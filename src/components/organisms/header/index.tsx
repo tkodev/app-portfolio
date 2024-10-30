@@ -14,18 +14,12 @@ type HeaderProps = React.HTMLAttributes<HTMLDivElement> &
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const { className, children, ...rest } = props
+  const { className, ...rest } = props
 
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.container())}>
-        {/* face / favicon hover
-        logo
-        nav
-          works
-          photo
-          about
-        omnisearch */}
+        {/* test */}
       </div>
     </header>
   )

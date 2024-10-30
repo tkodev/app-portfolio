@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     <div className={cn(styles.root({ className }))} {...rest}>
       <Header/>
       <Main>
-      {children}
+        {children}
       </Main>
       <Footer/>
     </div>

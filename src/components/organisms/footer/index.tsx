@@ -14,7 +14,7 @@ type FooterProps = React.HTMLAttributes<HTMLDivElement> &
 }
 
 const Footer: React.FC<FooterProps> = (props) => {
-  const { className, children, ...rest } = props
+  const { className, ...rest } = props
 
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>

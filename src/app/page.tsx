@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { cva, cn } from '@/utils/theme'
 
 const styles = {
@@ -8,7 +7,7 @@ const styles = {
 const Page = () => {
   return (
     <div className={cn(styles.root())}>
-     
+      test
     </div>
   );
 }
