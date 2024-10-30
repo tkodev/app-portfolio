@@ -1,7 +1,7 @@
-import { cva, cn, type VariantProps } from '@/utils/theme'
+import { Footer } from '@/components/organisms/footer'
 import { Header } from '@/components/organisms/header'
 import { Main } from '@/components/organisms/main'
-import { Footer } from '@/components/organisms/footer'
+import { cva, cn, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('', {
@@ -20,11 +20,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
 
   return (
     <div className={cn(styles.root({ className }))} {...rest}>
-      <Header/>
-      <Main>
-        {children}
-      </Main>
-      <Footer/>
+      <Header />
+      <Main>{children}</Main>
+      <Footer />
     </div>
   )
 }

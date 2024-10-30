@@ -1,15 +1,11 @@
 import { cva, cn } from '@/utils/theme'
 
 const styles = {
-  root: cva(''),
+  root: cva('')
 }
 
 const Page = () => {
-  return (
-    <div className={cn(styles.root())}>
-      test
-    </div>
-  );
+  return <div className={cn(styles.root())}>test</div>
 }
 
 export default Page

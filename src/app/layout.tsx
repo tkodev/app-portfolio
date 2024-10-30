@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next'
+import { Favicon } from '@/components/atoms/favicon'
+import { Layout } from '@/components/templates/layout'
 import { allianceNo1Font } from '@/fonts/alliance-no1'
 import { interFont } from '@/fonts/inter'
-import { Layout } from '@/components/templates/layout'
-import { ThemeProvider } from "@/providers/theme";
-import { cn, cva } from "@/utils/theme";
-import { Favicon } from '@/components/atoms/favicon'
-import "../themes/theme.css";
-import "../themes/theme-light.css";
-import "../themes/theme-dark.css";
+import { ThemeProvider } from '@/providers/theme'
+import { cn, cva } from '@/utils/theme'
+import '../themes/theme.css'
+import '../themes/theme-dark.css'
+import '../themes/theme-light.css'
 
 const styles = {
   html: cva('w-full h-full'),
@@ -33,20 +33,21 @@ const LayoutPage: React.FC<LayoutPageProps> = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Favicon />
       </head>
-      <body className={cn(styles.body(), allianceNo1Font.className, interFont.className )} suppressHydrationWarning>
+      <body
+        className={cn(styles.body(), allianceNo1Font.className, interFont.className)}
+        suppressHydrationWarning
+      >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-          <Layout>
-          {children}
-          </Layout>
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Layout>{children}</Layout>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
 
 export { metadata }

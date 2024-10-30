@@ -15,9 +15,7 @@ const Main: React.FC<MainProps> = (props) => {
 
   return (
     <main className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.container())}>
-      {children}
-      </div>
+      <div className={cn(styles.container())}>{children}</div>
     </main>
   )
 }

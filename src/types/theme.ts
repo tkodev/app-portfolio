@@ -4,10 +4,10 @@ type Theme = NonNullable<Config['theme']>
 
 type NestedTheme<T = string> = Record<string, Record<string, T>>
 
-interface NestedDictionary {
+type NestedDictionary = {
   [key: string]: string | NestedDictionary
 }
-interface FlattenedDictionary {
+type FlattenedDictionary = {
   [key: string]: string
 }
 

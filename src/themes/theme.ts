@@ -30,7 +30,7 @@ const colors = {
       high: 'var(--color-background-forced-high)',
       medium: 'var(--color-background-forced-medium)',
       low: 'var(--color-background-forced-low)',
-      overlay: 'var(--color-background-forced-overlay)',
+      overlay: 'var(--color-background-forced-overlay)'
     },
     button: {
       shaded: {
@@ -42,7 +42,7 @@ const colors = {
         rest: 'var(--color-background-button-outlined-rest)',
         hover: 'var(--color-background-button-outlined-hover)',
         disabled: 'var(--color-background-button-outlined-disabled)'
-      },
+      }
     },
     input: {
       rest: 'var(--color-background-input-rest)',
@@ -117,13 +117,13 @@ const colors = {
       high: 'var(--color-foreground-destructive-high)',
       medium: 'var(--color-foreground-destructive-medium)',
       low: 'var(--color-foreground-destructive-low)'
-    },
+    }
   },
   stroke: {
     neutral: {
       high: 'var(--color-stroke-neutral-high)',
       medium: 'var(--color-stroke-neutral-medium)',
-      low: 'var(--color-stroke-neutral-low)',
+      low: 'var(--color-stroke-neutral-low)'
     },
     button: {
       shaded: {
@@ -145,8 +145,7 @@ const colors = {
     info: 'var(--color-stroke-info)',
     warning: 'var(--color-stroke-warning)',
     success: 'var(--color-stroke-success)',
-    destructive: 'var(--color-stroke-destructive)',
-
+    destructive: 'var(--color-stroke-destructive)'
   },
   chart: {
     yellow: {
@@ -211,7 +210,7 @@ const typography: Theme = {
     industry: [`var(--font-industry)`],
     inter: [`var(--font-inter)`],
     geistSans: [`var(--font-geist-sans)`],
-    geistMono: [`var(--font-geist-mono)`],
+    geistMono: [`var(--font-geist-mono)`]
   },
   fontWeight: {
     thin: '100',
@@ -245,16 +244,16 @@ const utilities: Theme = {
     xl: '16px',
     xxl: '24px',
     full: '9999px'
-  },
+  }
 }
 
 // Combine all themes
 const theme: Theme = {
   ...defaultTheme,
-  darkMode: ["class"],
+  darkMode: ['class'],
   colors: flattenNestedTheme(colors),
   ...typography,
-  ...utilities,
+  ...utilities
 }
 
 // Tailwind CSS Configuration
@@ -266,4 +265,4 @@ const themeConfig: Config = {
   plugins: [twAnimate, twGradientMaskImage]
 }
 
-export { theme, themeConfig,  colors }
+export { theme, themeConfig, colors }
