@@ -2,7 +2,7 @@ import { cva, cn, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('w-full h-full p-1 bg-device-frame'),
-  container: cva('h-full rounded-3xl bg-basic-base-low shadow-inner')
+  container: cva('h-full rounded-4xl bg-basic-base-low shadow-inner')
 }
 
 type MainProps = React.HTMLAttributes<HTMLDivElement> &

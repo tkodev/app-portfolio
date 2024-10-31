@@ -10,14 +10,16 @@ import { Themer } from '../atoms/themer'
 import { Nav } from '../organisms/nav'
 
 const styles = {
-  root: cva(['fixed top-4 left-1/2 -translate-x-1/2', 'w-[800px] h-auto max-w-full']),
+  root: cva(['fixed top-0 left-1/2 -translate-x-1/2 p-4', 'w-[800px] h-auto max-w-full']),
   container: cva([
     'flex items-center justify-between gap-4 py-4 px-8',
     'rounded-3xl bg-basic-base-low-accent backdrop-blur-lg shadow-sm'
   ]),
 
-  left: cva('grid grid-cols-[auto_auto_auto] gap-4 items-center'),
-  right: cva('grid grid-cols-[auto_auto_auto] items-center')
+  left: cva('flex gap-5 items-center'),
+  right: cva('flex items-center'),
+
+  intro: cva('hidden md:block')
 }
 
 const navItems: NavItem[] = [
@@ -44,7 +46,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           <Link href="/">
             <Logo />
           </Link>
-          <Intro name="Tony Ko" title="Staff Software Engineer" />
+          <Intro className={cn(styles.intro())} name="Tony Ko" title="Staff Software Engineer" />
         </div>
         <div className={cn(styles.right())}>
           <Nav items={navItems} />
