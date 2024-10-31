@@ -13,4 +13,8 @@ type FlattenedDictionary = {
 
 type ThemeMode = 'light' | 'dark'
 
-export type { NestedTheme, Theme, NestedDictionary, FlattenedDictionary, ThemeMode }
+type SvgComponent = React.ForwardRefExoticComponent<
+  Omit<React.SVGProps<SVGSVGElement>, 'ref'> & React.RefAttributes<SVGSVGElement>
+>
+
+export type { NestedTheme, Theme, NestedDictionary, FlattenedDictionary, ThemeMode, SvgComponent }

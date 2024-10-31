@@ -5,7 +5,7 @@ const styles = {
 }
 
 const Page = () => {
-  return <div className={cn(styles.root())}>test</div>
+  return <div className={cn(styles.root())}></div>
 }
 
 export default Page

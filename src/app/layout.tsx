@@ -6,14 +6,11 @@ import { interFont } from '@/fonts/inter'
 import { ThemeProvider } from '@/providers/theme'
 import { cn, cva } from '@/utils/theme'
 import '../themes/theme.css'
-import '../themes/theme-dark.css'
-import '../themes/theme-light.css'
+import '../themes/theme-vars.css'
 
 const styles = {
   html: cva('w-full h-full'),
-  body: cva(
-    'w-full h-full font-inter text-body-md font-normal bg-background-forced-surface-sunken text-foreground-neutral-high'
-  )
+  body: cva('w-full h-full bg-basic-base-low text-basic-base-high font-inter text-sm font-normal')
 }
 
 const metadata: Metadata = {
@@ -37,12 +34,7 @@ const LayoutPage: React.FC<LayoutPageProps> = (props) => {
         className={cn(styles.body(), allianceNo1Font.className, interFont.className)}
         suppressHydrationWarning
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <Layout>{children}</Layout>
         </ThemeProvider>
       </body>

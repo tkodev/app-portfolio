@@ -19,184 +19,105 @@ import { flattenNestedTheme } from '../utils/theme'
 
 // 1. Colors
 const colors = {
-  background: {
-    neutral: {
-      high: 'var(--color-background-neutral-high)',
-      medium: 'var(--color-background-neutral-medium)',
-      low: 'var(--color-background-neutral-low)',
-      overlay: 'var(--color-background-neutral-overlay)'
+  device: {
+    frame: 'var(--device-frame)'
+  },
+  basic: {
+    base: {
+      low: 'var(--basic-base-low)',
+      'low-accent': 'var(--basic-base-low-accent)',
+      high: 'var(--basic-base-high)',
+      'high-accent': 'var(--basic-base-high-accent)'
     },
-    forced: {
-      high: 'var(--color-background-forced-high)',
-      medium: 'var(--color-background-forced-medium)',
-      low: 'var(--color-background-forced-low)',
-      overlay: 'var(--color-background-forced-overlay)'
-    },
-    button: {
-      shaded: {
-        rest: 'var(--color-background-button-shaded-rest)',
-        hover: 'var(--color-background-button-shaded-hover)',
-        disabled: 'var(--color-background-button-shaded-disabled)'
-      },
-      outlined: {
-        rest: 'var(--color-background-button-outlined-rest)',
-        hover: 'var(--color-background-button-outlined-hover)',
-        disabled: 'var(--color-background-button-outlined-disabled)'
-      }
-    },
-    input: {
-      rest: 'var(--color-background-input-rest)',
-      hover: 'var(--color-background-input-hover)',
-      disabled: 'var(--color-background-input-disabled)'
-    },
-    info: {
-      high: 'var(--color-background-info-high)',
-      medium: 'var(--color-background-info-medium)',
-      low: 'var(--color-background-info-low)'
-    },
-    warning: {
-      high: 'var(--color-background-warning-high)',
-      medium: 'var(--color-background-warning-medium)',
-      low: 'var(--color-background-warning-low)'
-    },
-    destructive: {
-      high: 'var(--color-background-destructive-high)',
-      medium: 'var(--color-background-destructive-medium)',
-      low: 'var(--color-background-destructive-low)'
-    },
-    success: {
-      high: 'var(--color-background-success-high)',
-      medium: 'var(--color-background-success-medium)',
-      low: 'var(--color-background-success-low)'
+    active: {
+      low: 'var(--basic-active-low)',
+      'low-accent': 'var(--basic-active-low-accent)',
+      high: 'var(--basic-active-high)',
+      'high-accent': 'var(--basic-active-high-accent)'
     }
   },
-  foreground: {
-    neutral: {
-      high: 'var(--color-foreground-neutral-high)',
-      medium: 'var(--color-foreground-neutral-medium)',
-      low: 'var(--color-foreground-neutral-low)'
+  inverse: {
+    base: {
+      low: 'var(--inverse-base-low)',
+      'low-accent': 'var(--inverse-base-low-accent)',
+      high: 'var(--inverse-base-high)',
+      'high-accent': 'var(--inverse-base-high-accent)'
     },
-    forced: {
-      high: 'var(--color-foreground-forced-high)',
-      medium: 'var(--color-foreground-forced-medium)',
-      low: 'var(--color-foreground-forced-low)'
-    },
-    button: {
-      shaded: {
-        rest: 'var(--color-foreground-button-shaded-rest)',
-        hover: 'var(--color-foreground-button-shaded-hover)',
-        disable: 'var(--color-foreground-button-shaded-disabled)'
-      },
-      outlined: {
-        rest: 'var(--color-foreground-button-outlined-rest)',
-        hover: 'var(--color-foreground-button-outlined-hover)',
-        disable: 'var(--color-foreground-button-outlined-disabled)'
-      }
-    },
-    input: {
-      rest: 'var(--color-foreground-input-rest)',
-      hover: 'var(--color-foreground-input-hover)',
-      disable: 'var(--color-foreground-input-disabled)'
-    },
-    info: {
-      high: 'var(--color-foreground-info-high)',
-      medium: 'var(--color-foreground-info-medium)',
-      low: 'var(--color-foreground-info-low)'
-    },
-    warning: {
-      high: 'var(--color-foreground-warning-high)',
-      medium: 'var(--color-foreground-warning-medium)',
-      low: 'var(--color-foreground-warning-low)'
-    },
-    success: {
-      high: 'var(--color-foreground-success-high)',
-      medium: 'var(--color-foreground-success-medium)',
-      low: 'var(--color-foreground-success-low)'
-    },
-    destructive: {
-      high: 'var(--color-foreground-destructive-high)',
-      medium: 'var(--color-foreground-destructive-medium)',
-      low: 'var(--color-foreground-destructive-low)'
+    active: {
+      low: 'var(--inverse-active-low)',
+      'low-accent': 'var(--inverse-active-low-accent)',
+      high: 'var(--inverse-active-high)',
+      'high-accent': 'var(--inverse-active-high-accent)'
     }
   },
-  stroke: {
-    neutral: {
-      high: 'var(--color-stroke-neutral-high)',
-      medium: 'var(--color-stroke-neutral-medium)',
-      low: 'var(--color-stroke-neutral-low)'
+  brand: {
+    base: {
+      low: 'var(--brand-base-low)',
+      'low-accent': 'var(--brand-base-low-accent)',
+      high: 'var(--brand-base-high)',
+      'high-accent': 'var(--brand-base-high-accent)'
     },
-    button: {
-      shaded: {
-        rest: 'var(--color-stroke-button-shaded-rest)',
-        hover: 'var(--color-stroke-button-shaded-hover)',
-        disable: 'var(--color-stroke-button-shaded-disabled)'
-      },
-      outlined: {
-        rest: 'var(--color-stroke-button-outlined-rest)',
-        hover: 'var(--color-stroke-button-outlined-hover)',
-        disable: 'var(--color-stroke-button-outlined-disabled)'
-      }
-    },
-    input: {
-      rest: 'var(--color-stroke-input-rest)',
-      hover: 'var(--color-stroke-input-hover)',
-      disable: 'var(--color-stroke-input-disabled)'
-    },
-    info: 'var(--color-stroke-info)',
-    warning: 'var(--color-stroke-warning)',
-    success: 'var(--color-stroke-success)',
-    destructive: 'var(--color-stroke-destructive)'
+    active: {
+      low: 'var(--brand-active-low)',
+      'low-accent': 'var(--brand-active-low-accent)',
+      high: 'var(--brand-active-high)',
+      'high-accent': 'var(--brand-active-high-accent)'
+    }
   },
-  chart: {
-    yellow: {
-      high: 'var(--color-chart-yellow-high)',
-      medium: 'var(--color-chart-yellow-medium)',
-      low: 'var(--color-chart-yellow-low)'
+  info: {
+    base: {
+      low: 'var(--info-base-low)',
+      'low-accent': 'var(--info-base-low-accent)',
+      high: 'var(--info-base-high)',
+      'high-accent': 'var(--info-base-high-accent)'
     },
-    green: {
-      high: 'var(--color-chart-green-high)',
-      medium: 'var(--color-chart-green-medium)',
-      low: 'var(--color-chart-green-low)'
+    active: {
+      low: 'var(--info-active-low)',
+      'low-accent': 'var(--info-active-low-accent)',
+      high: 'var(--info-active-high)',
+      'high-accent': 'var(--info-active-high-accent)'
+    }
+  },
+  warning: {
+    base: {
+      low: 'var(--warning-base-low)',
+      'low-accent': 'var(--warning-base-low-accent)',
+      high: 'var(--warning-base-high)',
+      'high-accent': 'var(--warning-base-high-accent)'
     },
-    purple: {
-      high: 'var(--color-chart-purple-high)',
-      medium: 'var(--color-chart-purple-medium)',
-      low: 'var(--color-chart-purple-low)'
+    active: {
+      low: 'var(--warning-active-low)',
+      'low-accent': 'var(--warning-active-low-accent)',
+      high: 'var(--warning-active-high)',
+      'high-accent': 'var(--warning-active-high-accent)'
+    }
+  },
+  destructive: {
+    base: {
+      low: 'var(--destructive-base-low)',
+      'low-accent': 'var(--destructive-base-low-accent)',
+      high: 'var(--destructive-base-high)',
+      'high-accent': 'var(--destructive-base-high-accent)'
     },
-    red: {
-      high: 'var(--color-chart-red-high)',
-      medium: 'var(--color-chart-red-medium)',
-      low: 'var(--color-chart-red-low)'
+    active: {
+      low: 'var(--destructive-active-low)',
+      'low-accent': 'var(--destructive-active-low-accent)',
+      high: 'var(--destructive-active-high)',
+      'high-accent': 'var(--destructive-active-high-accent)'
+    }
+  },
+  success: {
+    base: {
+      low: 'var(--success-base-low)',
+      'low-accent': 'var(--success-base-low-accent)',
+      high: 'var(--success-base-high)',
+      'high-accent': 'var(--success-base-high-accent)'
     },
-    brown: {
-      high: 'var(--color-chart-brown-high)',
-      medium: 'var(--color-chart-brown-medium)',
-      low: 'var(--color-chart-brown-low)'
-    },
-    teal: {
-      high: 'var(--color-chart-teal-high)',
-      medium: 'var(--color-chart-teal-medium)',
-      low: 'var(--color-chart-teal-low)'
-    },
-    orange: {
-      high: 'var(--color-chart-orange-high)',
-      medium: 'var(--color-chart-orange-medium)',
-      low: 'var(--color-chart-orange-low)'
-    },
-    blue: {
-      high: 'var(--color-chart-blue-high)',
-      medium: 'var(--color-chart-blue-medium)',
-      low: 'var(--color-chart-blue-low)'
-    },
-    brand: {
-      high: 'var(--color-chart-brand-high)',
-      medium: 'var(--color-chart-brand-medium)',
-      low: 'var(--color-chart-brand-low)'
-    },
-    grey: {
-      high: 'var(--color-chart-grey-high)',
-      medium: 'var(--color-chart-grey-medium)',
-      low: 'var(--color-chart-grey-low)'
+    active: {
+      low: 'var(--success-active-low)',
+      'low-accent': 'var(--success-active-low-accent)',
+      high: 'var(--success-active-high)',
+      'high-accent': 'var(--success-active-high-accent)'
     }
   }
 }
@@ -230,11 +151,12 @@ const typography: Theme = {
 // utilities
 const utilities: Theme = {
   boxShadow: {
-    inset: 'var(--shadow-inset)',
     sm: 'var(--shadow-sm)',
     md: 'var(--shadow-md)',
     lg: 'var(--shadow-lg)',
-    xl: 'var(--shadow-xl)'
+    xl: 'var(--shadow-xl)',
+    '2xl': 'var(--shadow-2xl)',
+    inner: 'var(--shadow-inner)'
   },
   borderRadius: {
     none: '0px',
@@ -243,6 +165,7 @@ const utilities: Theme = {
     lg: '12px',
     xl: '16px',
     xxl: '24px',
+    '3xl': '36px',
     full: '9999px'
   }
 }
