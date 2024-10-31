@@ -9,7 +9,7 @@ import { Nav } from '../organisms/nav'
 const styles = {
   root: cva(['fixed bottom-0 left-1/2 -translate-x-1/2 px-4 pb-4', 'w-[800px] h-auto max-w-full']),
   container: cva([
-    'grid grid-cols-[auto_1fr_auto] gap-4 items-center py-4 px-8',
+    'grid grid-cols-[auto_1fr_auto] gap-4 items-center py-2 px-4',
     'rounded-3xl bg-basic-base-low-accent backdrop-blur-lg shadow-sm'
   ])
 }

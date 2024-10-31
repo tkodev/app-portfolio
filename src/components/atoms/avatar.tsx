@@ -3,7 +3,9 @@ import { cn, cva } from '@/utils/theme'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 
 const styles = {
-  avatar: cva('relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full'),
+  avatar: cva(
+    'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full items-center justify-center'
+  ),
   avatarImage: cva('aspect-square h-full w-full'),
   avatarFallback: cva(
     'flex h-full w-full items-center justify-center rounded-full bg-basic-base-accent'
