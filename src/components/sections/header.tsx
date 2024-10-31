@@ -10,7 +10,7 @@ import { Themer } from '../atoms/themer'
 import { Nav } from '../organisms/nav'
 
 const styles = {
-  root: cva(['fixed top-0 left-1/2 -translate-x-1/2 p-4', 'w-[800px] h-auto max-w-full']),
+  root: cva(['fixed top-0 left-1/2 -translate-x-1/2 px-4 pt-4', 'w-[800px] h-auto max-w-full']),
   container: cva([
     'flex items-center justify-between gap-4 py-4 px-8',
     'rounded-3xl bg-basic-base-low-accent backdrop-blur-lg shadow-sm'
