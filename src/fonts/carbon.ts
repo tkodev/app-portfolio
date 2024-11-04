@@ -13,12 +13,12 @@ const carbonFont = localFont({
       style: 'italic'
     },
     {
-      path: '../../public/fonts/carbon/carbon-bold-italic.woff2',
+      path: '../../public/fonts/carbon/carbon-bold.woff2',
       weight: '700',
       style: 'normal'
     },
     {
-      path: '../../public/fonts/carbon/carbon-bold.woff2',
+      path: '../../public/fonts/carbon/carbon-bold-italic.woff2',
       weight: '700',
       style: 'italic'
     }

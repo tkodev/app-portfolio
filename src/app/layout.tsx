@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Favicon } from '@/components/atoms/favicon'
 import { Layout } from '@/components/templates/layout'
-import { allianceNo1Font } from '@/fonts/alliance-no1'
+import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { interFont } from '@/fonts/inter'
 import { ThemeProvider } from '@/providers/theme'
 import { cn, cva } from '@/utils/theme'
@@ -31,7 +31,7 @@ const LayoutPage: React.FC<LayoutPageProps> = (props) => {
         <Favicon />
       </head>
       <body
-        className={cn(styles.body(), allianceNo1Font.className, interFont.className)}
+        className={cn(styles.body(), interFont.variable, allianceNo2Font.variable)}
         suppressHydrationWarning
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>

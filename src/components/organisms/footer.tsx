@@ -8,7 +8,10 @@ import { Themer } from '../atoms/themer'
 import { Nav } from '../molecules/nav'
 
 const styles = {
-  root: cva(['fixed bottom-0 left-1/2 -translate-x-1/2 px-4 pb-4', 'w-[800px] h-auto max-w-full']),
+  root: cva([
+    'fixed bottom-0 left-1/2 -translate-x-1/2 container mx-auto px-4 pb-4',
+    'w-full h-auto z-10'
+  ]),
   container: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
     'rounded-3xl bg-basic-base-low-accent backdrop-blur-lg shadow-sm'

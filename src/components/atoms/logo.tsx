@@ -10,8 +10,8 @@ const styles = {
 }
 
 const images: Record<string, string> = {
-  light: '/images/logo/Mode=Light.svg',
-  dark: '/images/logo/Mode=Dark.svg'
+  dark: '/images/logo/logo-dark.svg',
+  light: '/images/logo/logo-light.svg'
 }
 
 type LogoRef = HTMLImageElement

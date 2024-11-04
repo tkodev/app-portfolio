@@ -18,18 +18,18 @@
 	  --black: #000000;
 	  --white: #ffffff;
 	  --gray-50:  #e6e6e6;
-	  --gray-100: #cdcece;
-	  --gray-200: #9c9c9d;
-	  --gray-300: #6a6b6c;
-	  --gray-400: #434345;
-	  --gray-500: #2f3031;
-	  --gray-600: #1b1c1e;
-	  --gray-700: #111214;
-	  --gray-800: #0c0d0f;
-	  --gray-900: #07080a;
+	  --gray-100: #cfcfcf;
+	  --gray-200: #9c9c9c;
+	  --gray-300: #6b6b6b;
+	  --gray-400: #454545;
+	  --gray-500: #303030;
+	  --gray-600: #1c1c1c;
+	  --gray-700: #121212;
+	  --gray-800: #0d0d0d;
+	  --gray-900: #080808;
 	  --red-50: #fef2f2;
 	  --red-100: #fee2e2;
-	  --red-200: #fecaca;
+	  --red-200: #050101;
 	  --red-300: #fca5a5;
 	  --red-400: #f87171;
 	  --red-500: #ef4444;
@@ -334,8 +334,8 @@
 	  --example: #ffffff;
 		--device-frame: var(--black);
 	  --basic-base-low: var(--gray-900);
-	  --basic-base-high: var(--gray-100);
-	  --basic-base-high-accent: var(--gray-600);
+	  --basic-base-high: var(--gray-50);
+	  --basic-base-high-accent: var(--gray-100);
 	  --basic-base-low-accent: var(--gray-700);
 	  --basic-active-low: var(--gray-800);
 	  --basic-active-high: var(--gray-50);
@@ -390,6 +390,4 @@
 	  --inverse-base-high-accent: var(--gray-700);
 	  --inverse-base-low-accent: var(--gray-100);
 	}
-
- 
 }

@@ -125,13 +125,13 @@ const colors = {
 // 2. Typography
 const typography: Theme = {
   fontFamily: {
-    allianceNo1: [`var(--font-alliance-no1)`],
-    allianceNo2: [`var(--font-alliance-no2)`],
+    'alliance-no1': [`var(--font-alliance-no1)`],
+    'alliance-no2': [`var(--font-alliance-no2)`],
     carbon: [`var(--font-carbon)`],
     industry: [`var(--font-industry)`],
     inter: [`var(--font-inter)`],
-    geistSans: [`var(--font-geist-sans)`],
-    geistMono: [`var(--font-geist-mono)`]
+    'geist-sans': [`var(--font-geist-sans)`],
+    'geist-mono': [`var(--font-geist-mono)`]
   },
   fontWeight: {
     thin: '100',

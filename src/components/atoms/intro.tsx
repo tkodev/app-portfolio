@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('grid grid-rows-2 text-sm')
+  root: cva('grid grid-rows-2 text-sm font-alliance-no2')
 }
 
 type IntroRef = HTMLDivElement

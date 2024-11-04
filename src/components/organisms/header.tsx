@@ -12,15 +12,15 @@ import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva([
-    'fixed top-0 left-1/2 -translate-x-1/2 px-4 pt-4',
-    'w-[800px] h-auto max-w-full z-10'
+    'fixed top-0 left-1/2 -translate-x-1/2 container mx-auto px-4 pt-4',
+    'w-full h-auto z-10'
   ]),
   container: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
     'rounded-3xl bg-basic-base-low-accent backdrop-blur-lg shadow-sm'
   ]),
 
-  left: cva('flex items-center gap-5'),
+  left: cva('flex items-center gap-8'),
   right: cva('flex items-center'),
 
   intro: cva('hidden md:block')
@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.left())}>
           <Avatar>
-            <AvatarImage src="/images/dp/purple-thumb.jpg" alt="Tony Ko" />
+            <AvatarImage src="/images/tko/purple-thumb.jpg" alt="Tony Ko" />
             <AvatarFallback>tk</AvatarFallback>
           </Avatar>
           <Link href="/">
@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           <Nav items={navItems} />
           <Icon icon={Dot} />
           <SearchModal>
-            <Button size="icon">
+            <Button variant="inverse" size="icon">
               <Icon icon={Search} />
             </Button>
           </SearchModal>
