@@ -12,7 +12,7 @@ const styles = {
         sand: [
           'dark:bg-[url(/images/background/adrien-olichon-dark-unsplash-x.jpg)]',
           'light:bg-[url(/images/background/adrien-olichon-light-unsplash-x.jpg)]',
-          'opacity-30'
+          'opacity-70'
         ]
       }
     },

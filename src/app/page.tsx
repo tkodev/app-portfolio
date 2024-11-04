@@ -37,9 +37,9 @@ const Page = () => {
             interaction patterns and data visualizations. Bridging the gap between design and
             engineering, endlessly pursuing design perfection.
           </p>
-          {/* <Button variant="inverse" asChild>
+          <Button variant="basic" size="lg" asChild>
             <Link href="#about">About Me</Link>
-          </Button> */}
+          </Button>
         </div>
         <div>
           <Image
