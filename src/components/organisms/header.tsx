@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           <Nav items={navItems} />
           <Icon icon={Dot} />
           <SearchModal>
-            <Button variant="inverse" size="icon">
+            <Button variant="basic" size="icon">
               <Icon icon={Search} />
             </Button>
           </SearchModal>
