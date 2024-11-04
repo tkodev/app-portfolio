@@ -19,7 +19,7 @@ const styles = {
   subtitle: cva('text-5xl leading-[3rem] mb-6 font-alliance-no2'),
   tagline: cva('text-2xl leading-[2rem] mb-6 font-alliance-no2'),
   desc: cva('text-base mb-8  text-basic-base-high-accent'),
-  signature: cva('mx-auto opacity-50 max-w-[200px] xl:max-w-[300px]')
+  signature: cva('mx-auto opacity-50 max-w-[200px] xl:max-w-[300px] light:invert')
 }
 
 const Page = () => {

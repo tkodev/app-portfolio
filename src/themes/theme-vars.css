@@ -274,7 +274,7 @@
 		--device-frame: var(--white);
 	  --basic-base-low: var(--gray-50);
 	  --basic-base-high: var(--gray-800);
-	  --basic-base-high-accent: var(--gray-300);
+	  --basic-base-high-accent: var(--gray-600);
 	  --basic-base-low-accent: var(--gray-100);
 	  --basic-active-low: var(--gray-100);
 	  --basic-active-high: var(--gray-900);

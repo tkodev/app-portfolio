@@ -6,13 +6,13 @@ const styles = {
     variants: {
       variant: {
         noise: [
-          'dark:bg-[url(/images/background/noise-dark-y@2x.png)] dark:md:bg-[url(/images/background/noise-dark-x@2x.png)]',
-          'light:bg-[url(/images/background/noise-light-y@2x.png)] light:md:bg-[url(/images/background/noise-light-x@2x.png)]'
+          'light:bg-[url(/images/background/noise-light-y@2x.png)] light:md:bg-[url(/images/background/noise-light-x@2x.png)]',
+          'dark:bg-[url(/images/background/noise-dark-y@2x.png)] dark:md:bg-[url(/images/background/noise-dark-x@2x.png)]'
         ],
         sand: [
-          'dark:bg-[url(/images/background/adrien-olichon-dark-unsplash-x.jpg)]',
           'light:bg-[url(/images/background/adrien-olichon-light-unsplash-x.jpg)]',
-          'opacity-70'
+          'dark:bg-[url(/images/background/adrien-olichon-dark-unsplash-x.jpg)]',
+          'opacity-30'
         ]
       }
     },
