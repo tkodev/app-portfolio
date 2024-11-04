@@ -4,7 +4,7 @@ import { forwardRef } from 'react'
 import { ButtonProps, ButtonRef, Button } from '@/components/atoms/button'
 import { useTheme } from '@/hooks/theme'
 import { Sun, Moon } from 'lucide-react'
-import { Icon } from '../atoms/icon'
+import { Icon } from './icon'
 
 type ThemerRef = ButtonRef
 type ThemerProps = ButtonProps
@@ -14,7 +14,7 @@ const Themer = forwardRef<ThemerRef, ThemerProps>((props, ref) => {
   const { theme, handleThemeModeToggle } = useTheme()
 
   return (
-    <Button ref={ref} {...rest} onClick={handleThemeModeToggle}>
+    <Button ref={ref} size="icon" {...rest} onClick={handleThemeModeToggle}>
       <Icon icon={theme === 'light' ? Moon : Sun} />
     </Button>
   )

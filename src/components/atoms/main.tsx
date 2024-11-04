@@ -1,8 +1,7 @@
 import { cva, cn, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('w-full h-full p-1 bg-device-frame'),
-  container: cva('h-full rounded-4xl bg-basic-base-low shadow-inner')
+  root: cva('w-full min-h-full bg-basic-base-low shadow-inner')
 }
 
 type MainProps = React.HTMLAttributes<HTMLDivElement> &
@@ -15,7 +14,7 @@ const Main: React.FC<MainProps> = (props) => {
 
   return (
     <main className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.container())}>{children}</div>
+      {children}
     </main>
   )
 }

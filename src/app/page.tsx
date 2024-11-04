@@ -1,3 +1,5 @@
+import { Main } from '@/components/atoms/main'
+import { Section } from '@/components/atoms/section'
 import { cva, cn } from '@/utils/theme'
 
 const styles = {
@@ -5,7 +7,15 @@ const styles = {
 }
 
 const Page = () => {
-  return <div className={cn(styles.root())}></div>
+  return (
+    <Main className={cn(styles.root())}>
+      <Section>
+        {/* asdfasdfasdfa */}
+        {/* asdfasdfasdfa */}
+        {/* asdfasdfasdfa */}
+      </Section>
+    </Main>
+  )
 }
 
 export default Page

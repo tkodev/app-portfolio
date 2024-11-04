@@ -1,13 +1,9 @@
-import { Footer } from '@/components/sections/footer'
-import { Header } from '@/components/sections/header'
-import { Main } from '@/components/sections/main'
+import { Footer } from '@/components/organisms/footer'
+import { Header } from '@/components/organisms/header'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('w-full h-full', {
-    variants: {},
-    defaultVariants: {}
-  })
+  root: cva('w-full h-full')
 }
 
 type LayoutProps = React.HTMLAttributes<HTMLDivElement> &
@@ -21,7 +17,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <div className={cn(styles.root({ className }))} {...rest}>
       <Header />
-      <Main>{children}</Main>
+      {children}
       <Footer />
     </div>
   )

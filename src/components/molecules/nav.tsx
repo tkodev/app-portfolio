@@ -26,7 +26,9 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
           return <Icon key={`nav-item-${index}`} icon={icon} />
         }
         if (props.href !== undefined) {
-          const { href, name, icon, variant, size, isExternal } = props
+          const { href, name, icon, variant, size, isDisabled } = props
+          const isExternal = !href.startsWith('/')
+          if (isDisabled) return null
           return (
             <Button key={`nav-item-${index}`} variant={variant} size={size} asChild>
               <Link href={href} target={isExternal ? '_blank' : undefined}>

@@ -8,7 +8,7 @@ type NavItem =
       icon?: SvgComponent
       variant?: ButtonProps['variant']
       size?: ButtonProps['size']
-      isExternal?: boolean
+      isDisabled?: boolean
     }
   | {
       href?: undefined

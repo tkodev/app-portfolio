@@ -1,30 +1,35 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Logo } from '@/components/atoms/logo'
+import { SearchModal } from '@/components/organisms/search-modal'
 import { NavItem } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
-import { Camera, DraftingCompass, Dot } from 'lucide-react'
+import { Camera, DraftingCompass, Dot, Search, NotebookPen } from 'lucide-react'
 import Link from 'next/link'
+import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
 import { Intro } from '../atoms/intro'
-import { Themer } from '../atoms/themer'
-import { Nav } from '../organisms/nav'
+import { Nav } from '../molecules/nav'
 
 const styles = {
-  root: cva(['fixed top-0 left-1/2 -translate-x-1/2 px-4 pt-4', 'w-[800px] h-auto max-w-full']),
+  root: cva([
+    'fixed top-0 left-1/2 -translate-x-1/2 px-4 pt-4',
+    'w-[800px] h-auto max-w-full z-10'
+  ]),
   container: cva([
-    'flex items-center justify-between gap-4 py-2 px-4',
+    'h-16 flex items-center justify-between gap-4 py-3 px-4',
     'rounded-3xl bg-basic-base-low-accent backdrop-blur-lg shadow-sm'
   ]),
 
-  left: cva('flex gap-5 items-center'),
+  left: cva('flex items-center gap-5'),
   right: cva('flex items-center'),
 
   intro: cva('hidden md:block')
 }
 
 const navItems: NavItem[] = [
-  { href: '/foundry', name: 'Foundry', icon: DraftingCompass, variant: 'basic' },
-  { href: '/photos', name: 'Shots', icon: Camera, variant: 'basic' }
+  { href: '/works', name: 'Works', icon: DraftingCompass, variant: 'basic' },
+  { href: '/shots', name: 'Shots', icon: Camera, variant: 'basic' },
+  { href: '/blog', name: 'Blog', icon: NotebookPen, variant: 'basic', isDisabled: true }
 ]
 
 type HeaderProps = React.HTMLAttributes<HTMLDivElement> &
@@ -51,7 +56,11 @@ const Header: React.FC<HeaderProps> = (props) => {
         <div className={cn(styles.right())}>
           <Nav items={navItems} />
           <Icon icon={Dot} />
-          <Themer />
+          <SearchModal>
+            <Button size="icon">
+              <Icon icon={Search} />
+            </Button>
+          </SearchModal>
         </div>
       </div>
     </header>
