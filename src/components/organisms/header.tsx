@@ -17,7 +17,7 @@ const styles = {
   ]),
   container: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
-    'rounded-3xl bg-basic-base-low-accent/50 backdrop-blur-md shadow-md'
+    'rounded-3xl bg-basic-base-low-accent shadow-sm'
   ]),
 
   left: cva('flex items-center gap-8'),
