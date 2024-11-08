@@ -118,10 +118,10 @@ const companiesOrder = [
   'airCanada',
   'airMiles',
   'toyota',
-  'babyJogger',
   'canadaDry',
   'geAppliances',
   'monogram',
+  'babyJogger',
   'toffifee',
   'weiser'
 ]
