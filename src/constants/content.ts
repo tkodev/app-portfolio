@@ -118,12 +118,12 @@ const companiesOrder = [
   'airCanada',
   'airMiles',
   'toyota',
-  'canadaDry',
   'geAppliances',
   'monogram',
-  'babyJogger',
+  'canadaDry',
+  'weiser',
   'toffifee',
-  'weiser'
+  'babyJogger'
 ]
 
 export { companies, companiesOrder }
