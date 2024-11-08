@@ -49,14 +49,22 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Avatar>
-              <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
-              <AvatarFallback>tk</AvatarFallback>
-            </Avatar>
+            <Link href="/">
+              <Avatar>
+                <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
+                <AvatarFallback>tk</AvatarFallback>
+              </Avatar>
+            </Link>
             <Link href="/">
               <Logo />
             </Link>
-            <Intro className={cn(styles.intro())} name="Tony Ko" title="Staff Software Engineer" />
+            <Link href="/">
+              <Intro
+                className={cn(styles.intro())}
+                name="Tony Ko"
+                title="Staff Software Engineer"
+              />
+            </Link>
           </div>
           <div className={cn(styles.right())}>
             <Nav items={navItems} />
