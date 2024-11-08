@@ -73,7 +73,7 @@ const companies: Record<string, Company> = {
   },
   quantumMob: {
     name: 'Quantum Mob',
-    src: 'https://www.linkedin.com/company/quantum-mob/',
+    src: 'https://www.linkedin.com/company/quantumMob/',
     baseSrc: '/images/companies/quantum-mob/base@1x.png',
     lightSrc: '/images/companies/quantum-mob/light@1x.png',
     darkSrc: '/images/companies/quantum-mob/dark@1x.png'
@@ -157,7 +157,7 @@ const jobs: Job[] = [
     ]
   },
   {
-    companyKey: 'quantum-mob',
+    companyKey: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Staff Software Engineer',
     location: 'Toronto, Ontario, Canada · Hybrid',
@@ -186,7 +186,7 @@ const jobs: Job[] = [
     ]
   },
   {
-    companyKey: 'quantum-mob',
+    companyKey: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Senior Software Engineer',
     location: 'Toronto, Ontario, Canada',
@@ -223,7 +223,7 @@ const jobs: Job[] = [
     ]
   },
   {
-    companyKey: 'quantum-mob',
+    companyKey: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Software Engineer II',
     location: 'Toronto, Canada Area',
@@ -263,7 +263,7 @@ const jobs: Job[] = [
     ]
   },
   {
-    companyKey: 'quantum-mob',
+    companyKey: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Software Engineer I',
     location: 'Toronto, Ontario, Canada',

@@ -40,7 +40,7 @@ const styles = {
 
 const Page = () => {
   const yearsSince = Math.abs(differenceInCalendarYears(new Date(), new Date('2017-04-01')))
-  const jobDateFormat = 'MMM dd, yyyy'
+  const jobDateFormat = 'MMM yyyy'
 
   return (
     <Main className={cn(styles.root())}>
@@ -72,11 +72,7 @@ const Page = () => {
           </Avatar>
         </div>
       </Section>
-      <Section
-        id="clients"
-        className={cn(styles.clients())}
-        bg={<Background variant="noise-invert" />}
-      >
+      <Section id="clients" className={cn(styles.clients())} bg={<Background variant="noise" />}>
         <div>
           <h2 className={cn(styles.tagline())}>
             Trusted by{' '}
@@ -107,7 +103,7 @@ const Page = () => {
       <Section
         id="experience"
         className={cn(styles.experience())}
-        bg={<Background variant="noise" />}
+        bg={<Background variant="sand" attach="fixed" />}
       >
         <div>
           <h2 className={cn(styles.tagline())}>
@@ -137,7 +133,7 @@ const Page = () => {
                   </p>
                   <p>
                     {format(dateFrom, jobDateFormat)} to{' '}
-                    {dateTo ? format(dateFrom, jobDateFormat) : 'Present'}
+                    {dateTo ? format(dateTo, jobDateFormat) : 'Present'}
                   </p>
                 </div>
                 <div>
