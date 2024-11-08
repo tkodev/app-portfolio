@@ -6,8 +6,12 @@ const styles = {
     variants: {
       variant: {
         noise: [
-          'bg-[url(/images/background/noise-light-y@2x.png)] md:bg-[url(/images/background/noise-light-x@2x.png)]',
-          'dark:bg-[url(/images/background/noise-dark-y@2x.png)] dark:md:bg-[url(/images/background/noise-dark-x@2x.png)]'
+          'bg-[url(/images/background/noise/light-y@2x.png)] md:bg-[url(/images/background/noise/light-x@2x.png)]',
+          'dark:bg-[url(/images/background/noise/dark-y@2x.png)] dark:md:bg-[url(/images/background/noise/dark-x@2x.png)]'
+        ],
+        'noise-invert': [
+          'bg-[url(/images/background/noise-invert/light-y@2x.png)] md:bg-[url(/images/background/noise-invert/light-x@2x.png)]',
+          'dark:bg-[url(/images/background/noise-invert/dark-y@2x.png)] dark:md:bg-[url(/images/background/noise-invert/dark-x@2x.png)]'
         ],
         sand: [
           'bg-[url(/images/background/adrien-olichon-light-unsplash-x.jpg)]',

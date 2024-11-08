@@ -1,4 +1,4 @@
-import { Company } from '@/types/content'
+import { Company, Job } from '@/types/content'
 
 const companies: Record<string, Company> = {
   airCanada: {
@@ -126,4 +126,200 @@ const companiesOrder = [
   'babyJogger'
 ]
 
-export { companies, companiesOrder }
+const jobs: Job[] = [
+  {
+    companyKey: 'badal',
+    companyName: 'Badal.io',
+    title: 'Staff Software Engineer',
+    location: 'Toronto, Ontario, Canada · Remote',
+    dateFrom: new Date('2023-05-01'),
+    dateTo: new Date('2024-11-08'),
+    skills: [
+      'Docker',
+      'Node.js',
+      'I18n',
+      'Express.js',
+      'Monorepo',
+      'Sales Engineering',
+      'React.js',
+      'Serverless Computing',
+      'TypeScript',
+      'Software Estimation',
+      'Coaching & Mentoring',
+      'Team Leadership',
+      'Composable Headless',
+      'React Native',
+      'Project Management',
+      'Solution Architecture',
+      'Application Architecture',
+      'Figma',
+      'Next.js'
+    ]
+  },
+  {
+    companyKey: 'quantum-mob',
+    companyName: 'Quantum Mob',
+    title: 'Staff Software Engineer',
+    location: 'Toronto, Ontario, Canada · Hybrid',
+    dateFrom: new Date('2022-11-01'),
+    dateTo: new Date('2023-05-01'),
+    skills: [
+      'Docker',
+      'Node.js',
+      'I18n',
+      'Express.js',
+      'Monorepo',
+      'Sales Engineering',
+      'React.js',
+      'Serverless Computing',
+      'TypeScript',
+      'Software Estimation',
+      'Coaching & Mentoring',
+      'Team Leadership',
+      'Composable Headless',
+      'React Native',
+      'Project Management',
+      'Solution Architecture',
+      'Application Architecture',
+      'Figma',
+      'Next.js'
+    ]
+  },
+  {
+    companyKey: 'quantum-mob',
+    companyName: 'Quantum Mob',
+    title: 'Senior Software Engineer',
+    location: 'Toronto, Ontario, Canada',
+    dateFrom: new Date('2021-11-01'),
+    dateTo: new Date('2022-10-01'),
+    skills: [
+      'Docker',
+      'Node.js',
+      'I18n',
+      'Express.js',
+      'Monorepo',
+      'CI/CD',
+      'PWAs',
+      'React Testing Library',
+      'React.js',
+      'Serverless Computing',
+      'React Query',
+      'OAuth',
+      'AODA',
+      'TypeScript',
+      'Software Estimation',
+      'Coaching & Mentoring',
+      'WCAG',
+      'Team Leadership',
+      'JavaScript',
+      'Jest',
+      'Redux.js',
+      'Composable Headless',
+      'React Native',
+      'Project Management',
+      'Application Architecture',
+      'Figma',
+      'Next.js'
+    ]
+  },
+  {
+    companyKey: 'quantum-mob',
+    companyName: 'Quantum Mob',
+    title: 'Software Engineer II',
+    location: 'Toronto, Canada Area',
+    dateFrom: new Date('2020-11-01'),
+    dateTo: new Date('2021-10-01'),
+    skills: [
+      'Docker',
+      'Node.js',
+      'I18n',
+      'Express.js',
+      'Monorepo',
+      'CI/CD',
+      'PWAs',
+      'React Testing Library',
+      'React.js',
+      'Serverless Computing',
+      'Webpack',
+      'React Query',
+      'OAuth',
+      'AODA',
+      'TypeScript',
+      'Software Estimation',
+      'Coaching & Mentoring',
+      'WCAG',
+      'Team Leadership',
+      'JavaScript',
+      'Jest',
+      'PostgreSQL',
+      'MySQL',
+      'Redux.js',
+      'ORM',
+      'React Native',
+      'Project Management',
+      'Application Architecture',
+      'Figma',
+      'Next.js'
+    ]
+  },
+  {
+    companyKey: 'quantum-mob',
+    companyName: 'Quantum Mob',
+    title: 'Software Engineer I',
+    location: 'Toronto, Ontario, Canada',
+    dateFrom: new Date('2019-11-01'),
+    dateTo: new Date('2020-10-01'),
+    skills: [
+      'Docker',
+      'Node.js',
+      'I18n',
+      'Express.js',
+      'Monorepo',
+      'CI/CD',
+      'React.js',
+      'Webpack',
+      'TypeScript',
+      'JavaScript',
+      'PostgreSQL',
+      'MySQL',
+      'Redux.js',
+      'ORM',
+      'Figma',
+      'Next.js'
+    ]
+  },
+  {
+    companyKey: 'brandfire',
+    companyName: 'Brandfire Marketing Group Inc.',
+    title: 'Intermediate Front End Developer',
+    location: 'Markham, Ontario',
+    dateFrom: new Date('2017-04-01'),
+    dateTo: new Date('2019-11-01'),
+    skills: [
+      'Node.js',
+      'I18n',
+      'Express.js',
+      'CI/CD',
+      'Software Estimation',
+      'JavaScript',
+      'PostgreSQL',
+      'MySQL',
+      'Adobe Creative Suite',
+      'Project Management',
+      'Vue.js',
+      'Angular.js',
+      'Ractive.js'
+    ]
+  },
+  {
+    companyKey: 'kos-interior-design',
+    companyName: "Ko's Interior Design and Construction",
+    title: 'Interior Designer',
+    location: 'Toronto, Canada Area',
+    dateFrom: new Date('2013-07-01'),
+    dateTo: new Date('2016-09-01'),
+    skills: ['Adobe Creative Suite']
+  }
+]
+
+export { companies, companiesOrder, jobs }

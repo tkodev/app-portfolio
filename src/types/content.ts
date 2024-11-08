@@ -6,4 +6,14 @@ type Company = {
   darkSrc: string
 }
 
-export type { Company }
+type Job = {
+  companyKey: string
+  companyName: string
+  title: string
+  location: string
+  dateFrom: Date
+  dateTo: Date
+  skills: string[]
+}
+
+export type { Company, Job }
