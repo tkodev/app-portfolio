@@ -1,54 +1,83 @@
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Background } from '@/components/atoms/background'
-import { Button } from '@/components/atoms/button'
+import { Badge } from '@/components/atoms/badge'
+import { Icon } from '@/components/atoms/icon'
+import { LogoCompany } from '@/components/atoms/logo-company'
 import { Main } from '@/components/atoms/main'
 import { Section } from '@/components/atoms/section'
+import { companies, companiesOrder } from '@/constants/content'
 import { cva, cn } from '@/utils/theme'
-import Image from 'next/image'
-import Link from 'next/link'
+import { Star, Users } from 'lucide-react'
 
 const styles = {
   root: cva(''),
   intro: cva([
-    'px-16 grid gap-8 items-center',
-    'grid-cols-[auto]',
-    'md:grid-cols-[3fr_1fr]',
-    'lg:grid-cols-[2fr_1fr]',
-    'xl:grid-cols-[1fr_1fr]'
+    'px-16 grid items-center',
+    'grid-cols-[auto] gap-8 text-center',
+    'md:grid-cols-[1fr_1fr] gap-8 md:text-left',
+    'lg:grid-cols-[2fr_1fr] gap-8',
+    'xl:grid-cols-[2fr_1fr] gap-12'
   ]),
-  title: cva('text-6xl leading-[4rem] mb-4 font-alliance-no2'),
-  subtitle: cva('text-5xl leading-[3rem] mb-6 font-alliance-no2'),
-  tagline: cva('text-2xl leading-[2rem] mb-6 font-alliance-no2'),
-  desc: cva('text-base mb-8  text-basic-base-high-accent'),
-  signature: cva('mx-auto opacity-50 max-w-[200px] xl:max-w-[300px] light:invert')
+  about: cva(),
+
+  badge: cva('mr-2 ml-2 md:ml-0 mb-8'),
+  title: cva('text-5xl lg:text-6xl mb-4 font-alliance-no2'),
+  subtitle: cva('text-4xl lg:text-5xl mb-6 font-alliance-no2'),
+  tagline: cva('text-xl lg:text-2xl mb-6 font-alliance-no2'),
+  desc: cva('text-base mb-8 text-basic-base-high-accent'),
+
+  dp: cva('w-4/5 lg:w-full h-auto mx-auto mb-4'),
+  signature: cva('mx-auto opacity-50 max-w-[100px] xl:max-w-[150px] light:invert'),
+
+  companies: cva('flex flex-wrap gap-4 items-center justify-center py-8')
 }
 
 const Page = () => {
   return (
     <Main className={cn(styles.root())}>
-      <Section className={cn(styles.intro())} bg={<Background variant="sand" />}>
+      <Section
+        id="intro"
+        className={cn(styles.intro())}
+        bg={<Background variant="sand" attach="fixed" />}
+      >
         <div>
           <h1 className={cn(styles.title())}>Tony Ko —</h1>
           <h2 className={cn(styles.subtitle())}>Staff Software Engineer</h2>
           <p className={cn(styles.tagline())}>
-            With Experience Building North America&apos;s Biggest Brands.
+            Crafting scalable solutions, championing best practices, and empowering teams to
+            innovate.
           </p>
-          <p className={cn(styles.desc())}>
-            Focused on creating <strong>strong user experiences</strong> - experimenting with
-            interaction patterns and data visualizations. Bridging the gap between design and
-            engineering, endlessly pursuing design perfection.
-          </p>
-          <Button variant="basic" size="lg" asChild>
-            <Link href="#about">About Me</Link>
-          </Button>
+          <div>
+            <Badge className={cn(styles.badge())}>
+              <Icon icon={Users} size="xs" /> 123 followers
+            </Badge>
+            <Badge className={cn(styles.badge())}>
+              <Icon icon={Star} size="xs" /> 123 stars
+            </Badge>
+          </div>
         </div>
         <div>
-          <Image
-            className={cn(styles.signature())}
-            src="/images/tko/signature-dark@2x.png"
-            width={376}
-            height={176}
-            alt="Tony's signature"
-          />
+          <Avatar className={cn(styles.dp())}>
+            <AvatarImage src="/images/tkodev/dp-sq.jpg" alt="Tony Ko" />
+            <AvatarFallback>tk</AvatarFallback>
+          </Avatar>
+        </div>
+      </Section>
+      <Section id="about" className={cn(styles.about())} bg={<Background variant="noise" />}>
+        <div>
+          <p className={cn(styles.desc())}>
+            Focused on creating <strong>strong user experiences</strong> - merger of cutting edge
+            interaction patterns with scalable architecture. Bridging the gap between design and
+            engineering.
+          </p>
+          <p className={cn(styles.desc())}>Trusted by 15+ Canadian and Global Companies:</p>
+          <div className={cn(styles.companies())}>
+            {companiesOrder.map((companyKey) => {
+              const company = companies[companyKey]
+              if (!company) return null
+              return <LogoCompany key={`company-${companyKey}`} company={company} />
+            })}
+          </div>
         </div>
       </Section>
     </Main>

@@ -12,12 +12,16 @@ import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva([
-    'fixed top-0 left-1/2 -translate-x-1/2 container mx-auto px-4 pt-4',
-    'w-full h-auto z-10'
+    'fixed top-0 left-0 bg-gradient-to-b from-basic-base-low-accent to-transparent',
+    'w-full h-[96px] z-10'
   ]),
   container: cva([
+    'fixed top-4 left-1/2 -translate-x-1/2 mx-auto px-4',
+    'max-w-[800px] w-full h-auto z-10'
+  ]),
+  bar: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
-    'rounded-3xl bg-basic-base-low-accent shadow-sm'
+    'rounded-3xl bg-basic-base-low shadow-sm border-basic-base-low-accent border'
   ]),
 
   left: cva('flex items-center gap-8'),
@@ -43,24 +47,26 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.container())}>
-        <div className={cn(styles.left())}>
-          <Avatar>
-            <AvatarImage src="/images/tko/purple-thumb.jpg" alt="Tony Ko" />
-            <AvatarFallback>tk</AvatarFallback>
-          </Avatar>
-          <Link href="/">
-            <Logo />
-          </Link>
-          <Intro className={cn(styles.intro())} name="Tony Ko" title="Staff Software Engineer" />
-        </div>
-        <div className={cn(styles.right())}>
-          <Nav items={navItems} />
-          <Icon icon={Dot} />
-          <SearchModal>
-            <Button variant="basic" size="icon">
-              <Icon icon={Search} />
-            </Button>
-          </SearchModal>
+        <div className={cn(styles.bar())}>
+          <div className={cn(styles.left())}>
+            <Avatar>
+              <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
+              <AvatarFallback>tk</AvatarFallback>
+            </Avatar>
+            <Link href="/">
+              <Logo />
+            </Link>
+            <Intro className={cn(styles.intro())} name="Tony Ko" title="Staff Software Engineer" />
+          </div>
+          <div className={cn(styles.right())}>
+            <Nav items={navItems} />
+            <Icon icon={Dot} />
+            <SearchModal>
+              <Button variant="basic" size="icon">
+                <Icon icon={Search} />
+              </Button>
+            </SearchModal>
+          </div>
         </div>
       </div>
     </header>

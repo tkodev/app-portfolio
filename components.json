@@ -14,7 +14,7 @@
     "lib": "@/utils",
     "utils": "@/utils/theme",
     "components": "@/components",
-    "ui": "@/components/shadcn",
+    "ui": "@/components/atoms",
     "hooks": "@/hooks"
   }
 }

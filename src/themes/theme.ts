@@ -166,7 +166,9 @@ const utilities: Theme = {
     xl: '16px',
     xxl: '24px',
     '3xl': '36px',
-    '4xl': '42px',
+    '4xl': '48px',
+    '5xl': '56px',
+    '6xl': '64px',
     full: '9999px'
   }
 }

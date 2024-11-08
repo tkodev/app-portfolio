@@ -9,12 +9,16 @@ import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva([
-    'fixed bottom-0 left-1/2 -translate-x-1/2 container mx-auto px-4 pb-4',
-    'w-full h-auto z-10'
+    'fixed bottom-0 left-0 bg-gradient-to-t from-basic-base-low-accent to-transparent',
+    'w-full h-[96px] z-10'
   ]),
   container: cva([
+    'fixed bottom-4 left-1/2 -translate-x-1/2 mx-auto px-4',
+    'max-w-[800px] w-full h-auto z-10'
+  ]),
+  bar: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
-    'rounded-3xl bg-basic-base-low-accent shadow-sm'
+    'rounded-3xl bg-basic-base-low shadow-sm border-basic-base-low-accent border'
   ]),
 
   left: cva('flex items-center'),
@@ -53,17 +57,19 @@ const Footer: React.FC<FooterProps> = (props) => {
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.container())}>
-        <div className={cn(styles.left())}>
-          <Button asChild>
-            <Link href="#">
-              <Icon icon={ChevronUp} /> Top
-            </Link>
-          </Button>
-        </div>
-        <div className={cn(styles.right())}>
-          <Nav items={navItems} />
-          <Icon icon={Dot} />
-          <Themer />
+        <div className={cn(styles.bar())}>
+          <div className={cn(styles.left())}>
+            <Button asChild>
+              <Link href="#">
+                <Icon icon={ChevronUp} /> Top
+              </Link>
+            </Button>
+          </div>
+          <div className={cn(styles.right())}>
+            <Nav items={navItems} />
+            <Icon icon={Dot} />
+            <Themer />
+          </div>
         </div>
       </div>
     </footer>
