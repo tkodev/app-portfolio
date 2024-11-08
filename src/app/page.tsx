@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Background } from '@/components/atoms/background'
-import { Badge } from '@/components/atoms/badge'
+import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { LogoCompany } from '@/components/atoms/logo-company'
 import { Main } from '@/components/atoms/main'
@@ -8,7 +8,8 @@ import { Section } from '@/components/atoms/section'
 import { companies, companiesOrder, jobs } from '@/constants/content'
 import { cva, cn } from '@/utils/theme'
 import { differenceInCalendarYears, format } from 'date-fns'
-import { Star, Users } from 'lucide-react'
+import { Linkedin, Github } from 'lucide-react'
+import Link from 'next/link'
 
 const styles = {
   root: cva(''),
@@ -22,11 +23,11 @@ const styles = {
   clients: cva('flex flex-col justify-center px-16 gap-8 text-center'),
   experience: cva('flex flex-col justify-center px-16 gap-8 text-center'),
 
-  badge: cva('mr-2 ml-2 md:ml-0'),
   title: cva('text-5xl lg:text-6xl mb-4 font-alliance-no2'),
   subtitle: cva('text-4xl lg:text-5xl mb-6 font-alliance-no2'),
   tagline: cva('text-xl lg:text-2xl mb-6 font-alliance-no2'),
   desc: cva('text-base mb-8 text-basic-base-high-accent'),
+  cta: cva('flex items-center gap-2 justify-center md:justify-start'),
 
   dp: cva('w-4/5 lg:w-full h-auto mx-auto mb-4'),
   signature: cva('mx-auto opacity-50 max-w-[100px] xl:max-w-[150px] light:invert'),
@@ -56,13 +57,17 @@ const Page = () => {
             Crafting scalable solutions, championing best practices, and empowering teams to
             innovate.
           </p>
-          <div>
-            <Badge className={cn(styles.badge())}>
-              <Icon icon={Users} size="xs" /> 123 followers
-            </Badge>
-            <Badge className={cn(styles.badge())}>
-              <Icon icon={Star} size="xs" /> 123 stars
-            </Badge>
+          <div className={cn(styles.cta())}>
+            <Button size="lg" asChild>
+              <Link href="https://www.linkedin.com/in/tkodev/" target="_blank">
+                <Icon icon={Linkedin} size="xs" /> 616+ Followers
+              </Link>
+            </Button>
+            <Button size="lg" asChild>
+              <Link href="https://github.com/tkodev" target="_blank">
+                <Icon icon={Github} size="xs" /> 38+ Stars
+              </Link>
+            </Button>
           </div>
         </div>
         <div>

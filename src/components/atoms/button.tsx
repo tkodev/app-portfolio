@@ -6,7 +6,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 const styles = {
   root: cva(
     [
-      'inline-flex items-center justify-center gap-1',
+      'inline-flex items-center justify-center gap-2',
       'rounded-3xl focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 transition-colors [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
       'whitespace-nowrap text-sm font-medium'
     ],
