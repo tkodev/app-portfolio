@@ -7,7 +7,6 @@ import { Main } from '@/components/atoms/main'
 import { Section } from '@/components/atoms/section'
 import { companies, companiesOrder, jobs } from '@/constants/content'
 import { cva, cn } from '@/utils/theme'
-import { kebabCase } from 'change-case'
 import { differenceInCalendarYears, format } from 'date-fns'
 import { Star, Users } from 'lucide-react'
 

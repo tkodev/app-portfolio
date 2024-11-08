@@ -14,8 +14,8 @@ const styles = {
           'dark:bg-[url(/images/background/noise-invert/dark-y@2x.png)] dark:md:bg-[url(/images/background/noise-invert/dark-x@2x.png)]'
         ],
         sand: [
-          'bg-[url(/images/background/adrien-olichon-light-unsplash-x.jpg)]',
-          'dark:bg-[url(/images/background/adrien-olichon-dark-unsplash-x.jpg)]',
+          'bg-[url(/images/background/sand/adrien-olichon-light-unsplash-x.jpg)]',
+          'dark:bg-[url(/images/background/sand/adrien-olichon-dark-unsplash-x.jpg)]',
           'opacity-30'
         ],
         debug: ['bg-red-100', 'dark:bg-red-800']
