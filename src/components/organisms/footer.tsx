@@ -1,6 +1,6 @@
 import { NavItem } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
-import { ChevronUp, Linkedin, Github, Mail, Dot } from 'lucide-react'
+import { ChevronUp, ChevronDown, Linkedin, Github, Mail, Dot } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
@@ -19,6 +19,10 @@ const styles = {
   bar: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
     'rounded-3xl bg-basic-base-low shadow-sm border-basic-base-low-accent border'
+  ]),
+  scroller: cva([
+    'fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto',
+    'w-auto h-auto z-10 animate-bounce'
   ]),
 
   left: cva('flex items-center'),
@@ -71,6 +75,9 @@ const Footer: React.FC<FooterProps> = (props) => {
             <Themer />
           </div>
         </div>
+      </div>
+      <div className={cn(styles.scroller())}>
+        <Icon icon={ChevronDown} />
       </div>
     </footer>
   )

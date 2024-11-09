@@ -40,7 +40,7 @@ const styles = {
 
   jobs: cva('flex flex-col text-left'),
   job: cva(
-    'grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-8 pl-8 border-b border-basic-base-high border-opacity-30'
+    'grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-6 pl-8 border-b border-basic-base-high border-opacity-30'
   ),
   jobCompany: cva('hidden md:block')
 }
