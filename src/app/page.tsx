@@ -14,29 +14,35 @@ import Link from 'next/link'
 const styles = {
   root: cva(''),
   intro: cva([
-    'grid items-center px-16',
-    'grid-cols-[auto] gap-4 text-center',
-    'md:grid-cols-[1fr_1fr] gap-8 md:text-left',
-    'lg:grid-cols-[2fr_1fr] gap-8',
-    'xl:grid-cols-[2fr_1fr] gap-12'
+    'grid items-center',
+    'grid-cols-[auto] gap-6 text-center px-8',
+    'sm:grid-cols sm:gap-6 sm:px-16',
+    'md:grid-cols md:gap-8',
+    'lg:grid-cols-[2fr_1fr] lg:text-left',
+    'xl:grid-cols-[2fr_1fr] '
   ]),
-  clients: cva('flex flex-col justify-center px-16 gap-8 text-center'),
-  experience: cva('flex flex-col justify-center px-16 gap-8 text-center'),
+  clients: cva('flex flex-col justify-center px-8 sm:px-16 gap-8 text-center'),
+  experience: cva('flex flex-col justify-center px-8 sm:px-16 gap-8 text-center'),
 
-  title: cva('text-5xl lg:text-6xl mb-4 font-alliance-no2'),
-  subtitle: cva('text-4xl lg:text-5xl mb-6 font-alliance-no2'),
-  tagline: cva('text-xl lg:text-2xl mb-6 font-alliance-no2'),
-  desc: cva('text-base mb-8 text-basic-base-high-accent'),
-  cta: cva('flex items-center gap-2 justify-center md:justify-start'),
+  introCol: cva('flex flex-col gap-4 justify-center'),
+
+  title: cva('text-5xl lg:text-6xl  font-alliance-no2'),
+  subtitle: cva('text-4xl lg:text-5xl  font-alliance-no2'),
+  tagline: cva('text-lg sm:text-xl lg:text-2xl font-alliance-no2'),
+  desc: cva('text-base text-basic-base-high-accent'),
+  cta: cva('flex items-center flex-wrap gap-2 justify-center lg:justify-start'),
 
   dp: cva('w-4/5 lg:w-full h-auto mx-auto mb-4'),
   signature: cva('mx-auto opacity-50 max-w-[100px] xl:max-w-[150px] light:invert'),
 
   companies: cva('flex flex-wrap gap-4 items-center justify-center'),
+  company: cva('m-2'),
+
   jobs: cva('flex flex-col text-left'),
   job: cva(
     'grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-8 pl-8 border-b border-basic-base-high border-opacity-30'
-  )
+  ),
+  jobCompany: cva('hidden md:block')
 }
 
 const Page = () => {
@@ -50,7 +56,7 @@ const Page = () => {
         className={cn(styles.intro())}
         bg={<Background variant="sand" attach="fixed" />}
       >
-        <div>
+        <div className={cn(styles.introCol())}>
           <h1 className={cn(styles.title())}>Tony Ko —</h1>
           <h2 className={cn(styles.subtitle())}>Staff Software Engineer</h2>
           <p className={cn(styles.tagline())}>
@@ -70,7 +76,7 @@ const Page = () => {
             </Button>
           </div>
         </div>
-        <div>
+        <div className={cn(styles.introCol())}>
           <Avatar className={cn(styles.dp())}>
             <AvatarImage src="/images/tkodev/dp-sq.jpg" alt="Tony Ko" />
             <AvatarFallback>tk</AvatarFallback>
@@ -101,7 +107,13 @@ const Page = () => {
           {companiesOrder.map((companyKey) => {
             const company = companies[companyKey]
             if (!company) return null
-            return <LogoCompany key={`company-${companyKey}`} company={company} />
+            return (
+              <LogoCompany
+                className={cn(styles.company())}
+                key={`company-${companyKey}`}
+                company={company}
+              />
+            )
           })}
         </div>
       </Section>
@@ -142,7 +154,13 @@ const Page = () => {
                   </p>
                 </div>
                 <div>
-                  {!!company && <LogoCompany key={`company-${companyKey}`} company={company} />}
+                  {!!company && (
+                    <LogoCompany
+                      className={cn(styles.jobCompany())}
+                      key={`company-${companyKey}`}
+                      company={company}
+                    />
+                  )}
                 </div>
               </div>
             )

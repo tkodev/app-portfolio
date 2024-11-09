@@ -24,9 +24,11 @@ const styles = {
     'rounded-3xl bg-basic-base-low shadow-sm border-basic-base-low-accent border'
   ]),
 
-  left: cva('flex items-center gap-8'),
+  left: cva('flex items-center'),
   right: cva('flex items-center'),
 
+  thumb: cva(''),
+  logo: cva('hidden sm:block mx-8'),
   intro: cva('hidden md:block')
 }
 
@@ -49,21 +51,17 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Link href="/">
+            <Link className={cn(styles.thumb())} href="/">
               <Avatar>
                 <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
                 <AvatarFallback>tk</AvatarFallback>
               </Avatar>
             </Link>
-            <Link href="/">
+            <Link className={cn(styles.logo())} href="/">
               <Logo />
             </Link>
-            <Link href="/">
-              <Intro
-                className={cn(styles.intro())}
-                name="Tony Ko"
-                title="Staff Software Engineer"
-              />
+            <Link className={cn(styles.intro())} href="/">
+              <Intro name="Tony Ko" title="Staff Software Engineer" />
             </Link>
           </div>
           <div className={cn(styles.right())}>

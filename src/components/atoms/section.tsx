@@ -3,7 +3,7 @@ import { cva, cn, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva('h-full min-h-screen relative flex'),
   overlay: cva('w-full h-full absolute top-0 left-0 -z-1'),
-  content: cva('w-full grow relative max-w-[1080px] mx-auto py-[128px] px-12')
+  content: cva('w-full grow relative max-w-[1080px] mx-auto py-[96px] px-12')
 }
 
 type SectionProps = React.HTMLAttributes<HTMLDivElement> &
