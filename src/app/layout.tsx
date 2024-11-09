@@ -16,6 +16,7 @@ const styles = {
 
 const pagedata = {
   title: 'Tony Ko / Portfolio',
+  siteName: 'tko.dev',
   description:
     'Experienced Staff Software Engineer with 7+ years building North America’s leading brands, specializing in scalable, accessible, and user-friendly software. Proven track record in leading modernization initiatives, architecting high-impact solutions, and mentoring engineers.',
   url: 'https://tko.dev'
@@ -28,7 +29,7 @@ const metadata: Metadata = {
     title: pagedata.title,
     description: pagedata.description,
     url: pagedata.url,
-    siteName: pagedata.title,
+    siteName: pagedata.siteName,
     images: [
       {
         url: 'https://tko.dev/favicons/preview.png',
