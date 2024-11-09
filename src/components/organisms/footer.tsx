@@ -20,13 +20,12 @@ const styles = {
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
     'rounded-3xl bg-basic-base-low shadow-sm border-basic-base-low-accent border'
   ]),
-  scroller: cva([
-    'fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto',
-    'w-auto h-auto z-10 animate-bounce'
-  ]),
+  scroller: cva(['fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto', 'w-auto h-auto z-10']),
 
   left: cva('flex items-center'),
-  right: cva('flex items-center')
+  right: cva('flex items-center'),
+
+  bouncer: cva('animate-bounce')
 }
 
 const navItems: NavItem[] = [
@@ -77,7 +76,7 @@ const Footer: React.FC<FooterProps> = (props) => {
         </div>
       </div>
       <div className={cn(styles.scroller())}>
-        <Icon icon={ChevronDown} />
+        <Icon className={cn(styles.bouncer())} icon={ChevronDown} />
       </div>
     </footer>
   )
