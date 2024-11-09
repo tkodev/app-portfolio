@@ -172,7 +172,7 @@ const Page = () => {
                 <div>
                   <p>
                     <strong>
-                      {companyName} - {title}
+                      {title} @ {companyName}
                     </strong>
                   </p>
                   <p>
