@@ -8,7 +8,7 @@ import { Section } from '@/components/atoms/section'
 import { companies, companiesOrder, jobs } from '@/constants/content'
 import { cva, cn } from '@/utils/theme'
 import { differenceInCalendarYears, format } from 'date-fns'
-import { Linkedin, Github } from 'lucide-react'
+import { Linkedin, Github, DraftingCompass } from 'lucide-react'
 import Link from 'next/link'
 
 const styles = {
@@ -30,8 +30,19 @@ const styles = {
   subtitle: cva('text-4xl lg:text-5xl font-alliance-no2'),
   tagline: cva('text-lg sm:text-xl lg:text-2xl font-alliance-no2'),
   desc: cva('text-base text-basic-base-high-accent'),
-  cta: cva('flex items-center flex-wrap gap-2 justify-center lg:justify-start'),
+  cta: cva('flex items-center flex-wrap gap-4 justify-center', {
+    variants: {
+      align: {
+        left: 'lg:justify-start',
+        center: 'lg:justify-center'
+      }
+    },
+    defaultVariants: {
+      align: 'center'
+    }
+  }),
 
+  ctaButton: cva('w-[180px]'),
   dp: cva('w-4/5 lg:w-full h-auto mx-auto mb-4'),
   signature: cva('mx-auto opacity-50 max-w-[100px] xl:max-w-[150px] light:invert'),
 
@@ -63,7 +74,7 @@ const Page = () => {
             Crafting scalable solutions, championing best practices, and empowering teams to
             innovate.
           </p>
-          <div className={cn(styles.cta())}>
+          <div className={cn(styles.cta({ align: 'left' }))}>
             <Button size="lg" asChild>
               <Link href="https://www.linkedin.com/in/tkodev/" target="_blank">
                 <Icon icon={Linkedin} size="xs" /> 616+ Followers
@@ -116,6 +127,20 @@ const Page = () => {
             )
           })}
         </div>
+        <div className={cn(styles.col())}>
+          <div className={cn(styles.cta())}>
+            <Button className={cn(styles.ctaButton())} size="lg" asChild>
+              <Link href="/works">
+                <Icon icon={DraftingCompass} size="xs" /> View Works
+              </Link>
+            </Button>
+            <Button className={cn(styles.ctaButton())} size="lg" asChild>
+              <Link href="https://github.com/tkodev" target="_blank">
+                <Icon icon={Linkedin} size="xs" /> Visit LinkedIn
+              </Link>
+            </Button>
+          </div>
+        </div>
       </Section>
       <Section
         id="experience"
@@ -165,6 +190,20 @@ const Page = () => {
               </div>
             )
           })}
+        </div>
+        <div className={cn(styles.col())}>
+          <div className={cn(styles.cta())}>
+            <Button className={cn(styles.ctaButton())} size="lg" asChild>
+              <Link href="/works">
+                <Icon icon={DraftingCompass} size="xs" /> View Works
+              </Link>
+            </Button>
+            <Button className={cn(styles.ctaButton())} size="lg" asChild>
+              <Link href="https://github.com/tkodev" target="_blank">
+                <Icon icon={Linkedin} size="xs" /> Visit LinkedIn
+              </Link>
+            </Button>
+          </div>
         </div>
       </Section>
     </Main>
