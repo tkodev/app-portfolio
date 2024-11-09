@@ -171,11 +171,15 @@ const Page = () => {
               <div key={`job-${index}`} className={cn(styles.job())}>
                 <div>
                   <p>
-                    {companyName} - {title}
+                    <strong>
+                      {companyName} - {title}
+                    </strong>
                   </p>
                   <p>
-                    {format(dateFrom, jobDateFormat)} to{' '}
-                    {dateTo ? format(dateTo, jobDateFormat) : 'Present'}
+                    <em>
+                      {format(dateFrom, jobDateFormat)} to{' '}
+                      {dateTo ? format(dateTo, jobDateFormat) : 'Present'}
+                    </em>
                   </p>
                 </div>
                 <div>
