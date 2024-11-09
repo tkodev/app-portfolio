@@ -24,10 +24,10 @@ const styles = {
   clients: cva('flex flex-col justify-center px-8 sm:px-16 gap-8 text-center'),
   experience: cva('flex flex-col justify-center px-8 sm:px-16 gap-8 text-center'),
 
-  introCol: cva('flex flex-col gap-4 justify-center'),
+  col: cva('flex flex-col gap-4 justify-center'),
 
-  title: cva('text-5xl lg:text-6xl  font-alliance-no2'),
-  subtitle: cva('text-4xl lg:text-5xl  font-alliance-no2'),
+  title: cva('text-5xl lg:text-6xl font-alliance-no2'),
+  subtitle: cva('text-4xl lg:text-5xl font-alliance-no2'),
   tagline: cva('text-lg sm:text-xl lg:text-2xl font-alliance-no2'),
   desc: cva('text-base text-basic-base-high-accent'),
   cta: cva('flex items-center flex-wrap gap-2 justify-center lg:justify-start'),
@@ -56,7 +56,7 @@ const Page = () => {
         className={cn(styles.intro())}
         bg={<Background variant="sand" attach="fixed" />}
       >
-        <div className={cn(styles.introCol())}>
+        <div className={cn(styles.col())}>
           <h1 className={cn(styles.title())}>Tony Ko —</h1>
           <h2 className={cn(styles.subtitle())}>Staff Software Engineer</h2>
           <p className={cn(styles.tagline())}>
@@ -76,7 +76,7 @@ const Page = () => {
             </Button>
           </div>
         </div>
-        <div className={cn(styles.introCol())}>
+        <div className={cn(styles.col())}>
           <Avatar className={cn(styles.dp())}>
             <AvatarImage src="/images/tkodev/dp-sq.jpg" alt="Tony Ko" />
             <AvatarFallback>tk</AvatarFallback>
@@ -84,7 +84,7 @@ const Page = () => {
         </div>
       </Section>
       <Section id="clients" className={cn(styles.clients())} bg={<Background variant="noise" />}>
-        <div>
+        <div className={cn(styles.col())}>
           <h2 className={cn(styles.tagline())}>
             Trusted by{' '}
             <strong>
@@ -122,7 +122,7 @@ const Page = () => {
         className={cn(styles.experience())}
         bg={<Background variant="sand" attach="fixed" />}
       >
-        <div>
+        <div className={cn(styles.col())}>
           <h2 className={cn(styles.tagline())}>
             With{' '}
             <strong>
