@@ -27,7 +27,7 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
         }
         if (props.href !== undefined) {
           const { href, name, icon, variant, size, isDisabled } = props
-          const isExternal = !href.startsWith('/')
+          const isExternal = !href.startsWith('/') || href.endsWith('.pdf')
           if (isDisabled) return null
           return (
             <Button key={`nav-item-${index}`} variant={variant} size={size} asChild>

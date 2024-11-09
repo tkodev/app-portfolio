@@ -1,6 +1,6 @@
 import { NavItem } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
-import { ChevronUp, ChevronDown, Linkedin, Github, Mail, Dot } from 'lucide-react'
+import { ChevronUp, ChevronDown, Linkedin, Github, Mail, Dot, FileUser } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
@@ -44,6 +44,12 @@ const navItems: NavItem[] = [
   {
     href: 'mailto:tony@tko.dev',
     icon: Mail,
+    variant: 'basic',
+    size: 'icon'
+  },
+  {
+    href: '/files/tony-ko-resume-q1-2024.pdf',
+    icon: FileUser,
     variant: 'basic',
     size: 'icon'
   }

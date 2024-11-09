@@ -14,9 +14,44 @@ const styles = {
   body: cva('w-full h-full bg-basic-base-low text-basic-base-high font-inter text-sm font-normal')
 }
 
+const pagedata = {
+  title: 'Tony Ko / Portfolio',
+  description:
+    'Experienced Staff Software Engineer with 7+ years building North America’s leading brands, specializing in scalable, accessible, and user-friendly software. Proven track record in leading modernization initiatives, architecting high-impact solutions, and mentoring engineers.',
+  url: 'https://tko.dev'
+}
+
 const metadata: Metadata = {
-  title: 'tko.dev',
-  description: "Tony Ko's Portfolio"
+  title: pagedata.title,
+  description: pagedata.description,
+  openGraph: {
+    title: pagedata.title,
+    description: pagedata.description,
+    url: pagedata.url,
+    siteName: pagedata.title,
+    images: [
+      {
+        url: 'https://tko.dev/favicons/preview.png',
+        width: 1200,
+        height: 630
+      }
+    ],
+    locale: 'en_CA',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pagedata.title,
+    description: pagedata.description,
+    images: [
+      {
+        url: 'https://tko.dev/favicons/preview.png',
+        width: 1200,
+        height: 630,
+        alt: pagedata.title
+      }
+    ]
+  }
 }
 
 type LayoutPageProps = {
@@ -28,7 +63,6 @@ const LayoutPage: React.FC<LayoutPageProps> = (props) => {
   return (
     <html lang="en" className={cn(styles.html())} suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Favicon />
       </head>
       <body
