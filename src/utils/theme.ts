@@ -38,5 +38,17 @@ function flattenNestedTheme(input: NestedDictionary, prefix: string = ''): Flatt
   return flatColors
 }
 
+/**
+ * Calculates the rem value of a given pixel value.
+ * @param pixels - The pixel value to convert to rem.
+ * @param fontSize - The base font size to convert pixels to rem.
+ */
+const pxToRem = (pixels: number | string, fontSize = 16) => {
+  const parsedPixels =
+    typeof pixels === 'string' ? parseInt(pixels.replace(/\s*px/gi, ''), 10) : pixels
+  const rem = parsedPixels / fontSize
+  return `${rem}rem`
+}
+
 export type { VariantProps }
-export { cn, cva, flattenNestedTheme }
+export { cn, cva, flattenNestedTheme, pxToRem }

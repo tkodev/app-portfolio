@@ -6,8 +6,9 @@ import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { interFont } from '@/fonts/inter'
 import { ThemeProvider } from '@/providers/theme'
 import { cn, cva } from '@/utils/theme'
+import '../themes/theme-colors.css'
+import '../themes/theme-utils.css'
 import '../themes/theme.css'
-import '../themes/theme-vars.css'
 
 const styles = {
   html: cva('w-full h-full'),

@@ -2,38 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* **Utility Classes** */
-@layer utilities {
-  /* Hide number arrows on inputs */
-  .hide-number-arrows::-webkit-inner-spin-button,
-  .hide-number-arrows::-webkit-outer-spin-button {
-    appearance: none;
-    margin: 0;
-  }
-  .hide-number-arrows {
-    appearance: textfield;
-  }
-
-  /* Gradient Masks */
-  .gradient-mask-x {
-    mask-image: linear-gradient(to right, transparent 15%, rgb(126, 96, 96) 50%, transparent 85%);
-  }
-  .gradient-mask-y {
-    mask-image: linear-gradient(to top, transparent 15%, rgba(0, 0, 0, 1) 50%, transparent 85%);
-  }
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+@layer base {
+	:root {
+		--shadow-xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+		--shadow-sm: 0px 2px 4px 0px rgba(0, 0, 0, 0.06), 0px 4px 6px 0px rgba(0, 0, 0, 0.10);
+		--shadow-md: 0px 10px 15px 0px rgba(0, 0, 0, 0.10), 0px 4px 6px 0px rgba(0, 0, 0, 0.05);
+		--shadow-lg: 0px 20px 25px 0px rgba(0, 0, 0, 0.10), 0px 10px 10px 0px rgba(0, 0, 0, 0.04);
+		--shadow-xl: 0px 25px 50px 0px rgba(0, 0, 0, 0.25);
+		--shadow-inner: 0px 4px 4px 0px rgba(0, 0, 0, 0.06) inset;
+	}
 }
 
-/** *Native Overrides* **/
-strong {
-  @apply font-semibold;
+@layer base {
+	:root {
+		--background: var(--white);
+		--foreground: var(--gray-600);
+
+		--muted: var(--gray-50);
+		--muted-foreground: var(--gray-300);
+
+		--popover: var(--white);
+		--popover-foreground: var(--gray-600);
+
+		--border: var(--gray-50);
+		--input: var(--gray-50);
+
+		--card: var(--white);
+		--card-foreground: var(--gray-600);
+
+		--primary: var(--gray-600);
+		--primary-foreground: var(--gray-50);
+
+		--secondary: var(--gray-50);
+		--secondary-foreground: var(--gray-600);
+
+		--accent: var(--gray-50);
+		--accent-foreground: var(--gray-600);
+
+		--destructive: var(--red-600);
+		--destructive-foreground: var(--gray-50);
+
+		--ring: var(--gray-200);
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: var(--gray-900);
+		--foreground: var(--gray-50);
+
+		--muted: var(--gray-600);
+		--muted-foreground: var(--gray-200);
+
+		--accent: var(--gray-500);
+		--accent-foreground: var(--gray-50);
+
+		--popover: var(--gray-900);
+		--popover-foreground: var(--gray-200);
+
+		--border: var(--gray-500);
+		--input: var(--gray-500);
+
+		--card: var(--gray-900);
+		--card-foreground: var(--gray-50);
+
+		--primary: var(--gray-50);
+		--primary-foreground: var(--gray-900);
+
+		--secondary: var(--gray-600);
+		--secondary-foreground: var(--gray-50);
+
+		--destructive: var(--red-800);
+		--destructive-foreground: var(--gray-50);
+
+		--ring: var(--gray-500);
+
+		--radius: 0.5rem;
+	}
 }
