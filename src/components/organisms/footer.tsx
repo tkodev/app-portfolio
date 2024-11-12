@@ -33,8 +33,9 @@ const styles = {
   scroller: cva(['fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto', 'w-auto h-auto z-10']),
 
   left: cva('flex items-center'),
-  right: cva('flex items-center'),
+  right: cva('flex items-center overflow-x-auto'),
 
+  label: cva('hidden md:inline'),
   bouncer: cva('animate-bounce')
 }
 
@@ -78,7 +79,7 @@ const Footer: FC<FooterProps> = (props) => {
           <div className={cn(styles.left())}>
             <Button variant="secondary" asChild>
               <Link href="#">
-                <Icon icon={ChevronUpIcon} /> Top
+                <Icon icon={ChevronUpIcon} /> <span className={cn(styles.label())}>Top</span>
               </Link>
             </Button>
           </div>

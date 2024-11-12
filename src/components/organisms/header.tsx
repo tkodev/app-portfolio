@@ -26,7 +26,7 @@ const styles = {
   ]),
 
   left: cva('flex items-center'),
-  right: cva('flex items-center'),
+  right: cva('flex items-center overflow-x-auto'),
 
   thumb: cva(''),
   logo: cva('hidden sm:block mx-8'),
