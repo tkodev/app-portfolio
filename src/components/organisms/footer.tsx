@@ -27,15 +27,15 @@ const styles = {
     'max-w-[800px] w-full h-auto z-10'
   ]),
   bar: cva([
-    'h-16 flex items-center justify-between gap-4 py-3 px-4',
+    'h-16 flex items-center justify-between gap-4 px-4',
     'rounded-full bg-background shadow-sm border-muted border'
   ]),
-  scroller: cva(['fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto', 'w-auto h-auto z-10']),
 
-  left: cva('flex items-center'),
-  right: cva('flex items-center overflow-x-auto'),
+  left: cva('h-full flex items-center'),
+  right: cva('h-full flex items-center overflow-x-auto'),
 
   label: cva('hidden md:inline'),
+  scroller: cva(['fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto', 'w-auto h-auto z-10']),
   bouncer: cva('animate-bounce')
 }
 
