@@ -19,9 +19,7 @@ const styles = {
 type SearchModalRef = HTMLDivElement
 type SearchModalProps = HTMLAttributes<SearchModalRef> &
   VariantProps<typeof styles.root> &
-  DialogProps & {
-    //
-  }
+  DialogProps
 
 const Search: FC<SearchModalProps> = (props) => {
   const { children, className, ...rest } = props

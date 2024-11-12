@@ -66,10 +66,7 @@ const navItems: NavEntry[] = [
   { icon: DotIcon }
 ]
 
-type FooterProps = HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type FooterProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>
 
 const Footer: FC<FooterProps> = (props) => {
   const { className, ...rest } = props

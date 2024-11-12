@@ -1,41 +1,48 @@
 'use client'
 
 import { forwardRef, HTMLAttributes } from 'react'
-import { useTheme } from '@/hooks/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import Image from 'next/image'
 
 const styles = {
-  root: cva('h-auto w-[72px]')
-}
-
-const images: Record<string, string> = {
-  dark: '/images/logo/logo-dark.svg',
-  light: '/images/logo/logo-light.svg'
+  root: cva('h-auto w-[72px] relative'),
+  img: cva('w-full h-full absolute top-0 left-0', {
+    variants: {
+      variant: {
+        light: 'block dark:hidden',
+        dark: 'hidden dark:block'
+      }
+    }
+  }),
+  baseImg: cva('opacity-0')
 }
 
 type LogoRef = HTMLImageElement
-type LogoProps = HTMLAttributes<LogoRef> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type LogoProps = HTMLAttributes<LogoRef> & VariantProps<typeof styles.root>
 
 const Logo = forwardRef<LogoRef, LogoProps>((props, ref) => {
   const { className, ...rest } = props
-  const { theme } = useTheme()
 
-  const imgSrc = images[theme]
+  const imageProps = {
+    width: 192,
+    height: 64,
+    alt: 'Tko.dev Logo'
+  }
 
   return (
-    <Image
-      ref={ref}
-      className={cn(styles.root({ className }))}
-      src={imgSrc}
-      width={192}
-      height={64}
-      alt="Tko.dev Logo"
-      {...rest}
-    />
+    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+      <Image
+        className={cn(styles.img({ variant: 'light' }))}
+        src="/images/logo/logo-light.svg"
+        {...imageProps}
+      />
+      <Image
+        className={cn(styles.img({ variant: 'dark' }))}
+        src="/images/logo/logo-dark.svg"
+        {...imageProps}
+      />
+      <Image className={cn(styles.baseImg())} src="/images/logo/logo-dark.svg" {...imageProps} />
+    </div>
   )
 })
 Logo.displayName = 'Logo'

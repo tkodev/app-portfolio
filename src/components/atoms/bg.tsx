@@ -2,7 +2,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('w-full h-full bg-center', {
+  root: cva('w-full h-full relative bg-center', {
     variants: {
       variant: {
         noise: [
@@ -17,10 +17,9 @@ const styles = {
           'bg-[url(/images/background/sand/adrien-olichon-light-unsplash-x.jpg)]',
           'dark:bg-[url(/images/background/sand/adrien-olichon-dark-unsplash-x.jpg)]',
           'opacity-30'
-        ],
-        debug: ['bg-red-100', 'dark:bg-red-800']
+        ]
       },
-      mode: {
+      size: {
         cover: 'bg-cover',
         contain: 'bg-contain'
       },
@@ -31,29 +30,21 @@ const styles = {
       }
     },
     defaultVariants: {
-      variant: 'noise',
-      mode: 'cover',
+      variant: 'sand',
+      size: 'cover',
       attach: 'local'
     }
   })
 }
 
 type BgRef = HTMLDivElement
-type BgProps = HTMLAttributes<BgRef> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type BgProps = HTMLAttributes<BgRef> & VariantProps<typeof styles.root>
 
 const Bg = forwardRef<BgRef, BgProps>((props, ref) => {
-  const { variant = 'noise', mode, attach, className, ...rest } = props
+  const { variant, size, attach, className, ...rest } = props
 
   return (
-    <div
-      ref={ref}
-      className={cn(styles.root({ variant, mode, attach, className }))}
-      {...rest}
-      suppressHydrationWarning
-    />
+    <div ref={ref} className={cn(styles.root({ variant, size, attach, className }))} {...rest} />
   )
 })
 Bg.displayName = 'Bg'

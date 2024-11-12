@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { Button } from '@/components/atoms/button'
 import { NavEntry } from '@/types/layout'
 import { cn, cva, VariantProps } from '@/utils/theme'
@@ -10,7 +10,7 @@ const styles = {
 }
 
 type NavRef = HTMLDivElement
-type NavProps = React.HTMLAttributes<NavRef> &
+type NavProps = HTMLAttributes<NavRef> &
   VariantProps<typeof styles.root> & {
     items: NavEntry[]
   }

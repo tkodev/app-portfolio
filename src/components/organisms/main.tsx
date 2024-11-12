@@ -5,10 +5,7 @@ const styles = {
   root: cva('w-full min-h-full bg-background shadow-inner')
 }
 
-type MainProps = HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type MainProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>
 
 const Main: FC<MainProps> = (props) => {
   const { className, children, ...rest } = props

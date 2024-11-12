@@ -40,10 +40,7 @@ const navItems: NavEntry[] = [
   { icon: DotIcon }
 ]
 
-type HeaderProps = HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type HeaderProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>
 
 const Header: FC<HeaderProps> = (props) => {
   const { className, ...rest } = props
@@ -53,16 +50,16 @@ const Header: FC<HeaderProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Link className={cn(styles.thumb())} href="/public">
+            <Link className={cn(styles.thumb())} href="/">
               <Avatar>
                 <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
                 <AvatarFallback>tk</AvatarFallback>
               </Avatar>
             </Link>
-            <Link className={cn(styles.logo())} href="/public">
+            <Link className={cn(styles.logo())} href="/">
               <Logo />
             </Link>
-            <Link className={cn(styles.intro())} href="/public">
+            <Link className={cn(styles.intro())} href="/">
               <Intro name="Tony Ko" title="Staff Software Engineer" />
             </Link>
           </div>

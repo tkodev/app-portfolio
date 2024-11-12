@@ -1,6 +1,6 @@
 type CompanyEntry = {
   name: string
-  src: string
+  href: string
   baseSrc: string
   lightSrc: string
   darkSrc: string

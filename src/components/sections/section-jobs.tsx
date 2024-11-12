@@ -1,9 +1,9 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
-import { Company } from '@/components/atoms/company'
 import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/atoms/section'
+import { Imager } from '@/components/molecules/imager'
 import { companyEntries, jobEntries } from '@/constants/content'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { differenceInCalendarYears, format } from 'date-fns'
@@ -16,7 +16,7 @@ const styles = {
   col: cva('flex flex-col gap-4 justify-center'),
 
   tagline: cva('text-lg sm:text-xl lg:text-2xl font-alliance-no2'),
-  desc: cva('text-base text-basic-base-high-accent'),
+  desc: cva('text-base'),
   cta: cva('flex items-center flex-wrap gap-4 justify-center', {
     variants: {
       align: {
@@ -32,16 +32,13 @@ const styles = {
 
   jobs: cva('flex flex-col text-left'),
   job: cva(
-    'grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-6 pl-8 border-b border-basic-base-high border-opacity-30'
+    'grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-6 pl-8 border-b border-foreground/30'
   ),
-  jobCompany: cva('hidden md:block')
+  company: cva('hidden md:block')
 }
 
 type SectionJobsRef = HTMLDivElement
-type SectionJobsProps = HTMLAttributes<SectionJobsRef> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type SectionJobsProps = HTMLAttributes<SectionJobsRef> & VariantProps<typeof styles.root>
 
 const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) => {
   const { className, ...rest } = props
@@ -93,11 +90,19 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
               </div>
               <div>
                 {!!company && (
-                  <Company
-                    className={cn(styles.jobCompany())}
+                  <Link
+                    className={cn(styles.company())}
+                    href={company.href}
                     key={`company-${companyKey}`}
-                    company={company}
-                  />
+                  >
+                    <Imager
+                      darkSrc={company.darkSrc}
+                      lightSrc={company.lightSrc}
+                      alt={`Logo of ${company.name}`}
+                      width={250}
+                      height={63}
+                    />
+                  </Link>
                 )}
               </div>
             </div>

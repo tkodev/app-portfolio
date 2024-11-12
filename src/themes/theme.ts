@@ -1,4 +1,4 @@
-import fluid, { extract } from 'fluid-tailwind'
+import fluid from 'fluid-tailwind'
 import twGradientMaskImage from 'tailwind-gradient-mask-image'
 import { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
@@ -124,7 +124,6 @@ const animations: Theme = {
 
 const theme: Theme = {
   ...defaultTheme,
-  darkMode: ['class'],
   ...screens,
   ...colors,
   ...typography,
@@ -135,8 +134,7 @@ const theme: Theme = {
 // Tailwind CSS Configuration
 const themeConfig: Config = {
   content: {
-    files: [],
-    extract
+    files: []
   },
   theme: {
     ...screens,

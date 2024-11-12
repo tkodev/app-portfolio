@@ -18,10 +18,7 @@ const styles = {
 }
 
 type ExampleRef = HTMLDivElement
-type ExampleProps = HTMLAttributes<ExampleRef> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type ExampleProps = HTMLAttributes<ExampleRef> & VariantProps<typeof styles.root>
 
 const Example = forwardRef<ExampleRef, ExampleProps>((props, ref) => {
   const { className, ...rest } = props

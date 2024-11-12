@@ -39,10 +39,7 @@ const styles = {
 }
 
 type SectionIntroRef = HTMLDivElement
-type SectionIntroProps = HTMLAttributes<SectionIntroRef> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type SectionIntroProps = HTMLAttributes<SectionIntroRef> & VariantProps<typeof styles.root>
 
 const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref) => {
   const { className, ...rest } = props

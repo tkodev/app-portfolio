@@ -1,9 +1,9 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
-import { Company } from '@/components/atoms/company'
 import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/atoms/section'
+import { Imager } from '@/components/molecules/imager'
 import { companyEntries, companyEntryKeys } from '@/constants/content'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { DraftingCompass, Linkedin } from 'lucide-react'
@@ -34,10 +34,7 @@ const styles = {
 }
 
 type SectionCompaniesRef = HTMLDivElement
-type SectionCompaniesProps = HTMLAttributes<SectionCompaniesRef> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type SectionCompaniesProps = HTMLAttributes<SectionCompaniesRef> & VariantProps<typeof styles.root>
 
 const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>((props, ref) => {
   const { className, ...rest } = props
@@ -73,11 +70,19 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
           const company = companyEntries[companyKey]
           if (!company) return null
           return (
-            <Company
+            <Link
               className={cn(styles.company())}
+              href={company.href}
               key={`company-${companyKey}`}
-              company={company}
-            />
+            >
+              <Imager
+                darkSrc={company.darkSrc}
+                lightSrc={company.lightSrc}
+                alt={`Logo of ${company.name}`}
+                width={250}
+                height={63}
+              />
+            </Link>
           )
         })}
       </div>

@@ -11,10 +11,7 @@ const styles = {
 }
 
 type ThemerRef = HTMLButtonElement
-type ThemerProps = ButtonHTMLAttributes<ThemerRef> &
-  VariantProps<typeof styles.root> & {
-    //
-  }
+type ThemerProps = ButtonHTMLAttributes<ThemerRef> & VariantProps<typeof styles.root>
 
 const Themer = forwardRef<ThemerRef, ThemerProps>((props, ref) => {
   const { onClick, className, ...rest } = props
