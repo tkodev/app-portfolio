@@ -1,11 +1,11 @@
+import { Theme } from '@/types/theme'
+import { pxToRem } from '@/utils/theme'
 import fluid from 'fluid-tailwind'
 import twGradientMaskImage from 'tailwind-gradient-mask-image'
 import { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 import twAnimate from 'tailwindcss-animate'
-import { Theme } from '../types/theme'
-import { pxToRem } from '../utils/theme'
 
 const screens: Theme = {
   screens: {

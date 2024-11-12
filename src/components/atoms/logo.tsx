@@ -25,23 +25,30 @@ const Logo = forwardRef<LogoRef, LogoProps>((props, ref) => {
 
   const imageProps = {
     width: 192,
-    height: 64,
-    alt: 'Tko.dev Logo'
+    height: 64
   }
+  const altString = 'Tko.dev Logo'
 
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <Image
         className={cn(styles.img({ variant: 'light' }))}
         src="/images/logo/logo-light.svg"
+        alt={altString}
         {...imageProps}
       />
       <Image
         className={cn(styles.img({ variant: 'dark' }))}
         src="/images/logo/logo-dark.svg"
+        alt={altString}
         {...imageProps}
       />
-      <Image className={cn(styles.baseImg())} src="/images/logo/logo-dark.svg" {...imageProps} />
+      <Image
+        className={cn(styles.baseImg())}
+        src="/images/logo/logo-dark.svg"
+        alt={altString}
+        {...imageProps}
+      />
     </div>
   )
 })
