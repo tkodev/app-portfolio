@@ -1,9 +1,10 @@
+import { HTMLAttributes, FC } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Logo } from '@/components/atoms/logo'
-import { SearchModal } from '@/components/organisms/search-modal'
-import { NavItem } from '@/types/layout'
+import { Search } from '@/components/organisms/search'
+import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
-import { Camera, DraftingCompass, Dot, Search, NotebookPen } from 'lucide-react'
+import { CameraIcon, DraftingCompassIcon, DotIcon, SearchIcon, NotebookPenIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
@@ -12,7 +13,7 @@ import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva([
-    'fixed top-0 left-0 bg-gradient-to-b from-basic-base-low-accent to-transparent',
+    'fixed top-0 left-0 bg-gradient-to-b from-background to-transparent',
     'w-full h-[96px] z-10'
   ]),
   container: cva([
@@ -21,7 +22,7 @@ const styles = {
   ]),
   bar: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
-    'rounded-3xl bg-basic-base-low shadow-sm border-basic-base-low-accent border'
+    'rounded-full bg-background shadow-sm border-muted border'
   ]),
 
   left: cva('flex items-center'),
@@ -32,18 +33,19 @@ const styles = {
   intro: cva('hidden md:block')
 }
 
-const navItems: NavItem[] = [
-  { href: '/works', name: 'Works', icon: DraftingCompass, variant: 'basic' },
-  { href: '/shots', name: 'Shots', icon: Camera, variant: 'basic' },
-  { href: '/blog', name: 'Blog', icon: NotebookPen, variant: 'basic', isDisabled: true }
+const navItems: NavEntry[] = [
+  { href: '/works', name: 'Works', icon: DraftingCompassIcon, variant: 'secondary' },
+  { href: '/shots', name: 'Shots', icon: CameraIcon, variant: 'secondary' },
+  { href: '/blog', name: 'Blog', icon: NotebookPenIcon, variant: 'secondary', isDisabled: true },
+  { icon: DotIcon }
 ]
 
-type HeaderProps = React.HTMLAttributes<HTMLDivElement> &
+type HeaderProps = HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof styles.root> & {
     //
   }
 
-const Header: React.FC<HeaderProps> = (props) => {
+const Header: FC<HeaderProps> = (props) => {
   const { className, ...rest } = props
 
   return (
@@ -51,27 +53,27 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Link className={cn(styles.thumb())} href="/">
+            <Link className={cn(styles.thumb())} href="/public">
               <Avatar>
                 <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
                 <AvatarFallback>tk</AvatarFallback>
               </Avatar>
             </Link>
-            <Link className={cn(styles.logo())} href="/">
+            <Link className={cn(styles.logo())} href="/public">
               <Logo />
             </Link>
-            <Link className={cn(styles.intro())} href="/">
+            <Link className={cn(styles.intro())} href="/public">
               <Intro name="Tony Ko" title="Staff Software Engineer" />
             </Link>
           </div>
           <div className={cn(styles.right())}>
-            <Nav items={navItems} />
-            <Icon icon={Dot} />
-            <SearchModal>
-              <Button variant="basic" size="icon">
-                <Icon icon={Search} />
-              </Button>
-            </SearchModal>
+            <Nav items={navItems}>
+              <Search>
+                <Button variant="secondary" size="icon">
+                  <Icon icon={SearchIcon} />
+                </Button>
+              </Search>
+            </Nav>
           </div>
         </div>
       </div>

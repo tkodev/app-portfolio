@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { Footer } from '@/components/organisms/footer'
 import { Header } from '@/components/organisms/header'
 import { cva, cn, type VariantProps } from '@/utils/theme'
@@ -11,7 +12,7 @@ type LayoutProps = React.HTMLAttributes<HTMLDivElement> &
     //
   }
 
-const Layout: React.FC<LayoutProps> = (props) => {
+const Layout: FC<LayoutProps> = (props) => {
   const { className, children, ...rest } = props
 
   return (

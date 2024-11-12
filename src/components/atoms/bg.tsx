@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -38,13 +38,13 @@ const styles = {
   })
 }
 
-type BackgroundRef = HTMLDivElement
-type BackgroundProps = React.HTMLAttributes<BackgroundRef> &
+type BgRef = HTMLDivElement
+type BgProps = HTMLAttributes<BgRef> &
   VariantProps<typeof styles.root> & {
     //
   }
 
-const Background = forwardRef<BackgroundRef, BackgroundProps>((props, ref) => {
+const Bg = forwardRef<BgRef, BgProps>((props, ref) => {
   const { variant = 'noise', mode, attach, className, ...rest } = props
 
   return (
@@ -56,7 +56,7 @@ const Background = forwardRef<BackgroundRef, BackgroundProps>((props, ref) => {
     />
   )
 })
-Background.displayName = 'Background'
+Bg.displayName = 'Bg'
 
-export { Background }
-export type { BackgroundProps, BackgroundRef }
+export { Bg }
+export type { BgProps, BgRef }

@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
-import { Company } from '@/types/content'
+import { HTMLAttributes } from 'react'
+import { CompanyEntry } from '@/types/content'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,13 +18,13 @@ const styles = {
   baseImg: cva('opacity-0')
 }
 
-type LogoCompanyRef = HTMLDivElement
-type LogoCompanyProps = React.HTMLAttributes<HTMLDivElement> &
+type CompanyRef = HTMLDivElement
+type CompanyProps = HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof styles.root> & {
-    company: Company
+    company: CompanyEntry
   }
 
-const LogoCompany = forwardRef<LogoCompanyRef, LogoCompanyProps>((props, ref) => {
+const Company = forwardRef<CompanyRef, CompanyProps>((props, ref) => {
   const { company, className, ...rest } = props
 
   const width = 200
@@ -58,7 +59,7 @@ const LogoCompany = forwardRef<LogoCompanyRef, LogoCompanyProps>((props, ref) =>
     </div>
   )
 })
-LogoCompany.displayName = 'LogoCompany'
+Company.displayName = 'Company'
 
-export { LogoCompany }
-export type { LogoCompanyProps, LogoCompanyRef }
+export { Company }
+export type { CompanyProps, CompanyRef }

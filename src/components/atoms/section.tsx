@@ -1,3 +1,4 @@
+import { HTMLAttributes, ReactNode, FC } from 'react'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -6,12 +7,12 @@ const styles = {
   content: cva('w-full grow relative max-w-[1080px] mx-auto py-[96px] px-12')
 }
 
-type SectionProps = React.HTMLAttributes<HTMLDivElement> &
+type SectionProps = HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof styles.root> & {
-    bg?: React.ReactNode
+    bg?: ReactNode
   }
 
-const Section: React.FC<SectionProps> = (props) => {
+const Section: FC<SectionProps> = (props) => {
   const { bg, className, children, ...rest } = props
 
   return (

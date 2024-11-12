@@ -1,6 +1,6 @@
 'use client'
 
-import { forwardRef } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { useTheme } from '@/hooks/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import Image from 'next/image'
@@ -15,7 +15,7 @@ const images: Record<string, string> = {
 }
 
 type LogoRef = HTMLImageElement
-type LogoProps = React.HTMLAttributes<LogoRef> &
+type LogoProps = HTMLAttributes<LogoRef> &
   VariantProps<typeof styles.root> & {
     //
   }

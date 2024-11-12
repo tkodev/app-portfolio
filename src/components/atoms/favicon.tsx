@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 const favicon = {
   themeColor: '#333333',
   configSrc: '/favicons/browserconfig.xml',
@@ -11,7 +13,7 @@ const favicon = {
 
 type FaviconProps = object
 
-const Favicon: React.FC<FaviconProps> = () => {
+const Favicon: FC<FaviconProps> = () => {
   const { themeColor, configSrc, manifestSrc, xsIcon, smIcon, favIcon, maskIcon, touchIcon } =
     favicon
 

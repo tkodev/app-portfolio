@@ -1,3 +1,4 @@
+import { FC, HTMLAttributes } from 'react'
 import { SvgComponent } from '@/types/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
@@ -18,13 +19,13 @@ const styles = {
   })
 }
 
-type IconProps = React.HTMLAttributes<SVGElement> &
+type IconProps = HTMLAttributes<SVGElement> &
   VariantProps<typeof styles.root> & {
-    icon?: SvgComponent | React.FC
+    icon?: SvgComponent | FC
     alt?: string
   }
 
-const Icon: React.FC<IconProps> = (props) => {
+const Icon: FC<IconProps> = (props) => {
   const { icon: Icon, alt, size, className, ...rest } = props
 
   if (!Icon) return null

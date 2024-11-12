@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -6,7 +6,7 @@ const styles = {
 }
 
 type IntroRef = HTMLDivElement
-type IntroProps = React.HTMLAttributes<IntroRef> &
+type IntroProps = HTMLAttributes<IntroRef> &
   VariantProps<typeof styles.root> & {
     name: string
     title: string

@@ -1,7 +1,7 @@
 import { ButtonProps } from '@/components/atoms/button'
 import { SvgComponent } from '@/types/theme'
 
-type NavItem =
+type NavEntry =
   | {
       href: string
       name?: string
@@ -15,4 +15,4 @@ type NavItem =
       icon: SvgComponent
     }
 
-export type { NavItem }
+export type { NavEntry }

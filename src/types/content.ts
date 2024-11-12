@@ -1,4 +1,4 @@
-type Company = {
+type CompanyEntry = {
   name: string
   src: string
   baseSrc: string
@@ -6,7 +6,7 @@ type Company = {
   darkSrc: string
 }
 
-type Job = {
+type JobEntry = {
   companyKey: string
   companyName: string
   title: string
@@ -16,4 +16,4 @@ type Job = {
   skills: string[]
 }
 
-export type { Company, Job }
+export type { CompanyEntry, JobEntry }

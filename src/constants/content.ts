@@ -1,6 +1,6 @@
-import { Company, Job } from '@/types/content'
+import { CompanyEntry, JobEntry } from '@/types/content'
 
-const companies: Record<string, Company> = {
+const companyEntries: Record<string, CompanyEntry> = {
   airCanada: {
     name: 'Air Canada',
     src: 'https://www.aircanada.com/',
@@ -108,7 +108,7 @@ const companies: Record<string, Company> = {
   }
 }
 
-const companiesOrder = [
+const companyEntryKeys = [
   'badal',
   'quantumMob',
   'rewardops',
@@ -126,7 +126,7 @@ const companiesOrder = [
   'babyJogger'
 ]
 
-const jobs: Job[] = [
+const jobEntries: JobEntry[] = [
   {
     companyKey: 'badal',
     companyName: 'Badal.io',
@@ -322,4 +322,4 @@ const jobs: Job[] = [
   }
 ]
 
-export { companies, companiesOrder, jobs }
+export { companyEntries, companyEntryKeys, jobEntries }

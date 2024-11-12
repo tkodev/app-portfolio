@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ReactNode, FC } from 'react'
 import { Favicon } from '@/components/atoms/favicon'
 import { Layout } from '@/components/templates/layout'
 import { defaultTheme } from '@/constants/theme'
@@ -6,20 +7,21 @@ import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { interFont } from '@/fonts/inter'
 import { ThemeProvider } from '@/providers/theme'
 import { cn, cva } from '@/utils/theme'
+import Head from 'next/head'
+import '../themes/theme.css'
 import '../themes/theme-colors.css'
 import '../themes/theme-utils.css'
-import '../themes/theme.css'
 
 const styles = {
   html: cva('w-full h-full'),
-  body: cva('w-full h-full bg-basic-base-low text-basic-base-high font-inter text-sm font-normal')
+  body: cva('w-full h-full bg-background text-foreground font-inter text-sm font-normal')
 }
 
 const pagedata = {
   title: 'Tony Ko / Portfolio',
   siteName: 'tko.dev',
   description:
-    'Experienced Staff Software Engineer with 7+ years building North America’s leading brands, specializing in scalable, accessible, and user-friendly software. Proven track record in leading modernization initiatives, architecting high-impact solutions, and mentoring engineers.',
+    'Experienced Staff Software Engineer with 7+ years building North America’s leading brands, specializing in scalable, accessible, and user-friendly software. Proven track record in leading modernization initiatives, architecting high-impact solutions, and team building.',
   url: 'https://tko.dev'
 }
 
@@ -57,16 +59,16 @@ const metadata: Metadata = {
 }
 
 type LayoutPageProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
-const LayoutPage: React.FC<LayoutPageProps> = (props) => {
+const LayoutPage: FC<LayoutPageProps> = (props) => {
   const { children } = props
   return (
     <html lang="en" className={cn(styles.html())} suppressHydrationWarning>
-      <head>
+      <Head>
         <Favicon />
-      </head>
+      </Head>
       <body
         className={cn(styles.body(), interFont.variable, allianceNo2Font.variable)}
         suppressHydrationWarning

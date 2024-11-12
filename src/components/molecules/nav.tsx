@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import { Button } from '@/components/atoms/button'
-import { NavItem } from '@/types/layout'
+import { NavEntry } from '@/types/layout'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import Link from 'next/link'
 import { Icon } from '../atoms/icon'
@@ -12,7 +12,7 @@ const styles = {
 type NavRef = HTMLDivElement
 type NavProps = React.HTMLAttributes<NavRef> &
   VariantProps<typeof styles.root> & {
-    items: NavItem[]
+    items: NavEntry[]
   }
 
 const Nav = forwardRef<NavRef, NavProps>((props, ref) => {

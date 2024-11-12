@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState, RefObject } from 'react'
 import { throttle } from 'lodash'
 import { useEventListener } from 'usehooks-ts'
 
 type UseScrollProps = {
-  scrollElementRef: React.RefObject<HTMLDivElement>
+  scrollElementRef: RefObject<HTMLDivElement>
   isEnabled?: boolean
   initialScrollPosition?: 'top' | 'bottom'
   throttleMs?: number

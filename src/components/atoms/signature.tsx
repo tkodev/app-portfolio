@@ -1,6 +1,6 @@
 'use client'
 
-import { forwardRef } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { useTheme } from '@/hooks/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import Image from 'next/image'
@@ -15,7 +15,7 @@ const images: Record<string, string> = {
 }
 
 type SignatureRef = HTMLImageElement
-type SignatureProps = React.HTMLAttributes<SignatureRef> &
+type SignatureProps = HTMLAttributes<SignatureRef> &
   VariantProps<typeof styles.root> & {
     //
   }

@@ -5,7 +5,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 import twAnimate from 'tailwindcss-animate'
 import { Theme } from '../types/theme'
-import { flattenNestedTheme, pxToRem } from '../utils/theme'
+import { pxToRem } from '../utils/theme'
 
 const screens: Theme = {
   screens: {
@@ -18,7 +18,7 @@ const screens: Theme = {
 }
 
 const colors: Theme = {
-  colors: flattenNestedTheme({
+  colors: {
     border: 'hsl(var(--border))',
     input: 'hsl(var(--input))',
     ring: 'hsl(var(--ring))',
@@ -52,7 +52,7 @@ const colors: Theme = {
       DEFAULT: 'hsl(var(--card))',
       foreground: 'hsl(var(--card-foreground))'
     }
-  })
+  }
 }
 
 const typography: Theme = {
@@ -95,11 +95,11 @@ const utilities: Theme = {
   },
   borderRadius: {
     DEFAULT: 'var(--radius)',
-    xs: 'calc(var(--radius) - 4px)',
-    sm: 'calc(var(--radius) - 2px)',
+    xs: 'calc(var(--radius) - 0.50rem)',
+    sm: 'calc(var(--radius) - 0.25rem)',
     md: 'var(--radius)',
-    lg: 'calc(var(--radius) + 2px)',
-    xl: 'calc(var(--radius) + 4px)'
+    lg: 'calc(var(--radius) + 0.25rem)',
+    xl: 'calc(var(--radius) + 0.50rem)'
   }
 }
 

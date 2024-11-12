@@ -1,15 +1,25 @@
-import { NavItem } from '@/types/layout'
+import { HTMLAttributes, FC } from 'react'
+import { Themer } from '@/components/molecules/themer'
+import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
-import { ChevronUp, ChevronDown, Linkedin, Github, Mail, Dot, FileUser } from 'lucide-react'
+import {
+  ChevronUpIcon,
+  ChevronDownIcon,
+  LinkedinIcon,
+  GithubIcon,
+  MailIcon,
+  DotIcon,
+  FileUserIcon,
+  SunMoonIcon
+} from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
-import { Themer } from '../atoms/themer'
 import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva([
-    'fixed bottom-0 left-0 bg-gradient-to-t from-basic-base-low-accent to-transparent',
+    'fixed bottom-0 left-0 bg-gradient-to-t from-background to-transparent',
     'w-full h-[96px] z-10'
   ]),
   container: cva([
@@ -18,7 +28,7 @@ const styles = {
   ]),
   bar: cva([
     'h-16 flex items-center justify-between gap-4 py-3 px-4',
-    'rounded-3xl bg-basic-base-low shadow-sm border-basic-base-low-accent border'
+    'rounded-full bg-background shadow-sm border-muted border'
   ]),
   scroller: cva(['fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto', 'w-auto h-auto z-10']),
 
@@ -28,39 +38,40 @@ const styles = {
   bouncer: cva('animate-bounce')
 }
 
-const navItems: NavItem[] = [
+const navItems: NavEntry[] = [
   {
     href: 'https://www.linkedin.com/in/tkodev/',
-    icon: Linkedin,
-    variant: 'basic',
+    icon: LinkedinIcon,
+    variant: 'secondary',
     size: 'icon'
   },
   {
     href: 'https://github.com/tkodev',
-    icon: Github,
-    variant: 'basic',
+    icon: GithubIcon,
+    variant: 'secondary',
     size: 'icon'
   },
   {
     href: 'mailto:tony@tko.dev',
-    icon: Mail,
-    variant: 'basic',
+    icon: MailIcon,
+    variant: 'secondary',
     size: 'icon'
   },
   {
     href: '/files/tony-ko-resume-q1-2024.pdf',
-    icon: FileUser,
-    variant: 'basic',
+    icon: FileUserIcon,
+    variant: 'secondary',
     size: 'icon'
-  }
+  },
+  { icon: DotIcon }
 ]
 
-type FooterProps = React.HTMLAttributes<HTMLDivElement> &
+type FooterProps = HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof styles.root> & {
     //
   }
 
-const Footer: React.FC<FooterProps> = (props) => {
+const Footer: FC<FooterProps> = (props) => {
   const { className, ...rest } = props
 
   return (
@@ -68,21 +79,25 @@ const Footer: React.FC<FooterProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Button asChild>
+            <Button variant="secondary" asChild>
               <Link href="#">
-                <Icon icon={ChevronUp} /> Top
+                <Icon icon={ChevronUpIcon} /> Top
               </Link>
             </Button>
           </div>
           <div className={cn(styles.right())}>
-            <Nav items={navItems} />
-            <Icon icon={Dot} />
-            <Themer />
+            <Nav items={navItems}>
+              <Themer>
+                <Button variant="secondary" size="icon">
+                  <Icon icon={SunMoonIcon} />
+                </Button>
+              </Themer>
+            </Nav>
           </div>
         </div>
       </div>
       <div className={cn(styles.scroller())}>
-        <Icon className={cn(styles.bouncer())} icon={ChevronDown} />
+        <Icon className={cn(styles.bouncer())} icon={ChevronDownIcon} />
       </div>
     </footer>
   )

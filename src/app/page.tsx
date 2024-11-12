@@ -1,11 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
-import { Background } from '@/components/atoms/background'
+import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
+import { Company } from '@/components/atoms/company'
 import { Icon } from '@/components/atoms/icon'
-import { LogoCompany } from '@/components/atoms/logo-company'
-import { Main } from '@/components/atoms/main'
 import { Section } from '@/components/atoms/section'
-import { companies, companiesOrder, jobs } from '@/constants/content'
+import { Main } from '@/components/organisms/main'
+import { companyEntries, companyEntryKeys, jobEntries } from '@/constants/content'
 import { cva, cn } from '@/utils/theme'
 import { differenceInCalendarYears, format } from 'date-fns'
 import { Linkedin, Github, DraftingCompass } from 'lucide-react'
@@ -62,11 +62,7 @@ const Page = () => {
 
   return (
     <Main className={cn(styles.root())}>
-      <Section
-        id="intro"
-        className={cn(styles.intro())}
-        bg={<Background variant="sand" attach="fixed" />}
-      >
+      <Section id="intro" className={cn(styles.intro())} bg={<Bg variant="sand" attach="fixed" />}>
         <div className={cn(styles.col())}>
           <h1 className={cn(styles.title())}>Tony Ko —</h1>
           <h2 className={cn(styles.subtitle())}>Staff Software Engineer</h2>
@@ -94,7 +90,7 @@ const Page = () => {
           </Avatar>
         </div>
       </Section>
-      <Section id="clients" className={cn(styles.clients())} bg={<Background variant="noise" />}>
+      <Section id="clients" className={cn(styles.clients())} bg={<Bg variant="noise" />}>
         <div className={cn(styles.col())}>
           <h2 className={cn(styles.tagline())}>
             Trusted by{' '}
@@ -115,11 +111,11 @@ const Page = () => {
           </p>
         </div>
         <div className={cn(styles.companies())}>
-          {companiesOrder.map((companyKey) => {
-            const company = companies[companyKey]
+          {companyEntryKeys.map((companyKey) => {
+            const company = companyEntries[companyKey]
             if (!company) return null
             return (
-              <LogoCompany
+              <Company
                 className={cn(styles.company())}
                 key={`company-${companyKey}`}
                 company={company}
@@ -145,7 +141,7 @@ const Page = () => {
       <Section
         id="experience"
         className={cn(styles.experience())}
-        bg={<Background variant="sand" attach="fixed" />}
+        bg={<Bg variant="sand" attach="fixed" />}
       >
         <div className={cn(styles.col())}>
           <h2 className={cn(styles.tagline())}>
@@ -165,8 +161,8 @@ const Page = () => {
           </p>
         </div>
         <div className={cn(styles.jobs())}>
-          {jobs.map(({ companyKey, companyName, title, dateFrom, dateTo }, index) => {
-            const company = companies[companyKey]
+          {jobEntries.map(({ companyKey, companyName, title, dateFrom, dateTo }, index) => {
+            const company = companyEntries[companyKey]
             return (
               <div key={`job-${index}`} className={cn(styles.job())}>
                 <div>
@@ -184,7 +180,7 @@ const Page = () => {
                 </div>
                 <div>
                   {!!company && (
-                    <LogoCompany
+                    <Company
                       className={cn(styles.jobCompany())}
                       key={`company-${companyKey}`}
                       company={company}

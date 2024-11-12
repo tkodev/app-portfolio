@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -18,7 +18,7 @@ const styles = {
 }
 
 type ExampleRef = HTMLDivElement
-type ExampleProps = React.HTMLAttributes<ExampleRef> &
+type ExampleProps = HTMLAttributes<ExampleRef> &
   VariantProps<typeof styles.root> & {
     //
   }
