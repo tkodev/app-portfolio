@@ -1,5 +1,5 @@
-import { HTMLAttributes, ReactNode, FC } from 'react'
-import { cva, cn, type VariantProps } from '@/utils/theme'
+import { forwardRef, ReactNode, HTMLAttributes } from 'react'
+import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('h-full min-h-screen relative flex'),
@@ -7,20 +7,23 @@ const styles = {
   content: cva('w-full grow relative max-w-[1080px] mx-auto py-[96px] px-12')
 }
 
-type SectionProps = HTMLAttributes<HTMLDivElement> &
+type SectionRef = HTMLDivElement
+type SectionProps = HTMLAttributes<SectionRef> &
   VariantProps<typeof styles.root> & {
-    bg?: ReactNode
+    bg: ReactNode
   }
 
-const Section: FC<SectionProps> = (props) => {
+const Section = forwardRef<SectionRef, SectionProps>((props, ref) => {
   const { bg, className, children, ...rest } = props
 
   return (
-    <section className={cn(styles.root())} {...rest}>
+    <section ref={ref} className={cn(styles.root())} {...rest}>
       <div className={cn(styles.overlay())}>{bg}</div>
       <div className={cn(styles.content({ className }))}>{children}</div>
     </section>
   )
-}
+})
+Section.displayName = 'Section'
 
 export { Section }
+export type { SectionProps, SectionRef }
