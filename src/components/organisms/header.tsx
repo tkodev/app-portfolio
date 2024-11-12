@@ -21,12 +21,12 @@ const styles = {
     'max-w-[800px] w-full h-auto z-10'
   ]),
   bar: cva([
-    'h-16 flex items-center justify-between gap-4 px-4',
+    'h-16 flex items-center justify-between gap-4',
     'rounded-full bg-background shadow-sm border-muted border'
   ]),
 
-  left: cva('h-full flex items-center'),
-  right: cva('h-full flex items-center overflow-x-auto overflow-y-visible'),
+  left: cva('h-full flex items-center pl-4'),
+  right: cva('h-full flex items-center overflow-x-auto pr-4'),
 
   thumb: cva(''),
   logo: cva('hidden sm:block mx-8'),
