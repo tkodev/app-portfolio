@@ -6,7 +6,8 @@ import Link from 'next/link'
 import { Icon } from '../atoms/icon'
 
 const styles = {
-  root: cva('flex items-center gap-2')
+  root: cva('flex items-center gap-2'),
+  icon: cva('-mx-2')
 }
 
 type NavRef = HTMLDivElement
@@ -23,14 +24,14 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
       {items.map((props, index) => {
         if (props.href === undefined && !!props.icon) {
           const { icon } = props
-          return <Icon key={`nav-item-${index}`} icon={icon} />
+          return <Icon key={`nav-item-${index}`} className={cn(styles.icon())} icon={icon} />
         }
         if (props.href !== undefined) {
-          const { href, name, icon, variant, size, isDisabled } = props
+          const { href, name, icon, isHidden, ...rest } = props
           const isExternal = !href.startsWith('/') || href.endsWith('.pdf')
-          if (isDisabled) return null
+          if (isHidden) return null
           return (
-            <Button key={`nav-item-${index}`} variant={variant} size={size} asChild>
+            <Button key={`nav-item-${index}`} {...rest} asChild>
               <Link href={href} target={isExternal ? '_blank' : undefined}>
                 {name}
                 <Icon icon={icon} />
