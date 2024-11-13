@@ -79,8 +79,8 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
                 darkSrc={company.darkSrc}
                 lightSrc={company.lightSrc}
                 alt={`Logo of ${company.name}`}
-                width={250}
-                height={63}
+                width={200}
+                height={50}
               />
             </Link>
           )
