@@ -94,7 +94,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
             </Link>
           </Button>
           <Button className={cn(styles.ctaButton())} size="lg" asChild>
-            <Link href="https://github.com/tkodev" target="_blank">
+            <Link href="https://www.linkedin.com/in/tkodev/" target="_blank">
               <Icon icon={Linkedin} size="xs" /> Visit LinkedIn
             </Link>
           </Button>
