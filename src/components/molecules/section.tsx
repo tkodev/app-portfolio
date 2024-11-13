@@ -14,7 +14,7 @@ const styles = {
     }
   }),
   overlay: cva('w-full h-full absolute top-0 left-0 -z-1'),
-  content: cva('w-full grow relative mx-auto py-[96px] px-12', {
+  content: cva('w-full grow relative mx-auto py-[104px] px-8', {
     variants: {
       width: {
         full: 'max-w-[1200px]',

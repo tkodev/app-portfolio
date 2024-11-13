@@ -4,6 +4,7 @@ import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Imager } from '@/components/molecules/imager'
 import { Section } from '@/components/molecules/section'
+import { textStyles } from '@/components/tokens/text'
 import { companyEntries, companyEntryKeys } from '@/constants/content'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { DraftingCompass, Linkedin } from 'lucide-react'
@@ -14,8 +15,6 @@ const styles = {
 
   col: cva('flex flex-col gap-4 justify-center'),
 
-  tagline: cva('text-lg sm:text-xl lg:text-2xl font-alliance-no2'),
-  desc: cva('text-base text-basic-base-high-accent'),
   cta: cva('flex items-center flex-wrap gap-4 justify-center', {
     variants: {
       align: {
@@ -48,14 +47,14 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
       {...rest}
     >
       <div className={cn(styles.col())}>
-        <h2 className={cn(styles.tagline())}>
+        <h2 className={cn(textStyles.h3())}>
           Trusted by{' '}
           <strong>
             <u>more than {companyEntryKeys.length}</u>
           </strong>{' '}
           Canadian and global companies
         </h2>
-        <p className={cn(styles.desc())}>
+        <p>
           Trusted to deliver high-impact and scalable software solutions. Known for a hands-on
           approach that balances <strong>technical excellence</strong> with{' '}
           <strong>genuine mentorship</strong> and <strong>team development</strong>, I&apos;ve led

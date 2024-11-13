@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { ReactNode, FC } from 'react'
 import { Favicon } from '@/components/atoms/favicon'
-import { Layout } from '@/components/templates/layout'
+import { Layout } from '@/components/sections/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { interFont } from '@/fonts/inter'
 import { ThemeProvider } from '@/providers/theme'
@@ -13,7 +13,7 @@ import '../themes/theme-utils.css'
 
 const styles = {
   html: cva('w-full h-full'),
-  body: cva('w-full h-full bg-background text-foreground font-inter text-sm font-normal')
+  body: cva('w-full h-full bg-background text-foreground font-inter text-base font-normal')
 }
 
 const pagedata = {

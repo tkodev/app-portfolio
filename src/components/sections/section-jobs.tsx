@@ -4,6 +4,7 @@ import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Imager } from '@/components/molecules/imager'
 import { Section } from '@/components/molecules/section'
+import { textStyles } from '@/components/tokens/text'
 import { companyEntries, jobEntries } from '@/constants/content'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { differenceInCalendarYears, format } from 'date-fns'
@@ -15,8 +16,6 @@ const styles = {
 
   col: cva('flex flex-col gap-4 justify-center'),
 
-  tagline: cva('text-lg sm:text-xl lg:text-2xl font-alliance-no2'),
-  desc: cva('text-base'),
   cta: cva('flex items-center flex-wrap gap-4 justify-center', {
     variants: {
       align: {
@@ -55,14 +54,14 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
       {...rest}
     >
       <div className={cn(styles.col())}>
-        <h2 className={cn(styles.tagline())}>
+        <h2 className={cn(textStyles.h3())}>
           With{' '}
           <strong>
             <u>over {yearsSince} years</u>
           </strong>{' '}
           of dedicated experience.
         </h2>
-        <p className={cn(styles.desc())}>
+        <p>
           I have built a career on delivering reliable, high-quality software for top North American
           brands and beyond. My journey has been one of constant growth and learning, advancing from
           foundational roles to strategic positions as a Senior and Staff Software Engineer. I bring

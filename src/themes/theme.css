@@ -28,6 +28,7 @@
 		--input: var(--gray-50);
 
 		--card: var(--white);
+		--card-accent: var(--gray-50);
 		--card-foreground: var(--gray-600);
 
 		--primary: var(--gray-600);
@@ -64,6 +65,7 @@
 		--input: var(--gray-500);
 
 		--card: var(--gray-900);
+		--card-accent: var(--gray-800);
 		--card-foreground: var(--gray-50);
 
 		--primary: var(--gray-50);

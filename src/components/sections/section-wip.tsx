@@ -1,11 +1,11 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Section } from '@/components/molecules/section'
+import { textStyles } from '@/components/tokens/text'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['flex items-center justify-center']),
-  tagline: cva('text-lg sm:text-xl lg:text-2xl font-alliance-no2')
+  root: cva(['flex items-center justify-center'])
 }
 
 type SectionWipRef = HTMLDivElement
@@ -21,7 +21,7 @@ const SectionWip = forwardRef<SectionWipRef, SectionWipProps>((props, ref) => {
       bg={<Bg variant="sand" attach="fixed" />}
       {...rest}
     >
-      <h1 className={cn(styles.tagline())}>Coming Soon</h1>
+      <h1 className={cn(textStyles.h3())}>Coming Soon</h1>
     </Section>
   )
 })

@@ -50,6 +50,7 @@ const colors: Theme = {
     },
     card: {
       DEFAULT: 'hsl(var(--card))',
+      accent: 'hsl(var(--card-accent))',
       foreground: 'hsl(var(--card-foreground))'
     }
   }
