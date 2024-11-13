@@ -13,4 +13,9 @@ type NavEntry =
       icon: SvgComponent
     }
 
-export type { NavEntry }
+type PageProps = {
+  params: Promise<{ [key: string]: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export type { NavEntry, PageProps }

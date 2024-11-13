@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Section } from '@/components/atoms/section'
+import { Section } from '@/components/molecules/section'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
@@ -48,6 +48,7 @@ const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref)
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      width="narrow"
       bg={<Bg variant="sand" attach="fixed" />}
       {...rest}
     >

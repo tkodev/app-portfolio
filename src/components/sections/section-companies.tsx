@@ -2,8 +2,8 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Section } from '@/components/atoms/section'
 import { Imager } from '@/components/molecules/imager'
+import { Section } from '@/components/molecules/section'
 import { companyEntries, companyEntryKeys } from '@/constants/content'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { DraftingCompass, Linkedin } from 'lucide-react'
@@ -43,6 +43,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      width="narrow"
       bg={<Bg variant="noise" />}
       {...rest}
     >

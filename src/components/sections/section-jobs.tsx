@@ -2,8 +2,8 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Section } from '@/components/atoms/section'
 import { Imager } from '@/components/molecules/imager'
+import { Section } from '@/components/molecules/section'
 import { companyEntries, jobEntries } from '@/constants/content'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { differenceInCalendarYears, format } from 'date-fns'
@@ -50,6 +50,7 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      width="narrow"
       bg={<Bg variant="sand" attach="fixed" />}
       {...rest}
     >

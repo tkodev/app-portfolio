@@ -1,13 +1,14 @@
 import { FC } from 'react'
-import { Main } from '@/components/organisms/main'
-import { cn, cva } from '@/utils/theme'
+import { Main } from '@/components/molecules/main'
+import { SectionWip } from '@/components/sections/section-wip'
+import { PageProps } from '@/types/layout'
 
-const styles = {
-  root: cva()
-}
-
-const Page: FC = () => {
-  return <Main className={cn(styles.root())}>Page Content</Main>
+const Page: FC<PageProps> = async () => {
+  return (
+    <Main>
+      <SectionWip id="wip" />
+    </Main>
+  )
 }
 
 export default Page
