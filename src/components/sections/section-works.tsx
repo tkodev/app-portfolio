@@ -1,15 +1,6 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
-import { Button } from '@/components/atoms/button'
-import {
-  Card,
-  CardImage,
-  CardContent,
-  CardDesc,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from '@/components/atoms/card'
+import { Card, CardImage } from '@/components/atoms/card'
 import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
 import { newArray } from '@/utils/objects'
