@@ -3,7 +3,7 @@ import { ThemeMode } from '@/types/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  card: cva('rounded-xl border shadow bg-card text-card-foreground overflow-hidden'),
+  card: cva('rounded-xl border shadow-sm bg-card text-card-foreground overflow-hidden'),
   cardHeader: cva('flex flex-col p-4 gap-2'),
   cardTitle: cva('font-semibold leading-none tracking-tight'),
   cardDesc: cva('text-sm text-muted-foreground'),
