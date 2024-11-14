@@ -9,11 +9,13 @@ import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex flex-col gap-4 overflow-x-auto'),
+  root: cva('flex flex-col gap-4 overflow-y-visible'),
 
   row: cva('flex flex-col gap-4'),
-  features: cva('columns-1 md:columns-2 lg:columns-2 gap-4 space-y-4'),
-  projects: cva('columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4'),
+  features: cva('columns-1 md:columns-2 lg:columns-2 gap-4 space-y-4 py-4'),
+  projects: cva('columns-1 md:columns-3 lg:columns-3 gap-4 space-y-4 py-4'),
+
+  project: cva('break-inside-avoid'),
 
   skills: cva('flex flex-wrap gap-2')
 }
@@ -41,7 +43,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
           const { src, title, subtitle, startDate, endDate, skills } = project
           const imageSrc = src ?? '/images/works/preview.png'
           return (
-            <Card key={`featured-${projectKey}`}>
+            <Card key={`featured-${projectKey}`} className={cn(styles.project())}>
               <CardImage src={imageSrc} mode="dark">
                 <CardTitle>{title}</CardTitle>
                 <CardDesc>
@@ -69,7 +71,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
           if (!project) return null
           const { src, title, subtitle, startDate, endDate, skills } = project
           return (
-            <Card key={`project-${projectKey}`}>
+            <Card key={`project-${projectKey}`} className={cn(styles.project())}>
               {src && <CardImage src={src} mode="dark" />}
               <CardHeader>
                 <CardTitle>{title}</CardTitle>
