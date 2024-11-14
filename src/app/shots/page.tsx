@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Main } from '@/components/molecules/main'
+import { Main } from '@/components/atoms/main'
 import { SectionWip } from '@/components/sections/section-wip'
 import { PageProps } from '@/types/layout'
 

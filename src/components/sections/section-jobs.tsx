@@ -2,12 +2,13 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Imager } from '@/components/molecules/imager'
+import { Imager } from '@/components/atoms/imager'
 import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
-import { companyEntries, jobEntries } from '@/constants/content'
+import { companyEntries, jobEntries } from '@/constants/works'
+import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import { differenceInCalendarYears, format } from 'date-fns'
+import { differenceInCalendarYears } from 'date-fns'
 import { DraftingCompass, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
@@ -43,7 +44,6 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
   const { className, ...rest } = props
 
   const yearsSince = Math.abs(differenceInCalendarYears(new Date(), new Date('2017-04-01')))
-  const jobDateFormat = 'MMM yyyy'
 
   return (
     <Section
@@ -71,43 +71,44 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
         </p>
       </div>
       <div className={cn(styles.jobs())}>
-        {jobEntries.map(({ companyKey, companyName, title, dateFrom, dateTo }, index) => {
-          const company = companyEntries[companyKey]
-          return (
-            <div key={`job-${index}`} className={cn(styles.job())}>
-              <div>
-                <p>
-                  <strong>
-                    {title} @ {companyName}
-                  </strong>
-                </p>
-                <p>
-                  <em>
-                    {format(dateFrom, jobDateFormat)} to{' '}
-                    {dateTo ? format(dateTo, jobDateFormat) : 'Present'}
-                  </em>
-                </p>
+        {jobEntries.map(
+          ({ companyKey, companyName, title, startDate, endDate, location }, index) => {
+            const company = companyEntries[companyKey]
+            return (
+              <div key={`job-${index}`} className={cn(styles.job())}>
+                <div>
+                  <p>
+                    <strong>
+                      {title} @ {companyName}
+                    </strong>
+                  </p>
+                  <p>
+                    <em>
+                      {formatStdDateRange(startDate, endDate)}, {location}
+                    </em>
+                  </p>
+                </div>
+                <div>
+                  {!!company && (
+                    <Link
+                      className={cn(styles.company())}
+                      href={company.href}
+                      key={`company-${companyKey}`}
+                    >
+                      <Imager
+                        darkSrc={company.darkSrc}
+                        lightSrc={company.lightSrc}
+                        alt={`Logo of ${company.name}`}
+                        width={200}
+                        height={50}
+                      />
+                    </Link>
+                  )}
+                </div>
               </div>
-              <div>
-                {!!company && (
-                  <Link
-                    className={cn(styles.company())}
-                    href={company.href}
-                    key={`company-${companyKey}`}
-                  >
-                    <Imager
-                      darkSrc={company.darkSrc}
-                      lightSrc={company.lightSrc}
-                      alt={`Logo of ${company.name}`}
-                      width={200}
-                      height={50}
-                    />
-                  </Link>
-                )}
-              </div>
-            </div>
-          )
-        })}
+            )
+          }
+        )}
       </div>
       <div className={cn(styles.col())}>
         <div className={cn(styles.cta())}>

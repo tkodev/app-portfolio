@@ -8,7 +8,7 @@ import { CameraIcon, DraftingCompassIcon, DotIcon, SearchIcon, NotebookPenIcon }
 import Link from 'next/link'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
-import { Intro } from '../atoms/intro'
+import { Intro } from '../molecules/intro'
 import { Nav } from '../molecules/nav'
 
 const styles = {

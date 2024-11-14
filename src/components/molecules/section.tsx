@@ -17,7 +17,7 @@ const styles = {
   content: cva('w-full grow relative mx-auto py-[104px] px-8', {
     variants: {
       width: {
-        full: 'max-w-[1200px]',
+        full: 'max-w-[1280px]',
         narrow: 'max-w-[1080px]'
       }
     },

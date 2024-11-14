@@ -1,19 +1,21 @@
 import { forwardRef, HTMLAttributes } from 'react'
+import { Badge } from '@/components/atoms/badge'
 import { Bg } from '@/components/atoms/bg'
-import { Card, CardImage } from '@/components/atoms/card'
+import { Card, CardDesc, CardHeader, CardTitle, CardImage } from '@/components/molecules/card'
 import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
-import { newArray } from '@/utils/objects'
+import { projects, projectKeys } from '@/constants/works'
+import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('flex flex-col gap-4 overflow-x-auto'),
 
   row: cva('flex flex-col gap-4'),
-  listing: cva('grid grid-cols-12 auto-rows-max gap-2 mb-4'),
+  features: cva('columns-1 md:columns-2 lg:columns-2 gap-4 space-y-4'),
+  projects: cva('columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4'),
 
-  category: cva('col-span-6 md:col-span-4 lg:col-span-3'),
-  project: cva('col-span-12 md:col-span-6 lg:col-span-4')
+  skills: cva('flex flex-wrap gap-2')
 }
 
 type SectionWorksRef = HTMLDivElement
@@ -30,28 +32,62 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
       {...rest}
     >
       <div className={cn(styles.row())}>
-        <h2 className={cn(textStyles.h3())}>Categories</h2>
+        <h2 className={cn(textStyles.h3())}>Featured Projects</h2>
       </div>
-      <div className={cn(styles.listing())}>
-        {newArray(3).map((index) => (
-          <Card key={`category-${index}`} className={cn(styles.category())}>
-            <CardImage src="/images/works/preview.png" aspect="video" mode="dark">
-              test
-            </CardImage>
-          </Card>
-        ))}
+      <div className={cn(styles.features())}>
+        {projectKeys.map((projectKey) => {
+          const project = projects[projectKey]
+          if (!project?.isFeatured) return null
+          const { src, title, subtitle, startDate, endDate, skills } = project
+          const imageSrc = src ?? '/images/works/preview.png'
+          return (
+            <Card key={`featured-${projectKey}`}>
+              <CardImage src={imageSrc} mode="dark">
+                <CardTitle>{title}</CardTitle>
+                <CardDesc>
+                  <em>{formatStdDateRange(startDate, endDate)}</em>
+                </CardDesc>
+                <CardDesc>{subtitle}</CardDesc>
+                <CardDesc className={cn(styles.skills())}>
+                  {skills.slice(0, 3).map((skill) => (
+                    <Badge key={skill} variant="default">
+                      {skill}
+                    </Badge>
+                  ))}
+                </CardDesc>
+              </CardImage>
+            </Card>
+          )
+        })}
       </div>
       <div className={cn(styles.row())}>
-        <h2 className={cn(textStyles.h3())}>Projects</h2>
+        <h2 className={cn(textStyles.h3())}>All Projects</h2>
       </div>
-      <div className={cn(styles.listing())}>
-        {newArray(15).map((index) => (
-          <Card key={`category-${index}`} className={cn(styles.project())}>
-            <CardImage src="/images/works/preview.png" aspect="square" mode="dark">
-              test
-            </CardImage>
-          </Card>
-        ))}
+      <div className={cn(styles.projects())}>
+        {projectKeys.map((projectKey) => {
+          const project = projects[projectKey]
+          if (!project) return null
+          const { src, title, subtitle, startDate, endDate, skills } = project
+          return (
+            <Card key={`project-${projectKey}`}>
+              {src && <CardImage src={src} mode="dark" />}
+              <CardHeader>
+                <CardTitle>{title}</CardTitle>
+                <CardDesc>
+                  <em>{formatStdDateRange(startDate, endDate)}</em>
+                </CardDesc>
+                <CardDesc>{subtitle}</CardDesc>
+                <CardDesc className={cn(styles.skills())}>
+                  {skills.slice(0, 3).map((skill) => (
+                    <Badge key={skill} variant="secondary">
+                      {skill}
+                    </Badge>
+                  ))}
+                </CardDesc>
+              </CardHeader>
+            </Card>
+          )
+        })}
       </div>
     </Section>
   )

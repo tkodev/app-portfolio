@@ -2,10 +2,10 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Imager } from '@/components/molecules/imager'
+import { Imager } from '@/components/atoms/imager'
 import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
-import { companyEntries, companyEntryKeys } from '@/constants/content'
+import { companyEntries, companyKeys } from '@/constants/works'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { DraftingCompass, Linkedin } from 'lucide-react'
 import Link from 'next/link'
@@ -50,7 +50,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
         <h2 className={cn(textStyles.h3())}>
           Trusted by{' '}
           <strong>
-            <u>more than {companyEntryKeys.length}</u>
+            <u>more than {companyKeys.length}</u>
           </strong>{' '}
           Canadian and global companies
         </h2>
@@ -66,7 +66,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
         </p>
       </div>
       <div className={cn(styles.companies())}>
-        {companyEntryKeys.map((companyKey) => {
+        {companyKeys.map((companyKey) => {
           const company = companyEntries[companyKey]
           if (!company) return null
           return (

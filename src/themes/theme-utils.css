@@ -12,6 +12,12 @@
   body {
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  .light {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
 }
 
 @layer utilities {

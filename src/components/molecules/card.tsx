@@ -1,39 +1,17 @@
 import { forwardRef, HTMLAttributes } from 'react'
+import { ThemeMode } from '@/types/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  card: cva('rounded-xl border bg-card text-card-foreground shadow p-1'),
-  cardHeader: cva('rounded-lg flex flex-col p-4'),
-  cardTitle: cva('rounded-lg font-semibold leading-none tracking-tight'),
-  cardDesc: cva('rounded-lg text-sm text-muted-foreground'),
-  cardContent: cva('rounded-lg p-4 pt-0'),
-  cardFooter: cva('rounded-lg flex items-center p-4 pt-0'),
-
-  cardImage: cva('rounded-lg relative flex flex-col justify-end', {
-    variants: {
-      aspect: {
-        square: 'aspect-square',
-        video: 'aspect-video'
-      }
-    },
-    defaultVariants: {
-      aspect: 'square'
-    }
-  }),
-  cardBackdrop: cva('rounded-lg w-full h-full absolute top-0 left-0 bg-center bg-cover'),
+  card: cva('rounded-xl border shadow bg-card text-card-foreground overflow-hidden'),
+  cardHeader: cva('flex flex-col p-4 gap-2'),
+  cardTitle: cva('font-semibold leading-none tracking-tight'),
+  cardDesc: cva('text-sm text-muted-foreground'),
+  cardContent: cva('p-4 pt-0'),
+  cardFooter: cva('flex items-center p-4 pt-0'),
+  cardImage: cva('bg-center bg-cover flex flex-col justify-end aspect-video'),
   cardOverlay: cva(
-    'rounded-lg w-full h-auto relative p-4 bg-gradient-to-t from-card to-transparent',
-    {
-      variants: {
-        mode: {
-          light: 'dark:invert',
-          dark: 'invert dark:invert-0'
-        }
-      },
-      defaultVariants: {
-        mode: 'light'
-      }
-    }
+    'p-4 flex flex-col justify-end gap-2 bg-gradient-to-t from-card to-card/50 text-foreground'
   )
 }
 
@@ -79,17 +57,27 @@ const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 )
 CardFooter.displayName = 'CardFooter'
 
-const CardImage = forwardRef<
-  HTMLDivElement,
-  HTMLAttributes<HTMLDivElement> &
-    VariantProps<typeof styles.cardImage> &
-    VariantProps<typeof styles.cardOverlay> & { src: string }
->(({ aspect, mode, src, className, children, ...props }, ref) => (
-  <div ref={ref} className={cn(styles.cardImage({ aspect }))} {...props}>
-    <div className={cn(styles.cardBackdrop())} style={{ backgroundImage: `url(${src})` }} />
-    <div className={cn(styles.cardOverlay({ mode, className }))}>{children}</div>
-  </div>
-))
+type CardImageRef = HTMLDivElement
+type CardImageProps = HTMLAttributes<CardImageRef> &
+  VariantProps<typeof styles.cardImage> & {
+    src: string
+    mode: ThemeMode
+  }
+
+const CardImage = forwardRef<CardImageRef, CardImageProps>((props, ref) => {
+  const { mode, src, className, children, ...rest } = props
+
+  return (
+    <div
+      ref={ref}
+      className={cn(styles.cardImage(), mode)}
+      style={{ backgroundImage: `url(${src})` }}
+      {...rest}
+    >
+      {!!children && <div className={cn(styles.cardOverlay({ className }))}>{children}</div>}
+    </div>
+  )
+})
 CardImage.displayName = 'CardImage'
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDesc, CardContent, CardImage }

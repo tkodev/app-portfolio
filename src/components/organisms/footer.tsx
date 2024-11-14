@@ -1,5 +1,5 @@
 import { HTMLAttributes, FC } from 'react'
-import { Themer } from '@/components/molecules/themer'
+import { Themer } from '@/components/atoms/themer'
 import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 import {

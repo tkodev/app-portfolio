@@ -14,7 +14,7 @@
 }
 
 @layer base {
-	:root {
+	.light {
 		--background: var(--white);
 		--foreground: var(--gray-600);
 

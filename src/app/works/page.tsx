@@ -1,12 +1,12 @@
 import { FC } from 'react'
-import { Main } from '@/components/molecules/main'
-import { SectionWip } from '@/components/sections/section-wip'
+import { Main } from '@/components/atoms/main'
+import { SectionWorks } from '@/components/sections/section-works'
 import { PageProps } from '@/types/layout'
 
 const Page: FC<PageProps> = async () => {
   return (
     <Main>
-      <SectionWip id="wip" />
+      <SectionWorks id="works" />
     </Main>
   )
 }
