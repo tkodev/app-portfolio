@@ -26,6 +26,8 @@ type SectionWorksProps = HTMLAttributes<SectionWorksRef> & VariantProps<typeof s
 const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref) => {
   const { className, ...rest } = props
 
+  const maxSkills = 7
+
   return (
     <Section
       ref={ref}
@@ -51,7 +53,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
                 </CardDesc>
                 <CardDesc>{subtitle}</CardDesc>
                 <CardDesc className={cn(styles.skills())}>
-                  {skills.slice(0, 3).map((skill) => (
+                  {skills.slice(0, maxSkills).map((skill) => (
                     <Badge key={skill} variant="default">
                       {skill}
                     </Badge>
@@ -80,7 +82,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
                 </CardDesc>
                 <CardDesc>{subtitle}</CardDesc>
                 <CardDesc className={cn(styles.skills())}>
-                  {skills.slice(0, 3).map((skill) => (
+                  {skills.slice(0, maxSkills).map((skill) => (
                     <Badge key={skill} variant="secondary">
                       {skill}
                     </Badge>

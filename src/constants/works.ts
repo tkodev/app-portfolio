@@ -370,8 +370,6 @@ const projects: Record<ProjectKey, Project> = {
       'Canvas',
       'SVG',
       'Jest',
-      'Unit Testing',
-      'Preview Management',
       'Design Systems'
     ],
     isFeatured: true
@@ -392,7 +390,7 @@ const projects: Record<ProjectKey, Project> = {
       'tRPC',
       'CI/CD',
       'Multi-language',
-      'Big Integer Calculations',
+      'Currency Precision',
       'Push Notifications',
       'UX Design System',
       'Agile Process'
@@ -415,7 +413,7 @@ const projects: Record<ProjectKey, Project> = {
       'CORS',
       'Multi-domain Navigation',
       'Caching',
-      'Preview Estimation',
+      'Browser Extension',
       'PRDs',
       'Client Management'
     ]
@@ -431,7 +429,15 @@ const projects: Record<ProjectKey, Project> = {
     companyKey: 'quantumMob',
     startDate: new Date('2021-04-01'),
     endDate: new Date('2021-07-01'),
-    skills: ['React', 'Redux', 'Catalog Filtering', 'UX Design', 'Affiliate Marketing'],
+    skills: [
+      'React',
+      'Redux',
+      'Monorepos',
+      'Cache & Query Management',
+      'UX Design',
+      'Design Systems',
+      'Whitelabel Theming'
+    ],
     isFeatured: true
   },
   rocMarEngineeringEmployeeDashboard: {
@@ -444,7 +450,7 @@ const projects: Record<ProjectKey, Project> = {
     companyKey: 'quantumMob',
     startDate: new Date('2020-11-01'),
     endDate: new Date('2021-03-01'),
-    skills: ['Design Systems', 'React', 'UI/UX', 'Client Relations']
+    skills: ['Design Systems', 'React', 'UI/UX', 'OAuth', 'OICD', 'Postgres', 'Client Management']
   },
   aeroplanEstoreAodaAaWtagCompliance: {
     projectKey: 'aeroplanEstoreAodaAaWtagCompliance',
