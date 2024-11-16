@@ -48,6 +48,7 @@ type JobEntry = {
 type ProjectId =
   | 'beyondModernization'
   | 'paypowerReloadablePrepaidMastercardMobileApp'
+  | 'techTalkMonoreposWithTurborepo'
   | 'aeroplanShoppingButtonBrowserExtension'
   | 'aeroplanEstoreRetailerAndCatalogRedesign'
   | 'rocMarEngineeringEmployeeDashboard'

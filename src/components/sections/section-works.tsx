@@ -15,10 +15,10 @@ const styles = {
   root: cva('flex flex-col gap-4 overflow-y-visible'),
 
   row: cva('flex flex-col gap-4'),
-  features: cva('columns-1 md:columns-2 lg:columns-2 gap-4 space-y-4 py-4'),
-  projects: cva('columns-1 md:columns-3 lg:columns-3 gap-4 space-y-4 py-4'),
+  features: cva('grid grid-cols-2 gap-4 py-4'),
+  projects: cva('grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 py-4'),
 
-  project: cva('break-inside-avoid'),
+  project: cva('break-inside-avoid min-h-64'),
 
   skills: cva('flex flex-wrap gap-2')
 }
@@ -68,7 +68,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
           const imageSrc = src ?? '/images/works/preview.png'
           return (
             <Card key={`featured-${id}`} className={cn(styles.project())}>
-              <CardImage src={imageSrc} mode="dark">
+              <CardImage aspect="video" mode="dark" src={imageSrc}>
                 <CardTitle>{title}</CardTitle>
                 <CardDesc>
                   <em>{formatStdDateRange(startDate, endDate)}</em>
@@ -98,7 +98,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
               const { id, src, title, subtitle, startDate, endDate, skills } = project
               return (
                 <Card key={`project-${id}`} className={cn(styles.project())}>
-                  {src && <CardImage src={src} mode="dark" />}
+                  {src && <CardImage aspect="video" mode="dark" src={src} />}
                   <CardHeader>
                     <CardTitle>{title}</CardTitle>
                     <CardDesc>

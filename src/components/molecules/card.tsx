@@ -10,7 +10,17 @@ const styles = {
   cardDesc: cva('text-sm text-muted-foreground'),
   cardContent: cva('p-4 pt-0'),
   cardFooter: cva('flex items-center p-4 pt-0'),
-  cardImage: cva('bg-center bg-cover aspect-video'),
+  cardImage: cva('bg-top bg-cover', {
+    variants: {
+      aspect: {
+        video: 'aspect-video',
+        square: 'aspect-square'
+      }
+    },
+    defaultVariants: {
+      aspect: 'video'
+    }
+  }),
   cardOverlay: cva(
     'w-full h-full p-4 flex flex-col justify-end gap-2 bg-gradient-to-t from-card to-transparent text-foreground'
   )
@@ -67,13 +77,13 @@ type CardImageProps = HTMLAttributes<CardImageRef> &
   }
 
 const CardImage = forwardRef<CardImageRef, CardImageProps>((props, ref) => {
-  const { mode, src, asChild, className, children, ...rest } = props
+  const { aspect, mode, src, asChild, className, children, ...rest } = props
   const Comp = asChild ? Slot : 'div'
 
   return (
     <Comp
       ref={ref}
-      className={cn(styles.cardImage(), mode)}
+      className={cn(styles.cardImage({ aspect }), mode)}
       style={{ backgroundImage: `url(${src})` }}
       {...rest}
     >

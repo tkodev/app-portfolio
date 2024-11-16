@@ -357,11 +357,12 @@ const jobIds = [
 const projectIds: ProjectId[] = [
   'beyondModernization',
   'paypowerReloadablePrepaidMastercardMobileApp',
+  'techTalkMonoreposWithTurborepo',
   'aeroplanShoppingButtonBrowserExtension',
   'aeroplanEstoreRetailerAndCatalogRedesign',
-  'rocMarEngineeringEmployeeDashboard',
   'aeroplanEstoreAodaAaWtagCompliance',
   'modaMatchVirtualFittingRoom',
+  'rocMarEngineeringEmployeeDashboard',
   'quantumMobCatalogAppProjectMobCiCdIntegrations',
   'quantumMobCoreUtilitiesAuthModule',
   'aeroplanEstoreInitialArchitectureAndMvp',
@@ -428,6 +429,20 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       'Agile Process'
     ],
     isFeatured: true
+  },
+  techTalkMonoreposWithTurborepo: {
+    id: 'techTalkMonoreposWithTurborepo',
+    src: '/images/works/monorepos.png',
+    title: 'TechTalk - Monorepos with Turborepo @ React + Native Toronto x Quantum Mob',
+    subtitle:
+      'This in-person event brought together developers at Quantum Mob’s head office to discuss cutting-edge topics in React and React Native development.',
+    tagline:
+      "An in-person tech talk event hosted at Quantum Mob's head office in collaboration with React + Native Toronto, featuring: Using Turborepo to manage a React Native and Web monorepo by Tony Ko.",
+    desc: 'This in-person event brought together developers at Quantum Mob’s head office to discuss cutting-edge topics in React and React Native development. Featuring talks on Redux to React Query migration, React integration in WordPress, and leveraging Turborepo for managing monorepos, the event provided actionable insights and facilitated meaningful discussions among attendees. The TechTalk showcased Quantum Mob’s commitment to fostering community and advancing developer knowledge.',
+    companyKey: 'quantumMob',
+    startDate: new Date('2022-10-01'),
+    endDate: new Date('2022-10-01'),
+    skills: ['React', 'React Native', 'Turborepo', 'Community Engagement']
   },
   aeroplanShoppingButtonBrowserExtension: {
     id: 'aeroplanShoppingButtonBrowserExtension',
@@ -630,8 +645,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       'White-label plugin for Shopify and WooCommerce allows users to virtually try on clothes on predefined models, adjusting for model and clothing dimensions.',
     desc: 'Moda Match transforms online apparel shopping by enabling customers to virtually try on clothing using predefined models. Integrated as a white-label plugin, it’s compatible with Shopify and WooCommerce, easily installed by store owners to enhance customer engagement. With support for thousands of items, Moda Match helps users visualize fit and dimensions, driving a more personalized shopping experience.',
     companyKey: 'quantumMob',
-    startDate: new Date('2022-05-01'),
-    endDate: new Date('2023-02-01'),
+    startDate: new Date('2021-04-01'),
+    endDate: new Date('2021-05-01'),
     skills: [
       'MongoDB',
       'Shopify Plugins',
