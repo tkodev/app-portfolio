@@ -15,10 +15,16 @@ const styles = {
       aspect: {
         video: 'aspect-video',
         square: 'aspect-square'
+      },
+      position: {
+        top: 'bg-top',
+        center: 'bg-center',
+        bottom: 'bg-bottom'
       }
     },
     defaultVariants: {
-      aspect: 'video'
+      aspect: 'video',
+      position: 'center'
     }
   }),
   cardOverlay: cva(
@@ -77,13 +83,13 @@ type CardImageProps = HTMLAttributes<CardImageRef> &
   }
 
 const CardImage = forwardRef<CardImageRef, CardImageProps>((props, ref) => {
-  const { aspect, mode, src, asChild, className, children, ...rest } = props
+  const { aspect, position, mode, src, asChild, className, children, ...rest } = props
   const Comp = asChild ? Slot : 'div'
 
   return (
     <Comp
       ref={ref}
-      className={cn(styles.cardImage({ aspect }), mode)}
+      className={cn(styles.cardImage({ aspect, position }), mode)}
       style={{ backgroundImage: `url(${src})` }}
       {...rest}
     >

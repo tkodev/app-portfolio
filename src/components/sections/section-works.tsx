@@ -68,7 +68,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
           const imageSrc = src ?? '/images/works/preview.png'
           return (
             <Card key={`featured-${id}`} className={cn(styles.project())}>
-              <CardImage aspect="video" mode="dark" src={imageSrc}>
+              <CardImage aspect="video" mode="dark" position="top" src={imageSrc}>
                 <CardTitle>{title}</CardTitle>
                 <CardDesc>
                   <em>{formatStdDateRange(startDate, endDate)}</em>
@@ -98,7 +98,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
               const { id, src, title, subtitle, startDate, endDate, skills } = project
               return (
                 <Card key={`project-${id}`} className={cn(styles.project())}>
-                  {src && <CardImage aspect="video" mode="dark" src={src} />}
+                  {src && <CardImage aspect="video" mode="dark" position="top" src={src} />}
                   <CardHeader>
                     <CardTitle>{title}</CardTitle>
                     <CardDesc>
