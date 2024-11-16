@@ -1,6 +1,7 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { ThemeMode } from '@/types/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
+import { Slot } from '@radix-ui/react-slot'
 
 const styles = {
   card: cva('rounded-xl border shadow-sm bg-card text-card-foreground overflow-hidden'),
@@ -9,9 +10,9 @@ const styles = {
   cardDesc: cva('text-sm text-muted-foreground'),
   cardContent: cva('p-4 pt-0'),
   cardFooter: cva('flex items-center p-4 pt-0'),
-  cardImage: cva('bg-center bg-cover flex flex-col justify-end aspect-video'),
+  cardImage: cva('bg-center bg-cover aspect-video'),
   cardOverlay: cva(
-    'p-4 flex flex-col justify-end gap-2 bg-gradient-to-t from-card to-card/50 text-foreground'
+    'w-full h-full p-4 flex flex-col justify-end gap-2 bg-gradient-to-t from-card to-transparent text-foreground'
   )
 }
 
@@ -60,22 +61,24 @@ CardFooter.displayName = 'CardFooter'
 type CardImageRef = HTMLDivElement
 type CardImageProps = HTMLAttributes<CardImageRef> &
   VariantProps<typeof styles.cardImage> & {
-    src: string
     mode: ThemeMode
+    src: string
+    asChild?: boolean
   }
 
 const CardImage = forwardRef<CardImageRef, CardImageProps>((props, ref) => {
-  const { mode, src, className, children, ...rest } = props
+  const { mode, src, asChild, className, children, ...rest } = props
+  const Comp = asChild ? Slot : 'div'
 
   return (
-    <div
+    <Comp
       ref={ref}
       className={cn(styles.cardImage(), mode)}
       style={{ backgroundImage: `url(${src})` }}
       {...rest}
     >
       {!!children && <div className={cn(styles.cardOverlay({ className }))}>{children}</div>}
-    </div>
+    </Comp>
   )
 })
 CardImage.displayName = 'CardImage'

@@ -3,10 +3,13 @@ import { Badge } from '@/components/atoms/badge'
 import { Bg } from '@/components/atoms/bg'
 import { Card, CardDesc, CardHeader, CardTitle, CardImage } from '@/components/molecules/card'
 import { Section } from '@/components/molecules/section'
+import { SearchProjects } from '@/components/organisms/search-projects'
 import { textStyles } from '@/components/tokens/text'
-import { projects, projectKeys } from '@/constants/works'
+import { projectEntries, projectIds } from '@/constants/works'
+import { ProjectId, ProjectEntry } from '@/types/works'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
+import MiniSearch from 'minisearch'
 
 const styles = {
   root: cva('flex flex-col gap-4 overflow-y-visible'),
@@ -21,12 +24,33 @@ const styles = {
 }
 
 type SectionWorksRef = HTMLDivElement
-type SectionWorksProps = HTMLAttributes<SectionWorksRef> & VariantProps<typeof styles.root>
+type SectionWorksProps = HTMLAttributes<SectionWorksRef> &
+  VariantProps<typeof styles.root> & {
+    query?: string | string[]
+  }
 
 const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref) => {
-  const { className, ...rest } = props
+  const { query, className, ...rest } = props
 
   const maxSkills = 7
+  const searchFields = ['title', 'subtitle', 'tagline', 'desc', 'companyKey', 'skills']
+
+  const orderedProjects = projectIds.map((key) => projectEntries[key])
+
+  const queries = [query ?? ''].flat()
+  const miniSearch = new MiniSearch<ProjectEntry>({
+    fields: searchFields,
+    storeFields: searchFields
+  })
+  miniSearch.addAll(orderedProjects)
+
+  const featuredProjects = orderedProjects.filter((project) => project.isFeatured)
+  const searchProjects = query
+    ? miniSearch
+        .search({ queries })
+        .map((result) => projectEntries[result.id as ProjectId])
+        .filter((project) => !!project)
+    : orderedProjects
 
   return (
     <Section
@@ -39,13 +63,11 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
         <h2 className={cn(textStyles.h3())}>Featured Projects</h2>
       </div>
       <div className={cn(styles.features())}>
-        {projectKeys.map((projectKey) => {
-          const project = projects[projectKey]
-          if (!project?.isFeatured) return null
-          const { src, title, subtitle, startDate, endDate, skills } = project
+        {featuredProjects.map((project) => {
+          const { id, src, title, subtitle, startDate, endDate, skills } = project
           const imageSrc = src ?? '/images/works/preview.png'
           return (
-            <Card key={`featured-${projectKey}`} className={cn(styles.project())}>
+            <Card key={`featured-${id}`} className={cn(styles.project())}>
               <CardImage src={imageSrc} mode="dark">
                 <CardTitle>{title}</CardTitle>
                 <CardDesc>
@@ -65,33 +87,36 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
         })}
       </div>
       <div className={cn(styles.row())}>
-        <h2 className={cn(textStyles.h3())}>All Projects</h2>
+        <h2 className={cn(textStyles.h3())}>Projects</h2>
+      </div>
+      <div className={cn(styles.row())}>
+        <SearchProjects queries={queries} />
       </div>
       <div className={cn(styles.projects())}>
-        {projectKeys.map((projectKey) => {
-          const project = projects[projectKey]
-          if (!project) return null
-          const { src, title, subtitle, startDate, endDate, skills } = project
-          return (
-            <Card key={`project-${projectKey}`} className={cn(styles.project())}>
-              {src && <CardImage src={src} mode="dark" />}
-              <CardHeader>
-                <CardTitle>{title}</CardTitle>
-                <CardDesc>
-                  <em>{formatStdDateRange(startDate, endDate)}</em>
-                </CardDesc>
-                <CardDesc>{subtitle}</CardDesc>
-                <CardDesc className={cn(styles.skills())}>
-                  {skills.slice(0, maxSkills).map((skill) => (
-                    <Badge key={skill} variant="secondary">
-                      {skill}
-                    </Badge>
-                  ))}
-                </CardDesc>
-              </CardHeader>
-            </Card>
-          )
-        })}
+        {!!searchProjects.length
+          ? searchProjects.map((project) => {
+              const { id, src, title, subtitle, startDate, endDate, skills } = project
+              return (
+                <Card key={`project-${id}`} className={cn(styles.project())}>
+                  {src && <CardImage src={src} mode="dark" />}
+                  <CardHeader>
+                    <CardTitle>{title}</CardTitle>
+                    <CardDesc>
+                      <em>{formatStdDateRange(startDate, endDate)}</em>
+                    </CardDesc>
+                    <CardDesc>{subtitle}</CardDesc>
+                    <CardDesc className={cn(styles.skills())}>
+                      {skills.slice(0, maxSkills).map((skill: string) => (
+                        <Badge key={skill} variant="secondary">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </CardDesc>
+                  </CardHeader>
+                </Card>
+              )
+            })
+          : 'No results found.'}
       </div>
     </Section>
   )

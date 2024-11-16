@@ -5,7 +5,7 @@ import { Icon } from '@/components/atoms/icon'
 import { Imager } from '@/components/atoms/imager'
 import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
-import { companyEntries, companyKeys } from '@/constants/works'
+import { companyEntries, companyIds } from '@/constants/works'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { DraftingCompass, Linkedin } from 'lucide-react'
 import Link from 'next/link'
@@ -50,13 +50,13 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
         <h2 className={cn(textStyles.h3())}>
           Trusted by{' '}
           <strong>
-            <u>more than {companyKeys.length}</u>
+            <u>more than {companyIds.length}</u>
           </strong>{' '}
           Canadian and global companies
         </h2>
         <p>
-          Trusted to deliver high-impact and scalable software solutions. Known for a hands-on
-          approach that balances <strong>technical excellence</strong> with{' '}
+          Recognized for delivering scalable and high-impact software solutions. Known for a
+          hands-on approach that balances <strong>technical excellence</strong> with{' '}
           <strong>genuine mentorship</strong> and <strong>team development</strong>, I&apos;ve led
           successful projects that align closely with business goals and user needs.{' '}
           <strong>From world-renowned brands to emerging businesses</strong>, these{' '}
@@ -66,7 +66,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
         </p>
       </div>
       <div className={cn(styles.companies())}>
-        {companyKeys.map((companyKey) => {
+        {companyIds.map((companyKey) => {
           const company = companyEntries[companyKey]
           if (!company) return null
           return (
@@ -74,6 +74,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
               className={cn(styles.company())}
               href={company.href}
               key={`company-${companyKey}`}
+              target="_blank"
             >
               <Imager
                 darkSrc={company.darkSrc}

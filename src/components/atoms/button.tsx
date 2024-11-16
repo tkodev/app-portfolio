@@ -36,10 +36,10 @@ const styles = {
 }
 
 type ButtonRef = HTMLButtonElement
-type ButtonProps = {
-  asChild?: boolean
-} & ButtonHTMLAttributes<ButtonRef> &
-  VariantProps<typeof styles.root>
+type ButtonProps = ButtonHTMLAttributes<ButtonRef> &
+  VariantProps<typeof styles.root> & {
+    asChild?: boolean
+  }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {

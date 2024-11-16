@@ -6,12 +6,12 @@ const styles = {
     variants: {
       variant: {
         noise: [
-          'bg-[url(/images/bg/noise/light-y@2x.png)] md:bg-[url(/images/bg/noise/light-x@2x.png)]',
-          'dark:bg-[url(/images/bg/noise/dark-y@2x.png)] dark:md:bg-[url(/images/bg/noise/dark-x@2x.png)]'
+          'bg-[url(/images/bg/noise/light-alt-y@2x.png)] md:bg-[url(/images/bg/noise/light-x@2x.png)]',
+          'dark:bg-[url(/images/bg/noise/dark-alt-y@2x.png)] dark:md:bg-[url(/images/bg/noise/dark-x@2x.png)]'
         ],
         'noise-invert': [
-          'bg-[url(/images/bg/noise-invert/light-y@2x.png)] md:bg-[url(/images/bg/noise-invert/light-x@2x.png)]',
-          'dark:bg-[url(/images/bg/noise-invert/dark-y@2x.png)] dark:md:bg-[url(/images/bg/noise-invert/dark-x@2x.png)]'
+          'bg-[url(/images/bg/noise-invert/light-alt-y@2x.png)] md:bg-[url(/images/bg/noise-invert/light-x@2x.png)]',
+          'dark:bg-[url(/images/bg/noise-invert/dark-alt-y@2x.png)] dark:md:bg-[url(/images/bg/noise-invert/dark-x@2x.png)]'
         ],
         sand: [
           'bg-[url(/images/bg/sand/adrien-olichon-light-unsplash-y.jpg)] md:bg-[url(/images/bg/sand/adrien-olichon-light-unsplash-x.jpg)]',

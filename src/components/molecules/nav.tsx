@@ -33,8 +33,8 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
           return (
             <Button key={`nav-item-${index}`} {...rest} asChild>
               <Link href={href} target={isExternal ? '_blank' : undefined}>
-                {name}
                 <Icon icon={icon} />
+                {name}
               </Link>
             </Button>
           )

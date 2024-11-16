@@ -72,8 +72,8 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
       </div>
       <div className={cn(styles.jobs())}>
         {jobEntries.map(
-          ({ companyKey, companyName, title, startDate, endDate, location }, index) => {
-            const company = companyEntries[companyKey]
+          ({ companyId, companyName, title, startDate, endDate, location }, index) => {
+            const company = companyEntries[companyId]
             return (
               <div key={`job-${index}`} className={cn(styles.job())}>
                 <div>
@@ -93,7 +93,8 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
                     <Link
                       className={cn(styles.company())}
                       href={company.href}
-                      key={`company-${companyKey}`}
+                      key={`company-${companyId}`}
+                      target="_blank"
                     >
                       <Imager
                         darkSrc={company.darkSrc}

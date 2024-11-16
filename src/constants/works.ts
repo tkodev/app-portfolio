@@ -1,7 +1,8 @@
-import { CompanyEntry, CompanyKey, JobEntry, Project, ProjectKey } from '@/types/works'
+import { CompanyEntry, CompanyId, JobEntry, ProjectEntry, ProjectId } from '@/types/works'
 
 const companyEntries: Record<string, CompanyEntry> = {
   airCanada: {
+    id: 'airCanada',
     name: 'Air Canada',
     href: 'https://www.aircanada.com/',
     baseSrc: '/images/companies/air-canada/base@1x.png',
@@ -9,6 +10,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/air-canada/dark@1x.png'
   },
   airMiles: {
+    id: 'airMiles',
     name: 'Air Miles',
     href: 'https://www.airmiles.ca/',
     baseSrc: '/images/companies/air-miles/base@1x.png',
@@ -16,6 +18,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/air-miles/dark@1x.png'
   },
   babyJogger: {
+    id: 'babyJogger',
     name: 'Baby Jogger',
     href: 'https://babyjogger.ca/',
     baseSrc: '/images/companies/baby-jogger/base@1x.png',
@@ -23,6 +26,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/baby-jogger/dark@1x.png'
   },
   badal: {
+    id: 'badal',
     name: 'Badal',
     href: 'https://badal.io/',
     baseSrc: '/images/companies/badal/base@1x.png',
@@ -30,6 +34,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/badal/dark@1x.png'
   },
   beyond: {
+    id: 'beyond',
     name: 'Beyond',
     href: 'https://beyondmpd.com/',
     baseSrc: '/images/companies/beyond/base@1x.png',
@@ -37,6 +42,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/beyond/dark@1x.png'
   },
   brandfire: {
+    id: 'brandfire',
     name: 'Brandfire',
     href: 'https://www.brandfire.ca/',
     baseSrc: '/images/companies/brandfire/base@1x.png',
@@ -44,6 +50,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/brandfire/dark@1x.png'
   },
   canadaDry: {
+    id: 'canadaDry',
     name: 'Canada Dry',
     href: 'https://www.canadadry.com/',
     baseSrc: '/images/companies/canada-dry/base@1x.png',
@@ -51,6 +58,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/canada-dry/dark@1x.png'
   },
   geAppliances: {
+    id: 'geAppliances',
     name: 'GE Appliances',
     href: 'https://geappliances.ca/',
     baseSrc: '/images/companies/ge-appliances/base@1x.png',
@@ -58,6 +66,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/ge-appliances/dark@1x.png'
   },
   monogram: {
+    id: 'monogram',
     name: 'Monogram',
     href: 'https://monogram.ca',
     baseSrc: '/images/companies/monogram/base@1x.png',
@@ -65,6 +74,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/monogram/dark@1x.png'
   },
   peoplesGroup: {
+    id: 'peoplesGroup',
     name: 'Peoples Group',
     href: 'https://www.peoplestrust.com/',
     baseSrc: '/images/companies/peoples-group/base@1x.png',
@@ -72,6 +82,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/peoples-group/dark@1x.png'
   },
   quantumMob: {
+    id: 'quantumMob',
     name: 'Quantum Mob',
     href: 'https://www.linkedin.com/company/quantumMob/',
     baseSrc: '/images/companies/quantum-mob/base@1x.png',
@@ -79,6 +90,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/quantum-mob/dark@1x.png'
   },
   rewardops: {
+    id: 'rewardops',
     name: 'RewardOps',
     href: 'https://www.rewardops.com/',
     baseSrc: '/images/companies/rewardops/base@1x.png',
@@ -86,6 +98,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/rewardops/dark@1x.png'
   },
   toffifee: {
+    id: 'toffifee',
     name: 'Toffifee',
     href: 'https://www.toffifee.ca/',
     baseSrc: '/images/companies/toffifee/base@1x.png',
@@ -93,6 +106,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/toffifee/dark@1x.png'
   },
   toyota: {
+    id: 'toyota',
     name: 'Toyota',
     href: 'https://www.toyota.ca/',
     baseSrc: '/images/companies/toyota/base@1x.png',
@@ -100,6 +114,7 @@ const companyEntries: Record<string, CompanyEntry> = {
     darkSrc: '/images/companies/toyota/dark@1x.png'
   },
   weiser: {
+    id: 'weiser',
     name: 'Weiser Lock',
     href: 'https://ca.weiserlock.com/',
     baseSrc: '/images/companies/weiser/base@1x.png',
@@ -108,7 +123,7 @@ const companyEntries: Record<string, CompanyEntry> = {
   }
 }
 
-const companyKeys: CompanyKey[] = [
+const companyIds: CompanyId[] = [
   'badal',
   'quantumMob',
   'rewardops',
@@ -128,7 +143,8 @@ const companyKeys: CompanyKey[] = [
 
 const jobEntries: JobEntry[] = [
   {
-    companyKey: 'badal',
+    id: 'badalStaffSoftwareEngineer',
+    companyId: 'badal',
     companyName: 'Badal.io',
     title: 'Staff Software Engineer',
     location: 'Toronto, Ontario, Canada · Remote',
@@ -157,7 +173,8 @@ const jobEntries: JobEntry[] = [
     ]
   },
   {
-    companyKey: 'quantumMob',
+    id: 'quantumMobStaffSoftwareEngineer',
+    companyId: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Staff Software Engineer',
     location: 'Toronto, Ontario, Canada · Hybrid',
@@ -186,7 +203,8 @@ const jobEntries: JobEntry[] = [
     ]
   },
   {
-    companyKey: 'quantumMob',
+    id: 'quantumMobSeniorSoftwareEngineer',
+    companyId: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Senior Software Engineer',
     location: 'Toronto, Ontario, Canada',
@@ -223,7 +241,8 @@ const jobEntries: JobEntry[] = [
     ]
   },
   {
-    companyKey: 'quantumMob',
+    id: 'quantumMobSoftwareEngineerII',
+    companyId: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Software Engineer II',
     location: 'Toronto, Canada Area',
@@ -263,7 +282,8 @@ const jobEntries: JobEntry[] = [
     ]
   },
   {
-    companyKey: 'quantumMob',
+    id: 'quantumMobSoftwareEngineerI',
+    companyId: 'quantumMob',
     companyName: 'Quantum Mob',
     title: 'Software Engineer I',
     location: 'Toronto, Ontario, Canada',
@@ -289,7 +309,8 @@ const jobEntries: JobEntry[] = [
     ]
   },
   {
-    companyKey: 'brandfire',
+    id: 'brandfireIntermediateFrontEndDeveloper',
+    companyId: 'brandfire',
     companyName: 'Brandfire Marketing Group Inc.',
     title: 'Intermediate Front End Developer',
     location: 'Markham, Ontario',
@@ -312,7 +333,8 @@ const jobEntries: JobEntry[] = [
     ]
   },
   {
-    companyKey: 'kosInteriorDesign',
+    id: 'kosInteriorDesignInteriorDesigner',
+    companyId: 'kosInteriorDesign',
     companyName: "Ko's Interior Design and Construction",
     title: 'Interior Designer',
     location: 'Toronto, Canada Area',
@@ -322,7 +344,17 @@ const jobEntries: JobEntry[] = [
   }
 ]
 
-const projectKeys: ProjectKey[] = [
+const jobIds = [
+  'badalStaffSoftwareEngineer',
+  'quantumMobStaffSoftwareEngineer',
+  'quantumMobSeniorSoftwareEngineer',
+  'quantumMobSoftwareEngineerII',
+  'quantumMobSoftwareEngineerI',
+  'brandfireIntermediateFrontEndDeveloper',
+  'kosInteriorDesignInteriorDesigner'
+]
+
+const projectIds: ProjectId[] = [
   'beyondModernization',
   'paypowerReloadablePrepaidMastercardMobileApp',
   'aeroplanShoppingButtonBrowserExtension',
@@ -349,9 +381,9 @@ const projectKeys: ProjectKey[] = [
   'babyJoggerCanadianCatalogWebsite'
 ]
 
-const projects: Record<ProjectKey, Project> = {
+const projectEntries: Record<ProjectId, ProjectEntry> = {
   beyondModernization: {
-    projectKey: 'beyondModernization',
+    id: 'beyondModernization',
     src: '/images/works/beyond.png',
     title: 'Beyond - Modernization',
     subtitle: 'Transforming oil rig systems into a modern, data-driven architecture.',
@@ -375,7 +407,7 @@ const projects: Record<ProjectKey, Project> = {
     isFeatured: true
   },
   paypowerReloadablePrepaidMastercardMobileApp: {
-    projectKey: 'paypowerReloadablePrepaidMastercardMobileApp',
+    id: 'paypowerReloadablePrepaidMastercardMobileApp',
     src: '/images/works/paypower.png',
     title: 'Paypower - Reloadable Prepaid Mastercard - Mobile App',
     subtitle: 'Empowering users with mobile control over prepaid Mastercards.',
@@ -398,7 +430,7 @@ const projects: Record<ProjectKey, Project> = {
     isFeatured: true
   },
   aeroplanShoppingButtonBrowserExtension: {
-    projectKey: 'aeroplanShoppingButtonBrowserExtension',
+    id: 'aeroplanShoppingButtonBrowserExtension',
     src: '/images/works/aeroplan-ext.jpg',
     title: 'Aeroplan Shopping Button - Browser Extension',
     subtitle: 'Enabling rewards with Aeroplan’s cross-browser shopping extension.',
@@ -419,7 +451,7 @@ const projects: Record<ProjectKey, Project> = {
     ]
   },
   aeroplanEstoreRetailerAndCatalogRedesign: {
-    projectKey: 'aeroplanEstoreRetailerAndCatalogRedesign',
+    id: 'aeroplanEstoreRetailerAndCatalogRedesign',
     src: '/images/works/aeroplan.png',
     title: 'Aeroplan eStore - Retailer & Catalog Redesign',
     subtitle: 'Redesigning the Aeroplan eStore for streamlined user experiences.',
@@ -441,7 +473,7 @@ const projects: Record<ProjectKey, Project> = {
     isFeatured: true
   },
   rocMarEngineeringEmployeeDashboard: {
-    projectKey: 'rocMarEngineeringEmployeeDashboard',
+    id: 'rocMarEngineeringEmployeeDashboard',
     src: '/images/works/rocmar.png',
     title: 'RocMar Engineering - Employee Dashboard',
     subtitle: 'Bringing productivity and design harmony to RocMar Engineering.',
@@ -453,7 +485,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Design Systems', 'React', 'UI/UX', 'OAuth', 'OICD', 'Postgres', 'Client Management']
   },
   aeroplanEstoreAodaAaWtagCompliance: {
-    projectKey: 'aeroplanEstoreAodaAaWtagCompliance',
+    id: 'aeroplanEstoreAodaAaWtagCompliance',
     src: '/images/works/aeroplan.png',
     title: 'Aeroplan eStore - AODA AA / WTAG 2.0 Compliance',
     subtitle: 'Enhancing accessibility for the Aeroplan eStore.',
@@ -466,7 +498,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Accessibility', 'AODA Compliance', 'WCAG 2.0', 'React']
   },
   quantumMobCatalogAppProjectMobCiCdIntegrations: {
-    projectKey: 'quantumMobCatalogAppProjectMobCiCdIntegrations',
+    id: 'quantumMobCatalogAppProjectMobCiCdIntegrations',
     title: 'Quantum Mob - Catalog App, Preview Mob, CI/CD Integrations',
     subtitle: 'Driving infrastructure and CI/CD innovation at Quantum Mob.',
     tagline:
@@ -478,19 +510,19 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['CI/CD', 'Pipeline Development', 'Product Catalog', 'Team Leadership']
   },
   quantumMobCoreUtilitiesAuthModule: {
-    projectKey: 'quantumMobCoreUtilitiesAuthModule',
+    id: 'quantumMobCoreUtilitiesAuthModule',
     title: 'Quantum Mob - Core Utilities, Auth Module',
     subtitle: 'Creating scalable, reusable modules with Quantum Mob’s core utilities.',
     tagline:
-      'Monorepo-style reusable modules for internal and client projects, focusing on authentication utilities.',
-    desc: 'At Quantum Mob, I developed core authentication utilities within a monorepo structure, enabling reuse across multiple projects. These modules provided robust, secure authentication solutions for both internal and client applications, enhancing scalability and reducing development time on future projects.',
+      'Monorepo-style reusable modules for internal and client projectEntries, focusing on authentication utilities.',
+    desc: 'At Quantum Mob, I developed core authentication utilities within a monorepo structure, enabling reuse across multiple projectEntries. These modules provided robust, secure authentication solutions for both internal and client applications, enhancing scalability and reducing development time on future projectEntries.',
     companyKey: 'quantumMob',
     startDate: new Date('2020-07-01'),
     endDate: new Date('2020-10-01'),
     skills: ['Monorepo', 'Authentication', 'Node.js', 'Modular Development']
   },
   aeroplanEstoreInitialArchitectureAndMvp: {
-    projectKey: 'aeroplanEstoreInitialArchitectureAndMvp',
+    id: 'aeroplanEstoreInitialArchitectureAndMvp',
     src: '/images/works/aeroplan.png',
     title: 'Aeroplan eStore - Initial Architecture & MVP',
     subtitle: 'Laying the foundation for Aeroplan’s eStore MVP.',
@@ -503,7 +535,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['React', 'Redux', 'Node.js', 'Server Architecture', 'Front-End Development']
   },
   airMilesLandingPortalDevelopment: {
-    projectKey: 'airMilesLandingPortalDevelopment',
+    id: 'airMilesLandingPortalDevelopment',
     src: '/images/works/airmiles.png',
     title: 'Air Miles - Landing Portal Development',
     subtitle: 'Developing a cohesive experience for the Air Miles landing portal.',
@@ -517,7 +549,7 @@ const projects: Record<ProjectKey, Project> = {
     isFeatured: true
   },
   petsAboveReactModernization: {
-    projectKey: 'petsAboveReactModernization',
+    id: 'petsAboveReactModernization',
     title: 'Pets Above - React Modernization',
     subtitle: 'Bringing modern standards to the Pets Above app.',
     tagline:
@@ -529,7 +561,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['React', 'Redux', 'RabbitMQ', 'MySQL', 'Application Modernization']
   },
   cardinalMeatsFoodServiceWebsiteAndCms: {
-    projectKey: 'cardinalMeatsFoodServiceWebsiteAndCms',
+    id: 'cardinalMeatsFoodServiceWebsiteAndCms',
     src: '/images/works/cardinal.png',
     title: 'Cardinal Meats & Food Service - Website & CMS',
     subtitle: 'Delivering a streamlined CMS and website for Cardinal Meats.',
@@ -542,7 +574,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Express.js', 'CMS Development', 'Web Development', 'Node.js']
   },
   canadaChiropracticProtectiveAssociationWebsiteAndCms: {
-    projectKey: 'canadaChiropracticProtectiveAssociationWebsiteAndCms',
+    id: 'canadaChiropracticProtectiveAssociationWebsiteAndCms',
     src: '/images/works/ccpa.png',
     title: 'Canada Chiropractic Protective Association - Website & CMS',
     subtitle: 'Building a client management platform for Canada Chiropractic.',
@@ -555,7 +587,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Microsoft Dynamics 365', 'CRM Integration', 'Web Development', 'Client Management']
   },
   canadaDryEnterPinContest: {
-    projectKey: 'canadaDryEnterPinContest',
+    id: 'canadaDryEnterPinContest',
     title: 'Canada Dry - Enter PIN Contest',
     subtitle: 'Creating an interactive PIN-based contest for Canada Dry.',
     tagline: 'Developed a PHP & Ractive.js time and entry-based contest for user engagement.',
@@ -566,7 +598,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['PHP', 'Ractive.js', 'User Engagement', 'Contest Development']
   },
   canadaDryWebsite: {
-    projectKey: 'canadaDryWebsite',
+    id: 'canadaDryWebsite',
     src: '/images/works/canadadry.png',
     title: 'Canada Dry - Website',
     subtitle: 'Designing an immersive web experience for Canada Dry.',
@@ -578,7 +610,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['PHP', 'Parallax', 'Animation', 'Web Development']
   },
   monogramCanadianCatalogWebsite: {
-    projectKey: 'monogramCanadianCatalogWebsite',
+    id: 'monogramCanadianCatalogWebsite',
     src: '/images/works/monogram.png',
     title: 'Monogram - Canadian Catalog Website',
     subtitle: 'Delivering a responsive catalog experience for Monogram.',
@@ -590,7 +622,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Koa.js', 'Ractive.js', 'Responsive Design', 'Catalog Website']
   },
   modaMatchVirtualFittingRoom: {
-    projectKey: 'modaMatchVirtualFittingRoom',
+    id: 'modaMatchVirtualFittingRoom',
     src: '/images/works/modamatch.png',
     title: 'Moda Match - Virtual Fitting Room',
     subtitle: 'Bringing virtual try-ons to e-commerce with Moda Match.',
@@ -611,7 +643,7 @@ const projects: Record<ProjectKey, Project> = {
     ]
   },
   parentsCanadaMagazineWebsite: {
-    projectKey: 'parentsCanadaMagazineWebsite',
+    id: 'parentsCanadaMagazineWebsite',
     src: '/images/works/parents.png',
     title: 'Parents Canada - Magazine Website',
     subtitle: 'Building a custom WordPress theme for Parents Canada.',
@@ -623,7 +655,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['WordPress', 'Theme Development', 'Content Management', 'Web Design']
   },
   toffifeeSpinToWinContest: {
-    projectKey: 'toffifeeSpinToWinContest',
+    id: 'toffifeeSpinToWinContest',
     title: 'Toffifee - Spin to Win Contest',
     subtitle: 'Engaging users with an interactive "spin to win" contest for Toffifee.',
     tagline:
@@ -635,7 +667,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Express.js', 'Ractive.js', 'Animation', 'User Engagement']
   },
   toyotaBringYourToyotaHomeContest: {
-    projectKey: 'toyotaBringYourToyotaHomeContest',
+    id: 'toyotaBringYourToyotaHomeContest',
     title: 'Toyota - Bring Your Toyota Home Contest',
     subtitle: 'Creating an immersive contest experience with parallax for Toyota.',
     tagline:
@@ -647,7 +679,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Express.js', 'Parallax', 'Animation', 'Web Development']
   },
   toyotaMakeADateContest: {
-    projectKey: 'toyotaMakeADateContest',
+    id: 'toyotaMakeADateContest',
     title: 'Toyota - Make a Date Contest',
     subtitle: 'Enhancing user interaction with Toyota’s Make a Date contest.',
     tagline:
@@ -659,7 +691,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Express.js', 'Interactive Design', 'Contest Development', 'User Engagement']
   },
   babyJoggerCanadianCatalogWebsite: {
-    projectKey: 'babyJoggerCanadianCatalogWebsite',
+    id: 'babyJoggerCanadianCatalogWebsite',
     src: '/images/works/babyjogger.png',
     title: 'BabyJogger - Canadian Catalog Website',
     subtitle: 'Delivering a catalog site experience for BabyJogger.',
@@ -671,7 +703,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Koa.js', 'Ractive.js', 'Responsive Design', 'Catalog Website']
   },
   toyotaSalesReportingDashboard: {
-    projectKey: 'toyotaSalesReportingDashboard',
+    id: 'toyotaSalesReportingDashboard',
     title: 'Toyota - Sales Reporting Dashboard',
     subtitle: 'Streamlining Toyota’s sales reporting with a custom dashboard.',
     tagline: 'Developed an internal sales reporting dashboard for Toyota using Koa.js.',
@@ -682,7 +714,7 @@ const projects: Record<ProjectKey, Project> = {
     skills: ['Koa.js', 'Data Visualization', 'Dashboard Development', 'Sales Reporting']
   },
   weiserCanadianCatalogWebsite: {
-    projectKey: 'weiserCanadianCatalogWebsite',
+    id: 'weiserCanadianCatalogWebsite',
     src: '/images/works/weiser.png',
     title: 'Weiser - Canadian Catalog Website',
     subtitle: 'Creating a robust, catalog-driven website for Weiser.',
@@ -695,4 +727,4 @@ const projects: Record<ProjectKey, Project> = {
   }
 }
 
-export { companyEntries, companyKeys, jobEntries, projects, projectKeys }
+export { companyIds, companyEntries, jobIds, jobEntries, projectIds, projectEntries }

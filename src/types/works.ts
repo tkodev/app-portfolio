@@ -1,4 +1,4 @@
-type CompanyKey =
+type CompanyId =
   | 'badal'
   | 'quantumMob'
   | 'rewardops'
@@ -17,6 +17,7 @@ type CompanyKey =
   | 'kosInteriorDesign'
 
 type CompanyEntry = {
+  id: CompanyId
   name: string
   href: string
   baseSrc: string
@@ -24,8 +25,18 @@ type CompanyEntry = {
   darkSrc: string
 }
 
+type JobId =
+  | 'badalStaffSoftwareEngineer'
+  | 'quantumMobStaffSoftwareEngineer'
+  | 'quantumMobSeniorSoftwareEngineer'
+  | 'quantumMobSoftwareEngineerII'
+  | 'quantumMobSoftwareEngineerI'
+  | 'brandfireIntermediateFrontEndDeveloper'
+  | 'kosInteriorDesignInteriorDesigner'
+
 type JobEntry = {
-  companyKey: CompanyKey
+  id: JobId
+  companyId: CompanyId
   companyName: string
   title: string
   location: string
@@ -34,7 +45,7 @@ type JobEntry = {
   skills: string[]
 }
 
-type ProjectKey =
+type ProjectId =
   | 'beyondModernization'
   | 'paypowerReloadablePrepaidMastercardMobileApp'
   | 'aeroplanShoppingButtonBrowserExtension'
@@ -60,18 +71,18 @@ type ProjectKey =
   | 'toyotaMakeADateContest'
   | 'babyJoggerCanadianCatalogWebsite'
 
-type Project = {
-  projectKey: ProjectKey
+type ProjectEntry = {
+  id: ProjectId
   src?: string
   title: string
   subtitle: string
   tagline: string
   desc: string
-  companyKey: CompanyKey
+  companyKey: CompanyId
   startDate: Date
   endDate: Date
   skills: string[]
   isFeatured?: boolean
 }
 
-export type { CompanyKey, CompanyEntry, JobEntry, ProjectKey, Project }
+export type { CompanyId, CompanyEntry, JobEntry, ProjectId, ProjectEntry }
