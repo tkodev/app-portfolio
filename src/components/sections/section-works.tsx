@@ -101,7 +101,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
               const { id, src, title, subtitle, startDate, endDate, skills } = project
               return (
                 <Tilt key={`project-${id}`}>
-                  <Card className={cn(styles.project())}>
+                  <Card key={`project-${id}`} className={cn(styles.project())}>
                     {src && <CardImage aspect="video" mode="dark" position="top" src={src} />}
                     <CardHeader>
                       <CardTitle>{title}</CardTitle>

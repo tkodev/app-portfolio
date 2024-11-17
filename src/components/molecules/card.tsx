@@ -4,7 +4,10 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 import { Slot } from '@radix-ui/react-slot'
 
 const styles = {
-  card: cva('rounded-xl border shadow-sm bg-card text-card-foreground overflow-hidden'),
+  card: cva([
+    'rounded-xl shadow-sm bg-card/30 text-card-foreground overflow-hidden',
+    'backdrop-filter backdrop-blur-md'
+  ]),
   cardHeader: cva('flex flex-col p-4 gap-2'),
   cardTitle: cva('font-semibold leading-none tracking-tight'),
   cardDesc: cva('text-sm text-muted-foreground'),
