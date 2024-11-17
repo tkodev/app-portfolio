@@ -41,12 +41,11 @@ type ButtonProps = ButtonHTMLAttributes<ButtonRef> &
     asChild?: boolean
   }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button'
-    return <Comp className={cn(styles.root({ variant, size, className }))} ref={ref} {...props} />
-  }
-)
+const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
+  const { className, variant, size, asChild = false, ...rest } = props
+  const Comp = asChild ? Slot : 'button'
+  return <Comp className={cn(styles.root({ variant, size, className }))} ref={ref} {...rest} />
+})
 Button.displayName = 'Button'
 
 export { Button }

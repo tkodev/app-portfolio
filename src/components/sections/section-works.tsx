@@ -1,6 +1,7 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Badge } from '@/components/atoms/badge'
 import { Bg } from '@/components/atoms/bg'
+import { Tilt } from '@/components/atoms/tilt'
 import { Card, CardDesc, CardHeader, CardTitle, CardImage } from '@/components/molecules/card'
 import { Section } from '@/components/molecules/section'
 import { SearchProjects } from '@/components/organisms/search-projects'
@@ -67,22 +68,24 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
           const { id, src, title, subtitle, startDate, endDate, skills } = project
           const imageSrc = src ?? '/images/works/preview.png'
           return (
-            <Card key={`featured-${id}`} className={cn(styles.project())}>
-              <CardImage aspect="video" mode="dark" position="top" src={imageSrc}>
-                <CardTitle>{title}</CardTitle>
-                <CardDesc>
-                  <em>{formatStdDateRange(startDate, endDate)}</em>
-                </CardDesc>
-                <CardDesc>{subtitle}</CardDesc>
-                <CardDesc className={cn(styles.skills())}>
-                  {skills.slice(0, maxSkills).map((skill) => (
-                    <Badge key={skill} variant="default">
-                      {skill}
-                    </Badge>
-                  ))}
-                </CardDesc>
-              </CardImage>
-            </Card>
+            <Tilt key={`featured-${id}`}>
+              <Card className={cn(styles.project())}>
+                <CardImage aspect="video" mode="dark" position="top" src={imageSrc}>
+                  <CardTitle>{title}</CardTitle>
+                  <CardDesc>
+                    <em>{formatStdDateRange(startDate, endDate)}</em>
+                  </CardDesc>
+                  <CardDesc>{subtitle}</CardDesc>
+                  <CardDesc className={cn(styles.skills())}>
+                    {skills.slice(0, maxSkills).map((skill) => (
+                      <Badge key={skill} variant="default">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </CardDesc>
+                </CardImage>
+              </Card>
+            </Tilt>
           )
         })}
       </div>
@@ -97,23 +100,25 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
           ? searchProjects.map((project) => {
               const { id, src, title, subtitle, startDate, endDate, skills } = project
               return (
-                <Card key={`project-${id}`} className={cn(styles.project())}>
-                  {src && <CardImage aspect="video" mode="dark" position="top" src={src} />}
-                  <CardHeader>
-                    <CardTitle>{title}</CardTitle>
-                    <CardDesc>
-                      <em>{formatStdDateRange(startDate, endDate)}</em>
-                    </CardDesc>
-                    <CardDesc>{subtitle}</CardDesc>
-                    <CardDesc className={cn(styles.skills())}>
-                      {skills.slice(0, maxSkills).map((skill: string) => (
-                        <Badge key={skill} variant="secondary">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </CardDesc>
-                  </CardHeader>
-                </Card>
+                <Tilt key={`project-${id}`}>
+                  <Card className={cn(styles.project())}>
+                    {src && <CardImage aspect="video" mode="dark" position="top" src={src} />}
+                    <CardHeader>
+                      <CardTitle>{title}</CardTitle>
+                      <CardDesc>
+                        <em>{formatStdDateRange(startDate, endDate)}</em>
+                      </CardDesc>
+                      <CardDesc>{subtitle}</CardDesc>
+                      <CardDesc className={cn(styles.skills())}>
+                        {skills.slice(0, maxSkills).map((skill: string) => (
+                          <Badge key={skill} variant="secondary">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </CardDesc>
+                    </CardHeader>
+                  </Card>
+                </Tilt>
               )
             })
           : 'No results found.'}

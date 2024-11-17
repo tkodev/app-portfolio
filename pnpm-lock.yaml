@@ -59,6 +59,9 @@ dependencies:
   react-hook-form:
     specifier: ^7.53.2
     version: 7.53.2(react@18.3.1)
+  react-parallax-tilt:
+    specifier: ^1.7.256
+    version: 1.7.256(react-dom@18.3.1)(react@18.3.1)
   usehooks-ts:
     specifier: ^3.1.0
     version: 3.1.0(react@18.3.1)
@@ -3503,6 +3506,16 @@ packages:
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-parallax-tilt@1.7.256(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-bHRDHavMVKBMfX2X2ao0GTWZ5b3csiVKnQQGIIH4MpZ2CHuhT1uXb85QyjCUmxNC7pWdGQXxSj6rYvMEzfu0aw==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
 
   /react-remove-scroll-bar@2.3.6(@types/react@18.3.12)(react@18.3.1):
     resolution: {integrity: sha512-DtSYaao4mBmX+HDo5YWYdBWQwYIQQshUV/dVxFxK+KM26Wjwp1gZ6rv6OC3oujI6Bfu6Xyg3TwK533AQutsn/g==}

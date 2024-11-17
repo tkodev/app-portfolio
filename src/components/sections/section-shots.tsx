@@ -1,5 +1,6 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
+import { Tilt } from '@/components/atoms/tilt'
 import { Card, CardImage } from '@/components/molecules/card'
 import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
@@ -35,9 +36,11 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
         {shots.map((shot, index) => {
           const src = `/images/shots/${shot}`
           return (
-            <Card key={`shot-${index}`} className={cn(styles.shot())}>
-              <CardImage aspect="square" mode="dark" src={src} />
-            </Card>
+            <Tilt key={`shot-${index}`}>
+              <Card className={cn(styles.shot())}>
+                <CardImage aspect="square" mode="dark" src={src} />
+              </Card>
+            </Tilt>
           )
         })}
       </div>
