@@ -42,7 +42,7 @@ const SearchProjects = forwardRef<SearchProjectsRef, SearchProjectsProps>((props
 
   const handleClearForm = useCallback(() => {
     reset({ query: '' })
-    push(`/works?query=`)
+    push(`/works`)
   }, [push, reset])
 
   return (
@@ -52,13 +52,13 @@ const SearchProjects = forwardRef<SearchProjectsRef, SearchProjectsProps>((props
       onSubmit={handleSubmit(handleSubmitForm)}
       {...rest}
     >
-      <Input placeholder={'Search projectEntries'} {...register('query')} />
+      <Input placeholder={'Search Projects'} {...register('query')} />
       {hasQueries && (
-        <Button variant="secondary" type="button" onClick={handleClearForm}>
+        <Button type="button" onClick={handleClearForm}>
           <Icon icon={XIcon} /> Clear
         </Button>
       )}
-      <Button variant="secondary" type="submit">
+      <Button type="submit">
         <Icon icon={SearchIcon} /> Search
       </Button>
     </form>
