@@ -6,7 +6,7 @@ import { Slot } from '@radix-ui/react-slot'
 const styles = {
   card: cva([
     'rounded-xl shadow-sm bg-card/30 text-card-foreground overflow-hidden',
-    'backdrop-filter backdrop-blur-md'
+    'backdrop-filter backdrop-blur-lg'
   ]),
   cardHeader: cva('flex flex-col p-4 gap-2 border-t border-card-border'),
   cardTitle: cva('font-semibold leading-none tracking-tight'),

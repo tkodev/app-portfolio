@@ -4,7 +4,13 @@ import { Logo } from '@/components/atoms/logo'
 import { Search } from '@/components/organisms/search'
 import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
-import { CameraIcon, DraftingCompassIcon, DotIcon, SearchIcon, NotebookPenIcon } from 'lucide-react'
+import {
+  DraftingCompassIcon,
+  DotIcon,
+  SearchIcon,
+  NotebookPenIcon,
+  PaletteIcon
+} from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
@@ -36,7 +42,7 @@ const styles = {
 
 const navItems: NavEntry[] = [
   { href: '/works', name: 'Works', icon: DraftingCompassIcon, variant: 'secondary' },
-  { href: '/shots', name: 'Shots', icon: CameraIcon, variant: 'secondary' },
+  { href: '/crafts', name: 'Crafts', icon: PaletteIcon, variant: 'secondary' },
   { href: '/blog', name: 'Blog', icon: NotebookPenIcon, variant: 'secondary', isHidden: true },
   { icon: DotIcon }
 ]

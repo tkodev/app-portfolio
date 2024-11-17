@@ -16,7 +16,7 @@ const styles = {
         sand: [
           'bg-[url(/images/bg/sand/adrien-olichon-light-unsplash-y.jpg)] md:bg-[url(/images/bg/sand/adrien-olichon-light-unsplash-x.jpg)]',
           'dark:bg-[url(/images/bg/sand/adrien-olichon-dark-unsplash-y.jpg)] dark:md:bg-[url(/images/bg/sand/adrien-olichon-dark-unsplash-x.jpg)]',
-          'opacity-30'
+          'opacity-70'
         ]
       },
       size: {
