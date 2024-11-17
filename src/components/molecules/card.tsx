@@ -8,7 +8,7 @@ const styles = {
     'rounded-xl shadow-sm bg-card/30 text-card-foreground overflow-hidden',
     'backdrop-filter backdrop-blur-md'
   ]),
-  cardHeader: cva('flex flex-col p-4 gap-2'),
+  cardHeader: cva('flex flex-col p-4 gap-2 border-t border-card-border'),
   cardTitle: cva('font-semibold leading-none tracking-tight'),
   cardDesc: cva('text-sm text-muted-foreground'),
   cardContent: cva('p-4 pt-0'),
@@ -30,9 +30,10 @@ const styles = {
       position: 'center'
     }
   }),
-  cardOverlay: cva(
-    'w-full h-full p-4 flex flex-col justify-end gap-2 bg-gradient-to-t from-card to-transparent text-foreground'
-  )
+  cardOverlay: cva([
+    'w-full h-full p-4 flex flex-col justify-end gap-2',
+    'bg-gradient-to-t from-card to-transparent text-foreground'
+  ])
 }
 
 const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
