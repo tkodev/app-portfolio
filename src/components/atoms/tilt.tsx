@@ -18,9 +18,10 @@ type TiltProps = HTMLAttributes<TiltRef> &
   }
 
 const options = {
+  scale: 1.025,
   tiltReverse: true,
-  tiltMaxAngleX: 12,
-  tiltMaxAngleY: 12,
+  tiltMaxAngleX: 15,
+  tiltMaxAngleY: 15,
   perspective: 5000,
   transitionSpeed: 2000
 }
