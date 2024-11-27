@@ -3,7 +3,7 @@ import { ReactNode, FC } from 'react'
 import { Favicon } from '@/components/atoms/favicon'
 import { Layout } from '@/components/sections/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
-import { interFont } from '@/fonts/inter'
+import { geistSansFont } from '@/fonts/geist'
 import { ThemeProvider } from '@/providers/theme'
 import { cn, cva } from '@/utils/theme'
 import Head from 'next/head'
@@ -13,7 +13,7 @@ import '../themes/theme-utils.css'
 
 const styles = {
   html: cva('w-full h-full'),
-  body: cva('w-full h-full bg-background text-foreground font-inter text-base font-normal')
+  body: cva('w-full h-full bg-background text-foreground font-geist-sans text-base font-normal')
 }
 
 const pagedata = {
@@ -69,7 +69,7 @@ const LayoutPage: FC<LayoutPageProps> = (props) => {
         <Favicon />
       </Head>
       <body
-        className={cn(styles.body(), interFont.variable, allianceNo2Font.variable)}
+        className={cn(styles.body(), allianceNo2Font.variable, geistSansFont.variable)}
         suppressHydrationWarning
       >
         <ThemeProvider>
