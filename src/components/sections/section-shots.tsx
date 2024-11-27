@@ -11,9 +11,9 @@ const styles = {
   root: cva('flex flex-col gap-4 overflow-y-visible'),
 
   row: cva('flex flex-col gap-4'),
-  shots: cva('grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-4'),
+  shots: cva('grid grid-cols-3 lg:grid-cols-3 gap-2 lg:gap-4 mb-4'),
 
-  shot: cva('break-inside-avoid min-h-64')
+  shot: cva('break-inside-avoid')
 }
 
 type SectionShotsRef = HTMLDivElement
