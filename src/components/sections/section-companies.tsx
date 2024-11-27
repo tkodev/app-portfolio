@@ -28,8 +28,8 @@ const styles = {
   }),
   ctaButton: cva('w-[180px]'),
 
-  companies: cva('flex flex-wrap gap-4 items-center justify-center'),
-  company: cva('m-2')
+  companies: cva('flex flex-wrap gap-2 md:gap-4 items-center justify-center'),
+  company: cva('')
 }
 
 type SectionCompaniesRef = HTMLDivElement
