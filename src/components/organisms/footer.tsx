@@ -33,7 +33,7 @@ const styles = {
   ]),
 
   left: cva('h-full flex items-center px-2'),
-  right: cva('h-full flex items-center overflow-x-auto px-2'),
+  right: cva('h-full flex items-center overflow-x-auto px-2 no-scrollbar'),
 
   label: cva('hidden md:inline'),
   scroller: cva(['fixed bottom-[96px] left-1/2 -translate-x-1/2 mx-auto', 'w-auto h-auto z-10']),

@@ -11,6 +11,7 @@ type NavEntry =
   | {
       href?: undefined
       icon: SvgComponent
+      isHidden?: boolean
     }
 
 type PageProps = {

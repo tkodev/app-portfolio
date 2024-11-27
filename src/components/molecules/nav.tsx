@@ -23,7 +23,8 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
     <nav ref={ref} className={cn(styles.root({ className }))} {...rest}>
       {items.map((props, index) => {
         if (props.href === undefined && !!props.icon) {
-          const { icon } = props
+          const { icon, isHidden } = props
+          if (isHidden) return null
           return <Icon key={`nav-item-${index}`} className={cn(styles.icon())} icon={icon} />
         }
         if (props.href !== undefined) {

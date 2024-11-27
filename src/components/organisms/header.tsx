@@ -33,10 +33,9 @@ const styles = {
   ]),
 
   left: cva('h-full flex items-center px-2'),
-  right: cva('h-full flex items-center overflow-x-auto px-2'),
+  right: cva('h-full flex items-center overflow-x-auto px-2 no-scrollbar'),
 
-  thumb: cva(''),
-  logo: cva('hidden sm:block mx-8'),
+  logo: cva('mx-8'),
   intro: cva('hidden md:block')
 }
 
@@ -44,7 +43,7 @@ const navItems: NavEntry[] = [
   { href: '/works', name: 'Works', icon: DraftingCompassIcon, variant: 'secondary' },
   { href: '/crafts', name: 'Crafts', icon: PaletteIcon, variant: 'secondary' },
   { href: '/blog', name: 'Blog', icon: NotebookPenIcon, variant: 'secondary', isHidden: true },
-  { icon: DotIcon }
+  { icon: DotIcon, isHidden: true }
 ]
 
 type HeaderProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>
@@ -52,17 +51,13 @@ type HeaderProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.r
 const Header: FC<HeaderProps> = (props) => {
   const { className, ...rest } = props
 
+  const isSearchEnabled = false
+
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Link className={cn(styles.thumb())} href="/">
-              <Avatar>
-                <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
-                <AvatarFallback>tk</AvatarFallback>
-              </Avatar>
-            </Link>
             <Link className={cn(styles.logo())} href="/">
               <Logo />
             </Link>
@@ -72,11 +67,13 @@ const Header: FC<HeaderProps> = (props) => {
           </div>
           <div className={cn(styles.right())}>
             <Nav items={navItems}>
-              <Search>
-                <Button variant="secondary" size="icon">
-                  <Icon icon={SearchIcon} />
-                </Button>
-              </Search>
+              {isSearchEnabled && (
+                <Search>
+                  <Button variant="secondary" size="icon">
+                    <Icon icon={SearchIcon} />
+                  </Button>
+                </Search>
+              )}
             </Nav>
           </div>
         </div>
