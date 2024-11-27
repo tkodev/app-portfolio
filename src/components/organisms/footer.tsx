@@ -4,7 +4,6 @@ import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 import {
   ChevronUpIcon,
-  ChevronDownIcon,
   LinkedinIcon,
   GithubIcon,
   MailIcon,
