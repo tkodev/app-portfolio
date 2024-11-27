@@ -71,13 +71,13 @@ const config = [
             'object',
             'unknown',
           ],
-          'customGroups': {
+          customGroups: {
             value: {
               next: ['next', 'next-*'],
               react: ['react', 'react-*'],
             },
           },
-          'newlinesBetween': 'never',
+          newlinesBetween: 'never',
         },
       ],
       'perfectionist/sort-exports': [
