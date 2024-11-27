@@ -1,3 +1,5 @@
+// noinspection ES6PreferShortImport - tailwind does not support ts aliases
+
 import fluid from 'fluid-tailwind'
 import twGradientMaskImage from 'tailwind-gradient-mask-image'
 import { Config } from 'tailwindcss'
