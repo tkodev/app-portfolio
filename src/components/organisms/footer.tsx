@@ -18,7 +18,7 @@ import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva([
-    'fixed bottom-0 left-0 bg-gradient-to-t from-background to-transparent',
+    'fixed bottom-0 left-0 bg-gradient-to-t from-background via-background/70 to-transparent',
     'w-full h-[96px] z-10'
   ]),
   container: cva([
