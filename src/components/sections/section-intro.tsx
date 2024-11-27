@@ -25,11 +25,11 @@ const styles = {
   photo: cva('max-w-[480px] w-3/5 md:w-2/5 lg:w-full h-auto rounded-[64px] lg:mt-4'),
   content: cva('max-w-[480px] w-full flex flex-col gap-4 justify-center'),
 
-  breadcrumbs: cva('justify-start'),
+  breadcrumbs: cva('justify-center lg:justify-start'),
   divider: cva('border-t border-foreground/30 md:my-2 lg:my-4'),
   logo: cva('w-[150px]'),
   title: cva('text-h1 font-alliance-no2'),
-  cta: cva('flex justify-start flex-wrap gap-4')
+  cta: cva('flex justify-center lg:justify-start flex-wrap gap-4')
 }
 
 type SectionIntroRef = HTMLDivElement
