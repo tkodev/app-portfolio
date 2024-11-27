@@ -4,11 +4,9 @@ import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Logo } from '@/components/atoms/logo'
-import { Breadcrumbs } from '@/components/molecules/breadcrumb'
 import { Section } from '@/components/molecules/section'
-import { NavEntry } from '@/types/layout'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import { Github, HomeIcon, Linkedin } from 'lucide-react'
+import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
 const styles = {
@@ -23,10 +21,10 @@ const styles = {
   right: cva(['flex items-center justify-center', 'lg:items-center lg:justify-start']),
 
   photo: cva('max-w-[480px] w-3/5 md:w-2/5 lg:w-full h-auto rounded-[64px] lg:mt-4'),
-  content: cva('max-w-[480px] w-full flex flex-col gap-4 justify-center'),
+  content: cva('max-w-[480px] w-full flex flex-col gap-4 lg:gap-6 justify-center'),
 
   breadcrumbs: cva('justify-center lg:justify-start'),
-  divider: cva('border-t border-foreground/30 md:my-2 lg:my-4'),
+  divider: cva('border-t border-foreground/30 my-4'),
   logo: cva('w-[150px]'),
   title: cva('text-h1 font-alliance-no2'),
   cta: cva('flex justify-center lg:justify-start flex-wrap gap-4')
@@ -34,8 +32,6 @@ const styles = {
 
 type SectionIntroRef = HTMLDivElement
 type SectionIntroProps = HTMLAttributes<SectionIntroRef> & VariantProps<typeof styles.root>
-
-const breadcrumbItems: NavEntry[] = [{ href: '/', icon: HomeIcon }, { name: '01 - Intro' }]
 
 const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref) => {
   const { className, ...rest } = props
@@ -56,7 +52,6 @@ const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref)
       </div>
       <div className={cn(styles.right())}>
         <div className={cn(styles.content())}>
-          <Breadcrumbs className={cn(styles.breadcrumbs())} id="intro" items={breadcrumbItems} />
           <hr className={cn(styles.divider())} />
           <Logo className={cn(styles.logo())} />
           <h1>
