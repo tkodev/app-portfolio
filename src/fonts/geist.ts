@@ -1,14 +1,14 @@
 import localFont from 'next/font/local'
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
+const geistSansFont = localFont({
+  src: '../../public/fonts/geist/geist-vf.woff',
   variable: '--font-geist-sans',
   weight: '100 900'
 })
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
+const geistMonoFont = localFont({
+  src: '../../public/fonts/geist/geist-mono-vf.woff',
   variable: '--font-geist-mono',
   weight: '100 900'
 })
 
-export { geistSans, geistMono }
+export { geistSansFont, geistMonoFont }

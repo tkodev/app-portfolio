@@ -5,8 +5,8 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 import Image, { ImageProps } from 'next/image'
 
 const styles = {
-  root: cva('h-auto w-auto relative'),
-  img: cva('w-full h-full absolute top-0 left-0', {
+  root: cva('h-full w-auto relative'),
+  img: cva('w-full h-auto absolute top-0 left-0', {
     variants: {
       variant: {
         light: 'block dark:hidden',

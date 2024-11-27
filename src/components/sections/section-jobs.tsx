@@ -5,10 +5,12 @@ import { Icon } from '@/components/atoms/icon'
 import { Imager } from '@/components/atoms/imager'
 import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
+import { appTimeZone } from '@/constants/date'
 import { companyEntries, jobEntries } from '@/constants/works'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { differenceInCalendarYears } from 'date-fns'
+import { fromZonedTime } from 'date-fns-tz'
 import { DraftingCompass, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
@@ -43,7 +45,9 @@ type SectionJobsProps = HTMLAttributes<SectionJobsRef> & VariantProps<typeof sty
 const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) => {
   const { className, ...rest } = props
 
-  const yearsSince = Math.abs(differenceInCalendarYears(new Date(), new Date('2017-04-01')))
+  const yearsSince = Math.abs(
+    differenceInCalendarYears(new Date(), fromZonedTime('2017-04-01', appTimeZone))
+  )
 
   return (
     <Section
@@ -84,7 +88,7 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
                   </p>
                   <p>
                     <em>
-                      {formatStdDateRange(startDate, endDate)}, {location}
+                      {formatStdDateRange(startDate, endDate, appTimeZone)}, {location}
                     </em>
                   </p>
                 </div>

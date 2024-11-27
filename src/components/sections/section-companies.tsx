@@ -29,7 +29,7 @@ const styles = {
   ctaButton: cva('w-[180px]'),
 
   companies: cva('flex flex-wrap gap-2 md:gap-4 items-center justify-center'),
-  company: cva('')
+  company: cva('w-[150px]')
 }
 
 type SectionCompaniesRef = HTMLDivElement
@@ -80,7 +80,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
                 darkSrc={company.darkSrc}
                 lightSrc={company.lightSrc}
                 alt={`Logo of ${company.name}`}
-                width={150}
+                width={200}
                 height={50}
               />
             </Link>

@@ -1,9 +1,9 @@
 import { simpleDateFormat } from '@/constants/date'
-import { format } from 'date-fns'
+import { format } from 'date-fns-tz'
 
-const formatStdDateRange = (startDate: Date, endDate: Date) => {
-  const startDateStr = format(startDate, simpleDateFormat)
-  const endDateStr = endDate ? format(endDate, simpleDateFormat) : 'Present'
+const formatStdDateRange = (startDate: Date, endDate: Date, timeZone: string) => {
+  const startDateStr = format(startDate, simpleDateFormat, { timeZone })
+  const endDateStr = endDate ? format(endDate, simpleDateFormat, { timeZone }) : 'Present'
 
   return `${startDateStr} to ${endDateStr}`
 }

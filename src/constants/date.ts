@@ -1,3 +1,5 @@
 const simpleDateFormat = 'MMM yyyy'
 
-export { simpleDateFormat }
+const appTimeZone = 'America/Toronto'
+
+export { simpleDateFormat, appTimeZone }

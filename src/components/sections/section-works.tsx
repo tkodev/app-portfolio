@@ -6,6 +6,7 @@ import { Card, CardDesc, CardHeader, CardTitle, CardImage } from '@/components/m
 import { Section } from '@/components/molecules/section'
 import { SearchProjects } from '@/components/organisms/search-projects'
 import { textStyles } from '@/components/tokens/text'
+import { appTimeZone } from '@/constants/date'
 import { projectEntries, projectIds } from '@/constants/works'
 import { ProjectId, ProjectEntry } from '@/types/works'
 import { formatStdDateRange } from '@/utils/date'
@@ -73,7 +74,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
                 <CardImage aspect="video" mode="dark" position="top" src={imageSrc}>
                   <CardTitle>{title}</CardTitle>
                   <CardDesc>
-                    <em>{formatStdDateRange(startDate, endDate)}</em>
+                    <em>{formatStdDateRange(startDate, endDate, appTimeZone)}</em>
                   </CardDesc>
                   <CardDesc>{subtitle}</CardDesc>
                   <CardDesc className={cn(styles.skills())}>
@@ -106,7 +107,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
                     <CardHeader>
                       <CardTitle>{title}</CardTitle>
                       <CardDesc>
-                        <em>{formatStdDateRange(startDate, endDate)}</em>
+                        <em>{formatStdDateRange(startDate, endDate, appTimeZone)}</em>
                       </CardDesc>
                       <CardDesc>{subtitle}</CardDesc>
                       <CardDesc className={cn(styles.skills())}>
