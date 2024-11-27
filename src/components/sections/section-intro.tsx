@@ -45,7 +45,7 @@ const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref)
       ref={ref}
       className={cn(styles.root({ className }))}
       width="full"
-      bg={<Bg variant="sand" attach="fixed" />}
+      bg={<Bg variant="sand" attach="local" />}
       {...rest}
     >
       <div className={cn(styles.left())}>

@@ -50,7 +50,7 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
       ref={ref}
       className={cn(styles.root({ className }))}
       width="narrow"
-      bg={<Bg variant="sand" attach="fixed" />}
+      bg={<Bg variant="sand" attach="local" />}
       {...rest}
     >
       <div className={cn(styles.col())}>
