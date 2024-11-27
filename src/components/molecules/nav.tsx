@@ -7,7 +7,13 @@ import { Icon } from '../atoms/icon'
 
 const styles = {
   root: cva('flex items-center gap-2'),
-  icon: cva('-mx-2')
+  item: cva('', {
+    variants: {
+      isGhost: {
+        true: '-mx-2'
+      }
+    }
+  })
 }
 
 type NavRef = HTMLDivElement
@@ -22,24 +28,30 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
   return (
     <nav ref={ref} className={cn(styles.root({ className }))} {...rest}>
       {items.map((props, index) => {
-        if (props.href === undefined && !!props.icon) {
-          const { icon, isHidden } = props
-          if (isHidden) return null
-          return <Icon key={`nav-item-${index}`} className={cn(styles.icon())} icon={icon} />
-        }
-        if (props.href !== undefined) {
-          const { href, name, icon, isHidden, ...rest } = props
-          const isExternal = !href.startsWith('/') || href.endsWith('.pdf')
-          if (isHidden) return null
-          return (
-            <Button key={`nav-item-${index}`} {...rest} asChild>
-              <Link href={href} target={isExternal ? '_blank' : undefined}>
-                <Icon icon={icon} />
-                {name}
-              </Link>
-            </Button>
-          )
-        }
+        const { href, name, icon, isHidden, variant, ...rest } = props
+        const isExternal = href && (!href.startsWith('/') || href.endsWith('.pdf'))
+        if (isHidden) return null
+
+        return href ? (
+          <Button
+            key={`nav-item-${index}`}
+            variant={variant}
+            className={cn(styles.item({ isGhost: variant === 'ghost' }))}
+            {...rest}
+            asChild
+          >
+            <Link href={href} target={isExternal ? '_blank' : undefined}>
+              <Icon icon={icon} />
+              {name}
+            </Link>
+          </Button>
+        ) : (
+          <Icon
+            key={`nav-item-${index}`}
+            icon={icon}
+            className={cn(styles.item({ isGhost: variant === 'ghost' }))}
+          />
+        )
       })}
       {children}
     </nav>

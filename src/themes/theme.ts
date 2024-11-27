@@ -71,9 +71,9 @@ const typography: Theme = {
     '7xl': ['4.5rem', { lineHeight: '4.5rem' }],
     '8xl': ['6rem', { lineHeight: '6rem' }],
     '9xl': ['8rem', { lineHeight: '8rem' }],
-    tagline: [pxToRem(24), { lineHeight: pxToRem(24 + 8) }],
-    subtitle: [pxToRem(32), { lineHeight: pxToRem(32 + 8) }],
-    title: [pxToRem(40), { lineHeight: pxToRem(40 + 8) }]
+    h3: [pxToRem(24), { lineHeight: pxToRem(24 + 8) }],
+    h2: [pxToRem(32), { lineHeight: pxToRem(32 + 8) }],
+    h1: [pxToRem(40), { lineHeight: pxToRem(40 + 8) }]
   },
   fontFamily: {
     sans: ['var(--font-sans)', ...fontFamily.sans],
