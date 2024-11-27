@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { Github, Linkedin } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Bg } from '@/components/atoms/bg'
@@ -6,8 +8,6 @@ import { Icon } from '@/components/atoms/icon'
 import { Logo } from '@/components/atoms/logo'
 import { Section } from '@/components/molecules/section'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import { Github, Linkedin } from 'lucide-react'
-import Link from 'next/link'
 
 const styles = {
   root: cva([

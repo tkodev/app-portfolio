@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { DraftingCompass, Linkedin } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
@@ -7,8 +9,6 @@ import { Section } from '@/components/molecules/section'
 import { textStyles } from '@/components/tokens/text'
 import { companyEntries, companyIds } from '@/constants/works'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import { DraftingCompass, Linkedin } from 'lucide-react'
-import Link from 'next/link'
 
 const styles = {
   root: cva('flex flex-col justify-center px-8 sm:px-16 gap-8 text-center'),

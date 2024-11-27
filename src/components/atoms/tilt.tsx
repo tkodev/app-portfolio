@@ -1,9 +1,9 @@
 'use client'
 
+import { Slot } from '@radix-ui/react-slot'
 import { HTMLAttributes, forwardRef } from 'react'
 import ReactTilt from 'react-parallax-tilt'
 import { cn } from '@/utils/theme'
-import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const styles = {

@@ -1,7 +1,4 @@
-import { HTMLAttributes, FC } from 'react'
-import { Themer } from '@/components/atoms/themer'
-import { NavEntry } from '@/types/layout'
-import { cva, cn, type VariantProps } from '@/utils/theme'
+import Link from 'next/link'
 import {
   ChevronUpIcon,
   LinkedinIcon,
@@ -11,7 +8,10 @@ import {
   FileUserIcon,
   SunMoonIcon
 } from 'lucide-react'
-import Link from 'next/link'
+import { HTMLAttributes, FC } from 'react'
+import { Themer } from '@/components/atoms/themer'
+import { NavEntry } from '@/types/layout'
+import { cva, cn, type VariantProps } from '@/utils/theme'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
 import { Nav } from '../molecules/nav'

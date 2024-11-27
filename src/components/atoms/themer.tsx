@@ -1,9 +1,9 @@
 'use client'
 
+import { Slot } from '@radix-ui/react-slot'
 import { forwardRef, useCallback, MouseEvent, ButtonHTMLAttributes } from 'react'
 import { useTheme } from '@/hooks/theme'
 import { cn } from '@/utils/theme'
-import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const styles = {

@@ -1,10 +1,10 @@
+import Link from 'next/link'
+import { ChevronRightIcon, DotsHorizontalIcon } from '@radix-ui/react-icons'
+import { Slot } from '@radix-ui/react-slot'
 import { ComponentPropsWithoutRef, ComponentProps, ReactNode, forwardRef, Fragment } from 'react'
 import { Icon } from '@/components/atoms/icon'
 import { NavEntry } from '@/types/layout'
 import { cn, cva } from '@/utils/theme'
-import { ChevronRightIcon, DotsHorizontalIcon } from '@radix-ui/react-icons'
-import { Slot } from '@radix-ui/react-slot'
-import Link from 'next/link'
 
 const styles = {
   breadcrumbList: cva(

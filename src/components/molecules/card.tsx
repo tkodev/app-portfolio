@@ -1,7 +1,7 @@
+import { Slot } from '@radix-ui/react-slot'
 import { forwardRef, HTMLAttributes } from 'react'
 import { ThemeMode } from '@/types/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import { Slot } from '@radix-ui/react-slot'
 
 const styles = {
   card: cva([

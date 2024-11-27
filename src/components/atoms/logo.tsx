@@ -1,8 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import Image from 'next/image'
 
 const styles = {
   root: cva('h-auto w-[72px] relative'),

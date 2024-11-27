@@ -1,8 +1,8 @@
+import Link from 'next/link'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Button } from '@/components/atoms/button'
 import { NavEntry } from '@/types/layout'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import Link from 'next/link'
 import { Icon } from '../atoms/icon'
 
 const styles = {

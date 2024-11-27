@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { DraftingCompass, Linkedin } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
@@ -11,8 +13,6 @@ import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { differenceInCalendarYears } from 'date-fns'
 import { fromZonedTime } from 'date-fns-tz'
-import { DraftingCompass, Linkedin } from 'lucide-react'
-import Link from 'next/link'
 
 const styles = {
   root: cva('flex flex-col justify-center px-8 sm:px-16 gap-8 text-center'),

@@ -1,5 +1,5 @@
-import { cva, cn } from '@/utils/theme'
 import Image from 'next/image'
+import { cva, cn } from '@/utils/theme'
 
 const styles = {
   root: cva(

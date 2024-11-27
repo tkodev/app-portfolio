@@ -1,12 +1,12 @@
 'use client'
 
+import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { type DialogProps } from '@radix-ui/react-dialog'
+import { X } from 'lucide-react'
 import { ElementRef, forwardRef, ComponentPropsWithoutRef, HTMLAttributes } from 'react'
 import { Hidden } from '@/components/atoms/hidden'
 import { Icon } from '@/components/atoms/icon'
 import { cn, cva } from '@/utils/theme'
-import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { type DialogProps } from '@radix-ui/react-dialog'
-import { X } from 'lucide-react'
 
 const styles = {
   overlay: cva(

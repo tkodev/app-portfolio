@@ -1,8 +1,4 @@
-import { HTMLAttributes, FC } from 'react'
-import { Logo } from '@/components/atoms/logo'
-import { Search } from '@/components/organisms/search'
-import { NavEntry } from '@/types/layout'
-import { cva, cn, type VariantProps } from '@/utils/theme'
+import Link from 'next/link'
 import {
   DraftingCompassIcon,
   DotIcon,
@@ -10,7 +6,11 @@ import {
   NotebookPenIcon,
   PaletteIcon
 } from 'lucide-react'
-import Link from 'next/link'
+import { HTMLAttributes, FC } from 'react'
+import { Logo } from '@/components/atoms/logo'
+import { Search } from '@/components/organisms/search'
+import { NavEntry } from '@/types/layout'
+import { cva, cn, type VariantProps } from '@/utils/theme'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
 import { Intro } from '../molecules/intro'

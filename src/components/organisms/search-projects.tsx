@@ -1,13 +1,13 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+import { SearchIcon, XIcon } from 'lucide-react'
 import { forwardRef, HTMLAttributes, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Input } from '@/components/atoms/input'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import { SearchIcon, XIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
 
 const styles = {
   root: cva('grid grid-cols-[1fr_auto_auto] gap-2')

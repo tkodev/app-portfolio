@@ -1,6 +1,6 @@
+import { Slot } from '@radix-ui/react-slot'
 import { ButtonHTMLAttributes, forwardRef } from 'react'
 import { cn } from '@/utils/theme'
-import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const styles = {

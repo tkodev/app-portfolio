@@ -1,6 +1,6 @@
+import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react'
 import { cn, cva } from '@/utils/theme'
-import * as AvatarPrimitive from '@radix-ui/react-avatar'
 
 const styles = {
   avatar: cva(

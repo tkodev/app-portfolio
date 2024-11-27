@@ -1,9 +1,9 @@
 import fluid from 'fluid-tailwind'
 import twGradientMaskImage from 'tailwind-gradient-mask-image'
 import { Config } from 'tailwindcss'
+import twAnimate from 'tailwindcss-animate'
 import defaultTheme from 'tailwindcss/defaultTheme'
 import { fontFamily } from 'tailwindcss/defaultTheme'
-import twAnimate from 'tailwindcss-animate'
 import { Theme } from '../types/theme'
 import { pxToRem } from '../utils/theme'
 
