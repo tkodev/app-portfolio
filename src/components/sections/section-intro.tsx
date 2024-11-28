@@ -12,7 +12,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva([
     'grid items-center',
-    'grid-cols-1 gap-8 px-8',
+    'grid-cols-1 gap-2 px-8',
     'lg:grid-cols-2 lg:gap-24',
     'xl:grid-cols-2 xl:gap-32'
   ]),
@@ -24,7 +24,7 @@ const styles = {
   content: cva('max-w-[480px] w-full flex flex-col gap-4 lg:gap-6 justify-center'),
 
   breadcrumbs: cva('justify-center lg:justify-start'),
-  divider: cva('border-t border-border my-4 hidden md:block'),
+  divider: cva('border-t border-border my-2 md:my-4'),
   logo: cva('w-[150px]'),
   title: cva('text-h1 font-alliance-no2'),
   cta: cva('flex justify-center lg:justify-start flex-wrap gap-4')
