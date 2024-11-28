@@ -110,6 +110,10 @@ const utilities: Theme = {
     md: 'var(--radius)',
     lg: 'calc(var(--radius) + 0.25rem)',
     xl: 'calc(var(--radius) + 0.50rem)'
+  },
+  opacity: {
+    ...defaultTheme.opacity,
+    '2.5': '0.025'
   }
 }
 

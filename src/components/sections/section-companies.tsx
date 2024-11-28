@@ -43,7 +43,7 @@ const SectionCompanies = forwardRef<SectionCompaniesRef, SectionCompaniesProps>(
       ref={ref}
       className={cn(styles.root({ className }))}
       width="narrow"
-      bg={<Bg variant="noise" />}
+      bg={<Bg variant="gradient" />}
       {...rest}
     >
       <div className={cn(styles.col())}>
