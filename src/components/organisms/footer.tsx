@@ -17,9 +17,10 @@ import { Icon } from '../atoms/icon'
 import { Nav } from '../molecules/nav'
 
 const styles = {
-  root: cva([
-    'fixed bottom-0 left-0 bg-gradient-to-t from-background/75 via-background/50 to-transparent',
-    'w-full h-[96px] z-10'
+  root: cva(['w-full h-auto z-10', 'fixed bottom-0 left-0']),
+  fade: cva([
+    'w-full h-[104px]',
+    'fixed bottom-0 left-0 bg-background/75 backdrop-filter backdrop-blur-xl gradient-mask-t-0'
   ]),
   container: cva([
     'fixed bottom-4 left-1/2 -translate-x-1/2 mx-auto px-4',
@@ -72,6 +73,7 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>
+      <div className={cn(styles.fade())} />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>

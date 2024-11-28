@@ -18,16 +18,17 @@ import { Intro } from '../molecules/intro'
 import { Nav } from '../molecules/nav'
 
 const styles = {
-  root: cva([
-    'fixed top-0 left-0 bg-gradient-to-b from-background/75 via-background/50 to-transparent',
-    'w-full h-[96px] z-10'
+  root: cva(['w-full h-auto z-10', 'fixed top-0 left-0']),
+  fade: cva([
+    'w-full h-[104px]',
+    'fixed top-0 left-0 bg-background/75 backdrop-filter backdrop-blur-xl gradient-mask-b-0'
   ]),
   container: cva([
-    'fixed top-4 left-1/2 -translate-x-1/2 mx-auto px-4',
-    'max-w-[1280px] w-full h-auto z-10'
+    'max-w-[1280px] w-full h-auto',
+    'fixed top-4 left-1/2 -translate-x-1/2 mx-auto px-4'
   ]),
   bar: cva([
-    'h-16 flex items-center justify-between px-2',
+    'w-full h-16 flex items-center justify-between px-2',
     'rounded-full bg-background/30 shadow-md border border-foreground/15',
     'backdrop-filter backdrop-blur-lg'
   ]),
@@ -56,6 +57,7 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
+      <div className={cn(styles.fade())} />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
