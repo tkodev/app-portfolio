@@ -32,10 +32,8 @@ const styles = {
   }),
   ctaButton: cva('w-[180px]'),
 
-  jobs: cva('flex flex-col text-left'),
-  job: cva(
-    'grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-6 pl-8 border-b border-foreground/30'
-  ),
+  jobs: cva('flex flex-col text-left divide-y divide-border'),
+  job: cva('grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-8'),
   company: cva('hidden md:block')
 }
 

@@ -11,11 +11,16 @@ import { pxToRem } from '../utils/theme'
 
 const screens: Theme = {
   screens: {
+    // base
+    xs: pxToRem(480),
     sm: pxToRem(640),
     md: pxToRem(768),
     lg: pxToRem(1024),
     xl: pxToRem(1280),
-    '2xl': pxToRem(1400)
+    // extended
+    '2xl': pxToRem(1440),
+    '3xl': pxToRem(1536),
+    '4xl': pxToRem(1920)
   }
 }
 
@@ -60,19 +65,18 @@ const colors: Theme = {
 
 const typography: Theme = {
   fontSize: {
-    xs: ['0.75rem', { lineHeight: '1rem' }],
-    sm: ['0.875rem', { lineHeight: '1.25rem' }],
-    base: ['1rem', { lineHeight: '1.5rem' }],
-    lg: ['1.125rem', { lineHeight: '1.75rem' }],
-    xl: ['1.25rem', { lineHeight: '1.75rem' }],
-    '2xl': ['1.5rem', { lineHeight: '2rem' }],
-    '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-    '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-    '5xl': ['3rem', { lineHeight: '3rem' }],
-    '6xl': ['3.75rem', { lineHeight: '3.75rem' }],
-    '7xl': ['4.5rem', { lineHeight: '4.5rem' }],
-    '8xl': ['6rem', { lineHeight: '6rem' }],
-    '9xl': ['8rem', { lineHeight: '8rem' }],
+    // tw defaults in rem
+    xs: [pxToRem(12), { lineHeight: pxToRem(12 * 1.5) }],
+    sm: [pxToRem(14), { lineHeight: pxToRem(14 * 1.5) }],
+    base: [pxToRem(16), { lineHeight: pxToRem(16 * 1.5) }],
+    lg: [pxToRem(18), { lineHeight: pxToRem(18 * 1.5) }],
+    xl: [pxToRem(20), { lineHeight: pxToRem(20 * 1.5) }],
+    '2xl': [pxToRem(24), { lineHeight: pxToRem(24 * 1.5) }],
+    '3xl': [pxToRem(30), { lineHeight: pxToRem(30 * 1.5) }],
+    '4xl': [pxToRem(36), { lineHeight: pxToRem(36 * 1.5) }],
+    '5xl': [pxToRem(48), { lineHeight: pxToRem(48 * 1.5) }],
+    '6xl': [pxToRem(64), { lineHeight: pxToRem(64 * 1.5) }],
+    // custom
     h3: [pxToRem(24), { lineHeight: pxToRem(24 + 8) }],
     h2: [pxToRem(32), { lineHeight: pxToRem(32 + 8) }],
     h1: [pxToRem(40), { lineHeight: pxToRem(40 + 8) }]
