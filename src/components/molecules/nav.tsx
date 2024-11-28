@@ -6,14 +6,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 import { Icon } from '../atoms/icon'
 
 const styles = {
-  root: cva('flex items-center gap-2'),
-  item: cva('', {
-    variants: {
-      isGhost: {
-        true: '-mx-2'
-      }
-    }
-  })
+  root: cva('flex items-center gap-2')
 }
 
 type NavRef = HTMLDivElement
@@ -33,24 +26,14 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
         if (isHidden) return null
 
         return href ? (
-          <Button
-            key={`nav-item-${index}`}
-            variant={variant}
-            className={cn(styles.item({ isGhost: variant === 'ghost' }))}
-            {...rest}
-            asChild
-          >
+          <Button key={`nav-item-${index}`} variant={variant} {...rest} asChild>
             <Link href={href} target={isExternal ? '_blank' : undefined}>
               <Icon icon={icon} />
               {name}
             </Link>
           </Button>
         ) : (
-          <Icon
-            key={`nav-item-${index}`}
-            icon={icon}
-            className={cn(styles.item({ isGhost: variant === 'ghost' }))}
-          />
+          <Icon key={`nav-item-${index}`} icon={icon} />
         )
       })}
       {children}

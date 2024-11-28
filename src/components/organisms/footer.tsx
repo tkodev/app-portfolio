@@ -41,25 +41,25 @@ const navItems: NavEntry[] = [
   {
     href: 'https://www.linkedin.com/in/tkodev/',
     icon: LinkedinIcon,
-    variant: 'secondary',
+    variant: 'ghost',
     size: 'icon'
   },
   {
     href: 'https://github.com/tkodev',
     icon: GithubIcon,
-    variant: 'secondary',
+    variant: 'ghost',
     size: 'icon'
   },
   {
     href: 'mailto:tony@tko.dev',
     icon: MailIcon,
-    variant: 'secondary',
+    variant: 'ghost',
     size: 'icon'
   },
   {
     href: '/files/tony-ko-resume-q1-2024.pdf',
     icon: FileUserIcon,
-    variant: 'secondary',
+    variant: 'ghost',
     size: 'icon'
   },
   { icon: DotIcon }
@@ -75,7 +75,7 @@ const Footer: FC<FooterProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Button variant="secondary" asChild>
+            <Button variant="ghost" asChild>
               <Link href="#">
                 <Icon icon={ChevronUpIcon} /> <span className={cn(styles.label())}>Top</span>
               </Link>
@@ -84,7 +84,7 @@ const Footer: FC<FooterProps> = (props) => {
           <div className={cn(styles.right())}>
             <Nav items={navItems}>
               <Themer>
-                <Button variant="secondary" size="icon">
+                <Button variant="ghost" size="icon">
                   <Icon icon={SunMoonIcon} />
                 </Button>
               </Themer>

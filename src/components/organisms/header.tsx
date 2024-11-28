@@ -41,9 +41,9 @@ const styles = {
 }
 
 const navItems: NavEntry[] = [
-  { href: '/works', name: 'Works', icon: DraftingCompassIcon, variant: 'secondary' },
-  { href: '/crafts', name: 'Crafts', icon: PaletteIcon, variant: 'secondary' },
-  { href: '/blog', name: 'Blog', icon: NotebookPenIcon, variant: 'secondary', isHidden: true },
+  { href: '/works', name: 'Works', icon: DraftingCompassIcon, variant: 'ghost' },
+  { href: '/crafts', name: 'Crafts', icon: PaletteIcon, variant: 'ghost' },
+  { href: '/blog', name: 'Blog', icon: NotebookPenIcon, variant: 'ghost', isHidden: true },
   { icon: DotIcon, isHidden: true }
 ]
 
