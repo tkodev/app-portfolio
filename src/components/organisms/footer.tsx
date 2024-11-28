@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import {
-  ChevronUpIcon,
   LinkedinIcon,
   GithubIcon,
   MailIcon,
   DotIcon,
   FileUserIcon,
-  SunMoonIcon
+  SunMoonIcon,
+  CopyrightIcon
 } from 'lucide-react'
 import { HTMLAttributes, FC } from 'react'
 import { Themer } from '@/components/atoms/themer'
@@ -20,7 +20,7 @@ const styles = {
   root: cva(['w-full h-auto z-10', 'fixed bottom-0 left-0']),
   fade: cva([
     'w-full h-[104px]',
-    'fixed bottom-0 left-0 bg-background/75 backdrop-filter backdrop-blur-xl gradient-mask-t-0'
+    'fixed -bottom-[2px] left-0 bg-background/75 backdrop-filter backdrop-blur-xl gradient-mask-t-0'
   ]),
   container: cva([
     'fixed bottom-4 left-1/2 -translate-x-1/2 mx-auto px-4',
@@ -32,10 +32,10 @@ const styles = {
     'backdrop-filter backdrop-blur-lg'
   ]),
 
-  left: cva('h-full flex items-center px-2'),
-  right: cva('h-full flex items-center px-2 overflow-x-auto no-scrollbar'),
+  left: cva('h-full flex items-center px-2 gap-2'),
+  right: cva('h-full flex items-center px-2 gap-2 overflow-x-auto no-scrollbar'),
 
-  label: cva('hidden md:inline')
+  label: cva('hidden xs:block text-sm')
 }
 
 const navItems: NavEntry[] = [
@@ -71,17 +71,20 @@ type FooterProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.r
 const Footer: FC<FooterProps> = (props) => {
   const { className, ...rest } = props
 
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.fade())} />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar())}>
           <div className={cn(styles.left())}>
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" size="icon" asChild>
               <Link href="#">
-                <Icon icon={ChevronUpIcon} /> <span className={cn(styles.label())}>Top</span>
+                <Icon icon={CopyrightIcon} />{' '}
               </Link>
             </Button>
+            <span className={cn(styles.label())}>{currentYear} Tony Ko</span>
           </div>
           <div className={cn(styles.right())}>
             <Nav items={navItems}>

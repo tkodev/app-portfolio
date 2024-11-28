@@ -21,7 +21,7 @@ const styles = {
   root: cva(['w-full h-auto z-10', 'fixed top-0 left-0']),
   fade: cva([
     'w-full h-[104px]',
-    'fixed top-0 left-0 bg-background/75 backdrop-filter backdrop-blur-xl gradient-mask-b-0'
+    'fixed -top-[2px] left-0 bg-background/75 backdrop-filter backdrop-blur-xl gradient-mask-b-0'
   ]),
   container: cva([
     'max-w-[1280px] w-full h-auto',
@@ -33,12 +33,12 @@ const styles = {
     'backdrop-filter backdrop-blur-lg'
   ]),
 
-  left: cva('h-full flex items-center px-2'),
-  right: cva('h-full flex items-center px-2 overflow-x-auto no-scrollbar'),
+  left: cva('h-full flex items-center px-2 gap-2'),
+  right: cva('h-full flex items-center px-2 gap-2 overflow-x-auto no-scrollbar'),
 
-  thumb: cva('hidden md:block'),
+  thumb: cva('hidden xs:block'),
   logo: cva('mx-2 sm:mx-4 md:mx-8'),
-  intro: cva('hidden md:block')
+  intro: cva('hidden sm:block')
 }
 
 const navItems: NavEntry[] = [

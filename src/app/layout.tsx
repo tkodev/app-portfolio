@@ -12,7 +12,7 @@ import '../themes/theme-colors.css'
 import '../themes/theme-utils.css'
 
 const styles = {
-  html: cva('w-full h-full'),
+  html: cva('w-full h-full scroll-smooth'),
   body: cva('w-full h-full bg-background text-foreground font-geist-sans text-base font-normal')
 }
 
