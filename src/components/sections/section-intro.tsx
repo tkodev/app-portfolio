@@ -12,7 +12,8 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva([
     'grid items-center',
-    'grid-cols-1 gap-2 px-8',
+    'grid-cols-1 gap-4 px-8',
+    'md:grid-cols-1 sm:gap-8',
     'lg:grid-cols-2 lg:gap-24',
     'xl:grid-cols-2 xl:gap-32'
   ]),
