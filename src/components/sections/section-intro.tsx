@@ -24,7 +24,7 @@ const styles = {
   content: cva('max-w-[480px] w-full flex flex-col gap-4 lg:gap-6 justify-center'),
 
   breadcrumbs: cva('justify-center lg:justify-start'),
-  divider: cva('border-t border-border my-4'),
+  divider: cva('border-t border-border my-4 hidden md:block'),
   logo: cva('w-[150px]'),
   title: cva('text-h1 font-alliance-no2'),
   cta: cva('flex justify-center lg:justify-start flex-wrap gap-4')
