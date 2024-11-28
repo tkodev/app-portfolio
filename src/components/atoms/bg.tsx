@@ -14,7 +14,7 @@ const styles = {
           'dark:bg-[url(/images/bg/sand/dark-y@1x.jpg)] dark:md:bg-[url(/images/bg/sand/dark-x@1x.jpg)]',
           'opacity-50'
         ],
-        noise: ['bg-[url(/images/bg/noise/noise@1x.gif)]', 'pointer-events-none opacity-2.5 z-50']
+        noise: ['bg-[url(/images/bg/noise/noise@1x.gif)]', 'opacity-2.5']
       },
       size: {
         cover: 'bg-cover',
@@ -25,12 +25,16 @@ const styles = {
         local: 'bg-local',
         fixed: 'bg-fixed',
         scroll: 'bg-scroll'
+      },
+      overlay: {
+        true: 'fixed top-0 left-0 pointer-events-none z-50'
       }
     },
     defaultVariants: {
       variant: 'sand',
       size: 'cover',
-      attach: 'local'
+      attach: 'local',
+      overlay: false
     }
   })
 }
@@ -39,10 +43,14 @@ type BgRef = HTMLDivElement
 type BgProps = HTMLAttributes<BgRef> & VariantProps<typeof styles.root>
 
 const Bg = forwardRef<BgRef, BgProps>((props, ref) => {
-  const { variant, size, attach, className, ...rest } = props
+  const { variant, size, attach, overlay, className, ...rest } = props
 
   return (
-    <div ref={ref} className={cn(styles.root({ variant, size, attach, className }))} {...rest} />
+    <div
+      ref={ref}
+      className={cn(styles.root({ variant, size, attach, overlay, className }))}
+      {...rest}
+    />
   )
 })
 Bg.displayName = 'Bg'

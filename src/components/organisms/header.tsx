@@ -28,7 +28,7 @@ const styles = {
   ]),
   bar: cva([
     'h-16 flex items-center justify-between px-2',
-    'rounded-full bg-background/30 shadow-md border border-border',
+    'rounded-full bg-background/30 shadow-md border border-foreground/15',
     'backdrop-filter backdrop-blur-lg'
   ]),
 
