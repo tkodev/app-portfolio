@@ -35,8 +35,8 @@ const styles = {
   left: cva('h-full flex items-center px-2'),
   right: cva('h-full flex items-center px-2 overflow-x-auto no-scrollbar'),
 
-  thumb: cva(''),
-  logo: cva('mx-4 md:mx-8'),
+  thumb: cva('hidden md:block'),
+  logo: cva('mx-2 sm:mx-4 md:mx-8'),
   intro: cva('hidden md:block')
 }
 
