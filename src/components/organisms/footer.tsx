@@ -23,7 +23,7 @@ const styles = {
   ]),
   container: cva([
     'fixed bottom-4 left-1/2 -translate-x-1/2 mx-auto px-4',
-    'max-w-[800px] w-full h-auto z-10'
+    'max-w-[1200px] w-full h-auto z-10'
   ]),
   bar: cva([
     'h-16 flex items-center justify-between px-2',
@@ -32,7 +32,7 @@ const styles = {
   ]),
 
   left: cva('h-full flex items-center px-2'),
-  right: cva('h-full flex items-center overflow-x-auto px-2 no-scrollbar'),
+  right: cva('h-full flex items-center px-2 overflow-x-auto no-scrollbar'),
 
   label: cva('hidden md:inline')
 }
