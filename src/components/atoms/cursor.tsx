@@ -19,7 +19,8 @@ const Cursor: FC<CursorProps> = (props) => {
       outerScale={1.5}
       outerAlpha={0}
       outerStyle={{
-        border: '1px solid hsl(var(--foreground) / .30)'
+        border: '1px solid hsl(var(--foreground) / .30)',
+        mixBlendMode: 'exclusion'
       }}
       showSystemCursor
       {...rest}

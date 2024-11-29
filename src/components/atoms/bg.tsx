@@ -14,6 +14,14 @@ const styles = {
           'dark:bg-[url(/images/bg/sand/dark-y@1x.jpg)] dark:md:bg-[url(/images/bg/sand/dark-x@1x.jpg)]',
           'opacity-50'
         ],
+        fade: [
+          'bg-[url(/images/bg/fade/light-alt-y@2x.png)] md:bg-[url(/images/bg/fade/light-x@1x.png)]',
+          'dark:bg-[url(/images/bg/fade/dark-alt-y@2x.png)] dark:md:bg-[url(/images/bg/fade/dark-x@1x.png)]'
+        ],
+        texture: [
+          'bg-[url(/images/bg/texture/light-y@1x.png)] md:bg-[url(/images/bg/texture/light-x@1x.png)]',
+          'dark:bg-[url(/images/bg/texture/dark-y@1x.png)] dark:md:bg-[url(/images/bg/texture/dark-x@1x.png)]'
+        ],
         noise: ['bg-[url(/images/bg/noise/noise@1x.gif)]', 'opacity-2.5']
       },
       size: {

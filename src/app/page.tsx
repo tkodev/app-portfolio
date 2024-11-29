@@ -1,14 +1,10 @@
 import { Main } from '@/components/atoms/main'
-import { SectionCompanies } from '@/components/sections/section-companies'
-import { SectionIntro } from '@/components/sections/section-intro'
-import { SectionJobs } from '@/components/sections/section-jobs'
+import { SectionHome } from '@/components/sections/section-home'
 
 const Page = () => {
   return (
     <Main>
-      <SectionIntro id="intro" />
-      <SectionCompanies id="companies" />
-      <SectionJobs id="jobs" />
+      <SectionHome id="intro" />
     </Main>
   )
 }

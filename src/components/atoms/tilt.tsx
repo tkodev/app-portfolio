@@ -7,30 +7,30 @@ import { cn } from '@/utils/theme'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const styles = {
-  root: cva('w-full h-full')
+  root: cva('')
 }
 
 type TiltRef = HTMLElement
 type TiltProps = HTMLAttributes<TiltRef> &
   VariantProps<typeof styles.root> & {
-    className?: string
-    asChild?: boolean
+    factor?: number
   }
 
-const options = {
-  scale: 1.025,
-  tiltReverse: true,
-  tiltMaxAngleX: 15,
-  tiltMaxAngleY: 15,
-  perspective: 5000,
-  transitionSpeed: 2000
-}
-
 const Tilt = forwardRef<TiltRef, TiltProps>((props, ref) => {
-  const { className, ...rest } = props
+  const { factor = 1, className, ...rest } = props
+
+  const options = {
+    scale: 1.025,
+    tiltReverse: true,
+    tiltMaxAngleX: 15 * factor,
+    tiltMaxAngleY: 15 * factor,
+    perspective: 5000 + factor * 1000,
+    transitionSpeed: 2000
+  }
+
   return (
-    <ReactTilt {...options}>
-      <Slot ref={ref} className={cn(styles.root({ className }))} {...rest} />
+    <ReactTilt className={cn(styles.root({ className }))} {...options}>
+      <Slot ref={ref} {...rest} />
     </ReactTilt>
   )
 })

@@ -19,18 +19,27 @@ import { Nav } from '../molecules/nav'
 const styles = {
   root: cva(['w-full h-auto z-10', 'fixed bottom-0 left-0']),
   fade: cva([
-    'w-full h-[104px]',
-    'fixed -bottom-[2px] left-0 bg-background/75 backdrop-filter backdrop-blur-xl gradient-mask-t-0'
+    'w-full h-[128px]',
+    'fixed -bottom-[2px] left-0 bg-background/90 backdrop-filter backdrop-blur-xl gradient-mask-t-10'
   ]),
   container: cva([
     'fixed bottom-4 left-1/2 -translate-x-1/2 mx-auto px-4',
     'max-w-[1280px] w-full h-auto z-10'
   ]),
-  bar: cva([
-    'h-16 flex items-center justify-between px-2',
-    'rounded-full bg-background/30 shadow-sm border border-foreground/15',
-    'backdrop-filter backdrop-blur-lg'
-  ]),
+  bar: cva('h-16 flex items-center justify-between px-2 animate-slide-up', {
+    variants: {
+      variant: {
+        bar: [
+          'rounded-full bg-background/30 shadow-md border border-foreground/15',
+          'backdrop-filter backdrop-blur-lg'
+        ],
+        flat: 'rounded-none bg-transparent shadow-none border-none'
+      }
+    },
+    defaultVariants: {
+      variant: 'flat'
+    }
+  }),
 
   left: cva('h-full flex items-center px-2 gap-2'),
   right: cva('h-full flex items-center px-2 gap-2 overflow-x-auto no-scrollbar'),
@@ -66,10 +75,10 @@ const navItems: NavEntry[] = [
   { icon: DotIcon }
 ]
 
-type FooterProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>
+type FooterProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.bar>
 
 const Footer: FC<FooterProps> = (props) => {
-  const { className, ...rest } = props
+  const { variant, className, ...rest } = props
 
   const currentYear = new Date().getFullYear()
 
@@ -77,7 +86,7 @@ const Footer: FC<FooterProps> = (props) => {
     <footer className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.fade())} />
       <div className={cn(styles.container())}>
-        <div className={cn(styles.bar())}>
+        <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>
             <Button variant="ghost" size="icon" asChild>
               <Link href="#">
