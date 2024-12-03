@@ -27,7 +27,7 @@ const clientEntries: Record<ClientId, ClientEntry> = {
   },
   badal: {
     id: 'badal',
-    name: 'Badal',
+    name: 'Badal.io',
     href: 'https://badal.io/',
     baseSrc: '/images/companies/badal/base@1x.png',
     lightSrc: '/images/companies/badal/light@1x.png',

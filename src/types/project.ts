@@ -27,18 +27,21 @@ type ProjectId =
   | 'toyotaMakeADateContest'
   | 'babyJoggerCanadianCatalogWebsite'
 
+type ProjectRole = 'development' | 'design'
+
 type ProjectEntry = {
   id: ProjectId
-  src?: string
+  src: string
+  roles: ProjectRole[]
   title: string
   subtitle: string
   tagline: string
   desc: string
-  companyKey: ClientId
+  clientId: ClientId
   startDate: Date
   endDate: Date
   skills: string[]
   isFeatured?: boolean
 }
 
-export type { ProjectId, ProjectEntry }
+export type { ProjectRole, ProjectId, ProjectEntry }

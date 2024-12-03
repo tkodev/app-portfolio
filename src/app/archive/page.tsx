@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import { Main } from '@/components/atoms/main'
+import { SectionArchive } from '@/components/sections/section-archive'
 import { SectionContact } from '@/components/sections/section-contact'
-import { SectionShots } from '@/components/sections/section-shots'
 import { PageProps } from '@/types/layout'
 
 const Page: FC<PageProps> = async () => {
   return (
     <Main>
-      <SectionShots id="shots" />
+      <SectionArchive id="archive" />
       <SectionContact id="contact" />
     </Main>
   )

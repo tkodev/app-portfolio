@@ -10,7 +10,9 @@ const styles = {
         sm: 'w-[24px] h-[24px]',
         md: 'w-[32px] h-[32px]',
         lg: 'w-[40px] h-[40px]',
-        xl: 'w-[64px] h-[64px]'
+        xl: 'w-[64px] h-[64px]',
+        '2xl': 'w-[96px] h-[96px]',
+        '3xl': 'w-[128px] h-[128px]'
       }
     },
     defaultVariants: {

@@ -81,7 +81,7 @@ CardFooter.displayName = 'CardFooter'
 type CardImageRef = HTMLDivElement
 type CardImageProps = HTMLAttributes<CardImageRef> &
   VariantProps<typeof styles.cardImage> & {
-    mode: ThemeMode
+    mode?: ThemeMode
     src: string
     asChild?: boolean
   }

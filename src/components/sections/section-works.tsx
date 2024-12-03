@@ -1,128 +1,181 @@
+'use client'
+
+import Link from 'next/link'
+import {
+  BracesIcon,
+  DraftingCompassIcon,
+  MousePointerIcon,
+  LayoutGridIcon,
+  LayoutListIcon,
+  MoveRightIcon,
+  TargetIcon
+} from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
-import { Badge } from '@/components/atoms/badge'
 import { Bg } from '@/components/atoms/bg'
-import { Tilt } from '@/components/atoms/tilt'
-import { Card, CardDesc, CardHeader, CardTitle, CardImage } from '@/components/molecules/card'
-import { SearchProjects } from '@/components/organisms/search-projects'
+import { Button } from '@/components/atoms/button'
+import { Icon } from '@/components/atoms/icon'
+import { CardImage } from '@/components/molecules/card'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from '@/components/molecules/table'
+import { Filter } from '@/components/organisms/filter'
 import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
+import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
 import { projectEntries, projectOrder } from '@/constants/project'
-import { ProjectId, ProjectEntry } from '@/types/project'
+import { useFilter } from '@/hooks/filter'
+import { SelectEntry } from '@/types/layout'
+import { ProjectRole } from '@/types/project'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import MiniSearch from 'minisearch'
 
 const styles = {
-  root: cva('flex flex-col gap-4 overflow-y-visible'),
+  root: cva('flex flex-col justify-center gap-16'),
 
-  row: cva('flex flex-col gap-4'),
-  features: cva('grid grid-cols-1 md:grid-cols-2 gap-4 mb-4'),
-  projects: cva('grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-4'),
+  content: cva([
+    'flex flex-col items-center justify-center gap-8',
+    'lg:flex-row lg:items-center lg:justify-between'
+  ]),
+  cta: cva('flex justify-center'),
 
-  project: cva('break-inside-avoid'),
+  icon: cva('w-auto'),
+  text: cva('lg:w-1/2 lg:order-first flex flex-col gap-4'),
 
-  skills: cva('hidden lg:flex flex-wrap gap-2 ')
+  grid: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
+  project: cva('flex flex-col gap-4'),
+  projectDetail: cva('flex justify-between gap-4'),
+
+  tableTitleHead: cva('w-[40%]'),
+  tableHead: cva('w-[20%]'),
+
+  divider: cva('border-t border-foreground/15'),
+  roles: cva('capitalize')
 }
 
 type SectionWorksRef = HTMLDivElement
-type SectionWorksProps = HTMLAttributes<SectionWorksRef> &
-  VariantProps<typeof styles.root> & {
-    query?: string | string[]
-  }
+type SectionWorksProps = HTMLAttributes<SectionWorksRef> & VariantProps<typeof styles.root>
+
+const filterEntries: SelectEntry[] = [
+  { icon: TargetIcon, name: 'All', value: 'all' },
+  { icon: BracesIcon, name: 'Development', value: 'development' },
+  { icon: MousePointerIcon, name: 'Design', value: 'design' }
+]
+
+const layoutEntries: SelectEntry[] = [
+  { icon: LayoutGridIcon, name: 'Grid', value: 'grid' },
+  { icon: LayoutListIcon, name: 'List', value: 'list' }
+]
 
 const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref) => {
-  const { query, className, ...rest } = props
+  const { className, ...rest } = props
 
-  const maxSkills = 7
-  const searchFields = ['title', 'subtitle', 'tagline', 'desc', 'companyKey', 'skills']
+  const {
+    activeFilterValue,
+    activeLayoutValue,
+    isDefaultFilter,
+    handleFilterClick,
+    handleLayoutClick
+  } = useFilter({
+    filterEntries,
+    layoutEntries
+  })
 
   const orderedProjects = projectOrder.map((key) => projectEntries[key])
-
-  const queries = [query ?? ''].flat()
-  const miniSearch = new MiniSearch<ProjectEntry>({
-    fields: searchFields,
-    storeFields: searchFields
-  })
-  miniSearch.addAll(orderedProjects)
-
   const featuredProjects = orderedProjects.filter((project) => project.isFeatured)
-  const searchProjects = query
-    ? miniSearch
-        .search({ queries })
-        .map((result) => projectEntries[result.id as ProjectId])
-        .filter((project) => !!project)
-    : orderedProjects
+  const filteredProjects = featuredProjects.filter((project) =>
+    !isDefaultFilter ? project.roles.includes(activeFilterValue as ProjectRole) : true
+  )
 
   return (
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      bg={<Bg variant="sand" attach="fixed" />}
+      height="auto"
+      bg={<Bg variant="texture" size="repeat" attach="local" position="top" />}
       {...rest}
     >
-      <div className={cn(styles.row())}>
-        <h2 className={cn(textStyles.h3())}>Featured Projects</h2>
+      <div className={cn(styles.content())}>
+        <div className={cn(styles.icon())}>
+          <Icon icon={DraftingCompassIcon} size="3xl" />
+        </div>
+        <div className={cn(styles.text())}>
+          <h1 className={cn(textStyles.h1())}>Works.</h1>
+          <h2 className={cn(textStyles.h2())}>Innovative Solutions, Real-World Impact.</h2>
+          <p>
+            From modernizing oil rig systems to building Aeroplan’s first browser extension, my
+            portfolio showcases innovative solutions that solve complex challenges. Each project
+            reflects my commitment to scalable, user-friendly design, and my ability to lead teams
+            toward measurable outcomes.
+          </p>
+        </div>
       </div>
-      <div className={cn(styles.features())}>
-        {featuredProjects.map((project) => {
-          const { id, src, title, subtitle, startDate, endDate, skills } = project
-          const imageSrc = src ?? '/images/works/preview.png'
-          return (
-            <Tilt key={`featured-${id}`}>
-              <Card className={cn(styles.project())}>
-                <CardImage aspect="video" mode="dark" position="top" src={imageSrc}>
-                  <CardTitle>{title}</CardTitle>
-                  <CardDesc>
-                    <em>{formatStdDateRange(startDate, endDate, appTimeZone)}</em>
-                  </CardDesc>
-                  <CardDesc>{subtitle}</CardDesc>
-                  <CardDesc className={cn(styles.skills())}>
-                    {skills.slice(0, maxSkills).map((skill) => (
-                      <Badge key={skill} variant="default">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </CardDesc>
-                </CardImage>
-              </Card>
-            </Tilt>
-          )
-        })}
-      </div>
-      <div className={cn(styles.row())}>
-        <h2 className={cn(textStyles.h3())}>Projects</h2>
-      </div>
-      <div className={cn(styles.row())}>
-        <SearchProjects queries={queries} />
-      </div>
-      <div className={cn(styles.projects())}>
-        {!!searchProjects.length
-          ? searchProjects.map((project) => {
-              const { id, src, title, subtitle, startDate, endDate, skills } = project
+      <Filter
+        filterEntries={filterEntries}
+        activeFilterValue={activeFilterValue}
+        onFilterClick={handleFilterClick}
+        layoutEntries={layoutEntries}
+        activeLayoutValue={activeLayoutValue}
+        onLayoutClick={handleLayoutClick}
+      />
+      {activeLayoutValue === 'grid' ? (
+        <div className={cn(styles.grid())}>
+          {filteredProjects.map((projectEntry) => {
+            const { id, roles, src, title, clientId, startDate, endDate } = projectEntry
+            const key = `project-${id}`
+            const client = clientEntries[clientId]
+            return (
+              <div key={key} className={cn(styles.project())}>
+                <CardImage src={src} />
+                <h2 className={cn(textStyles.h3())}>{title}</h2>
+                <hr className={cn(styles.divider())} />
+                <div className={cn(styles.projectDetail())}>
+                  <p className={cn(styles.roles())}>{roles.join(', ')}</p>
+                  <p>{formatStdDateRange(startDate, endDate, appTimeZone)}</p>
+                </div>
+                <p>{client.name}</p>
+              </div>
+            )
+          })}
+        </div>
+      ) : (
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className={cn(styles.tableTitleHead())}>Name</TableHead>
+              <TableHead className={cn(styles.tableHead())}>Type</TableHead>
+              <TableHead className={cn(styles.tableHead())}>Client</TableHead>
+              <TableHead className={cn(styles.tableHead())}>Date</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {filteredProjects.map((projectEntry) => {
+              const { id, title, roles, clientId, startDate, endDate } = projectEntry
+              const key = `project-${id}`
+              const client = clientEntries[clientId]
               return (
-                <Tilt key={`project-${id}`}>
-                  <Card key={`project-${id}`} className={cn(styles.project())}>
-                    {src && <CardImage aspect="video" mode="dark" position="top" src={src} />}
-                    <CardHeader>
-                      <CardTitle>{title}</CardTitle>
-                      <CardDesc>
-                        <em>{formatStdDateRange(startDate, endDate, appTimeZone)}</em>
-                      </CardDesc>
-                      <CardDesc>{subtitle}</CardDesc>
-                      <CardDesc className={cn(styles.skills())}>
-                        {skills.slice(0, maxSkills).map((skill: string) => (
-                          <Badge key={skill} variant="secondary">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </CardDesc>
-                    </CardHeader>
-                  </Card>
-                </Tilt>
+                <TableRow key={key}>
+                  <TableCell>{title}</TableCell>
+                  <TableCell className={cn(styles.roles())}>{roles.join(', ')}</TableCell>
+                  <TableCell>{client.name}</TableCell>
+                  <TableCell>{formatStdDateRange(startDate, endDate, appTimeZone)}</TableCell>
+                </TableRow>
               )
-            })
-          : 'No results found.'}
+            })}
+          </TableBody>
+        </Table>
+      )}
+      <div className={cn(styles.cta())}>
+        <Button size="lg" asChild>
+          <Link href="/archive">
+            Archived Works <Icon icon={MoveRightIcon} size="xs" />
+          </Link>
+        </Button>
       </div>
     </Section>
   )

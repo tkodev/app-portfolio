@@ -1,0 +1,135 @@
+'use client'
+
+import Link from 'next/link'
+import { ArchiveIcon, TargetIcon, BracesIcon, MousePointerIcon, MoveRightIcon } from 'lucide-react'
+import { forwardRef, HTMLAttributes } from 'react'
+import { Bg } from '@/components/atoms/bg'
+import { Button } from '@/components/atoms/button'
+import { Icon } from '@/components/atoms/icon'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from '@/components/molecules/table'
+import { Filter } from '@/components/organisms/filter'
+import { Section } from '@/components/organisms/section'
+import { textStyles } from '@/components/templates/text'
+import { clientEntries } from '@/constants/client'
+import { appTimeZone } from '@/constants/date'
+import { projectEntries, projectOrder } from '@/constants/project'
+import { useFilter } from '@/hooks/filter'
+import { SelectEntry } from '@/types/layout'
+import { ProjectRole } from '@/types/project'
+import { formatStdDateRange } from '@/utils/date'
+import { cn, cva, VariantProps } from '@/utils/theme'
+
+const styles = {
+  root: cva('flex flex-col justify-center gap-16'),
+
+  content: cva([
+    'flex flex-col items-center justify-center gap-8',
+    'lg:flex-row lg:items-center lg:justify-between'
+  ]),
+  cta: cva('flex justify-center'),
+
+  icon: cva('w-auto'),
+  text: cva('lg:w-1/2 lg:order-first flex flex-col gap-4'),
+
+  tableTitleHead: cva('w-[40%]'),
+  tableHead: cva('w-[20%]'),
+
+  roles: cva('capitalize')
+}
+
+type SectionArchiveRef = HTMLDivElement
+type SectionArchiveProps = HTMLAttributes<SectionArchiveRef> & VariantProps<typeof styles.root>
+
+const filterEntries: SelectEntry[] = [
+  { icon: TargetIcon, name: 'All', value: 'all' },
+  { icon: BracesIcon, name: 'Development', value: 'development' },
+  { icon: MousePointerIcon, name: 'Design', value: 'design' }
+]
+
+const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props, ref) => {
+  const { className, ...rest } = props
+
+  const { activeFilterValue, isDefaultFilter, handleFilterClick } = useFilter({
+    filterEntries
+  })
+
+  const orderedProjects = projectOrder.map((key) => projectEntries[key])
+  const archivedProjects = orderedProjects.filter((project) => !project.isFeatured)
+  const filteredProjects = archivedProjects.filter((project) =>
+    !isDefaultFilter ? project.roles.includes(activeFilterValue as ProjectRole) : true
+  )
+
+  return (
+    <Section
+      ref={ref}
+      className={cn(styles.root({ className }))}
+      height="auto"
+      bg={<Bg variant="texture" size="repeat" attach="local" position="top" />}
+      {...rest}
+    >
+      <div className={cn(styles.content())}>
+        <div className={cn(styles.icon())}>
+          <Icon icon={ArchiveIcon} size="3xl" />
+        </div>
+        <div className={cn(styles.text())}>
+          <h1 className={cn(textStyles.h1())}>Archive.</h1>
+          <h2 className={cn(textStyles.h2())}>A Legacy of Innovation.</h2>
+          <p>
+            These archived projects represent key milestones in my career, showcasing innovative
+            solutions and collaborative efforts that have shaped my journey. Though they’ve since
+            been completed or passed on, they highlight my ability to tackle challenges and deliver
+            meaningful results.
+          </p>
+        </div>
+      </div>
+      <Filter
+        filterEntries={filterEntries}
+        activeFilterValue={activeFilterValue}
+        onFilterClick={handleFilterClick}
+      />
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className={cn(styles.tableTitleHead())}>Name</TableHead>
+            <TableHead className={cn(styles.tableHead())}>Type</TableHead>
+            <TableHead className={cn(styles.tableHead())}>Client</TableHead>
+            <TableHead className={cn(styles.tableHead())}>Date</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {filteredProjects.map((projectEntry) => {
+            const { id, title, roles, clientId, startDate, endDate } = projectEntry
+            const key = `project-${id}`
+            const client = clientEntries[clientId]
+            return (
+              <TableRow key={key}>
+                <TableCell>{title}</TableCell>
+                <TableCell className={cn(styles.roles())}>{roles.join(', ')}</TableCell>
+                <TableCell>{client.name}</TableCell>
+                <TableCell>{formatStdDateRange(startDate, endDate, appTimeZone)}</TableCell>
+              </TableRow>
+            )
+          })}
+        </TableBody>
+      </Table>
+      <div className={cn(styles.cta())}>
+        <Button size="lg" asChild>
+          <Link href="/works">
+            Featured Works <Icon icon={MoveRightIcon} size="xs" />
+          </Link>
+        </Button>
+      </div>
+    </Section>
+  )
+})
+SectionArchive.displayName = 'SectionArchive'
+
+export { SectionArchive }
+export type { SectionArchiveProps, SectionArchiveRef }
