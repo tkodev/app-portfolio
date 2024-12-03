@@ -8,6 +8,7 @@ import { Button } from '@/components/atoms/button'
 import { Cross } from '@/components/atoms/cross'
 import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/organisms/section'
+import { textStyles } from '@/components/templates/text'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -44,13 +45,11 @@ const styles = {
     'w-[320px] h-auto lg:w-[200px]',
     'absolute top-[100%] left-1/2 -translate-x-1/2 text-center',
     'sm:top-[80%]',
-    'lg:top-1/2 lg:left-[82%] lg:-translate-y-1/2 lg:translate-x-0 lg:text-left'
+    'lg:top-1/2 lg:left-[82%] lg:-translate-y-1/2 lg:translate-x-0 lg:text-left',
+    'flex flex-col gap-2'
   ]),
 
-  h1: cva(['text-h3 font-alliance-no2 mb-2']),
-  h2: cva(['text-base font-alliance-no2 mb-2']),
-  h3: cva(['text-base font-alliance-no2 mb-4']),
-  cta: cva('')
+  cta: cva('mt-2')
 }
 
 type SectionHomeRef = HTMLDivElement
@@ -77,13 +76,13 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
           </Avatar>
           <Brand className={cn(styles.brand3())} variant="outline" />
           <div className={cn(styles.intro())}>
-            <h1 className={cn(styles.h1())}>
+            <h1 className={cn(textStyles.h3())}>
               Works By <strong>Tony Ko</strong>
             </h1>
-            <h2 className={cn(styles.h2())}>
+            <h2>
               <strong>Staff Software Engineer</strong> & <strong>UI Designer</strong> —
             </h2>
-            <h3 className={cn(styles.h3())}>
+            <h3>
               Based in <em>Toronto, Canada.</em>
             </h3>
             <div className={cn(styles.cta())}>
