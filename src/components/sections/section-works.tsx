@@ -45,7 +45,7 @@ const styles = {
   cta: cva('flex justify-center'),
 
   icon: cva('w-auto'),
-  text: cva('lg:w-1/2 lg:order-first flex flex-col gap-4'),
+  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
 
   grid: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
   project: cva('flex flex-col gap-4'),

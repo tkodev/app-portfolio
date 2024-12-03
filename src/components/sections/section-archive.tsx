@@ -1,11 +1,20 @@
 'use client'
 
 import Link from 'next/link'
-import { ArchiveIcon, TargetIcon, BracesIcon, MousePointerIcon, MoveRightIcon } from 'lucide-react'
+import {
+  ArchiveIcon,
+  TargetIcon,
+  BracesIcon,
+  MousePointerIcon,
+  MoveRightIcon,
+  LayoutGridIcon,
+  LayoutListIcon
+} from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
+import { CardImage } from '@/components/molecules/card'
 import {
   Table,
   TableBody,
@@ -36,11 +45,16 @@ const styles = {
   cta: cva('flex justify-center'),
 
   icon: cva('w-auto'),
-  text: cva('lg:w-1/2 lg:order-first flex flex-col gap-4'),
+  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
+
+  grid: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
+  project: cva('flex flex-col gap-4'),
+  projectDetail: cva('flex justify-between gap-4'),
 
   tableTitleHead: cva('w-[40%]'),
   tableHead: cva('w-[20%]'),
 
+  divider: cva('border-t border-foreground/15'),
   roles: cva('capitalize')
 }
 
@@ -53,11 +67,23 @@ const filterEntries: SelectEntry[] = [
   { icon: MousePointerIcon, name: 'Design', value: 'design' }
 ]
 
+const layoutEntries: SelectEntry[] = [
+  { icon: LayoutListIcon, name: 'List', value: 'list' },
+  { icon: LayoutGridIcon, name: 'Grid', value: 'grid' }
+]
+
 const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props, ref) => {
   const { className, ...rest } = props
 
-  const { activeFilterValue, isDefaultFilter, handleFilterClick } = useFilter({
-    filterEntries
+  const {
+    activeFilterValue,
+    activeLayoutValue,
+    isDefaultFilter,
+    handleFilterClick,
+    handleLayoutClick
+  } = useFilter({
+    filterEntries,
+    layoutEntries
   })
 
   const orderedProjects = projectOrder.map((key) => projectEntries[key])
@@ -93,32 +119,57 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
         filterEntries={filterEntries}
         activeFilterValue={activeFilterValue}
         onFilterClick={handleFilterClick}
+        layoutEntries={layoutEntries}
+        activeLayoutValue={activeLayoutValue}
+        onLayoutClick={handleLayoutClick}
       />
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className={cn(styles.tableTitleHead())}>Name</TableHead>
-            <TableHead className={cn(styles.tableHead())}>Type</TableHead>
-            <TableHead className={cn(styles.tableHead())}>Client</TableHead>
-            <TableHead className={cn(styles.tableHead())}>Date</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
+      {activeLayoutValue === 'grid' ? (
+        <div className={cn(styles.grid())}>
           {filteredProjects.map((projectEntry) => {
-            const { id, title, roles, clientId, startDate, endDate } = projectEntry
+            const { id, roles, src, title, clientId, startDate, endDate } = projectEntry
             const key = `project-${id}`
             const client = clientEntries[clientId]
             return (
-              <TableRow key={key}>
-                <TableCell>{title}</TableCell>
-                <TableCell className={cn(styles.roles())}>{roles.join(', ')}</TableCell>
-                <TableCell>{client.name}</TableCell>
-                <TableCell>{formatStdDateRange(startDate, endDate, appTimeZone)}</TableCell>
-              </TableRow>
+              <div key={key} className={cn(styles.project())}>
+                <CardImage src={src} />
+                <h2 className={cn(textStyles.h3())}>{title}</h2>
+                <hr className={cn(styles.divider())} />
+                <div className={cn(styles.projectDetail())}>
+                  <p className={cn(styles.roles())}>{roles.join(', ')}</p>
+                  <p>{formatStdDateRange(startDate, endDate, appTimeZone)}</p>
+                </div>
+                <p>{client.name}</p>
+              </div>
             )
           })}
-        </TableBody>
-      </Table>
+        </div>
+      ) : (
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className={cn(styles.tableTitleHead())}>Name</TableHead>
+              <TableHead className={cn(styles.tableHead())}>Type</TableHead>
+              <TableHead className={cn(styles.tableHead())}>Client</TableHead>
+              <TableHead className={cn(styles.tableHead())}>Date</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {filteredProjects.map((projectEntry) => {
+              const { id, title, roles, clientId, startDate, endDate } = projectEntry
+              const key = `project-${id}`
+              const client = clientEntries[clientId]
+              return (
+                <TableRow key={key}>
+                  <TableCell>{title}</TableCell>
+                  <TableCell className={cn(styles.roles())}>{roles.join(', ')}</TableCell>
+                  <TableCell>{client.name}</TableCell>
+                  <TableCell>{formatStdDateRange(startDate, endDate, appTimeZone)}</TableCell>
+                </TableRow>
+              )
+            })}
+          </TableBody>
+        </Table>
+      )}
       <div className={cn(styles.cta())}>
         <Button size="lg" asChild>
           <Link href="/works">

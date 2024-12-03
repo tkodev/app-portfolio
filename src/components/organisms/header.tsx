@@ -42,8 +42,8 @@ const styles = {
     }
   }),
 
-  left: cva('h-full flex items-center px-2 gap-4'),
-  right: cva('h-full flex items-center px-2 gap-4 overflow-x-auto no-scrollbar'),
+  left: cva('h-full flex items-center px-2 gap-2'),
+  right: cva('h-full flex items-center px-2 gap-2 overflow-x-auto no-scrollbar'),
 
   thumb: cva('hidden xs:block w-10 h-10'),
   logo: cva('mx-2 sm:mx-4 md:mx-8'),

@@ -5,9 +5,9 @@ import { SelectEntry } from '@/types/layout'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex justify-between gap-4 pb-8 border-b border-foreground/15'),
-  filters: cva('flex gap-4'),
-  layouts: cva('flex gap-4')
+  root: cva('flex justify-between gap-8 pb-8 border-b border-foreground/15 overflow-x-auto'),
+  filters: cva('flex gap-2'),
+  layouts: cva('flex gap-2')
 }
 
 type FilterRef = HTMLDivElement
