@@ -18,7 +18,7 @@ const styles = {
   ]),
 
   text: cva('lg:max-w-[55%] flex flex-col gap-4'),
-  contact: cva('lg:max-w-[480px] flex flex-col gap-4')
+  contact: cva('lg:max-w-[360px] flex flex-wrap gap-4 justify-center lg:justify-end')
 }
 
 type SectionContactRef = HTMLDivElement
