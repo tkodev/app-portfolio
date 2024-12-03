@@ -19,7 +19,7 @@ const styles = {
   ]),
   cta: cva('flex justify-center'),
 
-  text: cva('lg:max-w-[55%]'),
+  text: cva('lg:max-w-[55%] flex flex-col gap-4'),
   clients: cva(
     'lg:max-w-[480px] flex flex-wrap gap-2 md:gap-4 items-center justify-center lg:order-first'
   ),

@@ -17,7 +17,7 @@ const styles = {
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
 
-  text: cva('lg:max-w-[55%]'),
+  text: cva('lg:max-w-[55%] flex flex-col gap-4'),
   contact: cva('lg:max-w-[480px] flex flex-col gap-4')
 }
 
@@ -38,12 +38,12 @@ const SectionContact = forwardRef<SectionContactRef, SectionContactProps>((props
       <div className={cn(styles.content())}>
         <div className={cn(styles.text())}>
           <h2 className={cn(textStyles.h2())}>Let’s Build Something Exceptional Together.</h2>
-          <p className={cn(textStyles.p())}>
+          <p>
             Ready to collaborate or explore new opportunities? I’m open to connections and
             passionate about building impactful software that scales with user needs. Reach out, and
             let’s create something extraordinary.
           </p>
-          <p className={cn(textStyles.p())}>
+          <p>
             <strong>
               * Currently not available for freelance projects. Contact my company via Email.
             </strong>

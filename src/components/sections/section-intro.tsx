@@ -18,7 +18,7 @@ const styles = {
   stats: cva('flex flex-wrap justify-between gap-8 lg:gap-16'),
 
   photo: cva('max-w-[480px] w-full'),
-  text: cva('lg:w-1/2 lg:order-first'),
+  text: cva('lg:w-1/2 lg:order-first flex flex-col gap-4'),
 
   avatar: cva('max-w-[480px] w-full h-full'),
   stat: cva('w-[250px]')
