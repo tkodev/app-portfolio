@@ -38,14 +38,14 @@ const styles = {
   ]),
   avatar: cva([
     'w-[53.5%] h-[53.5%]',
-    'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
     'grayscale-[25%] hover:grayscale hover:scale-105 transition-all duration-1000'
   ]),
   intro: cva([
     'w-[320px] h-auto lg:w-[200px]',
-    'absolute top-[100%] left-1/2 -translate-x-1/2 text-center',
+    'absolute left-1/2 top-[100%] -translate-x-1/2 text-center',
     'sm:top-[80%]',
-    'lg:top-1/2 lg:left-[82%] lg:-translate-y-1/2 lg:translate-x-0 lg:text-left',
+    'lg:left-[82%] lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-0 lg:text-left',
     'flex flex-col gap-2'
   ]),
 

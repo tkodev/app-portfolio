@@ -1,3 +1,4 @@
+import { ForwardRefExoticComponent, SVGProps, RefAttributes } from 'react'
 import { Config } from 'tailwindcss'
 
 type Theme = NonNullable<Config['theme']>
@@ -13,8 +14,8 @@ type FlattenedDictionary = {
 
 type ThemeMode = 'light' | 'dark'
 
-type SvgComponent = React.ForwardRefExoticComponent<
-  Omit<React.SVGProps<SVGSVGElement>, 'ref'> & React.RefAttributes<SVGSVGElement>
+type SvgComponent = ForwardRefExoticComponent<
+  Omit<SVGProps<SVGSVGElement>, 'ref'> & RefAttributes<SVGSVGElement>
 >
 
 export type { NestedTheme, Theme, NestedDictionary, FlattenedDictionary, ThemeMode, SvgComponent }

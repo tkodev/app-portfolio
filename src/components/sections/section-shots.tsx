@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { CameraIcon, MoveRightIcon } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
