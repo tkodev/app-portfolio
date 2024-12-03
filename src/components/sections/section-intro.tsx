@@ -15,13 +15,13 @@ const styles = {
     'flex flex-col items-center justify-center gap-8',
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
-  stats: cva('flex flex-wrap justify-between gap-8 lg:gap-16'),
+  stats: cva('flex flex-wrap justify-between gap-4'),
 
   photo: cva('max-w-[480px] w-full'),
   text: cva('lg:w-1/2 lg:order-first flex flex-col gap-4'),
 
   avatar: cva('max-w-[480px] w-full h-full'),
-  stat: cva('w-[250px]')
+  stat: cva('w-[160px] md:w-[220px] lg:w-[250px]')
 }
 
 type SectionIntroRef = HTMLDivElement
