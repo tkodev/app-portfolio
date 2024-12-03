@@ -21,7 +21,7 @@ const styles = {
   text: cva('lg:w-1/2 lg:order-first flex flex-col gap-4'),
 
   avatar: cva('max-w-[480px] w-full h-full'),
-  stat: cva('w-[160px] md:w-[220px] lg:w-[250px]')
+  stat: cva('w-[160px] md:w-[220px] lg:w-[250px] flex flex-col gap-2')
 }
 
 type SectionIntroRef = HTMLDivElement
