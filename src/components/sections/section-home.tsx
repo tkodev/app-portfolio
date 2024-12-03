@@ -7,7 +7,7 @@ import { Brand } from '@/components/atoms/brand'
 import { Button } from '@/components/atoms/button'
 import { Cross } from '@/components/atoms/cross'
 import { Icon } from '@/components/atoms/icon'
-import { Section } from '@/components/molecules/section'
+import { Section } from '@/components/organisms/section'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -63,7 +63,6 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      width="full"
       bg={<Bg variant="texture" attach="local" />}
       {...rest}
     >
@@ -89,8 +88,8 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
             </h3>
             <div className={cn(styles.cta())}>
               <Button size="default" asChild>
-                <Link href="/about">
-                  About Me <Icon icon={ArrowRightIcon} size="xs" />
+                <Link href="/profile">
+                  Explore Profile <Icon icon={ArrowRightIcon} size="xs" />
                 </Link>
               </Button>
             </div>

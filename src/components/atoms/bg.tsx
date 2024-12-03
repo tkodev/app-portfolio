@@ -7,7 +7,8 @@ const styles = {
       variant: {
         gradient: [
           'bg-[url(/images/bg/gradient/light-alt-y@2x.png)] md:bg-[url(/images/bg/gradient/light-x@2x.png)]',
-          'dark:bg-[url(/images/bg/gradient/dark-alt-y@2x.png)] dark:md:bg-[url(/images/bg/gradient/dark-x@2x.png)]'
+          'dark:bg-[url(/images/bg/gradient/dark-alt-y@2x.png)] dark:md:bg-[url(/images/bg/gradient/dark-x@2x.png)]',
+          'opacity-30'
         ],
         sand: [
           'bg-[url(/images/bg/sand/light-y@1x.jpg)] md:bg-[url(/images/bg/sand/light-x@1x.jpg)]',
@@ -34,6 +35,10 @@ const styles = {
         fixed: 'bg-fixed',
         scroll: 'bg-scroll'
       },
+      position: {
+        center: 'bg-center',
+        top: 'bg-top'
+      },
       overlay: {
         true: 'fixed top-0 left-0 pointer-events-none z-50'
       }
@@ -42,6 +47,7 @@ const styles = {
       variant: 'sand',
       size: 'cover',
       attach: 'local',
+      position: 'center',
       overlay: false
     }
   })

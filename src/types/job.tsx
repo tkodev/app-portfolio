@@ -1,0 +1,23 @@
+import { ClientId } from './client'
+
+type JobId =
+  | 'badalStaffSoftwareEngineer'
+  | 'quantumMobStaffSoftwareEngineer'
+  | 'quantumMobSeniorSoftwareEngineer'
+  | 'quantumMobSoftwareEngineerII'
+  | 'quantumMobSoftwareEngineerI'
+  | 'brandfireIntermediateFrontEndDeveloper'
+  | 'kosInteriorDesignInteriorDesigner'
+
+type JobEntry = {
+  id: JobId
+  companyId: ClientId
+  companyName: string
+  title: string
+  location: string
+  startDate: Date
+  endDate: Date
+  skills: string[]
+}
+
+export type { JobId, JobEntry }

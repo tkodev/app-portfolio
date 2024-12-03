@@ -1,49 +1,4 @@
-type CompanyId =
-  | 'badal'
-  | 'quantumMob'
-  | 'rewardops'
-  | 'brandfire'
-  | 'beyond'
-  | 'peoplesGroup'
-  | 'airCanada'
-  | 'airMiles'
-  | 'toyota'
-  | 'geAppliances'
-  | 'monogram'
-  | 'canadaDry'
-  | 'weiser'
-  | 'toffifee'
-  | 'babyJogger'
-  | 'kosInteriorDesign'
-
-type CompanyEntry = {
-  id: CompanyId
-  name: string
-  href: string
-  baseSrc: string
-  lightSrc: string
-  darkSrc: string
-}
-
-type JobId =
-  | 'badalStaffSoftwareEngineer'
-  | 'quantumMobStaffSoftwareEngineer'
-  | 'quantumMobSeniorSoftwareEngineer'
-  | 'quantumMobSoftwareEngineerII'
-  | 'quantumMobSoftwareEngineerI'
-  | 'brandfireIntermediateFrontEndDeveloper'
-  | 'kosInteriorDesignInteriorDesigner'
-
-type JobEntry = {
-  id: JobId
-  companyId: CompanyId
-  companyName: string
-  title: string
-  location: string
-  startDate: Date
-  endDate: Date
-  skills: string[]
-}
+import { ClientId } from '@/types/client'
 
 type ProjectId =
   | 'beyondModernization'
@@ -79,11 +34,11 @@ type ProjectEntry = {
   subtitle: string
   tagline: string
   desc: string
-  companyKey: CompanyId
+  companyKey: ClientId
   startDate: Date
   endDate: Date
   skills: string[]
   isFeatured?: boolean
 }
 
-export type { CompanyId, CompanyEntry, JobEntry, ProjectId, ProjectEntry }
+export type { ProjectId, ProjectEntry }

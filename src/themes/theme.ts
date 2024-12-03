@@ -71,23 +71,14 @@ const typography: Theme = {
     base: [pxToRem(16), { lineHeight: pxToRem(16 * 1.5) }],
     lg: [pxToRem(18), { lineHeight: pxToRem(18 * 1.5) }],
     xl: [pxToRem(20), { lineHeight: pxToRem(20 * 1.5) }],
-    '2xl': [pxToRem(24), { lineHeight: pxToRem(24 * 1.5) }],
-    '3xl': [pxToRem(30), { lineHeight: pxToRem(30 * 1.5) }],
-    '4xl': [pxToRem(36), { lineHeight: pxToRem(36 * 1.5) }],
-    '5xl': [pxToRem(48), { lineHeight: pxToRem(48 * 1.5) }],
-    '6xl': [pxToRem(64), { lineHeight: pxToRem(64 * 1.5) }],
     // custom
     h3: [pxToRem(24), { lineHeight: pxToRem(24 + 8) }],
     h2: [pxToRem(32), { lineHeight: pxToRem(32 + 8) }],
-    h1: [pxToRem(40), { lineHeight: pxToRem(40 + 8) }]
+    h1: [pxToRem(72), { lineHeight: pxToRem(72 + 8) }]
   },
   fontFamily: {
     sans: ['var(--font-sans)', ...fontFamily.sans],
-    'alliance-no1': [`var(--font-alliance-no1)`],
     'alliance-no2': [`var(--font-alliance-no2)`],
-    carbon: [`var(--font-carbon)`],
-    industry: [`var(--font-industry)`],
-    inter: [`var(--font-inter)`],
     'geist-sans': [`var(--font-geist-sans)`],
     'geist-mono': [`var(--font-geist-mono)`]
   }

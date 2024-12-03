@@ -1,40 +1,31 @@
 import Link from 'next/link'
-import { DraftingCompass, Linkedin } from 'lucide-react'
+import { LinkedinIcon } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Imager } from '@/components/atoms/imager'
-import { Section } from '@/components/molecules/section'
-import { textStyles } from '@/components/tokens/text'
+import { Section } from '@/components/organisms/section'
+import { textStyles } from '@/components/templates/text'
+import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
-import { companyEntries, jobEntries } from '@/constants/works'
+import { jobEntries } from '@/constants/job'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { differenceInCalendarYears } from 'date-fns'
 import { fromZonedTime } from 'date-fns-tz'
 
 const styles = {
-  root: cva('flex flex-col justify-center px-8 sm:px-16 gap-8 text-center'),
+  root: cva('flex flex-col gap-16'),
 
-  col: cva('flex flex-col gap-4 justify-center'),
+  content: cva('flex flex-col items-center justify-center gap-8'),
+  cta: cva('flex justify-center'),
 
-  cta: cva('flex items-center flex-wrap gap-4 justify-center', {
-    variants: {
-      align: {
-        left: 'lg:justify-start',
-        center: 'lg:justify-center'
-      }
-    },
-    defaultVariants: {
-      align: 'center'
-    }
-  }),
-  ctaButton: cva('w-[180px]'),
+  text: cva(''),
+  jobs: cva('w-full flex flex-col divide-y divide-foreground/15'),
 
-  jobs: cva('flex flex-col text-left divide-y divide-foreground/15'),
   job: cva('grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-8'),
-  company: cva('hidden md:block')
+  client: cva('hidden md:block')
 }
 
 type SectionJobsRef = HTMLDivElement
@@ -51,81 +42,68 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      width="narrow"
-      bg={<Bg variant="sand" attach="local" />}
+      height="auto"
+      bg={<Bg variant="texture" attach="local" />}
       {...rest}
     >
-      <div className={cn(styles.col())}>
-        <h2 className={cn(textStyles.h3())}>
-          With{' '}
-          <strong>
-            <u>over {yearsSince} years</u>
-          </strong>{' '}
-          of dedicated experience.
-        </h2>
-        <p>
-          I have built a career on delivering reliable, high-quality software for top North American
-          brands and beyond. My journey has been one of constant growth and learning, advancing from
-          foundational roles to strategic positions as a Senior and Staff Software Engineer. I bring
-          an expert understanding of scalable architecture, cross-platform compatibility, and
-          accessible design, while guiding teams and projects with a steady hand and a passion for
-          mentorship.
-        </p>
-      </div>
-      <div className={cn(styles.jobs())}>
-        {jobEntries.map(
-          ({ companyId, companyName, title, startDate, endDate, location }, index) => {
-            const company = companyEntries[companyId]
-            return (
-              <div key={`job-${index}`} className={cn(styles.job())}>
-                <div>
-                  <p>
-                    <strong>
-                      {title} @ {companyName}
-                    </strong>
-                  </p>
-                  <p>
-                    <em>
-                      {formatStdDateRange(startDate, endDate, appTimeZone)}, {location}
-                    </em>
-                  </p>
-                </div>
-                <div>
-                  {!!company && (
-                    <Link
-                      className={cn(styles.company())}
-                      href={company.href}
-                      key={`company-${companyId}`}
-                      target="_blank"
-                    >
-                      <Imager
-                        darkSrc={company.darkSrc}
-                        lightSrc={company.lightSrc}
-                        alt={`Logo of ${company.name}`}
-                        width={200}
-                        height={50}
-                      />
-                    </Link>
-                  )}
-                </div>
-              </div>
-            )
-          }
-        )}
-      </div>
-      <div className={cn(styles.col())}>
-        <div className={cn(styles.cta())}>
-          <Button className={cn(styles.ctaButton())} size="lg" asChild>
-            <Link href="/works">
-              <Icon icon={DraftingCompass} size="xs" /> View Works
-            </Link>
-          </Button>
-          <Button className={cn(styles.ctaButton())} size="lg" asChild>
-            <Link href="https://www.linkedin.com/in/tkodev/" target="_blank">
-              <Icon icon={Linkedin} size="xs" /> Visit LinkedIn
-            </Link>
-          </Button>
+      <div className={cn(styles.content())}>
+        <div className={cn(styles.text())}>
+          <h2 className={cn(textStyles.h2())}>Driving Impact Through Expertise and Leadership.</h2>
+          <p>
+            With a career spanning over {yearsSince} years, I’ve progressed from foundational roles
+            to Staff Engineer, leading technical strategy, architecture, and team mentorship. I’ve
+            collaborated with companies like Badal.io, Quantum Mob, and Brandfire to build scalable
+            systems and nurture growth within engineering teams.
+          </p>
         </div>
+        <div className={cn(styles.jobs())}>
+          {jobEntries
+            .slice(0, 3)
+            .map(({ companyId, companyName, title, startDate, endDate, location }, index) => {
+              const clientEntry = clientEntries[companyId]
+              return (
+                <div key={`job-${index}`} className={cn(styles.job())}>
+                  <div>
+                    <p>
+                      <strong>
+                        {title} @ {companyName}
+                      </strong>
+                    </p>
+                    <p>
+                      <em>
+                        {formatStdDateRange(startDate, endDate, appTimeZone)} · {location}
+                      </em>
+                    </p>
+                  </div>
+                  <div>
+                    {!!clientEntry && (
+                      <Link
+                        className={cn(styles.client())}
+                        href={clientEntry.href}
+                        key={`company-${companyId}`}
+                        target="_blank"
+                      >
+                        <Imager
+                          darkSrc={clientEntry.darkSrc}
+                          lightSrc={clientEntry.lightSrc}
+                          alt={`Logo of ${clientEntry.name}`}
+                          width={200}
+                          height={50}
+                        />
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+        </div>
+      </div>
+      <div className={cn(styles.cta())}>
+        <Button size="lg" asChild>
+          <Link href="https://www.linkedin.com/in/tkodev/" target="_blank">
+            <Icon icon={LinkedinIcon} size="xs" /> Explore Full History
+          </Link>
+        </Button>
       </div>
     </Section>
   )

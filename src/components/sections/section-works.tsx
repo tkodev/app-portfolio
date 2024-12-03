@@ -3,12 +3,12 @@ import { Badge } from '@/components/atoms/badge'
 import { Bg } from '@/components/atoms/bg'
 import { Tilt } from '@/components/atoms/tilt'
 import { Card, CardDesc, CardHeader, CardTitle, CardImage } from '@/components/molecules/card'
-import { Section } from '@/components/molecules/section'
 import { SearchProjects } from '@/components/organisms/search-projects'
-import { textStyles } from '@/components/tokens/text'
+import { Section } from '@/components/organisms/section'
+import { textStyles } from '@/components/templates/text'
 import { appTimeZone } from '@/constants/date'
-import { projectEntries, projectIds } from '@/constants/works'
-import { ProjectId, ProjectEntry } from '@/types/works'
+import { projectEntries, projectOrder } from '@/constants/project'
+import { ProjectId, ProjectEntry } from '@/types/project'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import MiniSearch from 'minisearch'
@@ -37,7 +37,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
   const maxSkills = 7
   const searchFields = ['title', 'subtitle', 'tagline', 'desc', 'companyKey', 'skills']
 
-  const orderedProjects = projectIds.map((key) => projectEntries[key])
+  const orderedProjects = projectOrder.map((key) => projectEntries[key])
 
   const queries = [query ?? ''].flat()
   const miniSearch = new MiniSearch<ProjectEntry>({

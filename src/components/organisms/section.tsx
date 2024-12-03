@@ -2,7 +2,7 @@ import { forwardRef, ReactNode, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('h-full h-auto min-h-screen relative flex', {
+  root: cva('w-full h-auto relative flex', {
     variants: {
       height: {
         full: 'min-h-screen',
@@ -14,7 +14,7 @@ const styles = {
     }
   }),
   overlay: cva('w-full h-full absolute top-0 left-0 -z-1'),
-  content: cva('w-full grow relative mx-auto py-[104px] px-8', {
+  content: cva('w-full grow relative mx-auto py-[128px] px-8', {
     variants: {
       width: {
         full: 'max-w-[1280px]',

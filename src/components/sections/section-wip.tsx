@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
-import { Section } from '@/components/molecules/section'
-import { textStyles } from '@/components/tokens/text'
+import { Section } from '@/components/organisms/section'
+import { textStyles } from '@/components/templates/text'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {

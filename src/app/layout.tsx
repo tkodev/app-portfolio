@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Head from 'next/head'
 import { ReactNode, FC } from 'react'
 import { Favicon } from '@/components/atoms/favicon'
-import { Layout } from '@/components/sections/layout'
+import { Layout } from '@/components/templates/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { geistSansFont } from '@/fonts/geist'
 import { ThemeProvider } from '@/providers/theme'
@@ -13,7 +13,7 @@ import '../themes/theme-utils.css'
 
 const styles = {
   html: cva('w-full h-full scroll-smooth'),
-  body: cva('w-full h-full bg-background text-foreground font-geist-sans text-base font-normal')
+  body: cva('w-full h-full bg-background text-foreground font-geist-sans text-base font-light')
 }
 
 const pagedata = {

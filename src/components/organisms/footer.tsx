@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { HTMLAttributes, FC } from 'react'
 import { Themer } from '@/components/atoms/themer'
+import { userEntries } from '@/constants/user'
 import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 import { Button } from '../atoms/button'
@@ -49,25 +50,25 @@ const styles = {
 
 const navItems: NavEntry[] = [
   {
-    href: 'https://www.linkedin.com/in/tkodev/',
+    href: userEntries.tony.linkedin,
     icon: LinkedinIcon,
     variant: 'ghost',
     size: 'icon'
   },
   {
-    href: 'https://github.com/tkodev',
+    href: userEntries.tony.github,
     icon: GithubIcon,
     variant: 'ghost',
     size: 'icon'
   },
   {
-    href: 'mailto:tony@tko.dev',
+    href: `mailto:${userEntries.tony.email}`,
     icon: MailIcon,
     variant: 'ghost',
     size: 'icon'
   },
   {
-    href: '/files/tony-ko-resume-q1-2024.pdf',
+    href: '/files/tony-ko-resume-q4-2024.pdf',
     icon: FileUserIcon,
     variant: 'ghost',
     size: 'icon'

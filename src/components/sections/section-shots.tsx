@@ -2,9 +2,9 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Tilt } from '@/components/atoms/tilt'
 import { Card, CardImage } from '@/components/molecules/card'
-import { Section } from '@/components/molecules/section'
-import { textStyles } from '@/components/tokens/text'
-import { shots } from '@/constants/shots'
+import { Section } from '@/components/organisms/section'
+import { textStyles } from '@/components/templates/text'
+import { mediaEntries } from '@/constants/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -33,12 +33,13 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
         <h2 className={cn(textStyles.h3())}>Shots</h2>
       </div>
       <div className={cn(styles.shots())}>
-        {shots.map((shot, index) => {
-          const src = `/images/shots/${shot}`
+        {mediaEntries.map((mediaEntry, index) => {
+          const { src } = mediaEntry
+          const imageSrc = `/images/shots/${src}`
           return (
             <Tilt key={`shot-${index}`}>
               <Card className={cn(styles.shot())}>
-                <CardImage aspect="square" mode="dark" src={src} />
+                <CardImage aspect="square" mode="dark" src={imageSrc} />
               </Card>
             </Tilt>
           )

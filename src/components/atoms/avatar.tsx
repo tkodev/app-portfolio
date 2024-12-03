@@ -4,10 +4,10 @@ import { cn, cva } from '@/utils/theme'
 
 const styles = {
   avatar: cva(
-    'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full items-center justify-center'
+    'h-full w-full aspect-square relative flex items-center justify-center shrink-0 overflow-hidden rounded-full bg-muted'
   ),
-  avatarImage: cva('aspect-square h-full w-full'),
-  avatarFallback: cva('flex h-full w-full items-center justify-center rounded-full bg-muted')
+  avatarImage: cva('h-full w-full'),
+  avatarFallback: cva('h-full w-full flex items-center justify-center rounded-full bg-muted')
 }
 
 const Avatar = forwardRef<

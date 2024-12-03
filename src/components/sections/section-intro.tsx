@@ -1,34 +1,27 @@
-import Link from 'next/link'
-import { Github, Linkedin } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Bg } from '@/components/atoms/bg'
-import { Button } from '@/components/atoms/button'
-import { Icon } from '@/components/atoms/icon'
-import { Logo } from '@/components/atoms/logo'
-import { Section } from '@/components/molecules/section'
+import { Section } from '@/components/organisms/section'
+import { textStyles } from '@/components/templates/text'
+import { appTimeZone } from '@/constants/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
+import { differenceInCalendarYears } from 'date-fns'
+import { fromZonedTime } from 'date-fns-tz'
 
 const styles = {
-  root: cva([
-    'grid items-center',
-    'grid-cols-1 gap-4 px-8',
-    'md:grid-cols-1 sm:gap-8',
-    'lg:grid-cols-2 lg:gap-24',
-    'xl:grid-cols-2 xl:gap-32'
+  root: cva('flex flex-col justify-center gap-16'),
+
+  content: cva([
+    'flex flex-col items-center justify-center gap-8',
+    'lg:flex-row lg:items-center lg:justify-between'
   ]),
+  stats: cva('flex flex-wrap justify-between gap-8 lg:gap-16'),
 
-  left: cva(['flex items-center justify-center', 'lg:items-center lg:justify-end']),
-  right: cva(['flex items-center justify-center', 'lg:items-center lg:justify-start']),
+  photo: cva('max-w-[480px] w-full'),
+  text: cva('lg:w-1/2 lg:order-first'),
 
-  photo: cva('max-w-[480px] w-3/5 md:w-2/5 lg:w-full h-auto rounded-[64px] lg:mt-4'),
-  content: cva('max-w-[480px] w-full flex flex-col gap-4 lg:gap-6 justify-center'),
-
-  breadcrumbs: cva('justify-center lg:justify-start'),
-  divider: cva('border-t border-foreground/15 my-2 md:my-4'),
-  logo: cva('w-[150px]'),
-  title: cva('text-h1 font-alliance-no2'),
-  cta: cva('flex justify-center lg:justify-start flex-wrap gap-4')
+  avatar: cva('max-w-[480px] w-full h-full'),
+  stat: cva('w-[250px]')
 }
 
 type SectionIntroRef = HTMLDivElement
@@ -37,51 +30,56 @@ type SectionIntroProps = HTMLAttributes<SectionIntroRef> & VariantProps<typeof s
 const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref) => {
   const { className, ...rest } = props
 
+  const yearsSince = Math.abs(
+    differenceInCalendarYears(new Date(), fromZonedTime('2017-04-01', appTimeZone))
+  )
+
   return (
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      width="full"
-      bg={<Bg variant="sand" attach="local" />}
+      height="auto"
+      bg={<Bg variant="texture" attach="local" />}
       {...rest}
     >
-      <div className={cn(styles.left())}>
-        <Avatar className={cn(styles.photo())}>
-          <AvatarImage src="/images/tkodev/dp-sq.jpg" alt="Tony Ko" />
-          <AvatarFallback>tko</AvatarFallback>
-        </Avatar>
-      </div>
-      <div className={cn(styles.right())}>
-        <div className={cn(styles.content())}>
-          <hr className={cn(styles.divider())} />
-          <Logo className={cn(styles.logo())} />
-          <h1>
-            Works By <strong>Tony Ko</strong> —
-          </h1>
-          <h2 className={cn(styles.title())}>
-            Staff Software <br />
-            Engineer
+      <div className={cn(styles.content())}>
+        <div className={cn(styles.photo())}>
+          <Avatar className={cn(styles.avatar())}>
+            <AvatarImage src="/images/tkodev/dp-sq.jpg" alt="Tony Ko" />
+            <AvatarFallback>Tony Ko</AvatarFallback>
+          </Avatar>
+        </div>
+        <div className={cn(styles.text())}>
+          <h1 className={cn(textStyles.h1())}>Tony Ko</h1>
+          <h2 className={cn(textStyles.h2())}>
+            Staff Software Engineer <br />& UI Designer
           </h2>
-          {/*<h3>*/}
-          {/*  <em>Engineering / Design / Leadership</em>*/}
-          {/*</h3>*/}
-          <p>
+          <h3 className={cn(textStyles.h3())}>
             Crafting scalable solutions, championing best practices, and empowering teams to
             innovate.
+          </h3>
+          <p>
+            I’m Tony Ko, a Staff Software Engineer with over 8 years of experience delivering
+            scalable, accessible, and user-centred software for top North American brands, including
+            Aeroplan, Air Miles, and Toyota. My expertise spans web, mobile, browser extensions, and
+            embedded systems, backed by a strong foundation in TypeScript, Lua, and C. Passionate
+            about fostering team growth, I blend technical excellence with mentorship to lead
+            impactful projects that drive innovation and achieve business goals.
           </p>
-          <hr className={cn(styles.divider())} />
-          <div className={cn(styles.cta())}>
-            <Button size="default" asChild>
-              <Link href="https://www.linkedin.com/in/tkodev/" target="_blank">
-                <Icon icon={Linkedin} size="xs" /> 616+ Followers
-              </Link>
-            </Button>
-            <Button size="default" asChild>
-              <Link href="https://github.com/tkodev" target="_blank">
-                <Icon icon={Github} size="xs" /> 38+ Stars
-              </Link>
-            </Button>
-          </div>
+        </div>
+      </div>
+      <div className={cn(styles.stats())}>
+        <div className={cn(styles.stat())}>
+          <p className={cn(textStyles.h2())}>{yearsSince}+</p>
+          <p className={cn(textStyles.h3())}>Years of Experience</p>
+        </div>
+        <div className={cn(styles.stat())}>
+          <p className={cn(textStyles.h2())}>25+</p>
+          <p className={cn(textStyles.h3())}>Projects Completed</p>
+        </div>
+        <div className={cn(styles.stat())}>
+          <p className={cn(textStyles.h2())}>9+</p>
+          <p className={cn(textStyles.h3())}>Stellar Endorsements</p>
         </div>
       </div>
     </Section>
