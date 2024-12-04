@@ -20,7 +20,7 @@ const pagedata = {
   title: 'Tony Ko / Portfolio',
   siteName: 'tko.dev',
   description:
-    'Experienced Staff Software Engineer with 7+ years building North America’s leading brands, specializing in scalable, accessible, and user-friendly software. Proven track record in leading modernization initiatives, architecting high-impact solutions, and team building.',
+    "I'm Tony Ko, a Staff Software Engineer with a proven track record of delivering high-performing, secure, and accessible software solutions for top North American brands, including Aeroplan, Air Miles, and Toyota. My expertise spans web,  mobile, browser extensions, and embedded systems, backed by a strong foundation in  TypeScript, Lua, and C. Passionate about fostering team growth, I blend technical excellence with mentorship to lead impactful projects that drive innovation and achieve business goals",
   url: 'https://tko.dev'
 }
 

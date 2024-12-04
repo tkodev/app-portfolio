@@ -52,8 +52,8 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
           <p>
             With a career spanning over {yearsSince} years, I’ve progressed from foundational roles
             to Staff Engineer, leading technical strategy, architecture, and team mentorship. I’ve
-            collaborated with companies like Badal.io, Quantum Mob, and Brandfire to build scalable
-            systems and nurture growth within engineering teams.
+            collaborated with companies like Badal.io, Quantum Mob, and Brandfire to build
+            performant systems and nurture growth within engineering teams.
           </p>
         </div>
         <div className={cn(styles.jobs())}>

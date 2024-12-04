@@ -110,8 +110,8 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
           <p>
             From modernizing oil rig systems to building Aeroplan’s first browser extension, my
             portfolio showcases innovative solutions that solve complex challenges. Each project
-            reflects my commitment to scalable, user-friendly design, and my ability to lead teams
-            toward measurable outcomes.
+            reflects my commitment to high-performing, secure, and accessible software solutions,
+            and my ability to lead teams toward measurable outcomes.
           </p>
         </div>
       </div>

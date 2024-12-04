@@ -160,10 +160,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     roles: ['development'],
     src: '',
     title: 'Quantum Mob - Core Utilities, Auth Module',
-    subtitle: 'Creating scalable, reusable modules with Quantum Mob’s core utilities.',
+    subtitle: 'Creating reusable modules with Quantum Mob’s core utilities.',
     tagline:
-      'Monorepo-style reusable modules for internal and client projectEntries, focusing on authentication utilities.',
-    desc: 'At Quantum Mob, I developed core authentication utilities within a monorepo structure, enabling reuse across multiple projectEntries. These modules provided robust, secure authentication solutions for both internal and client applications, enhancing scalability and reducing development time on future projectEntries.',
+      'Monorepo-style reusable modules for internal and client projects, focusing on authentication utilities.',
+    desc: 'At Quantum Mob, I developed core authentication utilities within a monorepo structure, enabling reuse across multiple projects. These modules provided robust, secure authentication solutions for both internal and client applications, reducing development time on future projects.',
     clientId: 'quantumMob',
     startDate: fromZonedTime('2020-07-01', appTimeZone),
     endDate: fromZonedTime('2020-10-01', appTimeZone),
@@ -177,7 +177,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     subtitle: 'Laying the foundation for Aeroplan’s eStore MVP.',
     tagline:
       'Lead developer for front-end, state management, and server model design for Aeroplan eStore MVP.',
-    desc: 'As lead developer, I crafted the Aeroplan eStore’s foundational architecture, establishing front-end design, state management, and server infrastructure. This scalable design supported Aeroplan’s expansion in online redemption, creating a streamlined experience for users and a robust foundation for future iterations.',
+    desc: 'As lead developer, I crafted the Aeroplan eStore’s foundational architecture, establishing front-end design, state management, and server infrastructure. This design supported Aeroplan’s expansion in online redemption, creating a streamlined experience for users and a robust foundation for future iterations.',
     clientId: 'quantumMob',
     startDate: fromZonedTime('2020-01-01', appTimeZone),
     endDate: fromZonedTime('2020-06-01', appTimeZone),

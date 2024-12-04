@@ -55,16 +55,17 @@ const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref)
             Staff Software Engineer <br />& UI Designer
           </h2>
           <h3 className={cn(textStyles.h3())}>
-            Crafting scalable solutions, championing best practices, and empowering teams to
+            Crafting performant solutions, championing best practices, and empowering teams to
             innovate.
           </h3>
           <p>
-            I’m Tony Ko, a Staff Software Engineer with over 8 years of experience delivering
-            scalable, accessible, and user-centred software for top North American brands, including
-            Aeroplan, Air Miles, and Toyota. My expertise spans web, mobile, browser extensions, and
-            embedded systems, backed by a strong foundation in TypeScript, Lua, and C. Passionate
-            about fostering team growth, I blend technical excellence with mentorship to lead
-            impactful projects that drive innovation and achieve business goals.
+            I’m Tony Ko, a Staff Software Engineer with over {yearsSince} years of experience
+            delivering high-performing, secure, and accessible software solutions for top North
+            American brands, including Aeroplan, Air Miles, and Toyota. My expertise spans web,
+            mobile, browser extensions, and embedded systems, backed by a strong foundation in
+            TypeScript, Lua, and C. Passionate about fostering team growth, I blend technical
+            excellence with mentorship to lead impactful projects that drive innovation and achieve
+            business goals.
           </p>
         </div>
       </div>
