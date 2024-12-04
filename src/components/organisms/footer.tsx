@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import {
   LinkedinIcon,
@@ -6,11 +8,14 @@ import {
   DotIcon,
   FileUserIcon,
   SunMoonIcon,
+  PauseIcon,
+  MusicIcon,
   CopyrightIcon
 } from 'lucide-react'
 import { HTMLAttributes, FC } from 'react'
-import { Themer } from '@/components/atoms/themer'
 import { userEntries } from '@/constants/user'
+import { useAudio } from '@/hooks/audio'
+import { useTheme } from '@/hooks/theme'
 import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 import { Button } from '../atoms/button'
@@ -81,6 +86,14 @@ type FooterProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.b
 const Footer: FC<FooterProps> = (props) => {
   const { variant, className, ...rest } = props
 
+  const { audio, state, handleAudioToggle } = useAudio({
+    // Music from #Uppbeat (free for Creators!): https://uppbeat.io/t/justin-marshall-elias/an-empty-bus
+    src: '/audio/an-empty-bus-justin-marshall-elias-main-version-36442-03-56.mp3',
+    loop: true,
+    autoPlay: true
+  })
+  const { handleThemeModeToggle } = useTheme()
+
   const currentYear = new Date().getFullYear()
 
   return (
@@ -91,22 +104,28 @@ const Footer: FC<FooterProps> = (props) => {
           <div className={cn(styles.left())}>
             <Button variant="ghost" size="icon" asChild>
               <Link href="#">
-                <Icon icon={CopyrightIcon} />{' '}
+                <Icon icon={CopyrightIcon} />
               </Link>
             </Button>
             <span className={cn(styles.label())}>{currentYear} Tony Ko</span>
           </div>
           <div className={cn(styles.right())}>
             <Nav items={navItems}>
-              <Themer>
-                <Button variant="ghost" size="icon">
-                  <Icon icon={SunMoonIcon} />
-                </Button>
-              </Themer>
+              <Button
+                variant={state.paused ? 'ghost' : 'secondary'}
+                size="icon"
+                onClick={handleAudioToggle}
+              >
+                <Icon icon={state.paused ? MusicIcon : PauseIcon} />
+              </Button>
+              <Button variant="ghost" size="icon" onClick={handleThemeModeToggle}>
+                <Icon icon={SunMoonIcon} />
+              </Button>
             </Nav>
           </div>
         </div>
       </div>
+      {audio}
     </footer>
   )
 }
