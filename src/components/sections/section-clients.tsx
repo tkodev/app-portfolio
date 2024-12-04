@@ -3,8 +3,8 @@ import { MoveRightIcon } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
+import { Client } from '@/components/atoms/client'
 import { Icon } from '@/components/atoms/icon'
-import { Imager } from '@/components/atoms/imager'
 import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
 import { clientEntries, clientOrder } from '@/constants/client'
@@ -65,7 +65,7 @@ const SectionClients = forwardRef<SectionClientsRef, SectionClientsProps>((props
                 key={`company-${companyKey}`}
                 target="_blank"
               >
-                <Imager
+                <Client
                   darkSrc={clientEntry.darkSrc}
                   lightSrc={clientEntry.lightSrc}
                   alt={`Logo of ${clientEntry.name}`}

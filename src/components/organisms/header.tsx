@@ -2,7 +2,6 @@ import Link from 'next/link'
 import {
   DraftingCompassIcon,
   DotIcon,
-  SearchIcon,
   NotebookPenIcon,
   PaletteIcon,
   ScanFaceIcon
@@ -10,11 +9,8 @@ import {
 import { HTMLAttributes, FC } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Logo } from '@/components/atoms/logo'
-import { Search } from '@/components/organisms/search'
 import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
-import { Button } from '../atoms/button'
-import { Icon } from '../atoms/icon'
 import { Nav } from '../molecules/nav'
 
 const styles = {
@@ -87,15 +83,7 @@ const Header: FC<HeaderProps> = (props) => {
             </Link>
           </div>
           <div className={cn(styles.right())}>
-            <Nav items={navItems}>
-              {isSearchEnabled && (
-                <Search>
-                  <Button variant="secondary" size="icon">
-                    <Icon icon={SearchIcon} />
-                  </Button>
-                </Search>
-              )}
-            </Nav>
+            <Nav items={navItems} />
           </div>
         </div>
       </div>

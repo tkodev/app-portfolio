@@ -90,7 +90,7 @@ const Footer: FC<FooterProps> = (props) => {
     // Music from #Uppbeat (free for Creators!): https://uppbeat.io/t/justin-marshall-elias/an-empty-bus
     src: '/audio/an-empty-bus-justin-marshall-elias-main-version-36442-03-56.mp3',
     loop: true,
-    autoPlay: true
+    autoPlay: false
   })
   const { handleThemeModeToggle } = useTheme()
 

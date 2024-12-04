@@ -14,7 +14,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { CardImage } from '@/components/molecules/card'
+import { Preview } from '@/components/atoms/preview'
 import {
   Table,
   TableBody,
@@ -131,7 +131,7 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
             const client = clientEntries[clientId]
             return (
               <div key={key} className={cn(styles.project())}>
-                <CardImage src={src} />
+                <Preview src={src} />
                 <h2 className={cn(textStyles.h3())}>{title}</h2>
                 <hr className={cn(styles.divider())} />
                 <div className={cn(styles.projectDetail())}>

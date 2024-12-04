@@ -4,7 +4,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { CardImage } from '@/components/molecules/card'
+import { Preview } from '@/components/atoms/preview'
 import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
 import { mediaEntries } from '@/constants/media'
@@ -62,7 +62,7 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
           const imageSrc = `/images/shots/${src}`
           return (
             <div key={key} className={cn(styles.media())}>
-              <CardImage src={imageSrc} aspect="square" />
+              <Preview src={imageSrc} aspect="square" />
             </div>
           )
         })}

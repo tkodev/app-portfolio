@@ -25,7 +25,7 @@ type ImagerProps = HTMLAttributes<ImagerRef> &
     darkSrc: string
   }
 
-const Imager = forwardRef<ImagerRef, ImagerProps>((props, ref) => {
+const Client = forwardRef<ImagerRef, ImagerProps>((props, ref) => {
   const { lightSrc, darkSrc, alt, className, ...rest } = props
 
   return (
@@ -36,7 +36,7 @@ const Imager = forwardRef<ImagerRef, ImagerProps>((props, ref) => {
     </div>
   )
 })
-Imager.displayName = 'Imager'
+Client.displayName = 'Client'
 
-export { Imager }
+export { Client }
 export type { ImagerProps, ImagerRef }
