@@ -50,12 +50,11 @@ const styles = {
   grid: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
   project: cva('flex flex-col gap-4'),
   projectDetail: cva('flex justify-between gap-4'),
+  projectDivider: cva('border-t border-foreground/15'),
 
   tableTitleHead: cva('w-[40%]'),
   tableHead: cva('w-[20%]'),
-
-  divider: cva('border-t border-foreground/15'),
-  roles: cva('capitalize')
+  tableRoles: cva('capitalize')
 }
 
 type SectionArchiveRef = HTMLDivElement
@@ -133,9 +132,9 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
               <div key={key} className={cn(styles.project())}>
                 <Preview src={src} />
                 <h2 className={cn(textStyles.h3())}>{title}</h2>
-                <hr className={cn(styles.divider())} />
+                <hr className={cn(styles.projectDivider())} />
                 <div className={cn(styles.projectDetail())}>
-                  <p className={cn(styles.roles())}>{roles.join(', ')}</p>
+                  <p className={cn(styles.tableRoles())}>{roles.join(', ')}</p>
                   <p>{formatStdDateRange(startDate, endDate, appTimeZone)}</p>
                 </div>
                 <p>{client.name}</p>
@@ -161,7 +160,7 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
               return (
                 <TableRow key={key}>
                   <TableCell>{title}</TableCell>
-                  <TableCell className={cn(styles.roles())}>{roles.join(', ')}</TableCell>
+                  <TableCell className={cn(styles.tableRoles())}>{roles.join(', ')}</TableCell>
                   <TableCell>{client.name}</TableCell>
                   <TableCell>{formatStdDateRange(startDate, endDate, appTimeZone)}</TableCell>
                 </TableRow>

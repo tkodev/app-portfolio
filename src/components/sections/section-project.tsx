@@ -1,11 +1,7 @@
 'use client'
 
-import Link from 'next/link'
-import { MoveRightIcon } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
-import { Button } from '@/components/atoms/button'
-import { Icon } from '@/components/atoms/icon'
 import { Preview } from '@/components/atoms/preview'
 import {
   Table,
@@ -31,14 +27,11 @@ const styles = {
     'flex flex-col items-center justify-center gap-8',
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
-  cta: cva('flex justify-center'),
 
   text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
 
   tableHead: cva('w-[20%]'),
-
-  divider: cva('border-t border-foreground/15'),
-  roles: cva('capitalize')
+  tableRoles: cva('capitalize')
 }
 
 type SectionProjectRef = HTMLDivElement
@@ -77,7 +70,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell className={cn(styles.roles())}>{roles.join(', ')}</TableCell>
+            <TableCell className={cn(styles.tableRoles())}>{roles.join(', ')}</TableCell>
             <TableCell>{client.name}</TableCell>
             <TableCell>
               {profileIds.map((profileId) => (
@@ -89,13 +82,6 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
         </TableBody>
       </Table>
       <Preview src={src} />
-      <div className={cn(styles.cta())}>
-        <Button size="lg" asChild>
-          <Link href="/works">
-            Explore Works <Icon icon={MoveRightIcon} size="xs" />
-          </Link>
-        </Button>
-      </div>
     </Section>
   )
 })
