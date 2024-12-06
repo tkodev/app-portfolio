@@ -13,7 +13,7 @@ import {
   CopyrightIcon
 } from 'lucide-react'
 import { HTMLAttributes, FC } from 'react'
-import { userEntries } from '@/constants/user'
+import { profileEntries } from '@/constants/profile'
 import { useAudio } from '@/hooks/audio'
 import { useTheme } from '@/hooks/theme'
 import { NavEntry } from '@/types/layout'
@@ -55,19 +55,19 @@ const styles = {
 
 const navItems: NavEntry[] = [
   {
-    href: userEntries.tony.linkedin,
+    href: profileEntries.tony.linkedin,
     icon: LinkedinIcon,
     variant: 'ghost',
     size: 'icon'
   },
   {
-    href: userEntries.tony.github,
+    href: profileEntries.tony.github,
     icon: GithubIcon,
     variant: 'ghost',
     size: 'icon'
   },
   {
-    href: `mailto:${userEntries.tony.email}`,
+    href: `mailto:${profileEntries.tony.email}`,
     icon: MailIcon,
     variant: 'ghost',
     size: 'icon'

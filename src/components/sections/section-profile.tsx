@@ -24,10 +24,10 @@ const styles = {
   stat: cva('w-[160px] md:w-[220px] lg:w-[250px] flex flex-col gap-2')
 }
 
-type SectionIntroRef = HTMLDivElement
-type SectionIntroProps = HTMLAttributes<SectionIntroRef> & VariantProps<typeof styles.root>
+type SectionProfileRef = HTMLDivElement
+type SectionProfileProps = HTMLAttributes<SectionProfileRef> & VariantProps<typeof styles.root>
 
-const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref) => {
+const SectionProfile = forwardRef<SectionProfileRef, SectionProfileProps>((props, ref) => {
   const { className, ...rest } = props
 
   const yearsSince = Math.abs(
@@ -86,7 +86,7 @@ const SectionIntro = forwardRef<SectionIntroRef, SectionIntroProps>((props, ref)
     </Section>
   )
 })
-SectionIntro.displayName = 'SectionIntro'
+SectionProfile.displayName = 'SectionProfile'
 
-export { SectionIntro }
-export type { SectionIntroProps, SectionIntroRef }
+export { SectionProfile }
+export type { SectionProfileProps, SectionProfileRef }

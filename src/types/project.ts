@@ -1,4 +1,5 @@
 import { ClientId } from '@/types/client'
+import { ProfileId } from '@/types/profile'
 
 type ProjectId =
   | 'beyondModernization'
@@ -34,10 +35,9 @@ type ProjectEntry = {
   src: string
   roles: ProjectRole[]
   title: string
-  subtitle: string
-  tagline: string
   desc: string
   clientId: ClientId
+  profileIds: ProfileId[]
   startDate: Date
   endDate: Date
   skills: string[]

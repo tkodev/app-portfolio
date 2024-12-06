@@ -6,7 +6,7 @@ import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
-import { userEntries } from '@/constants/user'
+import { profileEntries } from '@/constants/profile'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -51,22 +51,22 @@ const SectionContact = forwardRef<SectionContactRef, SectionContactProps>((props
         </div>
         <div className={cn(styles.contact())}>
           <Button size="lg" asChild>
-            <Link href={userEntries.tony.linkedin} target="_blank">
+            <Link href={profileEntries.tony.linkedin} target="_blank">
               <Icon icon={LinkedinIcon} size="xs" /> LinkedIn: <u>tkodev</u>
             </Link>
           </Button>
           <Button size="lg" asChild>
-            <Link href={userEntries.tony.github} target="_blank">
+            <Link href={profileEntries.tony.github} target="_blank">
               <Icon icon={GithubIcon} size="xs" /> Github: <u>tkodev</u>
             </Link>
           </Button>
           <Button size="lg" asChild>
-            <Link href={`mailto:${userEntries.tony.email}`} target="_blank">
+            <Link href={`mailto:${profileEntries.tony.email}`} target="_blank">
               <Icon icon={MailIcon} size="xs" /> Email: <u>tony@tko.dev</u>
             </Link>
           </Button>
           <Button size="lg" asChild>
-            <Link href={`mailto:${userEntries.tony.phone}`} target="_blank">
+            <Link href={`mailto:${profileEntries.tony.phone}`} target="_blank">
               <Icon icon={PhoneIcon} size="xs" /> Phone: <u>+1 (647) 300-9787</u>
             </Link>
           </Button>

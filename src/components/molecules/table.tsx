@@ -9,10 +9,10 @@ const styles = {
   tableFooter: cva('border-t bg-muted/50 [&>tr]:last:border-b-0'),
   tableRow: cva('border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted'),
   tableHead: cva(
-    'h-24 px-4 text-base text-left font-light align-middle text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]'
+    'min-h-24 px-4 py-8 text-base text-left align-middle font-light text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]'
   ),
   tableCell: cva(
-    'h-32 px-4 text-base text-left [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]'
+    'min-h-32 px-4 py-8 text-base text-left align-top [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]'
   ),
   tableCaption: cva('mt-4 text-sm text-muted-foreground')
 }
