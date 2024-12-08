@@ -28,7 +28,7 @@ import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
 import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
-import { projectEntries, projectOrder } from '@/constants/project'
+import { projectEntries, projectIds } from '@/constants/project'
 import { useFilter } from '@/hooks/filter'
 import { SelectEntry } from '@/types/layout'
 import { ProjectRole } from '@/types/project'
@@ -58,8 +58,8 @@ const styles = {
   tableRoles: cva('capitalize')
 }
 
-type SectionWorksRef = HTMLDivElement
-type SectionWorksProps = HTMLAttributes<SectionWorksRef> & VariantProps<typeof styles.root>
+type SectionProjectsRef = HTMLDivElement
+type SectionProjectsProps = HTMLAttributes<SectionProjectsRef> & VariantProps<typeof styles.root>
 
 const filterEntries: SelectEntry[] = [
   { icon: TargetIcon, name: 'All', value: 'all' },
@@ -72,7 +72,7 @@ const layoutEntries: SelectEntry[] = [
   { icon: LayoutListIcon, name: 'List', value: 'list' }
 ]
 
-const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref) => {
+const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((props, ref) => {
   const { className, ...rest } = props
 
   const {
@@ -86,7 +86,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
     layoutEntries
   })
 
-  const orderedProjects = projectOrder.map((key) => projectEntries[key])
+  const orderedProjects = projectIds.map((key) => projectEntries[key])
   const featuredProjects = orderedProjects.filter((project) => project.isFeatured)
   const filteredProjects = featuredProjects.filter((project) =>
     !isDefaultFilter ? project.roles.includes(activeFilterValue as ProjectRole) : true
@@ -182,7 +182,7 @@ const SectionWorks = forwardRef<SectionWorksRef, SectionWorksProps>((props, ref)
     </Section>
   )
 })
-SectionWorks.displayName = 'SectionWorks'
+SectionProjects.displayName = 'SectionProjects'
 
-export { SectionWorks }
-export type { SectionWorksProps, SectionWorksRef }
+export { SectionProjects }
+export type { SectionProjectsProps, SectionProjectsRef }

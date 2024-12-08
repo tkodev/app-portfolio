@@ -389,4 +389,5 @@ const shotEntries: MediaEntry[] = [
     alt: 'airport'
   }
 ]
+
 export { shotEntries }

@@ -13,6 +13,11 @@ type PageProps = {
   params: Promise<{ projectIdPath: string }>
 }
 
+const generateStaticParams = async () => {
+  const projectIdPaths = Object.keys(projectEntries)
+  return projectIdPaths.map((projectIdPath) => ({ projectIdPath }))
+}
+
 const Page: FC<PageProps> = async (props) => {
   const { params } = props
   const { projectIdPath } = await params
@@ -38,4 +43,5 @@ const Page: FC<PageProps> = async (props) => {
   )
 }
 
+export { generateStaticParams }
 export default Page

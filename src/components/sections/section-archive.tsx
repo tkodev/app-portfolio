@@ -28,7 +28,7 @@ import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
 import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
-import { projectEntries, projectOrder } from '@/constants/project'
+import { projectEntries, projectIds } from '@/constants/project'
 import { useFilter } from '@/hooks/filter'
 import { SelectEntry } from '@/types/layout'
 import { ProjectRole } from '@/types/project'
@@ -86,7 +86,7 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
     layoutEntries
   })
 
-  const orderedProjects = projectOrder.map((key) => projectEntries[key])
+  const orderedProjects = projectIds.map((key) => projectEntries[key])
   const archivedProjects = orderedProjects.filter((project) => !project.isFeatured)
   const filteredProjects = archivedProjects.filter((project) =>
     !isDefaultFilter ? project.roles.includes(activeFilterValue as ProjectRole) : true

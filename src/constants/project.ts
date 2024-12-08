@@ -523,7 +523,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   }
 }
 
-const projectOrder: ProjectId[] = [
+const projectIds: ProjectId[] = [
   'beyondModernization',
   'paypowerReloadablePrepaidMastercardMobileApp',
   'techTalkMonoreposWithTurborepo',
@@ -551,4 +551,4 @@ const projectOrder: ProjectId[] = [
   'babyJoggerCanadianCatalogWebsite'
 ]
 
-export { projectOrder, projectEntries }
+export { projectIds, projectEntries }

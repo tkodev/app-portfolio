@@ -204,13 +204,5 @@ const jobEntries: JobEntry[] = [
     skills: ['Adobe Creative Suite']
   }
 ]
-const jobOrder = [
-  'badalStaffSoftwareEngineer',
-  'quantumMobStaffSoftwareEngineer',
-  'quantumMobSeniorSoftwareEngineer',
-  'quantumMobSoftwareEngineerII',
-  'quantumMobSoftwareEngineerI',
-  'brandfireIntermediateFrontEndDeveloper',
-  'kosInteriorDesignInteriorDesigner'
-]
-export { jobEntries, jobOrder }
+
+export { jobEntries }

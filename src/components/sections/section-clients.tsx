@@ -7,7 +7,7 @@ import { Client } from '@/components/atoms/client'
 import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
-import { clientEntries, clientOrder } from '@/constants/client'
+import { clientEntries, clientIds } from '@/constants/client'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -55,14 +55,14 @@ const SectionClients = forwardRef<SectionClientsRef, SectionClientsProps>((props
           </p>
         </div>
         <div className={cn(styles.clients())}>
-          {clientOrder.map((companyKey) => {
-            const clientEntry = clientEntries[companyKey]
+          {clientIds.map((clientId) => {
+            const clientEntry = clientEntries[clientId]
             if (!clientEntry || !clientEntry.baseSrc) return null
             return (
               <Link
                 className={cn(styles.client())}
                 href={clientEntry.href}
-                key={`company-${companyKey}`}
+                key={`company-${clientId}`}
                 target="_blank"
               >
                 <Client

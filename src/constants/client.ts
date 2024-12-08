@@ -130,7 +130,8 @@ const clientEntries: Record<ClientId, ClientEntry> = {
     darkSrc: ''
   }
 }
-const clientOrder: ClientId[] = [
+
+const clientIds: ClientId[] = [
   'badal',
   'quantumMob',
   'rewardops',
@@ -148,4 +149,4 @@ const clientOrder: ClientId[] = [
   'babyJogger'
 ]
 
-export { clientEntries, clientOrder }
+export { clientEntries, clientIds }
