@@ -18,8 +18,7 @@ const styles = {
 
   content: cva([
     'max-w-[896px] w-full aspect-square',
-    'absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2',
-    'sm:top-1/2',
+    'absolute top-[33%] sm:top-[40%] lg:top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2',
     'flex flex-col items-center justify-center'
   ]),
 
