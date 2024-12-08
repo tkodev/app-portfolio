@@ -81,7 +81,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
           </TableRow>
         </TableBody>
       </Table>
-      <Media mediaEntry={src[0]} />
+      {src[0] && <Media mediaEntry={src[0]} />}
     </Section>
   )
 })
