@@ -55,14 +55,14 @@ const SectionClients = forwardRef<SectionClientsRef, SectionClientsProps>((props
           </p>
         </div>
         <div className={cn(styles.clients())}>
-          {clientIds.map((clientId) => {
-            const clientEntry = clientEntries[clientId]
+          {clientIds.map((companyKey) => {
+            const clientEntry = clientEntries[companyKey]
             if (!clientEntry || !clientEntry.baseSrc) return null
             return (
               <Link
                 className={cn(styles.client())}
                 href={clientEntry.href}
-                key={`company-${clientId}`}
+                key={`company-${companyKey}`}
                 target="_blank"
               >
                 <Client

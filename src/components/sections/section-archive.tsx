@@ -3,12 +3,12 @@
 import Link from 'next/link'
 import {
   ArchiveIcon,
-  TargetIcon,
   BracesIcon,
+  LayoutGridIcon,
+  LayoutListIcon,
   MousePointerIcon,
   MoveRightIcon,
-  LayoutGridIcon,
-  LayoutListIcon
+  TargetIcon
 } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'

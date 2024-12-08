@@ -5,17 +5,16 @@ import { SectionContact } from '@/components/sections/section-contact'
 import { SectionFrames } from '@/components/sections/section-frames'
 import { SectionMedia } from '@/components/sections/section-media'
 import { SectionProject } from '@/components/sections/section-project'
-import { projectEntries } from '@/constants/project'
+import { projectEntries, projectIds } from '@/constants/project'
 import { ProjectId } from '@/types/project'
-import { camelCase } from 'change-case'
+import { camelCase, kebabCase } from 'change-case'
 
 type PageProps = {
   params: Promise<{ projectIdPath: string }>
 }
 
 const generateStaticParams = async () => {
-  const projectIdPaths = Object.keys(projectEntries)
-  return projectIdPaths.map((projectIdPath) => ({ projectIdPath }))
+  return projectIds.map((projectId) => ({ projectIdPath: kebabCase(projectId) }))
 }
 
 const Page: FC<PageProps> = async (props) => {

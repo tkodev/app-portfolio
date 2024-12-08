@@ -4,9 +4,9 @@ import Link from 'next/link'
 import {
   BracesIcon,
   DraftingCompassIcon,
-  MousePointerIcon,
   LayoutGridIcon,
   LayoutListIcon,
+  MousePointerIcon,
   MoveRightIcon,
   TargetIcon
 } from 'lucide-react'
