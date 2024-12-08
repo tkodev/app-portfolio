@@ -2,17 +2,17 @@ import { forwardRef, HTMLAttributes, ThHTMLAttributes, TdHTMLAttributes } from '
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
-  tableWrapper: cva('relative w-full h-auto'),
+  tableWrapper: cva('relative min-w-full h-auto overflow-x-auto'),
   table: cva('w-full caption-bottom text-sm'),
   tableHeader: cva('[&_tr]:border-b'),
   tableBody: cva('[&_tr:last-child]:border-0'),
   tableFooter: cva('border-t bg-muted/50 [&>tr]:last:border-b-0'),
   tableRow: cva('border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted'),
   tableHead: cva(
-    'min-h-24 px-4 py-8 text-base text-left align-middle font-light text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]'
+    'min-h-24 px-4 py-8 text-base text-left align-middle font-light text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap'
   ),
   tableCell: cva(
-    'min-h-32 px-4 py-8 text-base text-left align-top [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]'
+    'min-h-32 px-4 py-8 text-base text-left align-top [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap'
   ),
   tableCaption: cva('mt-4 text-sm text-muted-foreground')
 }

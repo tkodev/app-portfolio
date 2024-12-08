@@ -15,40 +15,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         alt: 'Beyond Oil Rig Control Interface'
       }
     ],
-    frames: [
-      {
-        type: 'image',
-        src: '/images/works/beyond.png',
-        width: 1920,
-        height: 1080,
-        alt: 'Beyond Oil Rig Control Interface',
-        frameId: 'mobile'
-      },
-      {
-        type: 'image',
-        src: '/images/frames/iphone.png',
-        width: 272,
-        height: 552,
-        alt: 'Beyond Oil Rig Control Interface',
-        frameId: 'mobile'
-      },
-      {
-        type: 'image',
-        src: '/images/frames/iphone.png',
-        width: 272,
-        height: 552,
-        alt: 'Beyond Oil Rig Control Interface',
-        frameId: 'mobile'
-      },
-      {
-        type: 'image',
-        src: '/images/frames/iphone.png',
-        width: 272,
-        height: 552,
-        alt: 'Beyond Oil Rig Control Interface',
-        frameId: 'desktop'
-      }
-    ],
+    frames: [],
     title: 'Beyond Oil Rig Control Interface',
     desc: 'As a Staff Engineer at Badal.io, I co-led the transformation of the Beyond MPD platform. The project entailed transitioning legacy oil rig systems to an event-driven architecture, enhancing operational integrity with real-time data visualization and a custom design system. This modernization also integrated back-end solutions for essential data management, reinforcing reliability in high-stakes environments.',
     clientId: 'badal',
