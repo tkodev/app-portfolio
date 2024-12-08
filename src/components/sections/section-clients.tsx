@@ -6,8 +6,8 @@ import { Button } from '@/components/atoms/button'
 import { Client } from '@/components/atoms/client'
 import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/organisms/section'
-import { textStyles } from '@/components/templates/text'
 import { clientEntries, clientIds } from '@/constants/client'
+import { textStyles } from '@/constants/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {

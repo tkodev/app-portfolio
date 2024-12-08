@@ -12,10 +12,10 @@ import {
   TableRow
 } from '@/components/molecules/table'
 import { Section } from '@/components/organisms/section'
-import { textStyles } from '@/components/templates/text'
 import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
 import { profileEntries } from '@/constants/profile'
+import { textStyles } from '@/constants/theme'
 import { ProjectEntry } from '@/types/project'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'

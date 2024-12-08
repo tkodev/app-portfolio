@@ -6,7 +6,7 @@ import { Brand } from '@/components/atoms/brand'
 import { Cross } from '@/components/atoms/cross'
 import { Progress } from '@/components/atoms/progress'
 import { Section } from '@/components/organisms/section'
-import { textStyles } from '@/components/templates/text'
+import { textStyles } from '@/constants/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 import { useInterval } from 'usehooks-ts'
 
@@ -54,9 +54,9 @@ const SectionLoading = forwardRef<SectionLoadingRef, SectionLoadingProps>((props
   useInterval(() => {
     if (progress >= 100) return
     const remain = 100 - progress
-    const increment = remain * 0.1
+    const increment = remain * 0.01
     setProgress(progress + increment)
-  }, 500)
+  }, 100)
 
   const progressString = (Math.round(progress * 100) / 100).toFixed(2)
 

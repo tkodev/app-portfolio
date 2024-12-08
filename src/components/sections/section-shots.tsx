@@ -6,8 +6,8 @@ import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Media } from '@/components/atoms/media'
 import { Section } from '@/components/organisms/section'
-import { textStyles } from '@/components/templates/text'
 import { shotEntries } from '@/constants/shots'
+import { textStyles } from '@/constants/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
