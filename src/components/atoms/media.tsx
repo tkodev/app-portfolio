@@ -5,21 +5,24 @@ import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('max-w-full max-h-full w-full h-auto bg-background', {
-    variants: {
-      aspect: {
-        video: 'aspect-video',
-        square: 'aspect-square'
+  root: cva(
+    'max-w-full max-h-full w-full h-auto bg-background hover:scale-105 transition-all duration-1000',
+    {
+      variants: {
+        aspect: {
+          video: 'aspect-video',
+          square: 'aspect-square'
+        },
+        fill: {
+          contain: 'object-contain',
+          cover: 'object-cover'
+        }
       },
-      fill: {
-        contain: 'object-contain',
-        cover: 'object-cover'
+      defaultVariants: {
+        fill: 'cover'
       }
-    },
-    defaultVariants: {
-      fill: 'cover'
     }
-  })
+  )
 }
 
 type MediaRef = HTMLImageElement

@@ -49,7 +49,7 @@ const styles = {
   text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
 
   grid: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
-  project: cva('flex flex-col gap-4'),
+  project: cva('flex flex-col gap-4 lg:gap-8'),
   projectDetail: cva('flex justify-between gap-4'),
   projectDivider: cva('border-t border-foreground/15'),
 
