@@ -1,4 +1,5 @@
 import { ClientId } from '@/types/client'
+import { MediaEntry } from '@/types/media'
 import { ProfileId } from '@/types/profile'
 
 type ProjectId =
@@ -32,7 +33,8 @@ type ProjectRole = 'development' | 'design'
 
 type ProjectEntry = {
   id: ProjectId
-  src: string
+  src: MediaEntry[]
+  frames: MediaEntry[]
   roles: ProjectRole[]
   title: string
   desc: string

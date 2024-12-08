@@ -2,7 +2,7 @@
 
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
-import { Preview } from '@/components/atoms/preview'
+import { Media } from '@/components/atoms/media'
 import {
   Table,
   TableBody,
@@ -81,7 +81,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
           </TableRow>
         </TableBody>
       </Table>
-      <Preview src={src} />
+      <Media mediaEntry={src[0]} />
     </Section>
   )
 })

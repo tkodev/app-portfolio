@@ -25,8 +25,8 @@ import { Nav } from '../molecules/nav'
 const styles = {
   root: cva(['w-full h-auto z-10', 'fixed bottom-0 left-0']),
   fade: cva([
-    'w-full h-[128px]',
-    'fixed -bottom-[2px] left-0 bg-background/90 backdrop-filter backdrop-blur-xl gradient-mask-t-10'
+    'w-full h-[144px] pointer-events-none',
+    'fixed -bottom-[2px] left-0 bg-background backdrop-filter backdrop-blur-xl gradient-mask-t-10'
   ]),
   container: cva([
     'fixed bottom-4 left-1/2 -translate-x-1/2 mx-auto px-4',

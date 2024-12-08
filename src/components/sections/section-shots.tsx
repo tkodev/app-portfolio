@@ -4,10 +4,10 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Preview } from '@/components/atoms/preview'
+import { Media } from '@/components/atoms/media'
 import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/components/templates/text'
-import { mediaEntries } from '@/constants/media'
+import { shotEntries } from '@/constants/shots'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -56,13 +56,11 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
         </div>
       </div>
       <div className={cn(styles.grid())}>
-        {mediaEntries.map((mediaEntry, index) => {
-          const { src } = mediaEntry
+        {shotEntries.map((mediaEntry, index) => {
           const key = `media-${index}`
-          const imageSrc = `/images/shots/${src}`
           return (
             <div key={key} className={cn(styles.media())}>
-              <Preview src={imageSrc} aspect="square" />
+              <Media mediaEntry={mediaEntry} aspect="square" fill="cover" />
             </div>
           )
         })}

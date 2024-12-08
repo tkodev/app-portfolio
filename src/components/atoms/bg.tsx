@@ -57,12 +57,12 @@ type BgRef = HTMLDivElement
 type BgProps = HTMLAttributes<BgRef> & VariantProps<typeof styles.root>
 
 const Bg = forwardRef<BgRef, BgProps>((props, ref) => {
-  const { variant, size, attach, overlay, className, ...rest } = props
+  const { variant, size, attach, position, overlay, className, ...rest } = props
 
   return (
     <div
       ref={ref}
-      className={cn(styles.root({ variant, size, attach, overlay, className }))}
+      className={cn(styles.root({ variant, size, attach, position, overlay, className }))}
       {...rest}
     />
   )

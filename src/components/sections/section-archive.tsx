@@ -14,7 +14,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Preview } from '@/components/atoms/preview'
+import { Media } from '@/components/atoms/media'
 import {
   Table,
   TableBody,
@@ -34,6 +34,7 @@ import { SelectEntry } from '@/types/layout'
 import { ProjectRole } from '@/types/project'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
+import { kebabCase } from 'change-case'
 
 const styles = {
   root: cva('flex flex-col justify-center gap-16'),
@@ -129,8 +130,8 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
             const key = `project-${id}`
             const client = clientEntries[clientId]
             return (
-              <div key={key} className={cn(styles.project())}>
-                <Preview src={src} />
+              <Link key={key} className={cn(styles.project())} href={`/works/${kebabCase(id)}`}>
+                <Media mediaEntry={src[0]} aspect="video" />
                 <h2 className={cn(textStyles.h3())}>{title}</h2>
                 <hr className={cn(styles.projectDivider())} />
                 <div className={cn(styles.projectDetail())}>
@@ -138,7 +139,7 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
                   <p>{formatStdDateRange(startDate, endDate, appTimeZone)}</p>
                 </div>
                 <p>{client.name}</p>
-              </div>
+              </Link>
             )
           })}
         </div>
@@ -159,7 +160,9 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
               const client = clientEntries[clientId]
               return (
                 <TableRow key={key}>
-                  <TableCell>{title}</TableCell>
+                  <TableCell>
+                    <Link href={`/works/${kebabCase(id)}`}>{title}</Link>
+                  </TableCell>
                   <TableCell className={cn(styles.tableRoles())}>{roles.join(', ')}</TableCell>
                   <TableCell>{client.name}</TableCell>
                   <TableCell>{formatStdDateRange(startDate, endDate, appTimeZone)}</TableCell>

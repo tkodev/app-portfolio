@@ -2,7 +2,7 @@ import { forwardRef, HTMLAttributes, ThHTMLAttributes, TdHTMLAttributes } from '
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
-  tableWrapper: cva('relative w-full overflow-auto'),
+  tableWrapper: cva('relative w-full h-auto'),
   table: cva('w-full caption-bottom text-sm'),
   tableHeader: cva('[&_tr]:border-b'),
   tableBody: cva('[&_tr:last-child]:border-0'),

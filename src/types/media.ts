@@ -1,7 +1,37 @@
-type MediaEntry = {
-  type: 'image' | 'video'
+type FrameId = 'desktop' | 'mobile'
+
+type FrameEntry = {
+  id: FrameId
   src: string
-  title?: string
+  width: number
+  height: number
+  alt: string
+  screenTop: number
+  screenWidth: number
+  screenHeight: number
 }
 
-export type { MediaEntry }
+type VideoMediaEntry = {
+  type: 'video'
+  src: string
+  width: number | `${number}`
+  height: number | `${number}`
+  alt: string
+  mime?: string
+  track?: string
+  lang?: string
+  frameId?: FrameId
+}
+
+type ImageMediaEntry = {
+  type: 'image'
+  src: string
+  width: number | `${number}`
+  height: number | `${number}`
+  alt: string
+  frameId?: FrameId
+}
+
+type MediaEntry = VideoMediaEntry | ImageMediaEntry
+
+export type { FrameId, FrameEntry, VideoMediaEntry, ImageMediaEntry, MediaEntry }

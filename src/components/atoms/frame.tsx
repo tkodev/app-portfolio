@@ -1,0 +1,61 @@
+import Image from 'next/image'
+import { forwardRef, HTMLAttributes } from 'react'
+import { Media } from '@/components/atoms/media'
+import { frameEntries } from '@/constants/media'
+import { MediaEntry } from '@/types/media'
+import { cn, cva, VariantProps } from '@/utils/theme'
+
+const styles = {
+  root: cva('relative', {
+    variants: {
+      frameId: {
+        mobile: 'w-1/5',
+        desktop: 'w-full'
+      }
+    }
+  }),
+  lcd: cva('absolute left-1/2 -translate-x-1/2 bg-black scale-[101%]', {
+    variants: {
+      frameId: {
+        mobile: 'rounded-lg',
+        desktop: 'rounded-none'
+      }
+    }
+  }),
+  screen: cva('w-full h-full'),
+  device: cva('relative left-1/2 top-0 -translate-x-1/2 pointer-events-none')
+}
+
+type FrameRef = HTMLDivElement
+type FrameProps = HTMLAttributes<FrameRef> &
+  VariantProps<typeof styles.lcd> & {
+    mediaEntry: MediaEntry
+  }
+
+const Frame = forwardRef<FrameRef, FrameProps>((props, ref) => {
+  const { mediaEntry, className, ...rest } = props
+  const { frameId = 'desktop' } = mediaEntry
+
+  const frameEntry = frameEntries[frameId]
+  const { screenTop, screenWidth, screenHeight, ...frameProps } = frameEntry
+
+  return (
+    <div ref={ref} className={cn(styles.root({ frameId, className }))} {...rest}>
+      <div
+        className={cn(styles.lcd({ frameId }))}
+        style={{
+          top: `${(screenTop / frameEntry.height) * 100}%`,
+          height: `${(screenHeight / frameEntry.height) * 100}%`,
+          aspectRatio: `${screenWidth}/${screenHeight}`
+        }}
+      >
+        <Media className={cn(styles.screen())} mediaEntry={mediaEntry} fill="contain" />
+      </div>
+      <Image className={cn(styles.device())} {...frameProps} alt={frameEntry.alt} />
+    </div>
+  )
+})
+Frame.displayName = 'Frame'
+
+export { Frame }
+export type { FrameProps, FrameRef }
