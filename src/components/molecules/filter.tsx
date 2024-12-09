@@ -62,7 +62,7 @@ const Filter = forwardRef<FilterRef, FilterProps>((props, ref) => {
               variant={isActive ? 'default' : 'secondary'}
               onClick={handleFilterClick(filterEntry)}
             >
-              <Icon icon={filterEntry.icon} size="xs" /> {filterEntry.name}
+              <Icon icon={filterEntry.icon} /> {filterEntry.name}
             </Button>
           )
         })}
@@ -76,7 +76,7 @@ const Filter = forwardRef<FilterRef, FilterProps>((props, ref) => {
               variant={isActive ? 'default' : 'secondary'}
               onClick={handleLayoutClick(layoutEntry)}
             >
-              <Icon icon={layoutEntry.icon} size="xs" /> {layoutEntry.name}
+              <Icon icon={layoutEntry.icon} /> {layoutEntry.name}
             </Button>
           )
         })}

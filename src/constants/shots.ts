@@ -7,21 +7,45 @@ const shotEntries: MediaEntry[] = [
     src: '/images/shots/450216072_982625153604890_3906790385182224999_n.jpg',
     width: 1080,
     height: 1350,
-    alt: 'vibes'
+    alt: 'vibes',
+    caption: `Pretty inspiring environment.
+
+      📸 Equipment
+      - Sony A7C
+      - Sony 55mm F1.8 Zeiss
+      
+      🔖 Hashtags
+      #上環 #pohingfong #hongkong #sony #a7c #mirrorless #fullframe #photography #cityscape #prime #primelens #urban #travel #explore #travelgram`
   },
   {
     type: 'image',
     src: '/images/shots/450110062_772318978315667_2071897119041152592_n.jpg',
     width: 1080,
     height: 1350,
-    alt: 'vibes'
+    alt: 'vibes',
+    caption: `I like the vibe here.
+      
+      📸 Equipment
+      - Sony A7C
+      - Sony 55mm F1.8 Zeiss
+      
+      🔖 Hashtags
+      #上環 #pohingfong #hongkong #ideasarebulletproof #sony #a7c #mirrorless #fullframe #photography #cityscape #prime #primelens #urban #travel #explore #travelgram #gentrification #cafe`
   },
   {
     type: 'image',
     src: '/images/shots/450217162_520804326951173_3106263697203663285_n.jpg',
     width: 1080,
     height: 1350,
-    alt: 'vibes'
+    alt: 'vibes',
+    caption: `Old vs new.
+      
+      📸 Equipment
+      - Sony A7C
+      - Sony 55mm F1.8 Zeiss
+      
+      🔖 Hashtags
+      #上環 #pohingfong #hongkong #sony #a7c #mirrorless #fullframe #photography #cityscape #prime #primelens #urban #travel #explore #travelgram #historic #architecture #cafe #gentrification #university`
   },
 
   // hk

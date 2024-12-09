@@ -80,7 +80,7 @@ const SectionClients = forwardRef<SectionClientsRef, SectionClientsProps>((props
       <div className={cn(styles.cta())}>
         <Button size="lg" asChild>
           <Link href="/works">
-            Explore Featured Works <Icon icon={MoveRightIcon} size="xs" />
+            Explore Featured Works <Icon icon={MoveRightIcon} />
           </Link>
         </Button>
       </div>

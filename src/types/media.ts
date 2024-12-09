@@ -21,6 +21,7 @@ type VideoMediaEntry = {
   track?: string
   lang?: string
   frameId?: FrameId
+  caption?: string
 }
 
 type ImageMediaEntry = {
@@ -30,6 +31,7 @@ type ImageMediaEntry = {
   height: number | `${number}`
   alt: string
   frameId?: FrameId
+  caption?: string
 }
 
 type MediaEntry = VideoMediaEntry | ImageMediaEntry

@@ -15,6 +15,7 @@ import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Media } from '@/components/atoms/media'
+import { Filter } from '@/components/molecules/filter'
 import {
   Table,
   TableBody,
@@ -23,7 +24,6 @@ import {
   TableHeader,
   TableRow
 } from '@/components/molecules/table'
-import { Filter } from '@/components/organisms/filter'
 import { Section } from '@/components/organisms/section'
 import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
@@ -131,7 +131,7 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
             const client = clientEntries[clientId]
             return (
               <Link key={key} className={cn(styles.project())} href={`/works/${kebabCase(id)}`}>
-                <Media mediaEntry={src[0]} aspect="video" />
+                <Media mediaEntry={src[0]} aspect="video" isHover />
                 <h2 className={cn(textStyles.h3())}>{title}</h2>
                 <hr className={cn(styles.projectDivider())} />
                 <div className={cn(styles.projectDetail())}>
@@ -175,7 +175,7 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
       <div className={cn(styles.cta())}>
         <Button size="lg" asChild>
           <Link href="/archive">
-            Archived Works <Icon icon={MoveRightIcon} size="xs" />
+            Archived Works <Icon icon={MoveRightIcon} />
           </Link>
         </Button>
       </div>

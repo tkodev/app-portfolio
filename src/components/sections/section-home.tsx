@@ -85,9 +85,9 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
               Based in <em>Toronto, Canada.</em>
             </h3>
             <div className={cn(styles.cta())}>
-              <Button size="default" asChild>
+              <Button size="lg" asChild>
                 <Link href="/profile">
-                  Explore Profile <Icon icon={ArrowRightIcon} size="xs" />
+                  Explore Profile <Icon icon={ArrowRightIcon} />
                 </Link>
               </Button>
             </div>

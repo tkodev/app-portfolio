@@ -11,6 +11,7 @@ import {
   TableHeader,
   TableRow
 } from '@/components/molecules/table'
+import { Lightbox } from '@/components/organisms/lightbox'
 import { Section } from '@/components/organisms/section'
 import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
@@ -81,7 +82,13 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
           </TableRow>
         </TableBody>
       </Table>
-      {src[0] && <Media mediaEntry={src[0]} />}
+      {src[0] && (
+        <Lightbox mediaEntry={src[0]}>
+          <button>
+            <Media mediaEntry={src[0]} isHover />
+          </button>
+        </Lightbox>
+      )}
     </Section>
   )
 })

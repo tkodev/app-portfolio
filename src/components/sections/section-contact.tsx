@@ -52,22 +52,22 @@ const SectionContact = forwardRef<SectionContactRef, SectionContactProps>((props
         <div className={cn(styles.contact())}>
           <Button size="lg" asChild>
             <Link href={profileEntries.tony.linkedin} target="_blank">
-              <Icon icon={LinkedinIcon} size="xs" /> LinkedIn: <u>tkodev</u>
+              <Icon icon={LinkedinIcon} /> LinkedIn: <u>tkodev</u>
             </Link>
           </Button>
           <Button size="lg" asChild>
             <Link href={profileEntries.tony.github} target="_blank">
-              <Icon icon={GithubIcon} size="xs" /> Github: <u>tkodev</u>
+              <Icon icon={GithubIcon} /> Github: <u>tkodev</u>
             </Link>
           </Button>
           <Button size="lg" asChild>
             <Link href={`mailto:${profileEntries.tony.email}`} target="_blank">
-              <Icon icon={MailIcon} size="xs" /> Email: <u>tony@tko.dev</u>
+              <Icon icon={MailIcon} /> Email: <u>tony@tko.dev</u>
             </Link>
           </Button>
           <Button size="lg" asChild>
             <Link href={`mailto:${profileEntries.tony.phone}`} target="_blank">
-              <Icon icon={PhoneIcon} size="xs" /> Phone: <u>+1 (647) 300-9787</u>
+              <Icon icon={PhoneIcon} /> Phone: <u>+1 (647) 300-9787</u>
             </Link>
           </Button>
         </div>

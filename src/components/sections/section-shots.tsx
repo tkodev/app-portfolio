@@ -5,6 +5,7 @@ import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { Media } from '@/components/atoms/media'
+import { Lightbox } from '@/components/organisms/lightbox'
 import { Section } from '@/components/organisms/section'
 import { shotEntries } from '@/constants/shots'
 import { textStyles } from '@/constants/theme'
@@ -22,7 +23,7 @@ const styles = {
   icon: cva('w-auto'),
   text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
 
-  grid: cva('grid grid-cols-3 gap-4 md:gap-8 lg:gap-16'),
+  grid: cva('grid grid-cols-3 gap-2 md:gap-4 lg:gap-8'),
   media: cva('flex flex-col gap-4')
 }
 
@@ -59,16 +60,18 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
         {shotEntries.map((mediaEntry, index) => {
           const key = `media-${index}`
           return (
-            <div key={key} className={cn(styles.media())}>
-              <Media mediaEntry={mediaEntry} aspect="square" fill="cover" />
-            </div>
+            <Lightbox key={key} mediaEntry={mediaEntry}>
+              <button className={cn(styles.media())}>
+                <Media mediaEntry={mediaEntry} aspect="square" fill="cover" isHover />
+              </button>
+            </Lightbox>
           )
         })}
       </div>
       <div className={cn(styles.cta())}>
         <Button size="lg" asChild>
           <Link href="/works">
-            Explore Projects <Icon icon={MoveRightIcon} size="xs" />
+            Explore Projects <Icon icon={MoveRightIcon} />
           </Link>
         </Button>
       </div>

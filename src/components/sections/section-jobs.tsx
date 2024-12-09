@@ -101,7 +101,7 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
       <div className={cn(styles.cta())}>
         <Button size="lg" asChild>
           <Link href="https://www.linkedin.com/in/tkodev/" target="_blank">
-            <Icon icon={LinkedinIcon} size="xs" /> Explore Full History
+            <Icon icon={LinkedinIcon} /> Explore Full History
           </Link>
         </Button>
       </div>

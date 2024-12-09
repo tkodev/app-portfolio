@@ -1,44 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  strong {
-    @apply font-semibold;
-  }
-  body {
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-  .light {
-    color-scheme: light;
-  }
-  .dark {
-    color-scheme: dark;
-  }
+* {
+  @apply border-border;
+}
+strong {
+  @apply font-semibold;
+}
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+.light {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
 }
 
-@layer utilities {
-  /* Hide number arrows on inputs */
-  .hide-number-arrows::-webkit-inner-spin-button,
-  .hide-number-arrows::-webkit-outer-spin-button {
-    appearance: none;
-    margin: 0;
-  }
-  .hide-number-arrows {
-    appearance: textfield;
-  }
+/* Hide number arrows on inputs */
+.hide-number-arrows::-webkit-inner-spin-button,
+.hide-number-arrows::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.hide-number-arrows {
+  appearance: textfield;
+}
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
