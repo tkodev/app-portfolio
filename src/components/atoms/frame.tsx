@@ -6,14 +6,7 @@ import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('relative', {
-    variants: {
-      frameId: {
-        mobile: 'w-1/5',
-        desktop: 'w-full'
-      }
-    }
-  }),
+  root: cva('relative w-full'),
   lcd: cva('absolute left-1/2 -translate-x-1/2 bg-black scale-[101%]', {
     variants: {
       frameId: {
@@ -40,7 +33,7 @@ const Frame = forwardRef<FrameRef, FrameProps>((props, ref) => {
   const { screenTop, screenWidth, screenHeight, ...frameProps } = frameEntry
 
   return (
-    <div ref={ref} className={cn(styles.root({ frameId, className }))} {...rest}>
+    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div
         className={cn(styles.lcd({ frameId }))}
         style={{

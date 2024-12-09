@@ -42,12 +42,37 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       {
         type: 'image',
         src: '/images/works/paypower.png',
-        width: 512,
-        height: 250,
+        width: 1640,
+        height: 1024,
         alt: 'Paypower Mastercard App'
       }
     ],
-    frames: [],
+    frames: [
+      {
+        type: 'image',
+        src: '/images/works/paypower-cards.png',
+        width: 375,
+        height: 812,
+        alt: 'Paypower Mastercard App - Cards',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/works/paypower-dashboard.png',
+        width: 375,
+        height: 812,
+        alt: 'Paypower Mastercard App - Dashboard',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/works/paypower-verify.png',
+        width: 375,
+        height: 812,
+        alt: 'Paypower Mastercard App - Verify Identity',
+        frameId: 'mobile'
+      }
+    ],
     title: 'Paypower Mastercard App',
     desc: 'I played a key role in developing Paypower’s mobile app, enabling users to manage prepaid Mastercards efficiently. My contributions included a shift from Redux to tRPC, implementing multi-currency support, and creating CI/CD pipelines. The project also involved real-time push notifications and enhanced UX features like dark/light modes to elevate user engagement and operational reliability.',
     clientId: 'peoplesGroup',

@@ -36,7 +36,7 @@ const Page: FC<PageProps> = async (props) => {
       <SectionProject id="works" projectEntry={projectEntry} />
       <SectionFrames id="frames-desktop" frameEntries={desktopEntries} />
       <SectionMedia id="media" mediaEntries={mediaEntries} />
-      <SectionFrames id="frames-mobile" frameEntries={mobileEntries} />
+      <SectionFrames id="frames-mobile" frameEntries={mobileEntries} isParallax />
       <SectionContact id="contact" />
     </Main>
   )
