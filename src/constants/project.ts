@@ -18,7 +18,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     frames: [],
     title: 'Beyond Oil Rig Control Interface',
     intro:
-      'As a Staff Engineer at Badal.io, I co-led the transformation of the Beyond MPD platform. The project entailed transitioning legacy oil rig systems to an event-driven architecture, enhancing operational integrity with real-time data visualization and a custom design system. This modernization also integrated back-end solutions for essential data management, reinforcing reliability in high-stakes environments.',
+      'The Beyond project is redefining industrial operations by transforming legacy oil rig systems into a cutting-edge, event-driven architecture. Designed to improve operational integrity and real-time decision-making, this modernization project bridges advanced technology with critical field applications.',
+    desc: "As a Staff Software Engineer on the Beyond project, I spearheaded the development of a cutting-edge platform that modernizes legacy oil rig systems into a real-time, event-driven architecture. My contributions included implementing advanced data visualization and interactive control elements, enabling sub-second updates through WebSocket and tRPC for seamless, responsive performance. Utilizing a monorepo architecture, I streamlined the development process across multiple teams, ensuring consistency and scalability. I adapted and integrated control algorithms to optimize operational precision and reliability, while also implementing a cohesive design system for an intuitive user experience. Additionally, I contributed to the overarching architecture to ensure the platform's robustness and adaptability for critical industrial applications. Beyond is poised to set new standards in the industry, with more details to come post-launch.",
     clientId: 'badal',
     profileIds: ['tony', 'tulio', 'zeena', 'harpreet'],
     startDate: fromZonedTime('2023-05-01', appTimeZone),
@@ -129,16 +130,42 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
-        src: '/images/projects/aeroplan-ext.png',
+        src: '/images/projects/aeroplan/aeroplan-ext.png',
         width: 2232,
         height: 936,
         alt: 'Aeroplan Shopping Button - Browser Extension'
       }
     ],
-    frames: [],
+    frames: [
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan/aeroplan-ext-02-activate-offer-coupons-crop.png',
+        width: 1440,
+        height: 934,
+        alt: 'Aeroplan Shopping Button - Offer Activation',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan/aeroplan-ext-04-activated-a-crop.png',
+        width: 2880,
+        height: 1868,
+        alt: 'Aeroplan Shopping Button - Offer Activated',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan/aeroplan-ext-05-landing-a-crop.png',
+        width: 2880,
+        height: 1868,
+        alt: 'Aeroplan Shopping Button - Home View',
+        frameId: 'desktop'
+      }
+    ],
     title: 'Aeroplan Shopping Button - Browser Extension',
     intro:
-      'As lead developer, I architected Aeroplan’s first cross-browser extension. Utilizing SWR to manage CORS, I created a navigation tracking system for multi-domain purchase sessions and a caching solution to optimize performance. This innovative approach supported users in earning Aeroplan points seamlessly across hundreds of retailer sites, aligning with high user engagement standards.',
+      'The Aeroplan Shopping Button browser extension brought seamless rewards earning to users across hundreds of retail sites. Designed for cross-browser compatibility, high traffic and dynamic retailer data, this innovative tool streamlined the shopping experience while integrating effortlessly with Aeroplan’s ecosystem.',
+    desc: 'As the lead developer for the Aeroplan Shopping Button browser extension, I created a cross-browser solution that integrated rewards earning seamlessly into online shopping. To address the complexities of shopping sessions, I optimized the event system to overcome CORS restrictions and handle interactions across multiple tabs and windows without state conflicts. I implemented an SWR-based query system and developed a navigation tracking system for multi-domain purchase sessions, ensuring smooth user journeys. To manage high traffic and dynamic retailer data, I designed a multi-level caching mechanism that reduced backend load while maintaining responsive performance. This project delivered a reliable, scalable, and user-friendly tool that empowered Aeroplan members to earn rewards effortlessly across hundreds of retailers.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2021-07-01', appTimeZone),
@@ -160,7 +187,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
-        src: '/images/projects/aeroplan.png',
+        src: '/images/projects/aeroplan/aeroplan.png',
         width: 1920,
         height: 1080,
         alt: 'Aeroplan eStore - Retailer & Catalog Redesign'
@@ -214,7 +241,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
-        src: '/images/projects/aeroplan.png',
+        src: '/images/projects/aeroplan/aeroplan.png',
         width: 1920,
         height: 1080,
         alt: 'Aeroplan eStore - AODA AA / WTAG 2.0 Compliance'
@@ -264,7 +291,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
-        src: '/images/projects/aeroplan.png',
+        src: '/images/projects/aeroplan/aeroplan.png',
         width: 1920,
         height: 1080,
         alt: 'Aeroplan eStore - Initial Architecture & MVP'

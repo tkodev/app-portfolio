@@ -100,10 +100,12 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
           </button>
         </Lightbox>
       )}
-      <div className={cn(styles.desc())}>
-        <h2 className={cn(textStyles.h2())}>In Depth</h2>
-        {!!desc && <p>{desc}</p>}
-      </div>
+      {!!desc && (
+        <div className={cn(styles.desc())}>
+          <h2 className={cn(textStyles.h2())}>In Depth</h2>
+          <p>{desc}</p>
+        </div>
+      )}
     </Section>
   )
 })
