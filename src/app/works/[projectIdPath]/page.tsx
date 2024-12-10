@@ -29,14 +29,14 @@ const Page: FC<PageProps> = async (props) => {
     (frameEntry) => frameEntry.frameId === 'desktop'
   )
   const mobileEntries = projectEntry.frames.filter((frameEntry) => frameEntry.frameId === 'mobile')
-  const mediaEntries = projectEntry.src.slice(1)
+  const mediaEntries = projectEntry.media.slice(1)
 
   return (
     <Main>
       <SectionProject id="works" projectEntry={projectEntry} />
       <SectionFrames id="frames-desktop" frameEntries={desktopEntries} />
-      <SectionMedia id="media" mediaEntries={mediaEntries} />
       <SectionFrames id="frames-mobile" frameEntries={mobileEntries} isParallax />
+      <SectionMedia id="media" mediaEntries={mediaEntries} />
       <SectionContact id="contact" />
     </Main>
   )

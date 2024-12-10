@@ -6,10 +6,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   beyondModernization: {
     id: 'beyondModernization',
     roles: ['development', 'design'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/beyond.png',
+        src: '/images/projects/beyond.png',
         width: 1920,
         height: 1080,
         alt: 'Beyond Oil Rig Control Interface'
@@ -17,7 +17,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Beyond Oil Rig Control Interface',
-    desc: 'As a Staff Engineer at Badal.io, I co-led the transformation of the Beyond MPD platform. The project entailed transitioning legacy oil rig systems to an event-driven architecture, enhancing operational integrity with real-time data visualization and a custom design system. This modernization also integrated back-end solutions for essential data management, reinforcing reliability in high-stakes environments.',
+    intro:
+      'As a Staff Engineer at Badal.io, I co-led the transformation of the Beyond MPD platform. The project entailed transitioning legacy oil rig systems to an event-driven architecture, enhancing operational integrity with real-time data visualization and a custom design system. This modernization also integrated back-end solutions for essential data management, reinforcing reliability in high-stakes environments.',
     clientId: 'badal',
     profileIds: ['tony', 'tulio', 'zeena', 'harpreet'],
     startDate: fromZonedTime('2023-05-01', appTimeZone),
@@ -38,19 +39,26 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   paypowerReloadablePrepaidMastercardMobileApp: {
     id: 'paypowerReloadablePrepaidMastercardMobileApp',
     roles: ['development', 'design'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/paypower.png',
+        src: '/images/projects/paypower/paypower.png',
         width: 1640,
         height: 1024,
         alt: 'Paypower Mastercard App'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/paypower/paypower-screens.png',
+        width: 1640,
+        height: 1024,
+        alt: 'Paypower Mastercard App - Screens'
       }
     ],
     frames: [
       {
         type: 'image',
-        src: '/images/works/paypower-cards.png',
+        src: '/images/projects/paypower/paypower-cards.png',
         width: 375,
         height: 812,
         alt: 'Paypower Mastercard App - Cards',
@@ -58,7 +66,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/works/paypower-dashboard.png',
+        src: '/images/projects/paypower/paypower-dashboard.png',
         width: 375,
         height: 812,
         alt: 'Paypower Mastercard App - Dashboard',
@@ -66,7 +74,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/works/paypower-verify.png',
+        src: '/images/projects/paypower/paypower-verify.png',
         width: 375,
         height: 812,
         alt: 'Paypower Mastercard App - Verify Identity',
@@ -74,7 +82,9 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       }
     ],
     title: 'Paypower Mastercard App',
-    desc: 'I played a key role in developing Paypower’s mobile app, enabling users to manage prepaid Mastercards efficiently. My contributions included a shift from Redux to tRPC, implementing multi-currency support, and creating CI/CD pipelines. The project also involved real-time push notifications and enhanced UX features like dark/light modes to elevate user engagement and operational reliability.',
+    intro:
+      'The Paypower Reloadable Prepaid Mastercard app redefined how users interact with prepaid financial tools. Designed as a white-label React Native solution, the app offers flexibility for clients and convenience for users, combining powerful backend architecture with an intuitive interface.',
+    desc: 'For the Paypower app, I developed a scalable and customizable solution using a monorepo architecture and feature flag-based whitelabeling. This approach streamlined cross-platform development and enabled rapid deployment tailored to diverse client needs. Transitioning the codebase from Redux to tRPC improved data efficiency, while CI/CD pipelines ensured a seamless development lifecycle. The app’s design incorporated dynamic theming and accessibility features, delivering a polished, user-focused experience for prepaid card management.',
     clientId: 'peoplesGroup',
     profileIds: ['tony', 'ben', 'leo', 'nikita'],
     startDate: fromZonedTime('2021-10-01', appTimeZone),
@@ -94,10 +104,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   techTalkMonoreposWithTurborepo: {
     id: 'techTalkMonoreposWithTurborepo',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/monorepos.png',
+        src: '/images/projects/monorepos.png',
         width: 1200,
         height: 1200,
         alt: 'Monorepos with Turborepo'
@@ -105,7 +115,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'TechTalk - Monorepos with Turborepo @ React + Native Toronto x Quantum Mob',
-    desc: 'This in-person event brought together developers at Quantum Mob’s head office to discuss cutting-edge topics in React and React Native development. Featuring talks on Redux to React Query migration, React integration in WordPress, and leveraging Turborepo for managing monorepos, the event provided actionable insights and facilitated meaningful discussions among attendees. The TechTalk showcased Quantum Mob’s commitment to fostering community and advancing developer knowledge.',
+    intro:
+      'This in-person event brought together developers at Quantum Mob’s head office to discuss cutting-edge topics in React and React Native development. Featuring talks on Redux to React Query migration, React integration in WordPress, and leveraging Turborepo for managing monorepos, the event provided actionable insights and facilitated meaningful discussions among attendees. The TechTalk showcased Quantum Mob’s commitment to fostering community and advancing developer knowledge.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2022-10-01', appTimeZone),
@@ -115,10 +126,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   aeroplanShoppingButtonBrowserExtension: {
     id: 'aeroplanShoppingButtonBrowserExtension',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/aeroplan-ext.png',
+        src: '/images/projects/aeroplan-ext.png',
         width: 2232,
         height: 936,
         alt: 'Aeroplan Shopping Button - Browser Extension'
@@ -126,7 +137,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Aeroplan Shopping Button - Browser Extension',
-    desc: 'As lead developer, I architected Aeroplan’s first cross-browser extension. Utilizing SWR to manage CORS, I created a navigation tracking system for multi-domain purchase sessions and a caching solution to optimize performance. This innovative approach supported users in earning Aeroplan points seamlessly across hundreds of retailer sites, aligning with high user engagement standards.',
+    intro:
+      'As lead developer, I architected Aeroplan’s first cross-browser extension. Utilizing SWR to manage CORS, I created a navigation tracking system for multi-domain purchase sessions and a caching solution to optimize performance. This innovative approach supported users in earning Aeroplan points seamlessly across hundreds of retailer sites, aligning with high user engagement standards.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2021-07-01', appTimeZone),
@@ -145,10 +157,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   aeroplanEstoreRetailerAndCatalogRedesign: {
     id: 'aeroplanEstoreRetailerAndCatalogRedesign',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/aeroplan.png',
+        src: '/images/projects/aeroplan.png',
         width: 1920,
         height: 1080,
         alt: 'Aeroplan eStore - Retailer & Catalog Redesign'
@@ -156,7 +168,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Aeroplan eStore - Retailer & Catalog Redesign',
-    desc: 'Tasked with enhancing the Aeroplan eStore’s usability, I spearheaded the redesign of catalog filtering and points-earning integrations on affiliate pages. This project improved the store’s visual appeal and functionality, allowing users to more easily locate retailers and earn points, thus fostering greater user satisfaction and engagement.',
+    intro:
+      'Tasked with enhancing the Aeroplan eStore’s usability, I spearheaded the redesign of catalog filtering and points-earning integrations on affiliate pages. This project improved the store’s visual appeal and functionality, allowing users to more easily locate retailers and earn points, thus fostering greater user satisfaction and engagement.',
     clientId: 'quantumMob',
     profileIds: ['tony', 'steven'],
     startDate: fromZonedTime('2021-04-01', appTimeZone),
@@ -175,10 +188,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   rocMarEngineeringEmployeeDashboard: {
     id: 'rocMarEngineeringEmployeeDashboard',
     roles: ['development', 'design'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/rocmar.png',
+        src: '/images/projects/rocmar.png',
         width: 1920,
         height: 1080,
         alt: 'RocMar Employee Dashboard'
@@ -186,7 +199,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'RocMar Employee Dashboard',
-    desc: 'I led the development of an employee dashboard for RocMar Engineering, balancing design and functionality to optimize productivity. From design to deployment, this project required close collaboration with stakeholders, translating complex workflows into a user-friendly, visually cohesive interface that met architectural productivity needs.',
+    intro:
+      'I led the development of an employee dashboard for RocMar Engineering, balancing design and functionality to optimize productivity. From design to deployment, this project required close collaboration with stakeholders, translating complex workflows into a user-friendly, visually cohesive interface that met architectural productivity needs.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2020-11-01', appTimeZone),
@@ -197,10 +211,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   aeroplanEstoreAodaAaWtagCompliance: {
     id: 'aeroplanEstoreAodaAaWtagCompliance',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/aeroplan.png',
+        src: '/images/projects/aeroplan.png',
         width: 1920,
         height: 1080,
         alt: 'Aeroplan eStore - AODA AA / WTAG 2.0 Compliance'
@@ -208,7 +222,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Aeroplan eStore - AODA AA / WTAG 2.0 Compliance',
-    desc: 'As the lead developer, I directed Aeroplan’s AODA AA and WCAG 2.0 compliance efforts. This initiative involved implementing accessibility standards across the eStore, ensuring it was user-friendly and compliant with regulatory standards, enhancing usability for all customers.',
+    intro:
+      'As the lead developer, I directed Aeroplan’s AODA AA and WCAG 2.0 compliance efforts. This initiative involved implementing accessibility standards across the eStore, ensuring it was user-friendly and compliant with regulatory standards, enhancing usability for all customers.',
     clientId: 'quantumMob',
     profileIds: ['tony', 'steven'],
     startDate: fromZonedTime('2020-10-01', appTimeZone),
@@ -218,10 +233,11 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   quantumMobCatalogAppProjectMobCiCdIntegrations: {
     id: 'quantumMobCatalogAppProjectMobCiCdIntegrations',
     roles: ['development'],
-    src: [],
+    media: [],
     frames: [],
     title: 'Quantum Mob - Catalog App, Media Mob, CI/CD Integrations',
-    desc: 'As Team Lead, I developed infrastructure for Quantum Mob’s product catalog and introduced a streamlined CI/CD tool for efficient project setup. This tool automated pipeline generation, enhancing development workflows and enabling faster product iteration, contributing to the firm’s commitment to efficient, modern development processes.',
+    intro:
+      'As Team Lead, I developed infrastructure for Quantum Mob’s product catalog and introduced a streamlined CI/CD tool for efficient project setup. This tool automated pipeline generation, enhancing development workflows and enabling faster product iteration, contributing to the firm’s commitment to efficient, modern development processes.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2020-09-01', appTimeZone),
@@ -231,10 +247,11 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   quantumMobCoreUtilitiesAuthModule: {
     id: 'quantumMobCoreUtilitiesAuthModule',
     roles: ['development'],
-    src: [],
+    media: [],
     frames: [],
     title: 'Quantum Mob - Core Utilities, Auth Module',
-    desc: 'At Quantum Mob, I developed core authentication utilities within a monorepo structure, enabling reuse across multiple projects. These modules provided robust, secure authentication solutions for both internal and client applications, reducing development time on future projects.',
+    intro:
+      'At Quantum Mob, I developed core authentication utilities within a monorepo structure, enabling reuse across multiple projects. These modules provided robust, secure authentication solutions for both internal and client applications, reducing development time on future projects.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2020-07-01', appTimeZone),
@@ -244,10 +261,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   aeroplanEstoreInitialArchitectureAndMvp: {
     id: 'aeroplanEstoreInitialArchitectureAndMvp',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/aeroplan.png',
+        src: '/images/projects/aeroplan.png',
         width: 1920,
         height: 1080,
         alt: 'Aeroplan eStore - Initial Architecture & MVP'
@@ -255,7 +272,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Aeroplan eStore - Initial Architecture & MVP',
-    desc: 'As lead developer, I crafted the Aeroplan eStore’s foundational architecture, establishing front-end design, state management, and server infrastructure. This design supported Aeroplan’s expansion in online redemption, creating a streamlined experience for users and a robust foundation for future iterations.',
+    intro:
+      'As lead developer, I crafted the Aeroplan eStore’s foundational architecture, establishing front-end design, state management, and server infrastructure. This design supported Aeroplan’s expansion in online redemption, creating a streamlined experience for users and a robust foundation for future iterations.',
     clientId: 'quantumMob',
     profileIds: ['tony', 'nahuel'],
     startDate: fromZonedTime('2020-01-01', appTimeZone),
@@ -265,10 +283,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   airMilesLandingPortalDevelopment: {
     id: 'airMilesLandingPortalDevelopment',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/airmiles.png',
+        src: '/images/projects/airmiles.png',
         width: 1920,
         height: 1080,
         alt: 'Air Miles - Landing Portal Development'
@@ -276,7 +294,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Air Miles - Landing Portal Development',
-    desc: 'As part of the Air Miles team, I contributed to the landing portal’s development using a monorepo structure with reusable React components. This project focused on creating a consistent, modular experience for users, integrating components that provided an intuitive interface and aligned with Air Miles branding.',
+    intro:
+      'As part of the Air Miles team, I contributed to the landing portal’s development using a monorepo structure with reusable React components. This project focused on creating a consistent, modular experience for users, integrating components that provided an intuitive interface and aligned with Air Miles branding.',
     clientId: 'airMiles',
     profileIds: ['tony'],
     startDate: fromZonedTime('2020-01-01', appTimeZone),
@@ -287,10 +306,11 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   petsAboveReactModernization: {
     id: 'petsAboveReactModernization',
     roles: ['development'],
-    src: [],
+    media: [],
     frames: [],
     title: 'Pets Above - React Modernization',
-    desc: 'I led the modernization of the Pets Above application, updating the codebase from legacy React and Redux to a more maintainable and efficient structure. This overhaul included enhancements in messaging with RabbitMQ and improvements in data handling with MySQL, aligning the app with modern standards for performance and usability.',
+    intro:
+      'I led the modernization of the Pets Above application, updating the codebase from legacy React and Redux to a more maintainable and efficient structure. This overhaul included enhancements in messaging with RabbitMQ and improvements in data handling with MySQL, aligning the app with modern standards for performance and usability.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2019-11-01', appTimeZone),
@@ -300,10 +320,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   cardinalMeatsFoodServiceWebsiteAndCms: {
     id: 'cardinalMeatsFoodServiceWebsiteAndCms',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/cardinal.png',
+        src: '/images/projects/cardinal.png',
         width: 1920,
         height: 1080,
         alt: 'Cardinal Meats & Food Service - Website & CMS'
@@ -311,7 +331,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Cardinal Meats & Food Service - Website & CMS',
-    desc: 'For Cardinal Meats, I developed a custom CMS integrated with their Express-based website. This project included creating user-friendly content management tools, providing the client with an accessible platform for content updates and ensuring the site remained engaging and efficient for end-users.',
+    intro:
+      'For Cardinal Meats, I developed a custom CMS integrated with their Express-based website. This project included creating user-friendly content management tools, providing the client with an accessible platform for content updates and ensuring the site remained engaging and efficient for end-users.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2019-04-01', appTimeZone),
@@ -321,10 +342,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   canadaChiropracticProtectiveAssociationWebsiteAndCms: {
     id: 'canadaChiropracticProtectiveAssociationWebsiteAndCms',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/ccpa.png',
+        src: '/images/projects/ccpa.png',
         width: 1920,
         height: 1080,
         alt: 'Canada Chiropractic Protective Association - Website & CMS'
@@ -332,7 +353,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Canada Chiropractic Protective Association - Website & CMS',
-    desc: 'For the Canada Chiropractic Protective Association, I developed a Microsoft Dynamics 365 CRM-integrated website. This project allowed the client to manage case information and plans effectively, enhancing their administrative capabilities and supporting better client service through a centralized, accessible platform.',
+    intro:
+      'For the Canada Chiropractic Protective Association, I developed a Microsoft Dynamics 365 CRM-integrated website. This project allowed the client to manage case information and plans effectively, enhancing their administrative capabilities and supporting better client service through a centralized, accessible platform.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2017-04-01', appTimeZone),
@@ -342,10 +364,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   canadaDryEnterPinContest: {
     id: 'canadaDryEnterPinContest',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/canadadry.png',
+        src: '/images/projects/canadadry.png',
         width: 1920,
         height: 1080,
         alt: 'Canada Dry - Enter PIN Contest'
@@ -353,7 +375,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Canada Dry - Enter PIN Contest',
-    desc: 'I designed and developed an entry-based contest for Canada Dry using PHP and Ractive.js. This interactive project allowed users to enter PIN codes for a chance to win, engaging customers and promoting Canada Dry’s brand in a fun, user-driven way.',
+    intro:
+      'I designed and developed an entry-based contest for Canada Dry using PHP and Ractive.js. This interactive project allowed users to enter PIN codes for a chance to win, engaging customers and promoting Canada Dry’s brand in a fun, user-driven way.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2017-04-01', appTimeZone),
@@ -363,10 +386,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   canadaDryWebsite: {
     id: 'canadaDryWebsite',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/canadadry.png',
+        src: '/images/projects/canadadry.png',
         width: 1920,
         height: 1080,
         alt: 'Canada Dry - Website'
@@ -374,7 +397,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Canada Dry - Website',
-    desc: 'I developed a dynamic landing site for Canada Dry that featured parallax effects and interactive animations. Built with PHP, this visually engaging site supported Canada Dry’s branding and offered an interactive experience for users, enhancing the brand’s digital presence.',
+    intro:
+      'I developed a dynamic landing site for Canada Dry that featured parallax effects and interactive animations. Built with PHP, this visually engaging site supported Canada Dry’s branding and offered an interactive experience for users, enhancing the brand’s digital presence.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2017-04-01', appTimeZone),
@@ -384,10 +408,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   monogramCanadianCatalogWebsite: {
     id: 'monogramCanadianCatalogWebsite',
     roles: ['development', 'design'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/monogram.png',
+        src: '/images/projects/monogram.png',
         width: 1920,
         height: 1080,
         alt: 'Monogram - Canadian Catalog Website'
@@ -395,7 +419,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Monogram - Canadian Catalog Website',
-    desc: 'For Monogram, I developed a responsive catalog website using Koa.js and Ractive.js. This project showcased Monogram’s offerings through a clean, accessible interface that adapted seamlessly across frames, enhancing user engagement and accessibility.',
+    intro:
+      'For Monogram, I developed a responsive catalog website using Koa.js and Ractive.js. This project showcased Monogram’s offerings through a clean, accessible interface that adapted seamlessly across frames, enhancing user engagement and accessibility.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2017-04-01', appTimeZone),
@@ -405,10 +430,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   modaMatchVirtualFittingRoom: {
     id: 'modaMatchVirtualFittingRoom',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/modamatch.png',
+        src: '/images/projects/modamatch.png',
         width: 1920,
         height: 1080,
         alt: 'Moda Match - Virtual Fitting Room'
@@ -416,7 +441,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Moda Match - Virtual Fitting Room',
-    desc: 'Moda Match transforms online apparel shopping by enabling customers to virtually try on clothing using predefined models. Integrated as a white-label plugin, it’s compatible with Shopify and WooCommerce, easily installed by store owners to enhance customer engagement. With support for thousands of items, Moda Match helps users visualize fit and dimensions, driving a more personalized shopping experience.',
+    intro:
+      'Moda Match transforms online apparel shopping by enabling customers to virtually try on clothing using predefined models. Integrated as a white-label plugin, it’s compatible with Shopify and WooCommerce, easily installed by store owners to enhance customer engagement. With support for thousands of items, Moda Match helps users visualize fit and dimensions, driving a more personalized shopping experience.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2021-04-01', appTimeZone),
@@ -434,10 +460,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   parentsCanadaMagazineWebsite: {
     id: 'parentsCanadaMagazineWebsite',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/parents.png',
+        src: '/images/projects/parents.png',
         width: 1920,
         height: 1080,
         alt: 'Parents Canada - Magazine Website'
@@ -445,7 +471,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Parents Canada - Magazine Website',
-    desc: 'I developed a custom WordPress theme for Parents Canada’s magazine website, providing a content-rich platform that aligned with the publication’s brand and met the needs of its diverse readership. This theme allowed for easy content updates and a visually engaging user experience.',
+    intro:
+      'I developed a custom WordPress theme for Parents Canada’s magazine website, providing a content-rich platform that aligned with the publication’s brand and met the needs of its diverse readership. This theme allowed for easy content updates and a visually engaging user experience.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2018-04-01', appTimeZone),
@@ -455,10 +482,11 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   toffifeeSpinToWinContest: {
     id: 'toffifeeSpinToWinContest',
     roles: ['development'],
-    src: [],
+    media: [],
     frames: [],
     title: 'Toffifee - Spin to Win Contest',
-    desc: 'For Toffifee, I created a "spin to win" contest using Express.js and Ractive.js. This engaging, animation-driven contest offered users a fun way to interact with the brand, increasing engagement and enhancing Toffifee’s digital marketing strategy.',
+    intro:
+      'For Toffifee, I created a "spin to win" contest using Express.js and Ractive.js. This engaging, animation-driven contest offered users a fun way to interact with the brand, increasing engagement and enhancing Toffifee’s digital marketing strategy.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2017-04-01', appTimeZone),
@@ -468,10 +496,11 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   toyotaBringYourToyotaHomeContest: {
     id: 'toyotaBringYourToyotaHomeContest',
     roles: ['development'],
-    src: [],
+    media: [],
     frames: [],
     title: 'Toyota - Bring Your Toyota Home Contest',
-    desc: 'I developed a contest for Toyota, integrating interactive Apple-style parallax animations with Express.js. This project offered users an immersive experience, showcasing Toyota’s commitment to innovative digital engagement.',
+    intro:
+      'I developed a contest for Toyota, integrating interactive Apple-style parallax animations with Express.js. This project offered users an immersive experience, showcasing Toyota’s commitment to innovative digital engagement.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2017-04-01', appTimeZone),
@@ -481,10 +510,11 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   toyotaMakeADateContest: {
     id: 'toyotaMakeADateContest',
     roles: ['development'],
-    src: [],
+    media: [],
     frames: [],
     title: 'Toyota - Make a Date Contest',
-    desc: 'I developed a date-driven contest for Toyota that engaged users with interactive elements. This project combined Toyota’s branding with an engaging user interface, encouraging customers to participate and connect with the brand in a unique way.',
+    intro:
+      'I developed a date-driven contest for Toyota that engaged users with interactive elements. This project combined Toyota’s branding with an engaging user interface, encouraging customers to participate and connect with the brand in a unique way.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2018-04-01', appTimeZone),
@@ -494,10 +524,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   babyJoggerCanadianCatalogWebsite: {
     id: 'babyJoggerCanadianCatalogWebsite',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/babyjogger.png',
+        src: '/images/projects/babyjogger.png',
         width: 1920,
         height: 1080,
         alt: 'BabyJogger - Canadian Catalog Website'
@@ -505,7 +535,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'BabyJogger - Canadian Catalog Website',
-    desc: 'I created a responsive catalog website for BabyJogger using Koa.js and Ractive.js, offering a seamless browsing experience for customers. This site presented BabyJogger’s products in a user-friendly format, helping customers make informed purchasing decisions.',
+    intro:
+      'I created a responsive catalog website for BabyJogger using Koa.js and Ractive.js, offering a seamless browsing experience for customers. This site presented BabyJogger’s products in a user-friendly format, helping customers make informed purchasing decisions.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2017-04-01', appTimeZone),
@@ -515,10 +546,11 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   toyotaSalesReportingDashboard: {
     id: 'toyotaSalesReportingDashboard',
     roles: ['development'],
-    src: [],
+    media: [],
     frames: [],
     title: 'Toyota - Sales Reporting Dashboard',
-    desc: 'For Toyota, I developed an internal sales dashboard using Koa.js to simplify sales reporting processes. This dashboard provided real-time data visualization, making it easier for teams to track sales metrics and make informed business decisions.',
+    intro:
+      'For Toyota, I developed an internal sales dashboard using Koa.js to simplify sales reporting processes. This dashboard provided real-time data visualization, making it easier for teams to track sales metrics and make informed business decisions.',
     clientId: 'toyota',
     profileIds: ['tony'],
     startDate: fromZonedTime('2019-04-01', appTimeZone),
@@ -528,10 +560,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   weiserCanadianCatalogWebsite: {
     id: 'weiserCanadianCatalogWebsite',
     roles: ['development'],
-    src: [
+    media: [
       {
         type: 'image',
-        src: '/images/works/weiser.png',
+        src: '/images/projects/weiser.png',
         width: 1920,
         height: 1080,
         alt: 'Weiser - Canadian Catalog Website'
@@ -539,7 +571,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     frames: [],
     title: 'Weiser - Canadian Catalog Website',
-    desc: 'I led the development of a Canadian catalog website for Weiser, using Express and Vue.js to deliver a server-rendered, user-friendly experience. This site showcased Weiser’s products, providing a seamless browsing experience that supported the brand’s online presence.',
+    intro:
+      'I led the development of a Canadian catalog website for Weiser, using Express and Vue.js to deliver a server-rendered, user-friendly experience. This site showcased Weiser’s products, providing a seamless browsing experience that supported the brand’s online presence.',
     clientId: 'brandfire',
     profileIds: ['tony'],
     startDate: fromZonedTime('2018-04-01', appTimeZone),

@@ -28,7 +28,7 @@ const styles = {
     }
   }),
 
-  left: cva('flex items-center justify-center min-w-[0] min-h-[0]'),
+  left: cva('flex items-center justify-center min-w-0 min-h-0'),
   right: cva('pr-4'),
 
   caption: cva('', {

@@ -36,11 +36,11 @@ const SectionFrames = forwardRef<SectionFramesRef, SectionFramesProps>((props, r
   const contentRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: contentRef,
-    layoutEffect: false
+    offset: ['start end', 'end start']
   })
 
-  const translateFirst = useTransform(scrollYProgress, [1, 0], [0, -32])
-  const translateThird = useTransform(scrollYProgress, [1, 0], [0, 32])
+  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -64])
+  const translateThird = useTransform(scrollYProgress, [0, 1], [0, 64])
 
   if (!frameEntries.length) return null
 

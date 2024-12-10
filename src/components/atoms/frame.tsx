@@ -7,7 +7,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('relative w-full'),
-  lcd: cva('absolute left-1/2 -translate-x-1/2 bg-black scale-[101%]', {
+  lcd: cva('absolute left-1/2 -translate-x-1/2 bg-black scale-[101%] overflow-hidden', {
     variants: {
       frameId: {
         mobile: 'rounded-lg',

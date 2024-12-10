@@ -19,8 +19,8 @@ const styles = {
 
 const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) => (
-    <div className={cn(styles.tableWrapper())}>
-      <table ref={ref} className={cn(styles.table({ className }))} {...props} />
+    <div className={cn(styles.tableWrapper({ className }))}>
+      <table ref={ref} className={cn(styles.table())} {...props} />
     </div>
   )
 )

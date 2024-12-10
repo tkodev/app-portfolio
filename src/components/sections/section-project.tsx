@@ -2,6 +2,7 @@
 
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
+import { Button } from '@/components/atoms/button'
 import { Media } from '@/components/atoms/media'
 import {
   Table,
@@ -20,6 +21,7 @@ import { textStyles } from '@/constants/theme'
 import { ProjectEntry } from '@/types/project'
 import { formatStdDateRange } from '@/utils/date'
 import { cn, cva, VariantProps } from '@/utils/theme'
+import { kebabCase } from 'change-case'
 
 const styles = {
   root: cva('flex flex-col justify-center gap-16'),
@@ -28,11 +30,12 @@ const styles = {
     'flex flex-col items-center justify-center gap-8',
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
-
-  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
+  text: cva('lg:w-[65%] flex flex-col gap-8'),
+  desc: cva('flex flex-col gap-8 lg:mt-8'),
 
   tableHead: cva('w-[20%]'),
-  tableRoles: cva('capitalize')
+  tableRoles: cva('capitalize'),
+  skills: cva('flex flex-wrap gap-2')
 }
 
 type SectionProjectRef = HTMLDivElement
@@ -43,7 +46,8 @@ type SectionProjectProps = HTMLAttributes<SectionProjectRef> &
 
 const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props, ref) => {
   const { projectEntry, className, ...rest } = props
-  const { title, src, desc, roles, clientId, profileIds, startDate, endDate } = projectEntry
+  const { title, media, intro, desc, roles, clientId, profileIds, startDate, endDate, skills } =
+    projectEntry
   const client = clientEntries[clientId]
 
   return (
@@ -57,7 +61,14 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
       <div className={cn(styles.content())}>
         <div className={cn(styles.text())}>
           <h1 className={cn(textStyles.h1())}>{title}</h1>
-          <p>{desc}</p>
+          <p>{intro}</p>
+          <div className={cn(styles.skills())}>
+            {skills.map((skill) => (
+              <Button key={`skill-${kebabCase(skill)}`} variant="secondary" size="xs">
+                {skill}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
       <Table>
@@ -82,13 +93,17 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
           </TableRow>
         </TableBody>
       </Table>
-      {src[0] && (
-        <Lightbox mediaEntry={src[0]}>
+      {media[0] && (
+        <Lightbox mediaEntry={media[0]}>
           <button>
-            <Media mediaEntry={src[0]} isHover />
+            <Media mediaEntry={media[0]} isHover />
           </button>
         </Lightbox>
       )}
+      <div className={cn(styles.desc())}>
+        <h2 className={cn(textStyles.h2())}>In Depth</h2>
+        {!!desc && <p>{desc}</p>}
+      </div>
     </Section>
   )
 })

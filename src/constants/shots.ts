@@ -210,14 +210,14 @@ const shotEntries: MediaEntry[] = [
   },
 
   // three gorges
-  // { type: 'image', src: '/images/shots/447123386_1381604302530297_6853870759701947215_n.jpg', width: 1080, height: 1350, alt: 'three gorges', },
-  // { type: 'image', src: '/images/shots/447161276_1199265401072814_1854254859035330667_n.jpg', width: 1080, height: 1350, alt: 'three gorges', },
-  // { type: 'image', src: '/images/shots/446976819_806875507742820_8123214639236659542_n.jpg', width: 1080, height: 1350, alt: 'three gorges', },
+  // { type: 'image', media: '/images/shots/447123386_1381604302530297_6853870759701947215_n.jpg', width: 1080, height: 1350, alt: 'three gorges', },
+  // { type: 'image', media: '/images/shots/447161276_1199265401072814_1854254859035330667_n.jpg', width: 1080, height: 1350, alt: 'three gorges', },
+  // { type: 'image', media: '/images/shots/446976819_806875507742820_8123214639236659542_n.jpg', width: 1080, height: 1350, alt: 'three gorges', },
 
   // red beijing
-  // { type: 'image', src: '/images/shots/442470239_1137643873934459_2160338447326021648_n.jpg', width: 1080, height: 1350, alt: 'red beijing', },
-  // { type: 'image', src: '/images/shots/442470169_2064636910604126_5367141406130725813_n.jpg', width: 1080, height: 853, alt: 'red beijing', },
-  // { type: 'image', src: '/images/shots/442421594_1124702405433027_5459486531373460869_n.jpg', width: 1080, height: 1350, alt: 'red beijing', },
+  // { type: 'image', media: '/images/shots/442470239_1137643873934459_2160338447326021648_n.jpg', width: 1080, height: 1350, alt: 'red beijing', },
+  // { type: 'image', media: '/images/shots/442470169_2064636910604126_5367141406130725813_n.jpg', width: 1080, height: 853, alt: 'red beijing', },
+  // { type: 'image', media: '/images/shots/442421594_1124702405433027_5459486531373460869_n.jpg', width: 1080, height: 1350, alt: 'red beijing', },
 
   // uk
   {
@@ -243,9 +243,9 @@ const shotEntries: MediaEntry[] = [
   },
 
   // korea
-  // { type: 'image', src: '/images/shots/442460439_8100000950045032_7737736390322150708_n.jpg', width: 1080, height: 810, alt: 'korea', },
-  // { type: 'image', src: '/images/shots/442465199_915416830387355_4481500067436098178_n.jpg', width: 1139, height: 1139, alt: 'korea', },
-  // { type: 'image', src: '/images/shots/442445417_1062039978905782_1179606260178848643_n.jpg', width: 1080, height: 608, alt: 'korea', },
+  // { type: 'image', media: '/images/shots/442460439_8100000950045032_7737736390322150708_n.jpg', width: 1080, height: 810, alt: 'korea', },
+  // { type: 'image', media: '/images/shots/442465199_915416830387355_4481500067436098178_n.jpg', width: 1139, height: 1139, alt: 'korea', },
+  // { type: 'image', media: '/images/shots/442445417_1062039978905782_1179606260178848643_n.jpg', width: 1080, height: 608, alt: 'korea', },
 
   // toronto
   {
@@ -271,9 +271,9 @@ const shotEntries: MediaEntry[] = [
   },
 
   // bc
-  // { type: 'image', src: '/images/shots/442171500_408653188704105_7958471567616111898_n.jpg', width: 1080, height: 602, alt: 'bc', },
-  // { type: 'image', src: '/images/shots/442321951_427267233383660_2470736457252555603_n.jpg', width: 1080, height: 1350, alt: 'bc', },
-  // { type: 'image', src: '/images/shots/442261358_1163088661701951_7883006990915126854_n.jpg', width: 1080, height: 602, alt: 'bc', },
+  // { type: 'image', media: '/images/shots/442171500_408653188704105_7958471567616111898_n.jpg', width: 1080, height: 602, alt: 'bc', },
+  // { type: 'image', media: '/images/shots/442321951_427267233383660_2470736457252555603_n.jpg', width: 1080, height: 1350, alt: 'bc', },
+  // { type: 'image', media: '/images/shots/442261358_1163088661701951_7883006990915126854_n.jpg', width: 1080, height: 602, alt: 'bc', },
 
   // banff
   {

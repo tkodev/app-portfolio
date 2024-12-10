@@ -33,11 +33,12 @@ type ProjectRole = 'development' | 'design'
 
 type ProjectEntry = {
   id: ProjectId
-  src: MediaEntry[]
+  media: MediaEntry[]
   frames: MediaEntry[]
   roles: ProjectRole[]
   title: string
-  desc: string
+  intro: string
+  desc?: string
   clientId: ClientId
   profileIds: ProfileId[]
   startDate: Date

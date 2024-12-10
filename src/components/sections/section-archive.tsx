@@ -46,10 +46,11 @@ const styles = {
   cta: cva('flex justify-center'),
 
   icon: cva('w-auto'),
-  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
+  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-8'),
 
   grid: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
-  project: cva('flex flex-col gap-4 lg:gap-8'),
+  project: cva('flex flex-col gap-4'),
+  projectMedia: cva('mb-4'),
   projectDetail: cva('flex justify-between gap-4'),
   projectDivider: cva('border-t border-foreground/15'),
 
@@ -126,12 +127,17 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
       {activeLayoutValue === 'grid' ? (
         <div className={cn(styles.grid())}>
           {filteredProjects.map((projectEntry) => {
-            const { id, roles, src, title, clientId, startDate, endDate } = projectEntry
+            const { id, roles, media, title, clientId, startDate, endDate } = projectEntry
             const key = `project-${id}`
             const client = clientEntries[clientId]
             return (
               <Link key={key} className={cn(styles.project())} href={`/works/${kebabCase(id)}`}>
-                <Media mediaEntry={src[0]} aspect="video" isHover />
+                <Media
+                  className={cn(styles.projectMedia())}
+                  mediaEntry={media[0]}
+                  aspect="video"
+                  isHover
+                />
                 <h2 className={cn(textStyles.h3())}>{title}</h2>
                 <hr className={cn(styles.projectDivider())} />
                 <div className={cn(styles.projectDetail())}>
