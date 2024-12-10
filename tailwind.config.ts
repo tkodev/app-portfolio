@@ -1,6 +1,6 @@
-// noinspection ImportCanBeShortened
 import type { Config } from 'tailwindcss'
 import { extract } from 'fluid-tailwind'
+// noinspection ES6PreferShortImport
 import { themeConfig } from './src/themes/theme'
 
 const tailwindConfig: Config = {
