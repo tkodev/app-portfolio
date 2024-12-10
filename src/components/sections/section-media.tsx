@@ -3,6 +3,7 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Media } from '@/components/atoms/media'
+import { Lightbox } from '@/components/organisms/lightbox'
 import { Section } from '@/components/organisms/section'
 import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
@@ -41,7 +42,11 @@ const SectionMedia = forwardRef<SectionMediaRef, SectionMediaProps>((props, ref)
       {...rest}
     >
       {mediaEntries.map((mediaEntry, index) => (
-        <Media key={`media-${index}`} mediaEntry={mediaEntry} />
+        <Lightbox key={`media-${index}`} mediaEntry={mediaEntry}>
+          <button>
+            <Media mediaEntry={mediaEntry} isHover />
+          </button>
+        </Lightbox>
       ))}
     </Section>
   )

@@ -19,7 +19,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     title: 'Beyond Oil Rig Control Interface',
     intro:
       'The Beyond project is redefining industrial operations by transforming legacy oil rig systems into a cutting-edge, event-driven architecture. Designed to improve operational integrity and real-time decision-making, this modernization project bridges advanced technology with critical field applications.',
-    desc: "As a Staff Software Engineer on the Beyond project, I spearheaded the development of a cutting-edge platform that modernizes legacy oil rig systems into a real-time, event-driven architecture. My contributions included implementing advanced data visualization and interactive control elements, enabling sub-second updates through WebSocket and tRPC for seamless, responsive performance. Utilizing a monorepo architecture, I streamlined the development process across multiple teams, ensuring consistency and scalability. I adapted and integrated control algorithms to optimize operational precision and reliability, while also implementing a cohesive design system for an intuitive user experience. Additionally, I contributed to the overarching architecture to ensure the platform's robustness and adaptability for critical industrial applications. Beyond is poised to set new standards in the industry, with more details to come post-launch.",
+    desc: 'As part of the Beyond MPD modernization project, I co-developed an event-driven architecture using event brokers to ensure reliable communication across control systems interfacing with oil rig panels, communication buses, and PLCs. I collaborated on building a design system in Figma, enabling a consistent and intuitive user interface across applications. I contributed to back-end solutions supporting the calibration of chokes and sensors, while co-authoring interpolation algorithms for precise fluid pressure control with rigorous unit testing. Leveraging SVG and Canvas, I designed real-time and historical data visualization solutions capable of tracking over 10,000 data points with subsecond tolerance. Additionally, I developed robust validation schemas, optimized CI/CD pipelines, and ensured global deployment compatibility through precise unit conversion standards. My role also involved creating project management presentations to enhance team efficiency and streamline processes. Beyond is poised to set new standards in the industry, with more details to come post-launch.',
     clientId: 'badal',
     profileIds: ['tony', 'tulio', 'zeena', 'harpreet'],
     startDate: fromZonedTime('2023-05-01', appTimeZone),
@@ -50,10 +50,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/projects/paypower/paypower-screens.png',
+        src: '/images/projects/paypower/paypower-overview.png',
         width: 1640,
         height: 1024,
-        alt: 'Paypower Mastercard App - Screens'
+        alt: 'Paypower Mastercard App - Overview'
       }
     ],
     frames: [
@@ -84,8 +84,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     title: 'Paypower Mastercard App',
     intro:
-      'The Paypower Reloadable Prepaid Mastercard app redefined how users interact with prepaid financial tools. Designed as a white-label React Native solution, the app offers flexibility for clients and convenience for users, combining powerful backend architecture with an intuitive interface.',
-    desc: 'For the Paypower app, I developed a scalable and customizable solution using a monorepo architecture and feature flag-based whitelabeling. This approach streamlined cross-platform development and enabled rapid deployment tailored to diverse client needs. Transitioning the codebase from Redux to tRPC improved data efficiency, while CI/CD pipelines ensured a seamless development lifecycle. The app’s design incorporated dynamic theming and accessibility features, delivering a polished, user-focused experience for prepaid card management.',
+      'The PayPower Reloadable Prepaid Mastercard app revolutionized prepaid financial management with a customizable React Native solution. Combining robust backend architecture, dynamic theming, and accessibility-first design, the app delivered an intuitive and user-focused experience for both clients and end-users.',
+    desc: 'As Team Lead, I spearheaded the system design and architecture for the PayPower app, focusing on scalability and feature consistency across platforms. For PayPower, I implemented a monorepo architecture with feature flag-based whitelabeling, enabling tailored deployments for diverse client needs. Transitioning the app’s codebase from Redux to tRPC enhanced data efficiency, while CI/CD pipelines with integrated Sentry monitoring ensured seamless development and robust performance. I also secured and led three client engagements, resulting in contracts for white-label solutions, React Query refactoring, and a UX-focused redesign. My role extended to incident response, managing critical security and deployment challenges to minimize production impact and uphold app reliability.',
     clientId: 'peoplesGroup',
     profileIds: ['tony', 'ben', 'leo', 'nikita'],
     startDate: fromZonedTime('2021-10-01', appTimeZone),
@@ -101,28 +101,6 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       'Agile Process'
     ],
     isFeatured: true
-  },
-  techTalkMonoreposWithTurborepo: {
-    id: 'techTalkMonoreposWithTurborepo',
-    roles: ['development'],
-    media: [
-      {
-        type: 'image',
-        src: '/images/projects/monorepos.png',
-        width: 1200,
-        height: 1200,
-        alt: 'Monorepos with Turborepo'
-      }
-    ],
-    frames: [],
-    title: 'TechTalk - Monorepos with Turborepo @ React + Native Toronto x Quantum Mob',
-    intro:
-      'This in-person event brought together developers at Quantum Mob’s head office to discuss cutting-edge topics in React and React Native development. Featuring talks on Redux to React Query migration, React integration in WordPress, and leveraging Turborepo for managing monorepos, the event provided actionable insights and facilitated meaningful discussions among attendees. The TechTalk showcased Quantum Mob’s commitment to fostering community and advancing developer knowledge.',
-    clientId: 'quantumMob',
-    profileIds: ['tony'],
-    startDate: fromZonedTime('2022-10-01', appTimeZone),
-    endDate: fromZonedTime('2022-10-01', appTimeZone),
-    skills: ['React', 'React Native', 'Turborepo', 'Community Engagement']
   },
   aeroplanShoppingButtonBrowserExtension: {
     id: 'aeroplanShoppingButtonBrowserExtension',
@@ -196,7 +174,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     frames: [],
     title: 'Aeroplan eStore - Retailer & Catalog Redesign',
     intro:
-      'Tasked with enhancing the Aeroplan eStore’s usability, I spearheaded the redesign of catalog filtering and points-earning integrations on affiliate pages. This project improved the store’s visual appeal and functionality, allowing users to more easily locate retailers and earn points, thus fostering greater user satisfaction and engagement.',
+      'I spearheaded the redesign of the Aeroplan eStore’s catalog and retailer pages, focusing on enhancing usability, visual appeal, and points-earning workflows. This initiative transformed the user experience by introducing seamless navigation and tailored filtering options, enabling users to efficiently locate retailers and maximize points-earning opportunities.',
+    desc: 'As part of the Aeroplan eStore redesign, I led the development of advanced catalog filtering and retailer integration features, using React and Redux within a monorepo architecture to streamline cross-platform development. Leveraging cache and query management techniques, I optimized data retrieval for a faster, more responsive user experience. A key focus was on usability, achieved through dynamic whitelabel theming and intuitive UX design. Additionally, I implemented design system enhancements to ensure a consistent and visually appealing interface. By improving functionality and navigation, the redesign significantly boosted user satisfaction and engagement, reinforcing the eStore’s value as a user-friendly points-earning platform.',
     clientId: 'quantumMob',
     profileIds: ['tony', 'steven'],
     startDate: fromZonedTime('2021-04-01', appTimeZone),
@@ -218,16 +197,41 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
-        src: '/images/projects/rocmar.png',
+        src: '/images/projects/rocmar/rocmar.png',
         width: 1920,
         height: 1080,
         alt: 'RocMar Employee Dashboard'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/rocmar/rocmar-overview.png',
+        width: 1920,
+        height: 1080,
+        alt: 'RocMar Employee Dashboard - Overview'
       }
     ],
-    frames: [],
+    frames: [
+      {
+        type: 'image',
+        src: '/images/projects/rocmar/rocmar-home.png',
+        width: 1920,
+        height: 1080,
+        alt: 'RocMar Employee Dashboard - Home',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/rocmar/rocmar-dashboard.png',
+        width: 1920,
+        height: 1080,
+        alt: 'RocMar Employee Dashboard - Home',
+        frameId: 'desktop'
+      }
+    ],
     title: 'RocMar Employee Dashboard',
     intro:
-      'I led the development of an employee dashboard for RocMar Engineering, balancing design and functionality to optimize productivity. From design to deployment, this project required close collaboration with stakeholders, translating complex workflows into a user-friendly, visually cohesive interface that met architectural productivity needs.',
+      'I led the design and development of an employee dashboard for RocMar Engineering, delivering a user-centric platform that streamlined workflows and optimized productivity. This end-to-end project involved designing a cohesive interface, implementing a robust back-end, and collaborating closely with stakeholders to translate complex processes into actionable, data-driven insights.',
+    desc: 'The RocMar Employee Dashboard project required a blend of design and technical expertise to create a platform tailored to architectural productivity needs. I designed the interface and developed a comprehensive design system, ensuring visual consistency and intuitive user interactions. On the back end, I implemented secure infrastructure using Next.js and Express, incorporating OAuth and OpenID Connect (OICD) for seamless SSO authentication via Passport.js. I integrated four OAuth-based APIs to source user data and browsing habits, transforming them into actionable insights through dynamic data visualizations. Leveraging SVG and optimized SQL queries, I combined and reformatted millions of data points spanning years to create meaningful, interactive visualizations. Close collaboration with stakeholders throughout the project ensured that the dashboard met user requirements while aligning with business goals. The result was a powerful, visually cohesive tool that centralized data and elevated employee productivity.',
     clientId: 'quantumMob',
     profileIds: ['tony'],
     startDate: fromZonedTime('2020-11-01', appTimeZone),
@@ -250,7 +254,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     frames: [],
     title: 'Aeroplan eStore - AODA AA / WTAG 2.0 Compliance',
     intro:
-      'As the lead developer, I directed Aeroplan’s AODA AA and WCAG 2.0 compliance efforts. This initiative involved implementing accessibility standards across the eStore, ensuring it was user-friendly and compliant with regulatory standards, enhancing usability for all customers.',
+      'As the lead developer, I directed Aeroplan eStore’s accessibility overhaul to achieve compliance with AODA AA and WCAG 2.0 standards. This initiative ensured that the platform became inclusive, user-friendly, and fully compliant with accessibility regulations, providing a seamless experience for all users, including those with disabilities.',
+    desc: 'Leading the accessibility project, I implemented key enhancements to align the Aeroplan eStore with AODA AA and WCAG 2.0 standards. This included integrating keyboard navigation, ARIA roles, and screen reader optimizations to improve usability for users with diverse needs. Working collaboratively with a team of five junior engineers, I oversaw the implementation of dynamic theming and responsive design to ensure consistency across devices and assistive technologies. Rigorous testing processes, including audits and user testing, were conducted to validate compliance and usability improvements. This project not only made the platform more accessible but also reinforced Aeroplan’s commitment to inclusivity and regulatory compliance.',
     clientId: 'quantumMob',
     profileIds: ['tony', 'steven'],
     startDate: fromZonedTime('2020-10-01', appTimeZone),
@@ -300,7 +305,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     frames: [],
     title: 'Aeroplan eStore - Initial Architecture & MVP',
     intro:
-      'As lead developer, I crafted the Aeroplan eStore’s foundational architecture, establishing front-end design, state management, and server infrastructure. This design supported Aeroplan’s expansion in online redemption, creating a streamlined experience for users and a robust foundation for future iterations.',
+      'As the lead developer, I designed and built the foundational architecture for the Aeroplan eStore MVP, integrating monorepo architecture and feature flag-based whitelabeling. This scalable and flexible solution supported Aeroplan’s entry into online redemption, enabling tailored client experiences and laying the groundwork for future growth.',
+    desc: 'The Aeroplan eStore MVP project focused on creating a robust and scalable architecture to meet the needs of a modern online redemption platform. Leveraging React, Redux, and a monorepo architecture, I streamlined cross-platform development while ensuring efficient state management and seamless integration of new features. Feature flag-based whitelabeling was implemented to enable rapid customization for diverse client needs, reducing time-to-market and enhancing flexibility. On the back end, I utilized Node.js to build a resilient server infrastructure capable of supporting high-traffic environments and dynamic data requirements. Additional functionalities, including localization, multi-currency support, and a streamlined checkout process, were incorporated to serve a global audience. By combining scalability, flexibility, and user-focused design, this architecture positioned Aeroplan eStore for long-term success and adaptability.',
     clientId: 'quantumMob',
     profileIds: ['tony', 'nahuel'],
     startDate: fromZonedTime('2020-01-01', appTimeZone),
@@ -322,7 +328,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     frames: [],
     title: 'Air Miles - Landing Portal Development',
     intro:
-      'As part of the Air Miles team, I contributed to the landing portal’s development using a monorepo structure with reusable React components. This project focused on creating a consistent, modular experience for users, integrating components that provided an intuitive interface and aligned with Air Miles branding.',
+      'As a key contributor to the Air Miles Landing Portal development, I played a pivotal role in creating a scalable and cohesive user experience. Leveraging a monorepo architecture and reusable React components, the project emphasized modularity, accessibility, and seamless integration with Air Miles branding.',
+    desc: 'The Air Miles Landing Portal project focused on delivering a modular, scalable, and user-friendly platform through a monorepo architecture with reusable React components. I contributed to the implementation of a cohesive design system using Lerna published components, ensuring consistency across the portal while aligning with Air Miles’ branding. Rigorous testing with Jest and Nock ensured reliability and code quality, while accessibility compliance with AODA and WCAG 2.0 AA standards enhanced usability for all users. By adhering to BEM SASS standards, I created maintainable and cross-compatible styles for hundreds of components, delivering a polished and professional user experience.',
     clientId: 'airMiles',
     profileIds: ['tony'],
     startDate: fromZonedTime('2020-01-01', appTimeZone),
@@ -611,7 +618,6 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
 const projectIds: ProjectId[] = [
   'beyondModernization',
   'paypowerReloadablePrepaidMastercardMobileApp',
-  'techTalkMonoreposWithTurborepo',
   'aeroplanShoppingButtonBrowserExtension',
   'aeroplanEstoreRetailerAndCatalogRedesign',
   'aeroplanEstoreAodaAaWtagCompliance',

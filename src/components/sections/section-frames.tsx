@@ -4,6 +4,7 @@ import { useScroll, useTransform, motion } from 'motion/react'
 import { forwardRef, HTMLAttributes, useRef } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Frame } from '@/components/atoms/frame'
+import { Lightbox } from '@/components/organisms/lightbox'
 import { Section } from '@/components/organisms/section'
 import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
@@ -59,9 +60,11 @@ const SectionFrames = forwardRef<SectionFramesRef, SectionFramesProps>((props, r
           const isPrimary = !(Math.floor(index / 2) % 2)
           const style = isAnimated ? { y: isPrimary ? translateFirst : translateThird } : {}
           return (
-            <motion.div key={index} className={cn(styles.item({ frameId }))} style={style}>
-              <Frame mediaEntry={frameEntry} />
-            </motion.div>
+            <Lightbox key={`frame-${index}`} mediaEntry={frameEntry}>
+              <motion.button className={cn(styles.item({ frameId }))} style={style}>
+                <Frame mediaEntry={frameEntry} />
+              </motion.button>
+            </Lightbox>
           )
         })}
       </div>

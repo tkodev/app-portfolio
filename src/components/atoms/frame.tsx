@@ -42,7 +42,7 @@ const Frame = forwardRef<FrameRef, FrameProps>((props, ref) => {
           aspectRatio: `${screenWidth}/${screenHeight}`
         }}
       >
-        <Media className={cn(styles.screen())} mediaEntry={mediaEntry} fill="contain" />
+        <Media className={cn(styles.screen())} mediaEntry={mediaEntry} fill="contain" isHover />
       </div>
       <Image className={cn(styles.device())} {...frameProps} alt={frameEntry.alt} />
     </div>

@@ -5,7 +5,6 @@ import { ProfileId } from '@/types/profile'
 type ProjectId =
   | 'beyondModernization'
   | 'paypowerReloadablePrepaidMastercardMobileApp'
-  | 'techTalkMonoreposWithTurborepo'
   | 'aeroplanShoppingButtonBrowserExtension'
   | 'aeroplanEstoreRetailerAndCatalogRedesign'
   | 'rocMarEngineeringEmployeeDashboard'
