@@ -41,7 +41,7 @@ const styles = {
     'grayscale-[25%] hover:grayscale hover:scale-105 transition-all duration-1000'
   ]),
   intro: cva([
-    'w-[320px] h-auto lg:w-[200px]',
+    'w-[320px] h-auto lg:w-[250px]',
     'absolute left-1/2 top-[100%] -translate-x-1/2 text-center',
     'sm:top-[80%]',
     'lg:left-[82%] lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-0 lg:text-left',

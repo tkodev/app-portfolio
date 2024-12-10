@@ -1,6 +1,7 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Bg } from '@/components/atoms/bg'
+import { HyperText } from '@/components/atoms/hyper-text'
 import { Section } from '@/components/organisms/section'
 import { appTimeZone } from '@/constants/date'
 import { textStyles } from '@/constants/theme'
@@ -50,7 +51,9 @@ const SectionProfile = forwardRef<SectionProfileRef, SectionProfileProps>((props
           </Avatar>
         </div>
         <div className={cn(styles.text())}>
-          <h1 className={cn(textStyles.h1())}>Tony Ko</h1>
+          <h1 className={cn(textStyles.h1())}>
+            <HyperText text="Tony Ko." />
+          </h1>
           <h2 className={cn(textStyles.h2())}>
             Staff Software Engineer <br />& UI Designer
           </h2>

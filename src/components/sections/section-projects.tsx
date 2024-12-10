@@ -13,6 +13,7 @@ import {
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
+import { HyperText } from '@/components/atoms/hyper-text'
 import { Icon } from '@/components/atoms/icon'
 import { Media } from '@/components/atoms/media'
 import { Filter } from '@/components/molecules/filter'
@@ -106,7 +107,9 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
           <Icon icon={DraftingCompassIcon} size="3xl" />
         </div>
         <div className={cn(styles.text())}>
-          <h1 className={cn(textStyles.h1())}>Works.</h1>
+          <h1 className={cn(textStyles.h1())}>
+            <HyperText text="Works." />
+          </h1>
           <h2 className={cn(textStyles.h2())}>Innovative Solutions, Real-World Impact.</h2>
           <p>
             From modernizing oil rig systems to building Aeroplan’s first browser extension, my

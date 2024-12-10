@@ -3,6 +3,7 @@ import { CameraIcon, MoveRightIcon } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
+import { HyperText } from '@/components/atoms/hyper-text'
 import { Icon } from '@/components/atoms/icon'
 import { Media } from '@/components/atoms/media'
 import { Lightbox } from '@/components/organisms/lightbox'
@@ -46,7 +47,9 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
           <Icon icon={CameraIcon} size="3xl" />
         </div>
         <div className={cn(styles.text())}>
-          <h1 className={cn(textStyles.h1())}>Shots.</h1>
+          <h1 className={cn(textStyles.h1())}>
+            <HyperText text="Shots." />
+          </h1>
           <h2 className={cn(textStyles.h2())}>Capturing Stories Through the Lens.</h2>
           <p>
             Beyond engineering & design, photography allows me to explore creativity and tell
