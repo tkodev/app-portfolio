@@ -7,7 +7,7 @@ import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('relative bg-background flex items-center justify-center'),
+  root: cva('relative bg-background flex items-center justify-center w-full h-full'),
   icon: cva('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15'),
   comp: cva('relative max-w-full max-h-full w-full h-auto', {
     variants: {

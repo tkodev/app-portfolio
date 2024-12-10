@@ -4,6 +4,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Media } from '@/components/atoms/media'
+import { Paragraph } from '@/components/molecules/paragraph'
 import {
   Table,
   TableBody,
@@ -30,7 +31,7 @@ const styles = {
     'flex flex-col items-center justify-center gap-8',
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
-  text: cva('lg:w-[65%] flex flex-col gap-8'),
+  text: cva('flex flex-col gap-8'),
   desc: cva('flex flex-col gap-8 lg:mt-8'),
 
   tableHead: cva('w-[20%]'),
@@ -61,7 +62,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
       <div className={cn(styles.content())}>
         <div className={cn(styles.text())}>
           <h1 className={cn(textStyles.h1())}>{title}</h1>
-          <p>{intro}</p>
+          <Paragraph id="project-intro" text={intro} />
           <div className={cn(styles.skills())}>
             {skills.map((skill) => (
               <Button key={`skill-${kebabCase(skill)}`} variant="secondary" size="xs">
@@ -103,7 +104,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
       {!!desc && (
         <div className={cn(styles.desc())}>
           <h2 className={cn(textStyles.h2())}>In Depth</h2>
-          <p>{desc}</p>
+          <Paragraph id="project-description" text={desc} />
         </div>
       )}
     </Section>

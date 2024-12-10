@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/molecules/dialog'
+import { Paragraph } from '@/components/molecules/paragraph'
 import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
@@ -50,8 +51,6 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
   const { mediaEntry, className, children, ...rest } = props
   const { caption } = mediaEntry
 
-  const captions = caption?.split('\n')
-
   return (
     <Dialog {...rest}>
       <DialogTrigger ref={ref} className={cn(styles.root({ className }))} asChild>
@@ -65,21 +64,8 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
           <div className={cn(styles.left())}>
             <Media mediaEntry={mediaEntry} fill="contain" />
           </div>
-          {!!captions && (
-            <div className={cn(styles.right())}>
-              {captions.map((text, index) => {
-                if (!text.trim()) return null
-                const isNextEmpty = !captions[index + 1]?.trim()
-                return (
-                  <p
-                    key={`caption-${index}`}
-                    className={cn(styles.caption({ break: isNextEmpty }))}
-                  >
-                    {text.trim()}
-                  </p>
-                )
-              })}
-            </div>
+          {!!caption?.trim() && (
+            <Paragraph className={cn(styles.right())} id="lightbox-caption" text={caption} />
           )}
         </div>
       </DialogContent>

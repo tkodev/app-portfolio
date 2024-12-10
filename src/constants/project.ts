@@ -82,14 +82,14 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         frameId: 'mobile'
       }
     ],
-    title: 'Paypower Mastercard App',
+    title: 'PayPower Mastercard App',
     intro:
       'The PayPower Reloadable Prepaid Mastercard app revolutionized prepaid financial management with a customizable React Native solution. Combining robust backend architecture, dynamic theming, and accessibility-first design, the app delivered an intuitive and user-focused experience for both clients and end-users.',
     desc: 'As Team Lead, I spearheaded the system design and architecture for the PayPower app, focusing on scalability and feature consistency across platforms. For PayPower, I implemented a monorepo architecture with feature flag-based whitelabeling, enabling tailored deployments for diverse client needs. Transitioning the app’s codebase from Redux to tRPC enhanced data efficiency, while CI/CD pipelines with integrated Sentry monitoring ensured seamless development and robust performance. I also secured and led three client engagements, resulting in contracts for white-label solutions, React Query refactoring, and a UX-focused redesign. My role extended to incident response, managing critical security and deployment challenges to minimize production impact and uphold app reliability.',
     clientId: 'peoplesGroup',
     profileIds: ['tony', 'ben', 'leo', 'nikita'],
     startDate: fromZonedTime('2021-10-01', appTimeZone),
-    endDate: fromZonedTime('2023-04-01', appTimeZone),
+    endDate: fromZonedTime('2022-04-01', appTimeZone),
     skills: [
       'React Native',
       'tRPC',
@@ -102,8 +102,8 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     isFeatured: true
   },
-  aeroplanShoppingButtonBrowserExtension: {
-    id: 'aeroplanShoppingButtonBrowserExtension',
+  aeroplanShoppingButton: {
+    id: 'aeroplanShoppingButton',
     roles: ['development'],
     media: [
       {
@@ -112,6 +112,13 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         width: 2232,
         height: 936,
         alt: 'Aeroplan Shopping Button - Browser Extension'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan/aeroplan-ext-overview.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Aeroplan Shopping Button - Overview'
       }
     ],
     frames: [
@@ -140,7 +147,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         frameId: 'desktop'
       }
     ],
-    title: 'Aeroplan Shopping Button - Browser Extension',
+    title: 'Aeroplan Shopping Button Browser Extension',
     intro:
       'The Aeroplan Shopping Button browser extension brought seamless rewards earning to users across hundreds of retail sites. Designed for cross-browser compatibility, high traffic and dynamic retailer data, this innovative tool streamlined the shopping experience while integrating effortlessly with Aeroplan’s ecosystem.',
     desc: 'As the lead developer for the Aeroplan Shopping Button browser extension, I created a cross-browser solution that integrated rewards earning seamlessly into online shopping. To address the complexities of shopping sessions, I optimized the event system to overcome CORS restrictions and handle interactions across multiple tabs and windows without state conflicts. I implemented an SWR-based query system and developed a navigation tracking system for multi-domain purchase sessions, ensuring smooth user journeys. To manage high traffic and dynamic retailer data, I designed a multi-level caching mechanism that reduced backend load while maintaining responsive performance. This project delivered a reliable, scalable, and user-friendly tool that empowered Aeroplan members to earn rewards effortlessly across hundreds of retailers.',
@@ -159,35 +166,127 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     isFeatured: true
   },
-  aeroplanEstoreRetailerAndCatalogRedesign: {
-    id: 'aeroplanEstoreRetailerAndCatalogRedesign',
+  aeroplanEStore: {
+    id: 'aeroplanEStore',
     roles: ['development'],
     media: [
       {
         type: 'image',
-        src: '/images/projects/aeroplan/aeroplan.png',
+        src: '/images/projects/aeroplan-retailer/aeroplan-for-you.png',
         width: 1920,
         height: 1080,
-        alt: 'Aeroplan eStore - Retailer & Catalog Redesign'
+        alt: 'Aeroplan eStore - Retailer & Catalog Redesign - For You Page'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-listing.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Aeroplan eStore - Retailers Listing'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-cart.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Aeroplan eStore - Cart'
       }
     ],
-    frames: [],
-    title: 'Aeroplan eStore - Retailer & Catalog Redesign',
+    frames: [
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-mobile-deals.png',
+        width: 430,
+        height: 930,
+        alt: 'Aeroplan eStore - Mobile Deals',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-mobile-retailer.png',
+        width: 430,
+        height: 930,
+        alt: 'Aeroplan eStore - Mobile Retailer',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-mobile-item.png',
+        width: 430,
+        height: 930,
+        alt: 'Aeroplan eStore - Mobile Product',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-retailers.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Aeroplan eStore - Retailers Intro',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-dyson.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Aeroplan eStore - Dyson Retailer',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/aeroplan-retailer/aeroplan-catalog.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Aeroplan eStore - Dyson Retailer Catalog',
+        frameId: 'desktop'
+      }
+    ],
+    title: 'Aeroplan Redemption eStore',
     intro:
-      'I spearheaded the redesign of the Aeroplan eStore’s catalog and retailer pages, focusing on enhancing usability, visual appeal, and points-earning workflows. This initiative transformed the user experience by introducing seamless navigation and tailored filtering options, enabling users to efficiently locate retailers and maximize points-earning opportunities.',
-    desc: 'As part of the Aeroplan eStore redesign, I led the development of advanced catalog filtering and retailer integration features, using React and Redux within a monorepo architecture to streamline cross-platform development. Leveraging cache and query management techniques, I optimized data retrieval for a faster, more responsive user experience. A key focus was on usability, achieved through dynamic whitelabel theming and intuitive UX design. Additionally, I implemented design system enhancements to ensure a consistent and visually appealing interface. By improving functionality and navigation, the redesign significantly boosted user satisfaction and engagement, reinforcing the eStore’s value as a user-friendly points-earning platform.',
+      'Transforming Aeroplan’s digital ecosystem, I played a key role in designing and implementing solutions that spanned multiple projects, from software architecture and initial MVP, to e-commerce experiences pioneering accessibility and cross-browser compatibility. These initiatives revolutionized how users interacted with Aeroplan’s services, enabling seamless reward earning, better user experiences, and regulatory compliance across their platform.',
+    desc: `
+      My engagements with Aeroplan encompassed a diverse range of projects that addressed user experience, accessibility, and technical scalability across their ecosystem:
+
+      Aeroplan Shopping Button - Browser Extension: As the lead developer, I architected Aeroplan’s first cross-browser web extension, which supported hundreds of retailer sites. The extension enabled users to earn points seamlessly while shopping online. Utilizing an SWR-based query system, I overcame CORS limitations to provide real-time updates, implemented multi-domain navigation tracking for uninterrupted purchase sessions, and designed a multi-layer caching system to reduce backend load and enhance performance.
+      
+      Aeroplan Retailer and Catalog Redesign: I spearheaded the implementation of the eStore’s retailer catalog and filtering system redesign to create a more intuitive shopping experience. My contributions included implementing a componentized React architecture, Redux-based state management, and whitelabel theming to improve scalability. These updates allowed users to more easily locate retailers and discover Aeroplan earning opportunities, significantly improving engagement.
+      
+      AODA AA / WCAG Compliance: Leading Aeroplan’s accessibility initiative, I ensured their eStore met AODA AA and WCAG 2.0 compliance standards. This involved auditing the platform, implementing semantic HTML, and enhancing keyboard navigation and screen reader compatibility. These changes ensured equitable access for all users and alignment with regulatory requirements.
+      
+      eStore Initial Architecture and MVP: I was instrumental in laying the groundwork for Aeroplan’s eStore by developing its initial architecture and MVP. This project involved designing scalable front-end and server-side solutions with React and Node.js, enabling future feature expansion. The MVP provided users with a streamlined way to redeem points online, setting a strong foundation for ongoing development.
+      
+      Technical Innovations and Team Leadership: Across all projects, I integrated modern development practices, including monorepos for streamlined code management, CI/CD pipelines for efficient deployments, and modular design systems for reusable components. I also led and mentored teams, ensuring consistent code quality, fostering knowledge sharing, and aligning technical solutions with business objectives.
+      
+      Proposal Development and Client Engagement: I collaborated with Aeroplan stakeholders to develop proposals for new projects, including feature enhancements, performance optimizations, and accessibility improvements. My contributions helped secure client buy-in for three engagements and align project goals with Aeroplan’s strategic vision.
+      
+      These contributions collectively elevated Aeroplan’s digital platform, driving user satisfaction and operational efficiency while adhering to stringent technical and regulatory standards. My work with Aeroplan exemplifies the power of combining technical expertise with a user-centered approach to deliver impactful, scalable solutions.
+    `,
     clientId: 'quantumMob',
     profileIds: ['tony', 'steven'],
-    startDate: fromZonedTime('2021-04-01', appTimeZone),
-    endDate: fromZonedTime('2021-07-01', appTimeZone),
+    startDate: fromZonedTime('2020-01-01', appTimeZone),
+    endDate: fromZonedTime('2023-01-10', appTimeZone),
     skills: [
       'React',
       'Redux',
+      'Node.js',
+      'SWR',
+      'Accessibility (AODA AA / WCAG 2.0)',
+      'Semantic HTML',
+      'Keyboard Navigation',
+      'Screen Reader Compatibility',
+      'Multi-Domain Navigation',
+      'Caching Strategies',
+      'Cross-Browser Development',
       'Monorepos',
-      'Cache & Query Management',
-      'UX Design',
+      'CI/CD Pipelines',
       'Design Systems',
-      'Whitelabel Theming'
+      'State Management',
+      'Whitelabel Theming',
+      'E-Commerce Optimization',
+      'Performance Optimization',
+      'Client Management',
+      'Team Leadership'
     ],
     isFeatured: true
   },
@@ -207,7 +306,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         src: '/images/projects/rocmar/rocmar-overview.png',
         width: 1920,
         height: 1080,
-        alt: 'RocMar Employee Dashboard - Overview'
+        alt: 'RocMar Employee Dashboard, Overview'
       }
     ],
     frames: [
@@ -216,7 +315,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         src: '/images/projects/rocmar/rocmar-home.png',
         width: 1920,
         height: 1080,
-        alt: 'RocMar Employee Dashboard - Home',
+        alt: 'RocMar Employee Dashboard, Home',
         frameId: 'desktop'
       },
       {
@@ -224,7 +323,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         src: '/images/projects/rocmar/rocmar-dashboard.png',
         width: 1920,
         height: 1080,
-        alt: 'RocMar Employee Dashboard - Home',
+        alt: 'RocMar Employee Dashboard, Home',
         frameId: 'desktop'
       }
     ],
@@ -238,29 +337,6 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     endDate: fromZonedTime('2021-03-01', appTimeZone),
     skills: ['Design Systems', 'React', 'UI/UX', 'OAuth', 'OICD', 'Postgres', 'Client Management'],
     isFeatured: true
-  },
-  aeroplanEstoreAodaAaWtagCompliance: {
-    id: 'aeroplanEstoreAodaAaWtagCompliance',
-    roles: ['development'],
-    media: [
-      {
-        type: 'image',
-        src: '/images/projects/aeroplan/aeroplan.png',
-        width: 1920,
-        height: 1080,
-        alt: 'Aeroplan eStore - AODA AA / WTAG 2.0 Compliance'
-      }
-    ],
-    frames: [],
-    title: 'Aeroplan eStore - AODA AA / WTAG 2.0 Compliance',
-    intro:
-      'As the lead developer, I directed Aeroplan eStore’s accessibility overhaul to achieve compliance with AODA AA and WCAG 2.0 standards. This initiative ensured that the platform became inclusive, user-friendly, and fully compliant with accessibility regulations, providing a seamless experience for all users, including those with disabilities.',
-    desc: 'Leading the accessibility project, I implemented key enhancements to align the Aeroplan eStore with AODA AA and WCAG 2.0 standards. This included integrating keyboard navigation, ARIA roles, and screen reader optimizations to improve usability for users with diverse needs. Working collaboratively with a team of five junior engineers, I oversaw the implementation of dynamic theming and responsive design to ensure consistency across devices and assistive technologies. Rigorous testing processes, including audits and user testing, were conducted to validate compliance and usability improvements. This project not only made the platform more accessible but also reinforced Aeroplan’s commitment to inclusivity and regulatory compliance.',
-    clientId: 'quantumMob',
-    profileIds: ['tony', 'steven'],
-    startDate: fromZonedTime('2020-10-01', appTimeZone),
-    endDate: fromZonedTime('2020-11-01', appTimeZone),
-    skills: ['Accessibility', 'AODA Compliance', 'WCAG 2.0', 'React']
   },
   quantumMobCatalogAppProjectMobCiCdIntegrations: {
     id: 'quantumMobCatalogAppProjectMobCiCdIntegrations',
@@ -290,43 +366,52 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     endDate: fromZonedTime('2020-10-01', appTimeZone),
     skills: ['Monorepo', 'Authentication', 'Node.js', 'Modular Development']
   },
-  aeroplanEstoreInitialArchitectureAndMvp: {
-    id: 'aeroplanEstoreInitialArchitectureAndMvp',
-    roles: ['development'],
-    media: [
-      {
-        type: 'image',
-        src: '/images/projects/aeroplan/aeroplan.png',
-        width: 1920,
-        height: 1080,
-        alt: 'Aeroplan eStore - Initial Architecture & MVP'
-      }
-    ],
-    frames: [],
-    title: 'Aeroplan eStore - Initial Architecture & MVP',
-    intro:
-      'As the lead developer, I designed and built the foundational architecture for the Aeroplan eStore MVP, integrating monorepo architecture and feature flag-based whitelabeling. This scalable and flexible solution supported Aeroplan’s entry into online redemption, enabling tailored client experiences and laying the groundwork for future growth.',
-    desc: 'The Aeroplan eStore MVP project focused on creating a robust and scalable architecture to meet the needs of a modern online redemption platform. Leveraging React, Redux, and a monorepo architecture, I streamlined cross-platform development while ensuring efficient state management and seamless integration of new features. Feature flag-based whitelabeling was implemented to enable rapid customization for diverse client needs, reducing time-to-market and enhancing flexibility. On the back end, I utilized Node.js to build a resilient server infrastructure capable of supporting high-traffic environments and dynamic data requirements. Additional functionalities, including localization, multi-currency support, and a streamlined checkout process, were incorporated to serve a global audience. By combining scalability, flexibility, and user-focused design, this architecture positioned Aeroplan eStore for long-term success and adaptability.',
-    clientId: 'quantumMob',
-    profileIds: ['tony', 'nahuel'],
-    startDate: fromZonedTime('2020-01-01', appTimeZone),
-    endDate: fromZonedTime('2020-06-01', appTimeZone),
-    skills: ['React', 'Redux', 'Node.js', 'Server Architecture', 'Front-End Development']
-  },
   airMilesLandingPortalDevelopment: {
     id: 'airMilesLandingPortalDevelopment',
     roles: ['development'],
     media: [
       {
         type: 'image',
-        src: '/images/projects/airmiles.png',
+        src: '/images/projects/airmiles/airmiles.png',
         width: 1920,
         height: 1080,
-        alt: 'Air Miles - Landing Portal Development'
+        alt: 'Air Miles Landing Portal'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/airmiles/airmiles-partners.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Air Miles Landing Portal, Partner Finder'
       }
     ],
-    frames: [],
-    title: 'Air Miles - Landing Portal Development',
+    frames: [
+      {
+        type: 'image',
+        src: '/images/projects/airmiles/airmiles-earn.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Air Miles Landing Portal, How to Earn',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/airmiles/airmiles-offers.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Air Miles Landing Portal, Offers',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/airmiles/airmiles-ways.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Air Miles Landing Portal, 6 Ways to Earn',
+        frameId: 'desktop'
+      }
+    ],
+    title: 'Air Miles Landing Portal',
     intro:
       'As a key contributor to the Air Miles Landing Portal development, I played a pivotal role in creating a scalable and cohesive user experience. Leveraging a monorepo architecture and reusable React components, the project emphasized modularity, accessibility, and seamless integration with Air Miles branding.',
     desc: 'The Air Miles Landing Portal project focused on delivering a modular, scalable, and user-friendly platform through a monorepo architecture with reusable React components. I contributed to the implementation of a cohesive design system using Lerna published components, ensuring consistency across the portal while aligning with Air Miles’ branding. Rigorous testing with Jest and Nock ensured reliability and code quality, while accessibility compliance with AODA and WCAG 2.0 AA standards enhanced usability for all users. By adhering to BEM SASS standards, I created maintainable and cross-compatible styles for hundreds of components, delivering a polished and professional user experience.',
@@ -618,14 +703,12 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
 const projectIds: ProjectId[] = [
   'beyondModernization',
   'paypowerReloadablePrepaidMastercardMobileApp',
-  'aeroplanShoppingButtonBrowserExtension',
-  'aeroplanEstoreRetailerAndCatalogRedesign',
-  'aeroplanEstoreAodaAaWtagCompliance',
+  'aeroplanEStore',
+  'aeroplanShoppingButton',
   'modaMatchVirtualFittingRoom',
   'rocMarEngineeringEmployeeDashboard',
   'quantumMobCatalogAppProjectMobCiCdIntegrations',
   'quantumMobCoreUtilitiesAuthModule',
-  'aeroplanEstoreInitialArchitectureAndMvp',
   'airMilesLandingPortalDevelopment',
   'petsAboveReactModernization',
   'cardinalMeatsFoodServiceWebsiteAndCms',
