@@ -101,7 +101,7 @@ const Footer: FC<FooterProps> = (props) => {
             >
               <Icon icon={bgmState === 'playing' ? PauseIcon : MusicIcon} />
             </Button>
-            <Button className={cn(styles.bgm())} variant="link" isHover={false} asChild>
+            <Button className={cn(styles.bgm())} variant="link" asChild>
               <Link
                 href="https://uppbeat.io/track/justin-marshall-elias/an-empty-bus"
                 target="_blank"
