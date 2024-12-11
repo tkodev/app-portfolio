@@ -1,4 +1,5 @@
 import { forwardRef, HTMLAttributes } from 'react'
+import { Markdown } from '@/components/atoms/markdown'
 import { Media } from '@/components/atoms/media'
 import {
   Dialog,
@@ -7,7 +8,6 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/molecules/dialog'
-import { Paragraph } from '@/components/molecules/paragraph'
 import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
@@ -64,9 +64,7 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
           <div className={cn(styles.left())}>
             <Media mediaEntry={mediaEntry} fill="contain" />
           </div>
-          {!!caption?.trim() && (
-            <Paragraph className={cn(styles.right())} id="lightbox-caption" text={caption} />
-          )}
+          {!!caption?.trim() && <Markdown className={cn(styles.right())}>{caption}</Markdown>}
         </div>
       </DialogContent>
     </Dialog>

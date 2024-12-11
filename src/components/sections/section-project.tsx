@@ -3,8 +3,8 @@
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
+import { Markdown } from '@/components/atoms/markdown'
 import { Media } from '@/components/atoms/media'
-import { Paragraph } from '@/components/molecules/paragraph'
 import {
   Table,
   TableBody,
@@ -62,7 +62,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
       <div className={cn(styles.content())}>
         <div className={cn(styles.text())}>
           <h1 className={cn(textStyles.h1())}>{title}</h1>
-          <Paragraph id="project-intro" text={intro} />
+          <Markdown>{intro}</Markdown>
           <div className={cn(styles.skills())}>
             {skills.map((skill) => (
               <Button key={`skill-${kebabCase(skill)}`} variant="secondary" size="xs">
@@ -104,7 +104,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
       {!!desc && (
         <div className={cn(styles.desc())}>
           <h2 className={cn(textStyles.h2())}>In Depth</h2>
-          <Paragraph id="project-description" text={desc} />
+          <Markdown>{desc}</Markdown>
         </div>
       )}
     </Section>

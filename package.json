@@ -31,6 +31,7 @@
     "react": "18.3.1",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "18.3.1",
+    "react-markdown": "^9.0.1",
     "react-use": "^17.5.1",
     "usehooks-ts": "^3.1.0"
   },
