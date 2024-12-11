@@ -697,6 +697,116 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     startDate: fromZonedTime('2018-04-01', appTimeZone),
     endDate: fromZonedTime('2019-11-01', appTimeZone),
     skills: ['Express.js', 'Vue.js', 'Catalog Website', 'Server-Side Rendering']
+  },
+  web10Era: {
+    id: 'web10Era',
+    roles: ['development', 'design'],
+    media: [
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/1.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Sony Ericsson Phone Theme'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/11.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Infu5ion @ Zuup.com Theme & Various Abstract Art'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/12.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - After5hock @ AsianAvenue.com Theme'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/5.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Mousepad Photoshop Design'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/4.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Train Illustration'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/3.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Alienware Illustration'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/9.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Naha Sushi Flash Website'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/10.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - ABC Cakes Business Cards'
+      }
+    ],
+    frames: [
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/6.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - PixelInfinity.ca Theme',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/2.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - After5hock @ Xanga.com Theme',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web10Era/8.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Infu5ion @ Zuup.com Theme',
+        frameId: 'desktop'
+      }
+    ],
+    title: 'Web 1.0 Era Web Design',
+    intro:
+      'During the Web 1.0 era, I honed my skills in web design and illustration, creating pixel-perfect layouts with early tools like Photoshop, Illustrator, Dreamweaver, FrontPage. These projects reflected the limitations and creativity of the time, leveraging HTML before the advent of HTML5, CSS 1 and 2, and flex / grid based layouts (tables!), all while navigating the challenges of dial-up internet speeds.',
+    desc: 'This period marked the beginning of my journey as a designer and developer, where creativity thrived within constraints of Netscape Navigator, Internet Explorer 6 and rudimentary Javascript. I specialized at the time in designing sliced Photoshop templates for web implementation and ventured into creating custom themes for various apps, such as Sony Ericsson Phones and Winamp. These projects showcased my love for early technologies while producing visually engaging and technically sound designs that laid the groundwork for my future in web development.',
+    clientId: 'tkodev',
+    profileIds: ['tony'],
+    startDate: fromZonedTime('2000-01-01', appTimeZone),
+    endDate: fromZonedTime('2010-12-31', appTimeZone),
+    skills: [
+      'Photoshop',
+      'Illustrator',
+      'Abstract Art',
+      'HTML (Pre-HTML5)',
+      'CSS 1 & 2',
+      'Table-Based Layouts',
+      'Sliced Photoshop Templates',
+      'Internet Explorer Compatibility',
+      'Dial-Up Internet Optimization',
+      'Illustration',
+      'Sony Ericsson Phone Themes'
+    ],
+    isFeatured: true
   }
 }
 
@@ -722,7 +832,8 @@ const projectIds: ProjectId[] = [
   'toffifeeSpinToWinContest',
   'toyotaBringYourToyotaHomeContest',
   'toyotaMakeADateContest',
-  'babyJoggerCanadianCatalogWebsite'
+  'babyJoggerCanadianCatalogWebsite',
+  'web10Era'
 ]
 
 export { projectIds, projectEntries }

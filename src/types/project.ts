@@ -25,6 +25,7 @@ type ProjectId =
   | 'toyotaBringYourToyotaHomeContest'
   | 'toyotaMakeADateContest'
   | 'babyJoggerCanadianCatalogWebsite'
+  | 'web10Era'
 
 type ProjectRole = 'development' | 'design'
 

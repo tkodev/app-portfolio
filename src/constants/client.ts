@@ -128,6 +128,14 @@ const clientEntries: Record<ClientId, ClientEntry> = {
     baseSrc: '',
     lightSrc: '',
     darkSrc: ''
+  },
+  tkodev: {
+    id: 'tkodev',
+    name: 'Tkodev Inc.',
+    href: 'https://www.tko.dev/',
+    baseSrc: '',
+    lightSrc: '',
+    darkSrc: ''
   }
 }
 

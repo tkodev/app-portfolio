@@ -70,6 +70,11 @@ const SectionProfile = forwardRef<SectionProfileRef, SectionProfileProps>((props
             excellence with mentorship to lead impactful projects that drive innovation and achieve
             business goals.
           </p>
+          <p>
+            This portfolio represents the essence of everything I&apos;ve learned. I strive to let
+            my &ldquo;soul&rdquo; shine through in the design of this piece of art. I hope you enjoy
+            exploring the site and the works it showcases!
+          </p>
         </div>
       </div>
       <div className={cn(styles.stats())}>
