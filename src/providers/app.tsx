@@ -1,14 +1,18 @@
 'use client'
 
-import { ThemeProvider as NextThemeProvider, ThemeProviderProps } from 'next-themes'
-import { FC } from 'react'
+import { ThemeProvider } from 'next-themes'
+import { FC, ReactNode } from 'react'
 import { defaultTheme } from '@/constants/theme'
 
-const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+type AppProviderProps = {
+  children: ReactNode
+}
+
+const AppProvider: FC<AppProviderProps> = (props) => {
   const { children } = props
 
   return (
-    <NextThemeProvider
+    <ThemeProvider
       attribute="class"
       defaultTheme={defaultTheme}
       themes={['light', 'dark']}
@@ -16,8 +20,8 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
       disableTransitionOnChange
     >
       {children}
-    </NextThemeProvider>
+    </ThemeProvider>
   )
 }
 
-export { ThemeProvider }
+export { AppProvider }

@@ -5,7 +5,7 @@ import { Favicon } from '@/components/atoms/favicon'
 import { Layout } from '@/components/templates/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { geistSansFont } from '@/fonts/geist'
-import { ThemeProvider } from '@/providers/theme'
+import { AppProvider } from '@/providers/app'
 import { cn, cva } from '@/utils/theme'
 import '../themes/theme.css'
 import '../themes/theme-colors.css'
@@ -72,9 +72,9 @@ const LayoutPage: FC<LayoutPageProps> = (props) => {
         className={cn(styles.body(), allianceNo2Font.variable, geistSansFont.variable)}
         suppressHydrationWarning
       >
-        <ThemeProvider>
+        <AppProvider>
           <Layout>{children}</Layout>
-        </ThemeProvider>
+        </AppProvider>
       </body>
     </html>
   )
