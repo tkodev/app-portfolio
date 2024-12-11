@@ -21,7 +21,6 @@ const Markdown = forwardRef<MarkdownRef, MarkdownProps>((props, ref) => {
   const indents = countIndents(children)
   const regexp = new RegExp(`^[ \\t]{${indents}}`, 'gm')
   const validChildren = children?.replace(regexp, '')
-  console.log(indents, validChildren)
 
   return (
     <div ref={ref} className={cn(styles.root({ className }))}>

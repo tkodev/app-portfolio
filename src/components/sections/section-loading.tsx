@@ -1,14 +1,14 @@
 'use client'
 
-import { forwardRef, HTMLAttributes, useState } from 'react'
+import { LoaderCircleIcon } from 'lucide-react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Brand } from '@/components/atoms/brand'
 import { Cross } from '@/components/atoms/cross'
-import { Progress } from '@/components/atoms/progress'
+import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/organisms/section'
 import { textStyles } from '@/constants/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
-import { useInterval } from 'usehooks-ts'
 
 const styles = {
   root: cva(['px-4 md:px-8']),
@@ -40,7 +40,7 @@ const styles = {
     'flex flex-col gap-2'
   ]),
 
-  progress: cva('mix-blend-exclusion')
+  icon: cva('animate-spin mx-auto')
 }
 
 type SectionLoadingRef = HTMLDivElement
@@ -48,17 +48,6 @@ type SectionLoadingProps = HTMLAttributes<SectionLoadingRef> & VariantProps<type
 
 const SectionLoading = forwardRef<SectionLoadingRef, SectionLoadingProps>((props, ref) => {
   const { className, ...rest } = props
-
-  const [progress, setProgress] = useState(0)
-
-  useInterval(() => {
-    if (progress >= 100) return
-    const remain = 100 - progress
-    const increment = remain * 0.01
-    setProgress(progress + increment)
-  }, 100)
-
-  const progressString = (Math.round(progress * 100) / 100).toFixed(2)
 
   return (
     <Section
@@ -73,14 +62,9 @@ const SectionLoading = forwardRef<SectionLoadingRef, SectionLoadingProps>((props
           <Brand className={cn(styles.brand())} variant="outline" />
           <div className={cn(styles.backdrop())} />
           <div className={cn(styles.intro())}>
+            <Icon className={cn(styles.icon())} icon={LoaderCircleIcon} size="lg" />
             <h1 className={cn(textStyles.h3())}>Loading...</h1>
-            <p>
-              Syncing inspiration...
-              <br />
-              Almost ready!
-            </p>
-            <Progress className={cn(styles.progress())} value={progress} />
-            <p className={cn(textStyles.h3())}>{progressString}%</p>
+            <p>Syncing inspiration... Almost Ready.</p>
           </div>
         </div>
       </div>

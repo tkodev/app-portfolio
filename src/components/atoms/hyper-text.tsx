@@ -77,7 +77,7 @@ const HyperText: FC<HyperTextProps> = (props) => {
 
   return (
     <div className={cn(styles.root())} onMouseEnter={triggerAnimation}>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         {displayText.map((letter, i) => (
           <motion.span
             key={i}
