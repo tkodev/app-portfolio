@@ -807,6 +807,282 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       'Sony Ericsson Phone Themes'
     ],
     isFeatured: true
+  },
+  interiorsArchitecture: {
+    id: 'interiorsArchitecture',
+    roles: ['design'],
+    media: [
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Overview.jpg',
+        width: 1920,
+        height: 1080,
+        alt: "Interior & Architecture Design - 1800's Queen St. Modernization"
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Overview-Cutaway-2.jpg',
+        width: 1920,
+        height: 1080,
+        alt: "Interior & Architecture Design - 1800's Queen St. Modernization Cutaway"
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Overview-Cutaway-1.jpg',
+        width: 1920,
+        height: 1080,
+        alt: "Interior & Architecture Design - 1800's Queen St. Modernization Cutaway"
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/South-West-Overview.jpg',
+        width: 300,
+        height: 300,
+        alt: 'Interior & Architecture Design - Modern Sculpture Gallery'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/South-Overview.jpg',
+        width: 300,
+        height: 300,
+        alt: 'Interior & Architecture Design - Modern Sculpture Gallery'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/West-Overview.jpg',
+        width: 300,
+        height: 300,
+        alt: 'Interior & Architecture Design - Modern Sculpture Gallery'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/North-East-Overview.jpg',
+        width: 300,
+        height: 300,
+        alt: 'Interior & Architecture Design - Modern Sculpture Gallery'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Overview-2.jpg',
+        width: 1920,
+        height: 1440,
+        alt: 'Interior & Architecture Design - Alexandra Park Revitalization'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Street-View.jpg',
+        width: 1920,
+        height: 1440,
+        alt: 'Interior & Architecture Design - Alexandra Park Revitalization'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/East-Overview.jpg',
+        width: 1920,
+        height: 1080,
+        alt: 'Interior & Architecture Design - Das Canoas House Model'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/axonometric-models.jpg',
+        width: 1920,
+        height: 1242,
+        alt: 'Interior & Architecture Design - AGO Staircase Technical Drawing'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/floor-plan-&-cross-section.jpg',
+        width: 1920,
+        height: 1242,
+        alt: 'Interior & Architecture Design - AGO Staircase Technical Drawing'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Final-1.jpg',
+        width: 1920,
+        height: 1242,
+        alt: 'Interior & Architecture Design - Museum of Contemporary Canadian Art Drawings'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Final-2.jpg',
+        width: 1920,
+        height: 1242,
+        alt: 'Interior & Architecture Design - Museum of Contemporary Canadian Art Drawings'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Final-4.jpg',
+        width: 1920,
+        height: 1242,
+        alt: 'Interior & Architecture Design - Museum of Contemporary Canadian Art Drawings'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Light.jpg',
+        width: 1920,
+        height: 1085,
+        alt: 'Interior & Architecture Design - Lamp Sculpture'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/interiors-arch/Light-Top.jpg',
+        width: 1920,
+        height: 1085,
+        alt: 'Interior & Architecture Design - Lamp Sculpture'
+      }
+    ],
+    frames: [],
+    title: 'Interior & Architecture Design',
+    intro:
+      'My journey into functional design began at Georgian College and OCAD University, where I explored interior design and architecture through art history, color theory, and user experience, culminating in works that combined technical precision with creative expression.',
+    desc: 'At OCAD University, I delved deeply into the interplay between design and functionality, focusing on interior design, architecture, and the broader principles of user experience. This period was defined by a passion for art history, architectural history, and the engineering aspects of design. My projects often involved creating architectural models that merged precision engineering with artistic creativity, paying homage to historic architecture through recreations and inspired works. I developed technical drawing skills, mastered 3D software like Revit, Fusion 360, and Blender, and crafted physical models that emphasized the relationship between form and function. This experience enriched my understanding of design as a holistic practice, where aesthetics and usability converge to create impactful spaces and concepts.',
+    clientId: 'ocadUniversity',
+    profileIds: ['tony'],
+    startDate: fromZonedTime('2010-09-01', appTimeZone),
+    endDate: fromZonedTime('2016-09-01', appTimeZone),
+    skills: [
+      'Art History',
+      'Architectural History',
+      'Sculpture Design',
+      'Industrial Design',
+      'Color Theory',
+      'User Experience Design',
+      'Architectural Models',
+      'Technical Drawing',
+      '3D Modeling',
+      'Revit',
+      'Fusion 360',
+      'Photoshop',
+      'Blender',
+      'Physical Modeling'
+    ],
+    isFeatured: true
+  },
+  earlySoftwareEngineering: {
+    id: 'earlySoftwareEngineering',
+    roles: ['development'],
+    media: [
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/mockup-mobile-m (1).jpg',
+        width: 2259,
+        height: 1506,
+        alt: 'Early Software Engineering - Simon Says Mobile Mockup'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/mockup-mobile-m.jpg',
+        width: 1980,
+        height: 1506,
+        alt: 'Early Software Engineering - Tic Tac Toe Mobile Mockup'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/mockup-mobile-game-m.jpg',
+        width: 1980,
+        height: 1506,
+        alt: 'Early Software Engineering - Tic Tac Toe Mobile Mockup'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/mockup-mobile-m (3).jpg',
+        width: 2259,
+        height: 1506,
+        alt: 'Early Software Engineering - Pomodoro Mobile Mockup'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/mockup-mobile-m (2).jpg',
+        width: 1980,
+        height: 1506,
+        alt: 'Early Software Engineering - Calculator Mobile Mockup'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/mockup-mobile.jpg',
+        width: 960,
+        height: 640,
+        alt: 'Early Software Engineering - Weather Widget Mockup'
+      }
+    ],
+    frames: [
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/screenshot-6+ (1).jpg',
+        width: 414,
+        height: 736,
+        alt: 'Early Software Engineering - Simon Says Mobile',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/screenshot-6+.jpg',
+        width: 414,
+        height: 736,
+        alt: 'Early Software Engineering - Tic Tac Toe Mobile',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/screenshot-game-6+.jpg',
+        width: 414,
+        height: 736,
+        alt: 'Early Software Engineering - Tic Tac Toe Mobile',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/screenshot-6+ (4).jpg',
+        width: 414,
+        height: 736,
+        alt: 'Early Software Engineering - Pomodoro Mobile',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/screenshot-6+ (3).jpg',
+        width: 414,
+        height: 736,
+        alt: 'Early Software Engineering - Calculator Mobile',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/early-soft/screenshot-6+ (2).jpg',
+        width: 414,
+        height: 736,
+        alt: 'Early Software Engineering - Weather Widget Mobile',
+        frameId: 'mobile'
+      }
+    ],
+    title: 'Early Software Engineering',
+    intro:
+      'During a self-directed bootcamp through FreeCodeCamp, I embarked on my journey from functional design, into software engineering, mastering full-stack JavaScript and blending my design expertise with technical development to create refined and functional user interfaces.',
+    desc: 'As part of my self-directed bootcamp with FreeCodeCamp, I immersed myself in the foundations of software engineering, focusing on full-stack JavaScript, DOM, jQuery, Node.js, and Advanced MySQL Queries. This experience also emphasized understanding core DOM manipulation, implementing OAuth authentication, and mastering algorithms and data structures. FreeCodeCamp offered a structured yet flexible environment that allowed me to explore and build real-world projects at my own pace, fostering both technical skills and self-discipline. \n\nThis period was transformative, as I applied my background in functional design, color theory, and composition from OCAD to create interfaces that were minimalist yet polished and user-centric. 2015-2017, often regarded as a "golden age" of web development, was a time of immense growth for me. It provided a thriving environment to explore new ideas, combine my design and engineering passions, and establish the foundation for a full-fledged career in software development.',
+    clientId: 'tkodev',
+    profileIds: ['tony'],
+    startDate: fromZonedTime('2016-09-01', appTimeZone),
+    endDate: fromZonedTime('2019-05-01', appTimeZone),
+    skills: [
+      'Full-Stack JavaScript',
+      'React.js',
+      'Node.js',
+      'Koa.js',
+      'Ractive.js (Not React)',
+      'Express.js',
+      'OAuth',
+      'Core DOM Knowledge',
+      'Algorithms',
+      'Data Structures',
+      'User Interface Design',
+      'Color Theory',
+      'Composition',
+      'Functional Design',
+      'Minimalist UI',
+      'MySQL'
+    ],
+    isFeatured: true
   }
 }
 
@@ -833,6 +1109,8 @@ const projectIds: ProjectId[] = [
   'toyotaBringYourToyotaHomeContest',
   'toyotaMakeADateContest',
   'babyJoggerCanadianCatalogWebsite',
+  'earlySoftwareEngineering',
+  'interiorsArchitecture',
   'web10Era'
 ]
 

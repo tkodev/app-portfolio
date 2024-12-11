@@ -136,6 +136,14 @@ const clientEntries: Record<ClientId, ClientEntry> = {
     baseSrc: '',
     lightSrc: '',
     darkSrc: ''
+  },
+  ocadUniversity: {
+    id: 'ocadUniversity',
+    name: 'OCAD University',
+    href: 'https://www.ocadu.ca/',
+    baseSrc: '',
+    lightSrc: '',
+    darkSrc: ''
   }
 }
 

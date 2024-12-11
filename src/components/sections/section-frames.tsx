@@ -40,8 +40,8 @@ const SectionFrames = forwardRef<SectionFramesRef, SectionFramesProps>((props, r
     offset: ['start end', 'end start']
   })
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -64])
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, 64])
+  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -72])
+  const translateThird = useTransform(scrollYProgress, [0, 1], [0, 72])
 
   if (!frameEntries.length) return null
 
@@ -56,9 +56,13 @@ const SectionFrames = forwardRef<SectionFramesRef, SectionFramesProps>((props, r
       <div ref={contentRef} className={styles.content()}>
         {frameEntries.map((frameEntry, index) => {
           const { frameId } = frameEntry
-          const isAnimated = isParallax && !(index % 2)
-          const isPrimary = !(Math.floor(index / 2) % 2)
-          const style = isAnimated ? { y: isPrimary ? translateFirst : translateThird } : {}
+          const remainder = Math.floor(index) % 3
+          const isFirst = remainder === 0
+          const isLast = remainder === 2
+          const style =
+            (isParallax && isFirst) || isLast
+              ? { y: isFirst ? translateFirst : isLast ? translateThird : 0 }
+              : {}
           return (
             <Lightbox key={`frame-${index}`} mediaEntry={frameEntry}>
               <motion.button className={cn(styles.item({ frameId }))} style={style}>

@@ -93,6 +93,7 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
   const filteredProjects = featuredProjects.filter((project) =>
     !isDefaultFilter ? project.roles.includes(activeFilterValue as ProjectRole) : true
   )
+  const archivedLength = orderedProjects.length - featuredProjects.length
 
   return (
     <Section
@@ -184,7 +185,7 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
       <div className={cn(styles.cta())}>
         <Button size="lg" asChild>
           <Link href="/archive">
-            Archived Works <Icon icon={MoveRightIcon} />
+            {archivedLength} Archived Works <Icon icon={MoveRightIcon} />
           </Link>
         </Button>
       </div>

@@ -16,6 +16,7 @@ type ClientId =
   | 'babyJogger'
   | 'kosInteriorDesign'
   | 'tkodev'
+  | 'ocadUniversity'
 
 type ClientEntry = {
   id: ClientId

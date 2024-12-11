@@ -9,7 +9,7 @@ import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex flex-col justify-center gap-16'),
+  root: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
 
   content: cva([
     'flex flex-col items-center justify-center gap-8',
@@ -44,7 +44,7 @@ const SectionMedia = forwardRef<SectionMediaRef, SectionMediaProps>((props, ref)
       {mediaEntries.map((mediaEntry, index) => (
         <Lightbox key={`media-${index}`} mediaEntry={mediaEntry}>
           <button>
-            <Media mediaEntry={mediaEntry} isHover />
+            <Media mediaEntry={mediaEntry} aspect="video" isHover />
           </button>
         </Lightbox>
       ))}
