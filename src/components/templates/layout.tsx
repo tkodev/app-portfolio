@@ -1,4 +1,4 @@
-import { HTMLAttributes, FC } from 'react'
+import { HTMLAttributes, forwardRef } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Cursor } from '@/components/atoms/cursor'
 import { Footer } from '@/components/organisms/footer'
@@ -9,13 +9,14 @@ const styles = {
   root: cva('w-full h-full relative')
 }
 
-type LayoutProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>
+type LayoutRef = HTMLDivElement
+type LayoutProps = HTMLAttributes<LayoutRef> & VariantProps<typeof styles.root>
 
-const Layout: FC<LayoutProps> = (props) => {
+const Layout = forwardRef<LayoutRef, LayoutProps>((props, ref) => {
   const { className, children, ...rest } = props
 
   return (
-    <div className={cn(styles.root({ className }))} {...rest}>
+    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <Header />
       {children}
       <Footer />
@@ -23,6 +24,7 @@ const Layout: FC<LayoutProps> = (props) => {
       <Cursor />
     </div>
   )
-}
+})
+Layout.displayName = 'Layout'
 
 export { Layout }
