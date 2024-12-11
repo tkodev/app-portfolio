@@ -7,7 +7,7 @@ const styles = {
   root: cva(
     [
       'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-colors',
-      'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring hover:scale-105 transition-all duration-300',
+      'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
       'disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 disabled:scale-100'
     ],
     {
@@ -29,11 +29,16 @@ const styles = {
           lg: 'h-10 px-8',
           xl: 'h-12 px-10',
           icon: 'h-9 w-9'
+        },
+        isHover: {
+          true: 'hover:scale-105 transition-all duration-300',
+          false: ''
         }
       },
       defaultVariants: {
         variant: 'default',
-        size: 'default'
+        size: 'default',
+        isHover: true
       }
     }
   )
@@ -46,9 +51,11 @@ type ButtonProps = ButtonHTMLAttributes<ButtonRef> &
   }
 
 const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
-  const { className, variant, size, asChild = false, ...rest } = props
+  const { variant, size, isHover, asChild = false, className, ...rest } = props
   const Comp = asChild ? Slot : 'button'
-  return <Comp className={cn(styles.root({ variant, size, className }))} ref={ref} {...rest} />
+  return (
+    <Comp className={cn(styles.root({ variant, size, isHover, className }))} ref={ref} {...rest} />
+  )
 })
 Button.displayName = 'Button'
 

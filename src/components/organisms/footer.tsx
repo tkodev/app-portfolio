@@ -9,13 +9,12 @@ import {
   FileUserIcon,
   SunMoonIcon,
   PauseIcon,
-  MusicIcon,
-  CopyrightIcon
+  MusicIcon
 } from 'lucide-react'
 import { HTMLAttributes, FC } from 'react'
 import { profileEntries } from '@/constants/profile'
-import { useAudio } from '@/hooks/audio'
 import { useTheme } from '@/hooks/theme'
+import { useBgmStore } from '@/stores/bgm'
 import { NavEntry } from '@/types/layout'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 import { Button } from '../atoms/button'
@@ -47,10 +46,10 @@ const styles = {
     }
   }),
 
-  left: cva('h-full flex items-center px-2 gap-2'),
+  left: cva('h-full flex items-center px-2'),
   right: cva('h-full flex items-center px-2 gap-2 overflow-x-auto no-scrollbar'),
 
-  label: cva('hidden xs:block text-sm')
+  bgm: cva('hidden sm:flex')
 }
 
 const navItems: NavEntry[] = [
@@ -86,15 +85,8 @@ type FooterProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.b
 const Footer: FC<FooterProps> = (props) => {
   const { variant, className, ...rest } = props
 
-  const { audio, state, handleAudioToggle } = useAudio({
-    // Music from #Uppbeat (free for Creators!): https://uppbeat.io/t/justin-marshall-elias/an-empty-bus
-    src: '/audio/an-empty-bus-justin-marshall-elias-main-version-36442-03-56.mp3',
-    loop: true,
-    autoPlay: false
-  })
+  const { bgmState, setBgmState } = useBgmStore()
   const { handleThemeModeToggle } = useTheme()
-
-  const currentYear = new Date().getFullYear()
 
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>
@@ -102,22 +94,24 @@ const Footer: FC<FooterProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="#">
-                <Icon icon={CopyrightIcon} />
+            <Button
+              variant={bgmState === 'playing' ? 'secondary' : 'ghost'}
+              size="icon"
+              onClick={() => setBgmState(bgmState === 'playing' ? 'stopped' : 'playing')}
+            >
+              <Icon icon={bgmState === 'playing' ? PauseIcon : MusicIcon} />
+            </Button>
+            <Button className={cn(styles.bgm())} variant="link" isHover={false} asChild>
+              <Link
+                href="https://uppbeat.io/track/justin-marshall-elias/an-empty-bus"
+                target="_blank"
+              >
+                An Empty Bus - Justin M. Elias
               </Link>
             </Button>
-            <span className={cn(styles.label())}>{currentYear} Tony Ko</span>
           </div>
           <div className={cn(styles.right())}>
             <Nav items={navItems}>
-              <Button
-                variant={state.paused ? 'ghost' : 'secondary'}
-                size="icon"
-                onClick={handleAudioToggle}
-              >
-                <Icon icon={state.paused ? MusicIcon : PauseIcon} />
-              </Button>
               <Button variant="ghost" size="icon" onClick={handleThemeModeToggle}>
                 <Icon icon={SunMoonIcon} />
               </Button>
@@ -125,7 +119,6 @@ const Footer: FC<FooterProps> = (props) => {
           </div>
         </div>
       </div>
-      {audio}
     </footer>
   )
 }
