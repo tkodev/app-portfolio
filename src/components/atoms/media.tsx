@@ -7,7 +7,9 @@ import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('relative bg-background flex items-center justify-center w-full h-full'),
+  root: cva(
+    'relative bg-background flex items-center justify-center w-full h-full overflow-hidden'
+  ),
   icon: cva('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15'),
   comp: cva('relative max-w-full max-h-full w-full h-auto', {
     variants: {
@@ -20,7 +22,7 @@ const styles = {
         cover: 'object-cover'
       },
       isHover: {
-        true: 'hover:scale-105 hover:grayscale transition-all duration-1000'
+        true: 'hover:scale-105 hover:contrast-[1.05] transition-all duration-1000'
       }
     },
     defaultVariants: {
