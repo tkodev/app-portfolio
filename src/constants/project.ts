@@ -108,14 +108,14 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
-        src: '/images/projects/aeroplan/aeroplan-ext.png',
+        src: '/images/projects/aeroplan-ext/aeroplan-ext.png',
         width: 2232,
         height: 936,
         alt: 'Aeroplan Shopping Button - Browser Extension'
       },
       {
         type: 'image',
-        src: '/images/projects/aeroplan/aeroplan-ext-overview.png',
+        src: '/images/projects/aeroplan-ext/aeroplan-ext-overview.png',
         width: 1920,
         height: 1080,
         alt: 'Aeroplan Shopping Button - Overview'
@@ -124,7 +124,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     frames: [
       {
         type: 'image',
-        src: '/images/projects/aeroplan/aeroplan-ext-02-activate-offer-coupons-crop.png',
+        src: '/images/projects/aeroplan-ext/aeroplan-ext-02-activate-offer-coupons-crop.png',
         width: 1440,
         height: 934,
         alt: 'Aeroplan Shopping Button - Offer Activation',
@@ -132,7 +132,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/projects/aeroplan/aeroplan-ext-04-activated-a-crop.png',
+        src: '/images/projects/aeroplan-ext/aeroplan-ext-04-activated-a-crop.png',
         width: 2880,
         height: 1868,
         alt: 'Aeroplan Shopping Button - Offer Activated',
@@ -140,7 +140,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/projects/aeroplan/aeroplan-ext-05-landing-a-crop.png',
+        src: '/images/projects/aeroplan-ext/aeroplan-ext-05-landing-a-crop.png',
         width: 2880,
         height: 1868,
         alt: 'Aeroplan Shopping Button - Home View',
