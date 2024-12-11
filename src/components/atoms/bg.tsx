@@ -23,7 +23,7 @@ const styles = {
           'bg-[url(/images/bg/texture/light-y@1x.png)] md:bg-[url(/images/bg/texture/light-x@1x.png)]',
           'dark:bg-[url(/images/bg/texture/dark-y@1x.png)] dark:md:bg-[url(/images/bg/texture/dark-x@1x.png)]'
         ],
-        noise: ['bg-[url(/images/bg/noise/noise@1x.gif)]', 'opacity-2.5']
+        noise: ['bg-[url(/images/bg/noise/noise@1x.gif)]', 'opacity-5']
       },
       size: {
         cover: 'bg-cover',

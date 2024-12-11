@@ -38,7 +38,7 @@ const styles = {
       defaultVariants: {
         variant: 'default',
         size: 'default',
-        isHover: true
+        isHover: false
       }
     }
   )
@@ -51,10 +51,14 @@ type ButtonProps = ButtonHTMLAttributes<ButtonRef> &
   }
 
 const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
-  const { variant, size, isHover, asChild = false, className, ...rest } = props
+  const { variant, size, asChild = false, className, ...rest } = props
   const Comp = asChild ? Slot : 'button'
   return (
-    <Comp className={cn(styles.root({ variant, size, isHover, className }))} ref={ref} {...rest} />
+    <Comp
+      className={cn(styles.root({ variant, size, isHover: variant !== 'link', className }))}
+      ref={ref}
+      {...rest}
+    />
   )
 })
 Button.displayName = 'Button'

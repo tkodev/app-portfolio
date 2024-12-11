@@ -1,13 +1,13 @@
 import { create } from 'zustand'
 
 type LifecycleState = {
-  transitionState: 'initial' | 'intro' | 'ready' | 'loading' | 'error'
-  setLifecycleState: (newLoadState: LifecycleState['transitionState']) => void
+  lifecycleState: 'initial' | 'intro' | 'ready' | 'loading' | 'error'
+  setLifecycleState: (newLoadState: LifecycleState['lifecycleState']) => void
 }
 
 const useLifecycleState = create<LifecycleState>()((set) => ({
-  transitionState: 'initial',
-  setLifecycleState: (newLoadState) => set(() => ({ transitionState: newLoadState }))
+  lifecycleState: 'initial',
+  setLifecycleState: (newLoadState) => set(() => ({ lifecycleState: newLoadState }))
 }))
 
 export { useLifecycleState }

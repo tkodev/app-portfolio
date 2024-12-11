@@ -5,11 +5,11 @@ import { FC, ReactNode } from 'react'
 import { useBgmStore } from '@/stores/bgm'
 import { useLifecycleState } from '@/stores/lifecycle'
 
-type TransitionProviderProps = {
+type LifecycleProps = {
   children: ReactNode
 }
 
-const TransitionProvider: FC<TransitionProviderProps> = (props) => {
+const LifecycleProvider: FC<LifecycleProps> = (props) => {
   const { children } = props
 
   const { setLifecycleState } = useLifecycleState()
@@ -33,4 +33,4 @@ const TransitionProvider: FC<TransitionProviderProps> = (props) => {
   )
 }
 
-export { TransitionProvider }
+export { LifecycleProvider }

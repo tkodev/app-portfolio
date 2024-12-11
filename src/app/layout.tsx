@@ -6,8 +6,8 @@ import { Layout } from '@/components/templates/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { geistSansFont } from '@/fonts/geist'
 import { BgmProvider } from '@/providers/bgm'
+import { LifecycleProvider } from '@/providers/lifecycle'
 import { ThemeProvider } from '@/providers/theme'
-import { TransitionProvider } from '@/providers/transition'
 import { cn, cva } from '@/utils/theme'
 import '../themes/theme.css'
 import '../themes/theme-colors.css'
@@ -76,9 +76,9 @@ const LayoutPage: FC<LayoutPageProps> = (props) => {
       >
         <ThemeProvider>
           <BgmProvider>
-            <TransitionProvider>
+            <LifecycleProvider>
               <Layout>{children}</Layout>
-            </TransitionProvider>
+            </LifecycleProvider>
           </BgmProvider>
         </ThemeProvider>
       </body>
