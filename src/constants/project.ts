@@ -704,56 +704,56 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
-        src: '/images/projects/web10Era/1.jpg',
+        src: '/images/projects/web-era/1.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - Sony Ericsson Phone Theme'
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/11.jpg',
+        src: '/images/projects/web-era/11.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - Infu5ion @ Zuup.com Theme & Various Abstract Art'
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/12.jpg',
+        src: '/images/projects/web-era/12.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - After5hock @ AsianAvenue.com Theme'
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/5.jpg',
+        src: '/images/projects/web-era/5.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - Mousepad Photoshop Design'
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/4.jpg',
+        src: '/images/projects/web-era/4.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - Train Illustration'
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/3.jpg',
+        src: '/images/projects/web-era/3.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - Alienware Illustration'
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/9.jpg',
+        src: '/images/projects/web-era/9.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - Naha Sushi Flash Website'
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/10.jpg',
+        src: '/images/projects/web-era/10.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - ABC Cakes Business Cards'
@@ -762,7 +762,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     frames: [
       {
         type: 'image',
-        src: '/images/projects/web10Era/6.jpg',
+        src: '/images/projects/web-era/6.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - PixelInfinity.ca Theme',
@@ -770,7 +770,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/2.jpg',
+        src: '/images/projects/web-era/2.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - After5hock @ Xanga.com Theme',
@@ -778,7 +778,7 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/projects/web10Era/8.jpg',
+        src: '/images/projects/web-era/8.jpg',
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - Infu5ion @ Zuup.com Theme',
