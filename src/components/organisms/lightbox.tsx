@@ -4,6 +4,7 @@ import { Media } from '@/components/atoms/media'
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger
@@ -49,7 +50,7 @@ type LightboxProps = HTMLAttributes<LightboxRef> &
 
 const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
   const { mediaEntry, className, children, ...rest } = props
-  const { caption } = mediaEntry
+  const { caption, alt } = mediaEntry
 
   return (
     <Dialog {...rest}>
@@ -64,7 +65,9 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
           <div className={cn(styles.left())}>
             <Media mediaEntry={mediaEntry} fill="contain" />
           </div>
-          {!!caption?.trim() && <Markdown className={cn(styles.right())}>{caption}</Markdown>}
+          <DialogDescription asChild>
+            <Markdown className={cn(styles.right())}>{caption || alt}</Markdown>
+          </DialogDescription>
         </div>
       </DialogContent>
     </Dialog>

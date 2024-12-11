@@ -1,6 +1,7 @@
 'use client'
 
 import { ThemeProvider } from 'next-themes'
+import { TransitionRouter } from 'next-transition-router'
 import { FC, ReactNode } from 'react'
 import { defaultTheme } from '@/constants/theme'
 
@@ -19,7 +20,17 @@ const AppProvider: FC<AppProviderProps> = (props) => {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <TransitionRouter
+        leave={async (next) => {
+          next()
+        }}
+        enter={async (next) => {
+          next()
+        }}
+        auto
+      >
+        {children}
+      </TransitionRouter>
     </ThemeProvider>
   )
 }

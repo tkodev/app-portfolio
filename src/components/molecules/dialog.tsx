@@ -18,7 +18,7 @@ const styles = {
   dialogHeader: cva('flex flex-col space-y-1.5 text-center sm:text-left'),
   dialogFooter: cva('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2'),
   dialogTitle: cva('text-h3 font-alliance-no2 mb-2'),
-  dialogDescription: cva('text-sm text-muted-foreground')
+  dialogDescription: cva('')
 }
 
 const Dialog = DialogPrimitive.Root
