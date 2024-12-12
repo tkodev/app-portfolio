@@ -19,4 +19,4 @@ type ProfileEntry = {
   phone: string
 }
 
-export type { ProfileId, ProfileEntry }
+export type { ProfileEntry, ProfileId }

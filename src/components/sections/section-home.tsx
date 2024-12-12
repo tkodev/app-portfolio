@@ -14,34 +14,34 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['px-4 md:px-8']),
 
-  container: cva(['w-full h-full relative']),
+  container: cva(['relative h-full w-full']),
 
   content: cva([
-    'max-w-[896px] w-full aspect-square',
-    'absolute top-[33%] sm:top-[40%] lg:top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2',
+    'aspect-square w-full max-w-[896px]',
+    'absolute left-1/2 top-[33%] -translate-x-1/2 -translate-y-1/2 sm:top-[40%] lg:top-[50%]',
     'flex flex-col items-center justify-center'
   ]),
 
-  cross: cva(['w-full h-full', 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2']),
+  cross: cva(['h-full w-full', 'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2']),
   brand1: cva([
-    'w-[75%] h-auto relative -left-8',
-    'hover:scale-105 transition-all duration-1000 animate-slide-down'
+    'relative -left-8 h-auto w-[75%]',
+    'animate-slide-down transition-all duration-1000 hover:scale-105'
   ]),
   brand2: cva([
-    'w-[75%] h-auto relative',
-    'hover:scale-105 transition-all duration-1000 animate-fade-in'
+    'relative h-auto w-[75%]',
+    'animate-fade-in transition-all duration-1000 hover:scale-105'
   ]),
   brand3: cva([
-    'w-[75%] h-auto relative left-8',
-    'hover:scale-105 transition-all duration-1000 animate-slide-up'
+    'relative left-8 h-auto w-[75%]',
+    'animate-slide-up transition-all duration-1000 hover:scale-105'
   ]),
   avatar: cva([
-    'w-[53.5%] h-[53.5%]',
+    'h-[53.5%] w-[53.5%]',
     'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
-    'grayscale-[25%] hover:grayscale hover:scale-105 transition-all duration-1000'
+    'grayscale-[25%] transition-all duration-1000 hover:scale-105 hover:grayscale'
   ]),
   intro: cva([
-    'w-[320px] h-auto lg:w-[250px]',
+    'h-auto w-[320px] lg:w-[250px]',
     'absolute left-1/2 top-[100%] -translate-x-1/2 text-center',
     'sm:top-[80%]',
     'lg:left-[82%] lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-0 lg:text-left',

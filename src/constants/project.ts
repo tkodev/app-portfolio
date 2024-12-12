@@ -1123,4 +1123,4 @@ const projectIds: ProjectId[] = [
   'web10Era'
 ]
 
-export { projectIds, projectEntries }
+export { projectEntries, projectIds }

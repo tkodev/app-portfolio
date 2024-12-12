@@ -1,13 +1,13 @@
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
-import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
   avatar: cva(
-    'h-full w-full aspect-square relative flex items-center justify-center shrink-0 overflow-hidden rounded-full bg-muted'
+    'relative flex aspect-square h-full w-full shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted'
   ),
   avatarImage: cva('h-full w-full'),
-  avatarFallback: cva('h-full w-full flex items-center justify-center rounded-full bg-muted')
+  avatarFallback: cva('flex h-full w-full items-center justify-center rounded-full bg-muted')
 }
 
 const Avatar = forwardRef<
@@ -38,4 +38,4 @@ const AvatarFallback = forwardRef<
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-export { Avatar, AvatarImage, AvatarFallback }
+export { Avatar, AvatarFallback, AvatarImage }

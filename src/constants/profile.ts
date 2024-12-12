@@ -1,4 +1,4 @@
-import { ProfileId, ProfileEntry } from '@/types/profile'
+import { ProfileEntry, ProfileId } from '@/types/profile'
 
 const profileEntries: Record<ProfileId, ProfileEntry> = {
   tony: {

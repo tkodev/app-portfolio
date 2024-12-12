@@ -11,34 +11,34 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['px-4 md:px-8']),
 
-  container: cva(['w-full h-full relative']),
+  container: cva(['relative h-full w-full']),
 
   content: cva([
-    'max-w-[896px] w-full aspect-square',
-    'absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2',
+    'aspect-square w-full max-w-[896px]',
+    'absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2',
     'sm:top-1/2',
     'flex flex-col items-center justify-center'
   ]),
 
-  cross: cva(['w-full h-full', 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2']),
+  cross: cva(['h-full w-full', 'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2']),
 
   brand: cva([
-    'w-[75%] h-auto relative',
-    'hover:scale-105 transition-all duration-1000 animate-fade-in'
+    'relative h-auto w-[75%]',
+    'animate-fade-in transition-all duration-1000 hover:scale-105'
   ]),
 
   backdrop: cva([
-    'w-[32%] h-[32%]',
+    'h-[32%] w-[32%]',
     'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
-    'mix-blend-exclusion bg-foreground hover:scale-105 transition-all duration-1000 rounded-full'
+    'rounded-full bg-foreground mix-blend-exclusion transition-all duration-1000 hover:scale-105'
   ]),
   intro: cva([
-    'w-[320px] h-auto lg:w-[200px] text-background',
+    'h-auto w-[320px] text-background lg:w-[200px]',
     'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center',
     'flex flex-col gap-2'
   ]),
 
-  icon: cva('animate-spin mx-auto')
+  icon: cva('mx-auto animate-spin')
 }
 
 type SectionLoadingRef = HTMLDivElement

@@ -18,11 +18,11 @@ const styles = {
   ]),
   stats: cva('flex flex-wrap justify-between gap-4'),
 
-  photo: cva('max-w-[480px] w-full'),
-  text: cva('lg:w-1/2 lg:order-first flex flex-col gap-8'),
+  photo: cva('w-full max-w-[480px]'),
+  text: cva('flex flex-col gap-8 lg:order-first lg:w-1/2'),
 
-  avatar: cva('max-w-[480px] w-full h-full'),
-  stat: cva('w-[160px] md:w-[220px] lg:w-[250px] flex flex-col gap-2')
+  avatar: cva('h-full w-full max-w-[480px]'),
+  stat: cva('flex w-[160px] flex-col gap-2 md:w-[220px] lg:w-[250px]')
 }
 
 type SectionProfileRef = HTMLDivElement

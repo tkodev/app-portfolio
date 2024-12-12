@@ -17,8 +17,8 @@ const styles = {
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
 
-  text: cva('lg:max-w-[55%] flex flex-col gap-4'),
-  contact: cva('lg:max-w-[360px] flex flex-wrap gap-4 justify-center lg:justify-end')
+  text: cva('flex flex-col gap-4 lg:max-w-[55%]'),
+  contact: cva('flex flex-wrap justify-center gap-4 lg:max-w-[360px] lg:justify-end')
 }
 
 type SectionContactRef = HTMLDivElement

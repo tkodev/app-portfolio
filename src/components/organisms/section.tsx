@@ -1,8 +1,8 @@
-import { forwardRef, ReactNode, HTMLAttributes } from 'react'
+import { forwardRef, HTMLAttributes, ReactNode } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('w-full h-auto relative flex', {
+  root: cva('relative flex h-auto w-full', {
     variants: {
       height: {
         full: 'min-h-screen',
@@ -13,8 +13,8 @@ const styles = {
       height: 'full'
     }
   }),
-  overlay: cva('w-full h-full absolute top-0 left-0 -z-1'),
-  content: cva('w-full grow relative mx-auto py-[128px] px-8 max-w-screen', {
+  overlay: cva('-z-1 absolute left-0 top-0 h-full w-full'),
+  content: cva('max-w-screen relative mx-auto w-full grow px-8 py-[128px]', {
     variants: {
       width: {
         full: 'max-w-[1280px]',

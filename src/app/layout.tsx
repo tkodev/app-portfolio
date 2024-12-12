@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Head from 'next/head'
-import { ReactNode, FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Favicon } from '@/components/atoms/favicon'
 import { Layout } from '@/components/templates/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
@@ -14,8 +14,8 @@ import '../themes/theme-colors.css'
 import '../themes/theme-utils.css'
 
 const styles = {
-  html: cva('w-full h-full scroll-smooth'),
-  body: cva('w-full h-full bg-background text-foreground font-geist-sans text-base font-light')
+  html: cva('h-full w-full scroll-smooth'),
+  body: cva('h-full w-full bg-background font-geist-sans text-base font-light text-foreground')
 }
 
 const pagedata = {

@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion, Variants } from 'motion/react'
-import { useEffect, useRef, useState, FC } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { cn, cva } from '@/utils/theme'
 
 const styles = {

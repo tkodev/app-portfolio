@@ -3,8 +3,8 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(''),
-  bold: cva('mix-blend-exclusion stroke-foreground/15'),
-  light: cva('mix-blend-exclusion stroke-foreground/5')
+  bold: cva('stroke-foreground/15 mix-blend-exclusion'),
+  light: cva('stroke-foreground/5 mix-blend-exclusion')
 }
 
 type CrossRef = SVGSVGElement

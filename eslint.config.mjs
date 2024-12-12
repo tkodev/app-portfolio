@@ -41,12 +41,13 @@ const config = [
       'prettier/prettier': [
         'error',
         {
+          plugins: ["prettier-plugin-tailwindcss"],
+          tailwindFunctions: ["cva"],
           semi: false,
           singleQuote: true,
           trailingComma: 'none',
           printWidth: 100,
           endOfLine: 'auto',
-          tailwindConfig: '../../config-tailwind/src/tailwind.config.js',
         },
       ],
 
@@ -61,13 +62,14 @@ const config = [
         }
       ],
 
-      // Perfectionist
+      // Perfectionist - imports / exports
       'import/order': 'off',
       'perfectionist/sort-imports': [
         'error',
         {
           type: 'natural',
           order: 'asc',
+          ignoreCase: false,
           groups: [
             'type',
             'next',
@@ -96,6 +98,29 @@ const config = [
         {
           type: 'natural',
           order: 'asc',
+          ignoreCase: false,
+          groupKind: 'values-first',
+        },
+      ],
+
+      // Perfectionist - named imports / exports
+      'perfectionist/sort-named-imports': [
+        'error',
+        {
+          type: 'natural',
+          order: 'asc',
+          ignoreAlias: false,
+          ignoreCase: false,
+          groupKind: 'values-first',
+        },
+      ],
+      'perfectionist/sort-named-exports': [
+        'error',
+        {
+          type: 'natural',
+          order: 'asc',
+          ignoreCase: false,
+          groupKind: 'values-first',
         },
       ],
     },

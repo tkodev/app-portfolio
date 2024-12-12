@@ -1,4 +1,4 @@
-import { HTMLAttributes, forwardRef } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { textStyles } from '@/constants/theme'
 import { countIndents } from '@/utils/string'

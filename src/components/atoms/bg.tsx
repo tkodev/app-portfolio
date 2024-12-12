@@ -2,7 +2,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('w-full h-full bg-center', {
+  root: cva('h-full w-full bg-center', {
     variants: {
       variant: {
         gradient: [
@@ -40,7 +40,7 @@ const styles = {
         top: 'bg-top'
       },
       overlay: {
-        true: 'fixed top-0 left-0 pointer-events-none z-50'
+        true: 'pointer-events-none fixed left-0 top-0 z-50'
       }
     },
     defaultVariants: {

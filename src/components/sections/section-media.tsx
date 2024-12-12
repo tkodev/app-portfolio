@@ -21,7 +21,7 @@ const styles = {
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
 
-  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-4'),
+  text: cva('flex flex-col gap-4 lg:order-first lg:w-[65%]'),
 
   tableHead: cva('w-[20%]'),
   tableRoles: cva('capitalize')

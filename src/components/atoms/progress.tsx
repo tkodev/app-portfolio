@@ -1,14 +1,14 @@
 'use client'
 
 import * as ProgressPrimitive from '@radix-ui/react-progress'
-import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
   progress: cva(
-    'relative h-2 w-full overflow-hidden rounded-full bg-secondary border border-secondary'
+    'relative h-2 w-full overflow-hidden rounded-full border border-secondary bg-secondary'
   ),
-  indicator: cva('h-full w-full flex-1 bg-primary transition-all rounded-full')
+  indicator: cva('h-full w-full flex-1 rounded-full bg-primary transition-all')
 }
 
 const Progress = forwardRef<

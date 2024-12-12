@@ -1,4 +1,4 @@
-import { ForwardRefExoticComponent, SVGProps, RefAttributes } from 'react'
+import { ForwardRefExoticComponent, RefAttributes, SVGProps } from 'react'
 import { Config } from 'tailwindcss'
 
 type Theme = NonNullable<Config['theme']>
@@ -9,4 +9,4 @@ type SvgComponent = ForwardRefExoticComponent<
   Omit<SVGProps<SVGSVGElement>, 'ref'> & RefAttributes<SVGSVGElement>
 >
 
-export type { Theme, ThemeMode, SvgComponent }
+export type { SvgComponent, Theme, ThemeMode }

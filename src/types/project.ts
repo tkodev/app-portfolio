@@ -47,4 +47,4 @@ type ProjectEntry = {
   isFeatured?: boolean
 }
 
-export type { ProjectRole, ProjectId, ProjectEntry }
+export type { ProjectEntry, ProjectId, ProjectRole }

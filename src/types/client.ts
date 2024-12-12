@@ -27,4 +27,4 @@ type ClientEntry = {
   darkSrc: string
 }
 
-export type { ClientId, ClientEntry }
+export type { ClientEntry, ClientId }

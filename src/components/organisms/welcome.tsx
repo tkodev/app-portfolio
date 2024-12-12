@@ -13,7 +13,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(''),
-  content: cva(['w-full h-full bg-background']),
+  content: cva(['h-full w-full bg-background']),
   body: cva('grid gap-8 overflow-auto p-8')
 }
 

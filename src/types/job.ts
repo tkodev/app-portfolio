@@ -20,4 +20,4 @@ type JobEntry = {
   skills: string[]
 }
 
-export type { JobId, JobEntry }
+export type { JobEntry, JobId }

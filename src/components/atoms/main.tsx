@@ -1,8 +1,8 @@
-import { HTMLAttributes, FC } from 'react'
-import { cva, cn, type VariantProps } from '@/utils/theme'
+import { FC, HTMLAttributes } from 'react'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('w-full min-h-full bg-background shadow-inner')
+  root: cva('min-h-full w-full bg-background shadow-inner')
 }
 
 type MainProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>

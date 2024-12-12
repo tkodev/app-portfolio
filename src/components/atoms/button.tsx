@@ -8,7 +8,7 @@ const styles = {
     [
       'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-colors',
       'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
-      'disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 disabled:scale-100'
+      'disabled:pointer-events-none disabled:scale-100 disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
     ],
     {
       variants: {
@@ -32,7 +32,7 @@ const styles = {
           none: 'h-9'
         },
         isHover: {
-          true: 'hover:scale-105 transition-all duration-300',
+          true: 'transition-all duration-300 hover:scale-105',
           false: ''
         }
       },

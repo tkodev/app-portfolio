@@ -22,7 +22,7 @@ const styles = {
   cta: cva('flex justify-center'),
 
   icon: cva('w-auto'),
-  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-8'),
+  text: cva('flex flex-col gap-8 lg:order-first lg:w-[65%]'),
 
   grid: cva('grid grid-cols-3 gap-2 md:gap-4 lg:gap-8'),
   media: cva('flex flex-col gap-4')

@@ -47,9 +47,9 @@ const styles = {
   cta: cva('flex justify-center'),
 
   icon: cva('w-auto'),
-  text: cva('lg:w-[65%] lg:order-first flex flex-col gap-8'),
+  text: cva('flex flex-col gap-8 lg:order-first lg:w-[65%]'),
 
-  grid: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
+  grid: cva('grid gap-16 md:grid-cols-2 md:gap-8 lg:gap-16'),
   project: cva('flex flex-col gap-4'),
   projectMedia: cva('mb-4'),
   projectDetail: cva('flex justify-between gap-4'),

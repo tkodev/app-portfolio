@@ -1,10 +1,10 @@
-import { forwardRef, ComponentProps } from 'react'
+import { ComponentProps, forwardRef } from 'react'
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
   root: cva([
     'flex h-9 w-full px-3 py-1',
-    'rounded-full border border-input bg-background text-base md:text-sm shadow-sm transition-colors',
+    'rounded-full border border-input bg-background text-base shadow-sm transition-colors md:text-sm',
     'file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground',
     'placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
     'disabled:cursor-not-allowed disabled:opacity-50'

@@ -6,13 +6,13 @@ const styles = {
   root: cva('', {
     variants: {
       size: {
-        xs: 'w-[20px] h-[20px]',
-        sm: 'w-[24px] h-[24px]',
-        md: 'w-[32px] h-[32px]',
-        lg: 'w-[40px] h-[40px]',
-        xl: 'w-[64px] h-[64px]',
-        '2xl': 'w-[96px] h-[96px]',
-        '3xl': 'w-[128px] h-[128px]'
+        xs: 'h-[20px] w-[20px]',
+        sm: 'h-[24px] w-[24px]',
+        md: 'h-[32px] w-[32px]',
+        lg: 'h-[40px] w-[40px]',
+        xl: 'h-[64px] w-[64px]',
+        '2xl': 'h-[96px] w-[96px]',
+        '3xl': 'h-[128px] w-[128px]'
       }
     },
     defaultVariants: {

@@ -8,10 +8,10 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(
-    'relative bg-background flex items-center justify-center w-full h-full overflow-hidden'
+    'relative flex h-full w-full items-center justify-center overflow-hidden bg-background'
   ),
-  icon: cva('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15'),
-  comp: cva('relative max-w-full max-h-full w-full h-auto', {
+  icon: cva('absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15'),
+  comp: cva('relative h-auto max-h-full w-full max-w-full', {
     variants: {
       aspect: {
         video: 'aspect-video',
@@ -22,7 +22,7 @@ const styles = {
         cover: 'object-cover'
       },
       isHover: {
-        true: 'hover:scale-105 hover:contrast-[1.05] transition-all duration-1000'
+        true: 'transition-all duration-1000 hover:scale-105 hover:contrast-[1.05]'
       }
     },
     defaultVariants: {
@@ -58,4 +58,4 @@ const Media: FC<MediaProps> = (props) => {
 Media.displayName = 'Media'
 
 export { Media }
-export type { MediaRef, MediaProps }
+export type { MediaProps, MediaRef }

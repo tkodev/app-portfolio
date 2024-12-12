@@ -7,7 +7,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('relative w-full'),
-  lcd: cva('absolute left-1/2 -translate-x-1/2 bg-black scale-[101%] overflow-hidden', {
+  lcd: cva('absolute left-1/2 -translate-x-1/2 scale-[101%] overflow-hidden bg-black', {
     variants: {
       frameId: {
         mobile: 'rounded-lg',
@@ -15,8 +15,8 @@ const styles = {
       }
     }
   }),
-  screen: cva('w-full h-full'),
-  device: cva('relative left-1/2 top-0 -translate-x-1/2 pointer-events-none')
+  screen: cva('h-full w-full'),
+  device: cva('pointer-events-none relative left-1/2 top-0 -translate-x-1/2')
 }
 
 type FrameRef = HTMLDivElement

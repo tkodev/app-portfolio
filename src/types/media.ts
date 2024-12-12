@@ -36,4 +36,4 @@ type ImageMediaEntry = {
 
 type MediaEntry = VideoMediaEntry | ImageMediaEntry
 
-export type { FrameId, FrameEntry, VideoMediaEntry, ImageMediaEntry, MediaEntry }
+export type { FrameEntry, FrameId, ImageMediaEntry, MediaEntry, VideoMediaEntry }

@@ -19,9 +19,9 @@ const styles = {
   ]),
   cta: cva('flex justify-center'),
 
-  text: cva('lg:max-w-[55%] flex flex-col gap-4'),
+  text: cva('flex flex-col gap-4 lg:max-w-[55%]'),
   clients: cva(
-    'lg:max-w-[480px] flex flex-wrap gap-2 md:gap-4 items-center justify-center lg:order-first'
+    'flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:order-first lg:max-w-[480px]'
   ),
 
   client: cva('w-[140px] lg:w-[125px]')

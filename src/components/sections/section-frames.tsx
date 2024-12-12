@@ -1,6 +1,6 @@
 'use client'
 
-import { useScroll, useTransform, motion } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { forwardRef, HTMLAttributes, useRef } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Frame } from '@/components/atoms/frame'
@@ -12,7 +12,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva('flex flex-col gap-16'),
 
-  content: cva(['flex flex flex-wrap items-center justify-center gap-16 lg:gap-32']),
+  content: cva(['flex flex-wrap items-center justify-center gap-16 lg:gap-32']),
 
   item: cva('', {
     variants: {

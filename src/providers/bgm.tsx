@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, ReactNode, Fragment, useEffect } from 'react'
+import { FC, Fragment, ReactNode, useEffect } from 'react'
 import { useAudio } from 'react-use'
 import { useBgmStore } from '@/stores/bgm'
 

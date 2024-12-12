@@ -5,8 +5,8 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('h-full w-auto relative'),
-  img: cva('w-full h-auto absolute top-0 left-0', {
+  root: cva('relative h-full w-auto'),
+  img: cva('absolute left-0 top-0 h-auto w-full', {
     variants: {
       variant: {
         light: 'block dark:hidden',

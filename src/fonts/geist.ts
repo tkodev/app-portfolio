@@ -11,4 +11,4 @@ const geistMonoFont = localFont({
   weight: '100 900'
 })
 
-export { geistSansFont, geistMonoFont }
+export { geistMonoFont, geistSansFont }

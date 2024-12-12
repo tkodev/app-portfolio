@@ -2,7 +2,7 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { XIcon } from 'lucide-react'
-import { HTMLAttributes, forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef, HTMLAttributes } from 'react'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
 import { textStyles } from '@/constants/theme'
@@ -13,7 +13,7 @@ const styles = {
   dialogOverlay: cva(
     'fixed inset-0 z-50 bg-black/30 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0'
   ),
-  dialogContent: cva('w-full fixed left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-50', {
+  dialogContent: cva('fixed left-[50%] top-[50%] z-50 w-full -translate-x-1/2 -translate-y-1/2', {
     variants: {
       isAnimated: {
         true: 'duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]',
@@ -111,15 +111,15 @@ DialogDescription.displayName = DialogPrimitive.Description.displayName
 
 export {
   Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogTrigger,
   DialogClose,
   DialogContent,
-  DialogHeader,
+  DialogDescription,
   DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
   DialogTitle,
-  DialogDescription
+  DialogTrigger
 }
 
 export type { DialogProps }
