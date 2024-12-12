@@ -3,6 +3,7 @@ import { Bg } from '@/components/atoms/bg'
 import { Cursor } from '@/components/atoms/cursor'
 import { Footer } from '@/components/organisms/footer'
 import { Header } from '@/components/organisms/header'
+import { Welcome } from '@/components/organisms/welcome'
 import { cva, cn, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -20,6 +21,7 @@ const Layout = forwardRef<LayoutRef, LayoutProps>((props, ref) => {
       <Header />
       {children}
       <Footer />
+      <Welcome />
       <Bg variant="noise" size="repeat" overlay />
       <Cursor />
     </div>

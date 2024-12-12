@@ -6,6 +6,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogProps,
   DialogTitle,
   DialogTrigger
 } from '@/components/molecules/dialog'
@@ -48,7 +49,8 @@ const styles = {
 
 type LightboxRef = HTMLButtonElement
 type LightboxProps = HTMLAttributes<LightboxRef> &
-  VariantProps<typeof styles.root> & {
+  VariantProps<typeof styles.root> &
+  DialogProps & {
     mediaEntry: MediaEntry
   }
 

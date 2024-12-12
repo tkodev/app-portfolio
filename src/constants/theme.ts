@@ -19,7 +19,8 @@ const textStyles = {
   ul: cva('list-disc pl-4', marginVariants),
   ol: cva('list-decimal pl-4', marginVariants),
   li: cva('*:mb-0', marginVariants),
-  none: cva('', marginVariants)
+  none: cva('', marginVariants),
+  sr: cva('sr-only')
 }
 
 export { defaultTheme, textStyles }

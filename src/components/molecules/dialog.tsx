@@ -30,6 +30,8 @@ const styles = {
   dialogDescription: cva('')
 }
 
+type DialogProps = DialogPrimitive.DialogProps
+
 const Dialog = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger
@@ -119,3 +121,5 @@ export {
   DialogTitle,
   DialogDescription
 }
+
+export type { DialogProps }
