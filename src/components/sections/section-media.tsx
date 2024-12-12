@@ -9,7 +9,14 @@ import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16'),
+  root: cva('grid gap-16 md:gap-8 lg:gap-16', {
+    variants: {
+      isDoubleCol: {
+        true: 'md:grid-cols-2',
+        false: 'md:grid-cols-1'
+      }
+    }
+  }),
 
   content: cva([
     'flex flex-col items-center justify-center gap-8',
@@ -36,7 +43,7 @@ const SectionMedia = forwardRef<SectionMediaRef, SectionMediaProps>((props, ref)
   return (
     <Section
       ref={ref}
-      className={cn(styles.root({ className }))}
+      className={cn(styles.root({ isDoubleCol: mediaEntries.length > 1, className }))}
       height="auto"
       bg={<Bg variant="texture" size="repeat" attach="local" position="top" />}
       {...rest}
