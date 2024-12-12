@@ -5,6 +5,7 @@ import { XIcon } from 'lucide-react'
 import { HTMLAttributes, forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
+import { textStyles } from '@/constants/theme'
 import { cn, cva } from '@/utils/theme'
 import { VariantProps } from 'class-variance-authority'
 
@@ -23,10 +24,9 @@ const styles = {
       isAnimated: false
     }
   }),
-  dialogClose: cva('absolute right-5 top-5'),
+  dialogClose: cva('absolute right-4 top-4'),
   dialogHeader: cva('flex flex-col space-y-1.5 text-center sm:text-left'),
   dialogFooter: cva('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2'),
-  dialogTitle: cva('text-h3 font-alliance-no2 mb-2'),
   dialogDescription: cva('')
 }
 
@@ -53,8 +53,10 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 const DialogContent = forwardRef<
   ElementRef<typeof DialogPrimitive.Content>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Content> &
-    VariantProps<typeof styles.dialogContent>
->(({ isAnimated, className, children, ...props }, ref) => (
+    VariantProps<typeof styles.dialogContent> & {
+      isCloseVisible?: boolean
+    }
+>(({ isAnimated, isCloseVisible = true, className, children, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content
@@ -63,11 +65,13 @@ const DialogContent = forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className={cn(styles.dialogClose())} asChild>
-        <Button variant="ghost" size="icon">
-          <Icon icon={XIcon} />
-        </Button>
-      </DialogPrimitive.Close>
+      {isCloseVisible && (
+        <DialogPrimitive.Close className={cn(styles.dialogClose())} asChild>
+          <Button variant="ghost" size="icon">
+            <Icon icon={XIcon} />
+          </Button>
+        </DialogPrimitive.Close>
+      )}
     </DialogPrimitive.Content>
   </DialogPortal>
 ))
@@ -87,7 +91,7 @@ const DialogTitle = forwardRef<
   ElementRef<typeof DialogPrimitive.Title>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(({ className, ...props }, ref) => (
-  <DialogPrimitive.Title ref={ref} className={cn(styles.dialogTitle({ className }))} {...props} />
+  <DialogPrimitive.Title ref={ref} className={cn(textStyles.h3({ className }))} {...props} />
 ))
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 

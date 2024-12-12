@@ -9,7 +9,8 @@ import {
   FileUserIcon,
   SunMoonIcon,
   PauseIcon,
-  MusicIcon
+  MusicIcon,
+  PlayIcon
 } from 'lucide-react'
 import { HTMLAttributes, FC } from 'react'
 import { profileEntries } from '@/constants/profile'
@@ -34,10 +35,7 @@ const styles = {
   bar: cva('h-16 flex items-center justify-between px-2 animate-slide-up', {
     variants: {
       variant: {
-        bar: [
-          'rounded-full bg-background/30 shadow-md border border-foreground/15',
-          'backdrop-filter backdrop-blur-lg'
-        ],
+        bar: ['rounded-full bg-background/30 shadow-md border', 'backdrop-filter backdrop-blur-lg'],
         flat: 'rounded-none bg-transparent shadow-none border-none'
       }
     },
@@ -46,7 +44,7 @@ const styles = {
     }
   }),
 
-  left: cva('h-full flex items-center px-2'),
+  left: cva('h-full flex items-center px-2 gap-2'),
   right: cva('h-full flex items-center px-2 gap-2 overflow-x-auto no-scrollbar'),
 
   bgm: cva('hidden sm:flex')
@@ -99,13 +97,14 @@ const Footer: FC<FooterProps> = (props) => {
               size="icon"
               onClick={() => setBgmState(bgmState === 'playing' ? 'stopped' : 'playing')}
             >
-              <Icon icon={bgmState === 'playing' ? PauseIcon : MusicIcon} />
+              <Icon icon={bgmState === 'playing' ? PauseIcon : PlayIcon} />
             </Button>
-            <Button className={cn(styles.bgm())} variant="link" asChild>
+            <Button className={cn(styles.bgm())} variant="link" size="none" asChild>
               <Link
                 href="https://uppbeat.io/track/justin-marshall-elias/an-empty-bus"
                 target="_blank"
               >
+                <Icon icon={MusicIcon} />
                 An Empty Bus - Justin M. Elias
               </Link>
             </Button>

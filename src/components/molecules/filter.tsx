@@ -8,7 +8,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(
-    'flex justify-between gap-8 pb-8 border-b border-foreground/15 overflow-x-auto overflow-y-visible no-scrollbar px-4'
+    'flex justify-between gap-8 pb-8 border-b overflow-x-auto overflow-y-visible no-scrollbar px-4'
   ),
   filters: cva('flex gap-2'),
   layouts: cva('flex gap-2')

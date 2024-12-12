@@ -22,7 +22,7 @@ const styles = {
   cta: cva('flex justify-center'),
 
   text: cva('flex flex-col gap-4'),
-  jobs: cva('w-full flex flex-col divide-y divide-foreground/15'),
+  jobs: cva('w-full flex flex-col divide-y divide-border'),
 
   job: cva('grid grid-cols-[1fr_auto] gap-4 items-center justify-center py-8'),
   client: cva('hidden md:block')

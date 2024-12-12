@@ -26,10 +26,7 @@ const styles = {
   bar: cva('w-full h-16 flex items-center justify-between px-2 animate-slide-down', {
     variants: {
       variant: {
-        bar: [
-          'rounded-full bg-background/30 shadow-md border border-foreground/15',
-          'backdrop-filter backdrop-blur-lg'
-        ],
+        bar: ['rounded-full bg-background/30 shadow-md border', 'backdrop-filter backdrop-blur-lg'],
         flat: 'rounded-none bg-transparent shadow-none border-none'
       }
     },

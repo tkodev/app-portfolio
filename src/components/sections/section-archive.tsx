@@ -53,7 +53,7 @@ const styles = {
   project: cva('flex flex-col gap-4'),
   projectMedia: cva('mb-4'),
   projectDetail: cva('flex justify-between gap-4'),
-  projectDivider: cva('border-t border-foreground/15'),
+  projectDivider: cva('border-t'),
 
   tableTitleHead: cva('w-[40%]'),
   tableHead: cva('w-[20%]'),

@@ -15,11 +15,13 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(''),
   content: cva([
-    'w-full h-[calc(100vh-32px)] md:max-w-[90%] md:max-h-[90%]',
-    'border bg-background p-6 shadow-lg rounded-lg',
-    'grid grid-rows-[auto_1fr_auto] gap-4 '
+    'w-full h-full md:max-w-[90%] md:max-h-[90%]',
+    'border bg-background shadow-lg',
+    'grid grid-rows-[auto_1fr_auto]'
   ]),
-  body: cva('grid gap-8 overflow-auto', {
+
+  header: cva('px-8 py-4 border-b'),
+  body: cva('grid gap-8 overflow-auto p-8', {
     variants: {
       isDoubleCol: {
         true: [
@@ -60,7 +62,7 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
         {children}
       </DialogTrigger>
       <DialogContent className={cn(styles.content())} isAnimated>
-        <DialogHeader>
+        <DialogHeader className={cn(styles.header())}>
           <DialogTitle>Media Preview</DialogTitle>
         </DialogHeader>
         <div className={cn(styles.body({ isDoubleCol: !!caption }))}>
