@@ -25,7 +25,7 @@ const styles = {
     }
   }),
   dialogClose: cva('absolute right-4 top-4'),
-  dialogHeader: cva('flex flex-col space-y-1.5 text-center sm:text-left'),
+  dialogHeader: cva('flex flex-col space-y-1.5'),
   dialogFooter: cva('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2'),
   dialogDescription: cva('')
 }

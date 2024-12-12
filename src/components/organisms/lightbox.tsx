@@ -16,13 +16,13 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(''),
   content: cva([
-    'w-full h-full md:max-w-[90%] md:max-h-[90%]',
+    'w-full h-full lg:max-w-[90%] lg:max-h-[90%]',
     'border bg-background shadow-lg',
     'grid grid-rows-[auto_1fr_auto]'
   ]),
 
-  header: cva('px-8 py-4 border-b'),
-  body: cva('grid gap-8 overflow-auto p-8', {
+  header: cva('px-8 py-4 text-center lg:text-left border-b'),
+  body: cva('grid gap-8 overflow-auto', {
     variants: {
       isDoubleCol: {
         true: [
@@ -35,8 +35,8 @@ const styles = {
     }
   }),
 
-  left: cva('flex items-center justify-center min-w-0 min-h-0'),
-  right: cva('pr-4'),
+  left: cva('flex items-center justify-center min-w-0 min-h-0 p-8'),
+  right: cva('p-8 border-t md:border-l md:border-t-0'),
 
   caption: cva('', {
     variants: {
