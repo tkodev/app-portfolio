@@ -11,7 +11,7 @@ import { VariantProps } from 'class-variance-authority'
 
 const styles = {
   dialogOverlay: cva(
-    'fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0'
+    'fixed inset-0 z-50 bg-black/30 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0'
   ),
   dialogContent: cva('w-full fixed left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-50', {
     variants: {
@@ -56,7 +56,7 @@ const DialogContent = forwardRef<
     VariantProps<typeof styles.dialogContent> & {
       isCloseVisible?: boolean
     }
->(({ isAnimated, isCloseVisible = true, className, children, ...props }, ref) => (
+>(({ isAnimated, isCloseVisible = false, className, children, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content

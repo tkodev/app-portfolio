@@ -61,7 +61,7 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
       <DialogTrigger ref={ref} className={cn(styles.root({ className }))} asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className={cn(styles.content())} isAnimated>
+      <DialogContent className={cn(styles.content())} isAnimated isCloseVisible>
         <DialogHeader className={cn(styles.header())}>
           <DialogTitle>Media Preview</DialogTitle>
         </DialogHeader>
