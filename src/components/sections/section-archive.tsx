@@ -13,7 +13,7 @@ import {
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
-import { HyperText } from '@/components/atoms/hyper-text'
+import { Hypertext } from '@/components/atoms/hypertext'
 import { Icon } from '@/components/atoms/icon'
 import { Media } from '@/components/atoms/media'
 import { Filter } from '@/components/molecules/filter'
@@ -109,7 +109,7 @@ const SectionArchive = forwardRef<SectionArchiveRef, SectionArchiveProps>((props
         </div>
         <div className={cn(styles.text())}>
           <h1 className={cn(textStyles.h1())}>
-            <HyperText text="Archive." />
+            <Hypertext text="Archive." />
           </h1>
           <h2 className={cn(textStyles.h2())}>A Legacy of Innovation.</h2>
           <p>

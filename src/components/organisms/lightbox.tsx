@@ -15,7 +15,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(''),
   content: cva([
-    'w-[calc(100vw-32px)] h-[calc(100vh-32px)] md:max-w-[90%] md:max-h-[90%]',
+    'w-full h-[calc(100vh-32px)] md:max-w-[90%] md:max-h-[90%]',
     'border bg-background p-6 shadow-lg rounded-lg',
     'grid grid-rows-[auto_1fr_auto] gap-4 '
   ]),

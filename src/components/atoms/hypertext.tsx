@@ -15,7 +15,7 @@ const styles = {
   })
 }
 
-type HyperTextProps = {
+type HypertextProps = {
   text: string
   duration?: number
   framerProps?: Variants
@@ -27,7 +27,7 @@ const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
 const getRandomInt = (max: number) => Math.floor(Math.random() * max)
 
-const HyperText: FC<HyperTextProps> = (props) => {
+const Hypertext: FC<HypertextProps> = (props) => {
   const {
     text,
     duration = 800,
@@ -92,4 +92,4 @@ const HyperText: FC<HyperTextProps> = (props) => {
   )
 }
 
-export { HyperText }
+export { Hypertext }

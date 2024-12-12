@@ -3,7 +3,7 @@ import {
   DraftingCompassIcon,
   DotIcon,
   NotebookPenIcon,
-  PaletteIcon,
+  CameraIcon,
   ScanFaceIcon
 } from 'lucide-react'
 import { HTMLAttributes, FC } from 'react'
@@ -50,7 +50,7 @@ const isSearchEnabled = false
 const navItems: NavEntry[] = [
   { href: '/profile', name: 'Profile', icon: ScanFaceIcon, variant: 'ghost' },
   { href: '/works', name: 'Works', icon: DraftingCompassIcon, variant: 'ghost' },
-  { href: '/shots', name: 'Shots', icon: PaletteIcon, variant: 'ghost' },
+  { href: '/shots', name: 'Shots', icon: CameraIcon, variant: 'ghost' },
   {
     href: '/blog',
     name: 'Blog',
