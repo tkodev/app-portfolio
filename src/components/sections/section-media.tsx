@@ -1,5 +1,3 @@
-'use client'
-
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'
 import { Media } from '@/components/atoms/media'

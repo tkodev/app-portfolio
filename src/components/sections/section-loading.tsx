@@ -1,5 +1,3 @@
-'use client'
-
 import { LoaderCircleIcon } from 'lucide-react'
 import { forwardRef, HTMLAttributes } from 'react'
 import { Bg } from '@/components/atoms/bg'

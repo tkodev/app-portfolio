@@ -8,10 +8,10 @@ const styles = {
   root: cva(['flex items-center justify-center'])
 }
 
-type SectionWipRef = HTMLDivElement
-type SectionWipProps = HTMLAttributes<SectionWipRef> & VariantProps<typeof styles.root>
+type SectionExampleRef = HTMLDivElement
+type SectionExampleProps = HTMLAttributes<SectionExampleRef> & VariantProps<typeof styles.root>
 
-const SectionWip = forwardRef<SectionWipRef, SectionWipProps>((props, ref) => {
+const SectionExample = forwardRef<SectionExampleRef, SectionExampleProps>((props, ref) => {
   const { className, ...rest } = props
 
   return (
@@ -25,7 +25,7 @@ const SectionWip = forwardRef<SectionWipRef, SectionWipProps>((props, ref) => {
     </Section>
   )
 })
-SectionWip.displayName = 'SectionWip'
+SectionExample.displayName = 'SectionExample'
 
-export { SectionWip }
-export type { SectionWipProps, SectionWipRef }
+export { SectionExample }
+export type { SectionExampleProps, SectionExampleRef }
