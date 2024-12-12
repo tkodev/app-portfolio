@@ -71,7 +71,7 @@ const Header: FC<HeaderProps> = (props) => {
           <div className={cn(styles.left())}>
             <Link className={cn(styles.thumb())} href="/">
               <Avatar>
-                <AvatarImage src="/images/tkodev/dp-thumb.jpg" alt="Tony Ko" />
+                <AvatarImage alt="Tony Ko" src="/images/tkodev/dp-thumb.jpg" />
                 <AvatarFallback>tko</AvatarFallback>
               </Avatar>
             </Link>

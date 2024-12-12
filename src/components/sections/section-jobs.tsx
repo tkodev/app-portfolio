@@ -42,8 +42,8 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      bg={<Bg attach="local" variant="texture" />}
       height="auto"
-      bg={<Bg variant="texture" attach="local" />}
       {...rest}
     >
       <div className={cn(styles.content())}>
@@ -78,17 +78,17 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
                   <div>
                     {!!clientEntry && (
                       <Link
+                        key={`company-${companyId}`}
                         className={cn(styles.client())}
                         href={clientEntry.href}
-                        key={`company-${companyId}`}
                         target="_blank"
                       >
                         <Client
                           darkSrc={clientEntry.darkSrc}
                           lightSrc={clientEntry.lightSrc}
                           alt={`Logo of ${clientEntry.name}`}
-                          width={200}
                           height={50}
+                          width={200}
                         />
                       </Link>
                     )}

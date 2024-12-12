@@ -99,8 +99,8 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      bg={<Bg attach="local" position="top" size="repeat" variant="texture" />}
       height="auto"
-      bg={<Bg variant="texture" size="repeat" attach="local" position="top" />}
       {...rest}
     >
       <div className={cn(styles.content())}>
@@ -121,11 +121,11 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
         </div>
       </div>
       <Filter
-        filterEntries={filterEntries}
         activeFilterValue={activeFilterValue}
-        onFilterClick={handleFilterClick}
-        layoutEntries={layoutEntries}
         activeLayoutValue={activeLayoutValue}
+        filterEntries={filterEntries}
+        layoutEntries={layoutEntries}
+        onFilterClick={handleFilterClick}
         onLayoutClick={handleLayoutClick}
       />
       {activeLayoutValue === 'grid' ? (
@@ -138,8 +138,8 @@ const SectionProjects = forwardRef<SectionProjectsRef, SectionProjectsProps>((pr
               <Link key={key} className={cn(styles.project())} href={`/works/${kebabCase(id)}`}>
                 <Media
                   className={cn(styles.projectMedia())}
-                  mediaEntry={media[0]}
                   aspect="video"
+                  mediaEntry={media[0]}
                   isHover
                 />
                 <h2 className={cn(textStyles.h3())}>{title}</h2>

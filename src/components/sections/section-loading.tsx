@@ -51,7 +51,7 @@ const SectionLoading = forwardRef<SectionLoadingRef, SectionLoadingProps>((props
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      bg={<Bg variant="texture" attach="local" />}
+      bg={<Bg attach="local" variant="texture" />}
       {...rest}
     >
       <div className={cn(styles.container())}>

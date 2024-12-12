@@ -31,8 +31,8 @@ const SectionContact = forwardRef<SectionContactRef, SectionContactProps>((props
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      height="auto"
       bg={<Bg variant="gradient" />}
+      height="auto"
       {...rest}
     >
       <div className={cn(styles.content())}>

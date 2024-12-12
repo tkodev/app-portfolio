@@ -38,8 +38,8 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      bg={<Bg attach="local" position="top" size="repeat" variant="texture" />}
       height="auto"
-      bg={<Bg variant="texture" size="repeat" attach="local" position="top" />}
       {...rest}
     >
       <div className={cn(styles.content())}>
@@ -65,7 +65,7 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
           return (
             <Lightbox key={key} mediaEntry={mediaEntry}>
               <button className={cn(styles.media())}>
-                <Media mediaEntry={mediaEntry} aspect="square" fill="cover" isHover />
+                <Media aspect="square" fill="cover" mediaEntry={mediaEntry} isHover />
               </button>
             </Lightbox>
           )

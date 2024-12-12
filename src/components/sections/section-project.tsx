@@ -53,8 +53,8 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      bg={<Bg attach="local" position="top" size="repeat" variant="texture" />}
       height="auto"
-      bg={<Bg variant="texture" size="repeat" attach="local" position="top" />}
       {...rest}
     >
       <div className={cn(styles.content())}>
@@ -63,7 +63,7 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
           <Markdown>{intro}</Markdown>
           <div className={cn(styles.skills())}>
             {skills.map((skill) => (
-              <Button key={`skill-${kebabCase(skill)}`} variant="secondary" size="xs">
+              <Button key={`skill-${kebabCase(skill)}`} size="xs" variant="secondary">
                 {skill}
               </Button>
             ))}

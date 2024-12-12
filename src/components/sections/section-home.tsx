@@ -61,7 +61,7 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      bg={<Bg variant="texture" attach="local" />}
+      bg={<Bg attach="local" variant="texture" />}
       {...rest}
     >
       <div className={cn(styles.container())}>
@@ -70,7 +70,7 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
           <Brand className={cn(styles.brand1())} variant="fill" />
           <Brand className={cn(styles.brand2())} variant="outline" />
           <Avatar className={cn(styles.avatar())}>
-            <AvatarImage src="/images/tkodev/dp-sq.jpg" alt="Tony Ko" />
+            <AvatarImage alt="Tony Ko" src="/images/tkodev/dp-sq.jpg" />
             <AvatarFallback>-</AvatarFallback>
           </Avatar>
           <Brand className={cn(styles.brand3())} variant="outline" />

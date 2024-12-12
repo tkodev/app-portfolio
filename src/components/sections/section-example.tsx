@@ -18,7 +18,7 @@ const SectionExample = forwardRef<SectionExampleRef, SectionExampleProps>((props
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      bg={<Bg variant="sand" attach="fixed" />}
+      bg={<Bg attach="fixed" variant="sand" />}
       {...rest}
     >
       <h1 className={cn(textStyles.h3())}>Coming Soon</h1>

@@ -93,13 +93,13 @@ const Footer: FC<FooterProps> = (props) => {
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>
             <Button
-              variant={bgmState === 'playing' ? 'secondary' : 'ghost'}
               size="icon"
+              variant={bgmState === 'playing' ? 'secondary' : 'ghost'}
               onClick={() => setBgmState(bgmState === 'playing' ? 'stopped' : 'playing')}
             >
               <Icon icon={bgmState === 'playing' ? PauseIcon : PlayIcon} />
             </Button>
-            <Button className={cn(styles.bgm())} variant="link" size="none" asChild>
+            <Button className={cn(styles.bgm())} size="none" variant="link" asChild>
               <Link
                 href="https://uppbeat.io/track/justin-marshall-elias/an-empty-bus"
                 target="_blank"
@@ -111,7 +111,7 @@ const Footer: FC<FooterProps> = (props) => {
           </div>
           <div className={cn(styles.right())}>
             <Nav items={navItems}>
-              <Button variant="ghost" size="icon" onClick={handleThemeModeToggle}>
+              <Button size="icon" variant="ghost" onClick={handleThemeModeToggle}>
                 <Icon icon={SunMoonIcon} />
               </Button>
             </Nav>

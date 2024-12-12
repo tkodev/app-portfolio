@@ -17,13 +17,13 @@ const LifecycleProvider: FC<LifecycleProps> = (props) => {
 
   return (
     <TransitionRouter
+      enter={(next) => {
+        setLifecycleState('ready')
+        next()
+      }}
       leave={(next) => {
         if (bgmState === 'paused') setBgmState('playing')
         setLifecycleState('loading')
-        next()
-      }}
-      enter={(next) => {
-        setLifecycleState('ready')
         next()
       }}
       auto

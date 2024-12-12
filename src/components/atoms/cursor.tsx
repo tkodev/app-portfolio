@@ -10,14 +10,14 @@ const Cursor: FC<CursorProps> = (props) => {
   return (
     <AnimatedCursor
       color="#fff"
-      innerSize={0}
       innerScale={0}
+      innerSize={0}
+      outerAlpha={0}
+      outerScale={1.5}
+      outerSize={48}
       innerStyle={{
         backgroundColor: 'hsl(var(--foreground) / .30)'
       }}
-      outerSize={48}
-      outerScale={1.5}
-      outerAlpha={0}
       outerStyle={{
         border: '1px solid hsl(var(--foreground) / .30)',
         mixBlendMode: 'exclusion'

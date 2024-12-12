@@ -20,7 +20,7 @@ const Layout = forwardRef<LayoutRef, LayoutProps>((props, ref) => {
       <Header />
       {children}
       <Footer />
-      <Bg variant="noise" size="repeat" overlay />
+      <Bg size="repeat" variant="noise" overlay />
       <Cursor />
     </div>
   )

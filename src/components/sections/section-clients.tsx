@@ -37,8 +37,8 @@ const SectionClients = forwardRef<SectionClientsRef, SectionClientsProps>((props
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      height="auto"
       bg={<Bg variant="gradient" />}
+      height="auto"
       {...rest}
     >
       <div className={cn(styles.content())}>
@@ -60,17 +60,17 @@ const SectionClients = forwardRef<SectionClientsRef, SectionClientsProps>((props
             if (!clientEntry || !clientEntry.baseSrc) return null
             return (
               <Link
+                key={`company-${companyKey}`}
                 className={cn(styles.client())}
                 href={clientEntry.href}
-                key={`company-${companyKey}`}
                 target="_blank"
               >
                 <Client
                   darkSrc={clientEntry.darkSrc}
                   lightSrc={clientEntry.lightSrc}
                   alt={`Logo of ${clientEntry.name}`}
-                  width={200}
                   height={50}
+                  width={200}
                 />
               </Link>
             )

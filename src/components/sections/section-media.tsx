@@ -42,14 +42,14 @@ const SectionMedia = forwardRef<SectionMediaRef, SectionMediaProps>((props, ref)
     <Section
       ref={ref}
       className={cn(styles.root({ isDoubleCol: mediaEntries.length > 1, className }))}
+      bg={<Bg attach="local" position="top" size="repeat" variant="texture" />}
       height="auto"
-      bg={<Bg variant="texture" size="repeat" attach="local" position="top" />}
       {...rest}
     >
       {mediaEntries.map((mediaEntry, index) => (
         <Lightbox key={`media-${index}`} mediaEntry={mediaEntry}>
           <button>
-            <Media mediaEntry={mediaEntry} aspect="video" isHover />
+            <Media aspect="video" mediaEntry={mediaEntry} isHover />
           </button>
         </Lightbox>
       ))}

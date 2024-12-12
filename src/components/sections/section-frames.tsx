@@ -49,8 +49,8 @@ const SectionFrames = forwardRef<SectionFramesRef, SectionFramesProps>((props, r
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
-      height="auto"
       bg={<Bg variant="gradient" />}
+      height="auto"
       {...rest}
     >
       <div ref={contentRef} className={styles.content()}>

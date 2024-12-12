@@ -24,13 +24,13 @@ const Brand = forwardRef<BrandRef, BrandProps>((props, ref) => {
 
   return (
     <svg
-      className={cn(styles.root({ className }))}
       ref={ref}
-      width="673"
-      height="218"
-      viewBox="0 0 673 218"
+      className={cn(styles.root({ className }))}
       fill="none"
+      viewBox="0 0 673 218"
       xmlns="http://www.w3.org/2000/svg"
+      height="218"
+      width="673"
       {...rest}
     >
       <path

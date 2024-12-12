@@ -69,7 +69,7 @@ const DialogContent = forwardRef<
       {children}
       {isCloseVisible && (
         <DialogPrimitive.Close className={cn(styles.dialogClose())} asChild>
-          <Button variant="ghost" size="icon">
+          <Button size="icon" variant="ghost">
             <Icon icon={XIcon} />
           </Button>
         </DialogPrimitive.Close>

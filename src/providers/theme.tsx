@@ -16,8 +16,8 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
       attribute="class"
       defaultTheme={defaultTheme}
       themes={['light', 'dark']}
-      enableSystem
       disableTransitionOnChange
+      enableSystem
     >
       {children}
     </NextThemeProvider>

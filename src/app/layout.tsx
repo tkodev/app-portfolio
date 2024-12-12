@@ -66,7 +66,7 @@ type LayoutPageProps = {
 const LayoutPage: FC<LayoutPageProps> = (props) => {
   const { children } = props
   return (
-    <html lang="en" className={cn(styles.html())} suppressHydrationWarning>
+    <html className={cn(styles.html())} lang="en" suppressHydrationWarning>
       <Head>
         <Favicon />
       </Head>

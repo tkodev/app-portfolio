@@ -13,7 +13,7 @@ const styles = {
 
 const Input = forwardRef<HTMLInputElement, ComponentProps<'input'>>(
   ({ className, type, ...props }, ref) => {
-    return <input type={type} className={cn(styles.root({ className }))} ref={ref} {...props} />
+    return <input ref={ref} type={type} className={cn(styles.root({ className }))} {...props} />
   }
 )
 Input.displayName = 'Input'

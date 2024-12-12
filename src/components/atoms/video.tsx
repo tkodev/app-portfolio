@@ -16,8 +16,8 @@ const Video = forwardRef<VideoRef, VideoProps>((props, ref) => {
 
   return (
     <video ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <source src={src} type={mime} />
-      {track && <track src={track} kind="subtitles" srcLang={lang} />}
+      <source type={mime} src={src} />
+      {track && <track kind="subtitles" srcLang={lang} src={track} />}
       Your browser does not support the video tag.
     </video>
   )

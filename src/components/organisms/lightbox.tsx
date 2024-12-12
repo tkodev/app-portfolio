@@ -69,7 +69,7 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
         </DialogHeader>
         <div className={cn(styles.body({ isDoubleCol: !!caption }))}>
           <div className={cn(styles.left())}>
-            <Media mediaEntry={mediaEntry} fill="contain" />
+            <Media fill="contain" mediaEntry={mediaEntry} />
           </div>
           <DialogDescription asChild>
             <Markdown className={cn(styles.right())}>{caption || alt}</Markdown>

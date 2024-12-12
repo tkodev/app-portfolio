@@ -30,9 +30,9 @@ const Client = forwardRef<ImagerRef, ImagerProps>((props, ref) => {
 
   return (
     <div ref={ref} className={cn(styles.root({ className }))}>
-      <Image className={cn(styles.img({ variant: 'light' }))} src={lightSrc} alt={alt} {...rest} />
-      <Image className={cn(styles.img({ variant: 'dark' }))} src={darkSrc} alt={alt} {...rest} />
-      <Image className={cn(styles.baseImg())} src={lightSrc} alt={alt} {...rest} />
+      <Image className={cn(styles.img({ variant: 'light' }))} alt={alt} src={lightSrc} {...rest} />
+      <Image className={cn(styles.img({ variant: 'dark' }))} alt={alt} src={darkSrc} {...rest} />
+      <Image className={cn(styles.baseImg())} alt={alt} src={lightSrc} {...rest} />
     </div>
   )
 })

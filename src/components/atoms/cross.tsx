@@ -15,17 +15,17 @@ const Cross = forwardRef<CrossRef, CrossProps>((props, ref) => {
 
   return (
     <svg
-      className={cn(styles.root({ className }))}
       ref={ref}
-      width="896"
-      height="896"
-      viewBox="0 0 896 896"
+      className={cn(styles.root({ className }))}
       fill="none"
+      viewBox="0 0 896 896"
       xmlns="http://www.w3.org/2000/svg"
+      height="896"
+      width="896"
       {...rest}
     >
-      <line className={cn(styles.bold())} x1="153.354" y1="152.646" x2="743.354" y2="742.646" />
-      <line className={cn(styles.bold())} x1="646.354" y1="250.354" x2="250.354" y2="646.354" />
+      <line className={cn(styles.bold())} x1="153.354" x2="743.354" y1="152.646" y2="742.646" />
+      <line className={cn(styles.bold())} x1="646.354" x2="250.354" y1="250.354" y2="646.354" />
       <circle className={cn(styles.light())} cx="448" cy="448" r="347.5" strokeWidth="25" />
       <circle className={cn(styles.light())} cx="448" cy="448" r="447.5" />
       <circle className={cn(styles.bold())} cx="448" cy="448" r="239.5" />

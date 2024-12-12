@@ -26,7 +26,7 @@ const Favicon: FC<FaviconProps> = () => {
       <link rel="icon" type="image/png" sizes="16x16" href={xsIcon} />
       <link rel="icon" type="image/png" sizes="32x32" href={smIcon} />
       <link rel="shortcut icon" href={favIcon} />
-      <link rel="mask-icon" href={maskIcon} color={themeColor} />
+      <link rel="mask-icon" color={themeColor} href={maskIcon} />
       <link rel="apple-touch-icon" sizes="180x180" href={touchIcon} />
     </>
   )

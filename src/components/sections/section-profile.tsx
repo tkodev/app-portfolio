@@ -39,14 +39,14 @@ const SectionProfile = forwardRef<SectionProfileRef, SectionProfileProps>((props
     <Section
       ref={ref}
       className={cn(styles.root({ className }))}
+      bg={<Bg attach="local" variant="texture" />}
       height="auto"
-      bg={<Bg variant="texture" attach="local" />}
       {...rest}
     >
       <div className={cn(styles.content())}>
         <div className={cn(styles.photo())}>
           <Avatar className={cn(styles.avatar())}>
-            <AvatarImage src="/images/tkodev/dp-sq.jpg" alt="Tony Ko" />
+            <AvatarImage alt="Tony Ko" src="/images/tkodev/dp-sq.jpg" />
             <AvatarFallback>Tony Ko</AvatarFallback>
           </Avatar>
         </div>

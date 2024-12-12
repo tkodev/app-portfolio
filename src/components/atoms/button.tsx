@@ -56,8 +56,8 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
   const Comp = asChild ? Slot : 'button'
   return (
     <Comp
-      className={cn(styles.root({ variant, size, isHover: variant !== 'link', className }))}
       ref={ref}
+      className={cn(styles.root({ variant, size, isHover: variant !== 'link', className }))}
       {...rest}
     />
   )
