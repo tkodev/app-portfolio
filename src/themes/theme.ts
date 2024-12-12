@@ -1,6 +1,6 @@
 // noinspection ES6PreferShortImport - tailwind does not support ts aliases
 
-import fluid from 'fluid-tailwind'
+import fluid, { extract } from 'fluid-tailwind'
 import twGradientMaskImage from 'tailwind-gradient-mask-image'
 import { Config } from 'tailwindcss'
 import twAnimate from 'tailwindcss-animate'
@@ -171,7 +171,8 @@ const theme: Theme = {
 // Tailwind CSS Configuration
 const themeConfig: Config = {
   content: {
-    files: []
+    files: [],
+    extract
   },
   theme: {
     ...screens,
