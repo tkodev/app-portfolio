@@ -44,11 +44,6 @@ const Hypertext: FC<HypertextProps> = (props) => {
   const interations = useRef(0)
   const isFirstRender = useRef(true)
 
-  const triggerAnimation = () => {
-    interations.current = 0
-    setTrigger(true)
-  }
-
   useEffect(() => {
     const interval = setInterval(
       () => {
@@ -76,7 +71,7 @@ const Hypertext: FC<HypertextProps> = (props) => {
   }, [text, duration, trigger, animateOnLoad])
 
   return (
-    <div className={cn(styles.root())} onMouseEnter={triggerAnimation}>
+    <div className={cn(styles.root())}>
       <AnimatePresence mode="sync">
         {displayText.map((letter, i) => (
           <motion.span
