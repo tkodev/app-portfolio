@@ -718,6 +718,13 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
+        src: '/images/projects/web-era/7.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - After5hock @ AsianAvenue.com Theme'
+      },
+      {
+        type: 'image',
         src: '/images/projects/web-era/12.jpg',
         width: 1920,
         height: 1500,
