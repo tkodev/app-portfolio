@@ -711,17 +711,10 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       },
       {
         type: 'image',
-        src: '/images/projects/web-era/11.jpg',
-        width: 1920,
-        height: 1500,
-        alt: 'Web 1.0 Era Web Design - Infu5ion @ Zuup.com Theme & Various Abstract Art'
-      },
-      {
-        type: 'image',
         src: '/images/projects/web-era/7.jpg',
         width: 1920,
         height: 1500,
-        alt: 'Web 1.0 Era Web Design - After5hock @ AsianAvenue.com Theme'
+        alt: 'Web 1.0 Era Web Design - After5hock @ Xanga.com Theme'
       },
       {
         type: 'image',
@@ -729,6 +722,13 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         width: 1920,
         height: 1500,
         alt: 'Web 1.0 Era Web Design - After5hock @ AsianAvenue.com Theme'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/web-era/11.jpg',
+        width: 1920,
+        height: 1500,
+        alt: 'Web 1.0 Era Web Design - Infu5ion @ Zuup.com Theme & Various Abstract Art'
       },
       {
         type: 'image',
