@@ -40,7 +40,7 @@ type MediaProps = HTMLAttributes<MediaRef> &
 const Media: FC<MediaProps> = (props) => {
   const { mediaEntry, aspect, fill, isHover, className } = props
 
-  const { type, frameId: _, caption: _caption, ...mediaProps } = mediaEntry ?? {}
+  const { type, frameId: _, ...mediaProps } = mediaEntry ?? {}
 
   const Comp = type === 'image' ? Image : Video
 

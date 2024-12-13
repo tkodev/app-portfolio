@@ -30,7 +30,6 @@ type ImageMediaEntry = {
   height: number | `${number}`
   alt: string
   frameId?: FrameId
-  caption?: string
 }
 
 type MediaEntry = VideoMediaEntry | ImageMediaEntry

@@ -36,15 +36,7 @@ const styles = {
   }),
 
   left: cva('flex min-h-0 min-w-0 items-center justify-center p-8'),
-  right: cva('border-t p-8 md:border-l md:border-t-0'),
-
-  caption: cva('', {
-    variants: {
-      break: {
-        true: 'mb-4'
-      }
-    }
-  })
+  right: cva('border-t p-8 md:border-l md:border-t-0')
 }
 
 type LightboxRef = HTMLButtonElement
@@ -56,7 +48,7 @@ type LightboxProps = HTMLAttributes<LightboxRef> &
 
 const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
   const { mediaEntry, className, children, ...rest } = props
-  const { caption, alt } = mediaEntry
+  const { alt } = mediaEntry
 
   return (
     <Dialog {...rest}>
@@ -67,12 +59,12 @@ const Lightbox = forwardRef<LightboxRef, LightboxProps>((props, ref) => {
         <DialogHeader className={cn(styles.header())}>
           <DialogTitle>Media Preview</DialogTitle>
         </DialogHeader>
-        <div className={cn(styles.body({ isDoubleCol: !!caption }))}>
+        <div className={cn(styles.body({ isDoubleCol: !!alt }))}>
           <div className={cn(styles.left())}>
             <Media fill="contain" mediaEntry={mediaEntry} />
           </div>
           <DialogDescription asChild>
-            <Markdown className={cn(styles.right())}>{caption || alt}</Markdown>
+            <Markdown className={cn(styles.right())}>{alt}</Markdown>
           </DialogDescription>
         </div>
       </DialogContent>
