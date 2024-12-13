@@ -21,7 +21,6 @@ type VideoMediaEntry = {
   track?: string
   lang?: string
   frameId?: FrameId
-  caption?: string
 }
 
 type ImageMediaEntry = {

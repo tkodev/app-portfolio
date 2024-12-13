@@ -470,7 +470,16 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
         alt: 'Canada Chiropractic Protective Association - Website & CMS'
       }
     ],
-    frames: [],
+    frames: [
+      {
+        type: 'video',
+        src: '/videos/projects/CCPAinfographic-short.mp4',
+        width: 2788,
+        height: 1748,
+        alt: 'Canada Chiropractic Protective Association - Infographic',
+        frameId: 'desktop'
+      }
+    ],
     title: 'Canada Chiropractic Protective Association - Website & CMS',
     intro:
       'For the Canada Chiropractic Protective Association, I developed a Microsoft Dynamics 365 CRM-integrated website. This project allowed the client to manage case information and plans effectively, enhancing their administrative capabilities and supporting better client service through a centralized, accessible platform.',
@@ -601,8 +610,33 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   toffifeeSpinToWinContest: {
     id: 'toffifeeSpinToWinContest',
     roles: ['development'],
-    media: [],
-    frames: [],
+    media: [
+      {
+        type: 'video',
+        src: '/videos/projects/toff7026-short.mp4',
+        width: 2400,
+        height: 1748,
+        alt: 'Toffifee Spin To Win Contest'
+      }
+    ],
+    frames: [
+      {
+        type: 'video',
+        src: '/videos/projects/toff7026.mp4',
+        width: 2400,
+        height: 1748,
+        alt: 'Toffifee Spin To Win Contest - Long Version',
+        frameId: 'desktop'
+      },
+      {
+        type: 'video',
+        src: '/videos/projects/toff7026-spin.mp4',
+        width: 2784,
+        height: 1652,
+        alt: 'Toffifee Spin To Win Contest - Spin Animation',
+        frameId: 'desktop'
+      }
+    ],
     title: 'Toffifee - Spin to Win Contest',
     intro:
       'For Toffifee, I created a "spin to win" contest using Express.js and Ractive.js. This engaging, animation-driven contest offered users a fun way to interact with the brand, increasing engagement and enhancing Toffifee’s digital marketing strategy.',
@@ -615,8 +649,25 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   toyotaBringYourToyotaHomeContest: {
     id: 'toyotaBringYourToyotaHomeContest',
     roles: ['development'],
-    media: [],
-    frames: [],
+    media: [
+      {
+        type: 'video',
+        src: '/videos/projects/byth7040-short.mp4',
+        width: 1146,
+        height: 850,
+        alt: 'Bring Your Toyota Home Contest'
+      }
+    ],
+    frames: [
+      {
+        type: 'video',
+        src: '/videos/projects/byth7040-long.mp4',
+        width: 1276,
+        height: 796,
+        alt: 'Bring Your Toyota Home Contest - Long Version',
+        frameId: 'desktop'
+      }
+    ],
     title: 'Toyota - Bring Your Toyota Home Contest',
     intro:
       'I developed a contest for Toyota, integrating interactive Apple-style parallax animations with Express.js. This project offered users an immersive experience, showcasing Toyota’s commitment to innovative digital engagement.',
@@ -629,7 +680,15 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
   toyotaMakeADateContest: {
     id: 'toyotaMakeADateContest',
     roles: ['development'],
-    media: [],
+    media: [
+      {
+        type: 'image',
+        src: '/images/projects/toyota.webp',
+        width: 900,
+        height: 574,
+        alt: 'Make A Date Every 8 Contest'
+      }
+    ],
     frames: [],
     title: 'Toyota - Make a Date Contest',
     intro:
