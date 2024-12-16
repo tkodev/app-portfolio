@@ -1151,6 +1151,189 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
       'MySQL'
     ],
     isFeatured: true
+  },
+  industrialDesign: {
+    id: 'industrialDesign',
+    roles: ['design'],
+    media: [
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/modern-build_2024-dec-15_11-10-28pm-000_customizedview2748624882.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Small Form Factor PC Build'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/modern-build_2024-dec-15_11-10-52pm-000_customizedview25809979503.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Small Form Factor PC Build'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/eos_1_a_2024-dec-15_11-32-28pm-000_customizedview18216312656.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - EOS Acrylic Laser Cut PC Case'
+      },
+      // {
+      //   type: 'image',
+      //   src: '/images/projects/industrial-design/mjolnir_3_2024-dec-15_11-31-31pm-000_customizedview24532261697.png',
+      //   width: 1200,
+      //   height: 1200,
+      //   alt: '3D Modeling and Industrial Design - Mjolnir 3D Printed PC Case - Close Up'
+      // },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/mjolnir_3_2024-dec-15_11-48-20pm-000_customizedview1631237819.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Mjolnir 3D Printed PC Case'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/eos_block_2024-dec-15_11-50-39pm-000_customizedview34151560115.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - EOS CPU Pump Water Block with Pump'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/eos_block_2024-nov-27_04-57-07am-000_customizedview5928134866.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - EOS CPU Pump Water Block'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/zx-1_mount_2024-dec-15_11-15-23pm-000_customizedview13614885543.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Nouvolo CPU Pump Water Block to Iquinix ZX-1 PC Case Mount'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/case_-_evolv_shift_2_2024-dec-15_11-12-54pm-000_customizedview31469564511.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Evolv Shift 2 Case Cover'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/redux-assy_2024-dec-15_11-37-14pm-000_customizedview18606186293.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Magic the Gathering - Redux Card Case'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/redux-assy_2024-dec-15_11-37-06pm-000_customizedview18606186293.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Magic the Gathering - Redux Card Case with Insert'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/desk-organizer-redux_2024-dec-15_11-36-28pm-000_customizedview7294577484.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Desk Organizer Redux'
+      },
+
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/macbook_stand_2024-dec-15_11-09-37pm-000_customizedview6170979262.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - MacBook Stand'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/hue-mount_2024-dec-15_11-13-59pm-000_customizedview18169488883.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Philips Hue Lightbar Mount for Vivo Desk Monitor Pole'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/light_pole_mount_-_screw_based_2024-dec-15_11-39-06pm-000_customizedview10171845343.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Generic Mount for Vivo Desk Monitor Pole'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/koolance_-_fitting_-_90_degree_-_low_profile_2024-dec-15_11-35-21pm-000_customizedview10262692848.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Koolance Fitting 90 Degree Low Profile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/vandal_switch_2024-dec-15_11-11-49pm-000_customizedview19737110002.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Anti-Vandal Switch from FDV'
+      },
+      // {
+      //   type: 'image',
+      //   src: '/images/projects/industrial-design/vent-redux_2024-dec-15_11-43-18pm-000_customizedview25641897381.png',
+      //   width: 1200,
+      //   height: 1200,
+      //   alt: '3D Modeling and Industrial Design - Air Return Vent - Redux'
+      // },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/qm-ornament_2024-dec-15_11-41-51pm-000_customizedview39273023891.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Quantum Mob Logo Ornament'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/keyfob_2024-dec-15_11-41-34pm-000_customizedview3517011434.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Quantum Mob Logo Keyfob'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/trophy_-_tech_tank_2024-dec-15_11-07-40pm-000_customizedview13777747030.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Tech Tank Sashimis - Sports Trophy'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/burger_press_2024-dec-15_11-36-02pm-000_customizedview3640923189.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Burger Press'
+      }
+    ],
+    frames: [],
+    title: '3D Modeling and Industrial Design',
+    intro:
+      'My 3D modeling journey began as a hobby, driven by a desire to merge creativity with practicality. I explored solving everyday problems by designing custom prints, reimagined forms for existing devices, and assembled parts for PC and electronic builds, pushing the boundaries of what functional design could achieve.',
+    desc: 'This hands-on exploration allowed me to dive deep into industrial design, using tools like Fusion 360 and Blender to create models that are both innovative and practical. From crafting 3D-printed solutions for everyday challenges to prototyping new forms and integrating parts for advanced electronic projects, I focused on bridging digital design with physical functionality. The process reinforced my passion for building solutions that enhance usability while maintaining a refined, aesthetic approach.',
+    clientId: 'tkodev',
+    profileIds: ['tony'],
+    startDate: fromZonedTime('2021-01-01', appTimeZone),
+    skills: [
+      '3D Modeling',
+      'Industrial Design',
+      '3D Printing',
+      'Fusion 360',
+      'Blender',
+      'Revit',
+      'Functional Design',
+      'Form and Function',
+      'Prototyping',
+      'Device Interface Design',
+      'Hobbyist Exploration'
+    ],
+    isFeatured: true
   }
 }
 
@@ -1178,8 +1361,9 @@ const projectIds: ProjectId[] = [
   'toyotaMakeADateContest',
   'babyJoggerCanadianCatalogWebsite',
   'earlySoftwareEngineering',
+  'web10Era',
   'interiorsArchitecture',
-  'web10Era'
+  'industrialDesign'
 ]
 
 export { projectEntries, projectIds }

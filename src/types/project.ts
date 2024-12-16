@@ -28,6 +28,7 @@ type ProjectId =
   | 'earlySoftwareEngineering'
   | 'interiorsArchitecture'
   | 'web10Era'
+  | 'industrialDesign'
 
 type ProjectRole = 'development' | 'design'
 
@@ -42,7 +43,7 @@ type ProjectEntry = {
   clientId: ClientId
   profileIds: ProfileId[]
   startDate: Date
-  endDate: Date
+  endDate?: Date
   skills: string[]
   isFeatured?: boolean
 }

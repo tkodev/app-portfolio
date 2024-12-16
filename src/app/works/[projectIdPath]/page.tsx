@@ -29,7 +29,8 @@ const Page: FC<PageProps> = async (props) => {
     (frameEntry) => frameEntry.frameId === 'desktop'
   )
   const mobileEntries = projectEntry.frames.filter((frameEntry) => frameEntry.frameId === 'mobile')
-  const mediaEntries = projectEntry.media.slice(1)
+  const mediaEntries =
+    projectEntry.media.length > 1 ? projectEntry.media : projectEntry.media.slice(1)
 
   return (
     <Main>
