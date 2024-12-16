@@ -32,8 +32,9 @@ const BgmProvider: FC<BgmProviderProps> = (props) => {
 
   // update store data based on audio
   useEffect(() => {
+    setBgmState(audioData.playing ? 'playing' : audioData.paused ? 'paused' : 'stopped', true)
     setBgmData(audioData)
-  }, [bgmState, audioData, setBgmState, setBgmData])
+  }, [audioData, setBgmState, setBgmData])
 
   return (
     <Fragment>
