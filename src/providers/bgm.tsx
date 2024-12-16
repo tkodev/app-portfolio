@@ -11,7 +11,7 @@ type BgmProviderProps = {
 const BgmProvider: FC<BgmProviderProps> = (props) => {
   const { children } = props
 
-  const { bgmState, setBgmData, setBgmState } = useBgmStore()
+  const { bgmConfirm, bgmState, setBgmData, setBgmState } = useBgmStore()
 
   const [audio, audioData, controls] = useAudio({
     src: '/audio/an-empty-bus-justin-marshall-elias-main-version-36442-03-56.mp3',
@@ -20,13 +20,15 @@ const BgmProvider: FC<BgmProviderProps> = (props) => {
 
   // trigger audio based on store data
   useEffect(() => {
+    if (bgmConfirm) return
     if (!audioData.playing && bgmState === 'playing') controls.play()
     if (!audioData.paused && bgmState === 'paused') controls.pause()
     if (!audioData.paused && bgmState === 'stopped') {
       controls.pause()
       controls.seek(0)
     }
-  }, [bgmState, audioData, controls])
+    setBgmState(bgmState, true)
+  }, [bgmConfirm, bgmState, audioData, controls, setBgmState])
 
   // update store data based on audio
   useEffect(() => {

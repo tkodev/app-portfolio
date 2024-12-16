@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 
 type BgmStore = {
+  bgmConfirm: boolean
   bgmState: 'playing' | 'paused' | 'stopped'
   bgmData: {
     buffered: Array<{
@@ -14,11 +15,12 @@ type BgmStore = {
     volume: number
     playing: boolean
   }
-  setBgmState: (newBgmState: BgmStore['bgmState']) => void
+  setBgmState: (newBgmState: BgmStore['bgmState'], newBgmConfirm?: BgmStore['bgmConfirm']) => void
   setBgmData: (newAudioData: BgmStore['bgmData']) => void
 }
 
 const useBgmStore = create<BgmStore>()((set) => ({
+  bgmConfirm: false,
   bgmState: 'paused',
   bgmData: {
     buffered: [],
@@ -29,7 +31,8 @@ const useBgmStore = create<BgmStore>()((set) => ({
     volume: 1,
     playing: false
   },
-  setBgmState: (newBgmState) => set(() => ({ bgmState: newBgmState })),
+  setBgmState: (newBgmState, newBgmConfirm = false) =>
+    set(() => ({ bgmState: newBgmState, bgmConfirm: newBgmConfirm })),
   setBgmData: (newBgmData) => set(() => ({ bgmData: newBgmData }))
 }))
 
