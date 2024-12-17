@@ -1,4 +1,4 @@
-import { Main } from '@/components/atoms/main'
+import { Main } from '@/components/organisms/main'
 import { SectionClients } from '@/components/sections/section-clients'
 import { SectionContact } from '@/components/sections/section-contact'
 import { SectionJobs } from '@/components/sections/section-jobs'

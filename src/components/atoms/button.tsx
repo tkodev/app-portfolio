@@ -23,8 +23,8 @@ const styles = {
           link: 'text-primary underline-offset-4 hover:underline'
         },
         size: {
-          xs: 'h-7 px-2 text-xs',
-          sm: 'h-8 px-3 text-xs',
+          xs: 'h-7 px-2',
+          sm: 'h-8 px-3',
           default: 'h-9 px-4 py-2',
           lg: 'h-10 px-8',
           xl: 'h-12 px-10',

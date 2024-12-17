@@ -12,17 +12,27 @@ import { textStyles } from '@/constants/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['px-4 md:px-8']),
+  root: cva('flex items-center justify-center'),
 
-  container: cva(['relative h-full w-full']),
-
-  content: cva([
-    'aspect-square w-full max-w-[896px]',
-    'absolute left-1/2 top-[33%] -translate-x-1/2 -translate-y-1/2 sm:top-[40%] lg:top-[50%]',
+  container: cva([
+    'relative h-full w-full max-w-[960px] grow-0',
     'flex flex-col items-center justify-center'
   ]),
 
-  cross: cva(['h-full w-full', 'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2']),
+  content: cva([
+    'aspect-square h-auto w-full',
+    'relative',
+    'flex flex-col items-center justify-center',
+    'lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:text-left'
+  ]),
+  intro: cva([
+    'h-auto w-[320px] max-w-[96%] text-center lg:w-[200px]',
+    '-mt-8 sm:-mt-16 md:-mt-24 lg:mt-0',
+    'lg:absolute lg:left-[78%] lg:top-1/2 lg:-translate-y-1/2 lg:text-left',
+    'flex flex-col gap-2'
+  ]),
+
+  cross: cva(['h-auto w-full', 'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2']),
   brand1: cva([
     'relative -left-8 h-auto w-[75%]',
     'animate-slide-down transition-all duration-1000 hover:scale-105'
@@ -36,16 +46,9 @@ const styles = {
     'animate-slide-up transition-all duration-1000 hover:scale-105'
   ]),
   avatar: cva([
-    'h-[53.5%] w-[53.5%]',
+    'h-auto w-[50%]',
     'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
     'grayscale-[25%] transition-all duration-1000 hover:scale-105 hover:grayscale'
-  ]),
-  intro: cva([
-    'h-auto w-[320px] lg:w-[250px]',
-    'absolute left-1/2 top-[100%] -translate-x-1/2 text-center',
-    'sm:top-[80%]',
-    'lg:left-[82%] lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-0 lg:text-left',
-    'flex flex-col gap-2'
   ]),
 
   cta: cva('mt-2')
@@ -74,23 +77,23 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
             <AvatarFallback>-</AvatarFallback>
           </Avatar>
           <Brand className={cn(styles.brand3())} variant="outline" />
-          <div className={cn(styles.intro())}>
-            <h1 className={cn(textStyles.h3())}>
-              Works By <strong>Tony Ko</strong>
-            </h1>
-            <h2>
-              <strong>Staff Software Engineer</strong> & <strong>UI Designer</strong> —
-            </h2>
-            <h3>
-              Based in <em>Toronto, Canada.</em>
-            </h3>
-            <div className={cn(styles.cta())}>
-              <Button size="lg" asChild>
-                <Link href="/profile">
-                  Explore Profile <Icon icon={ArrowRightIcon} />
-                </Link>
-              </Button>
-            </div>
+        </div>
+        <div className={cn(styles.intro())}>
+          <h1 className={cn(textStyles.h3())}>
+            Works By <strong>Tony Ko</strong>
+          </h1>
+          <h2>
+            <strong>Staff Software Engineer</strong> & <strong>UI Designer</strong> —
+          </h2>
+          <h3>
+            Based in <em>Toronto, Canada.</em>
+          </h3>
+          <div className={cn(styles.cta())}>
+            <Button size="lg" asChild>
+              <Link href="/profile">
+                Explore Profile <Icon icon={ArrowRightIcon} />
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

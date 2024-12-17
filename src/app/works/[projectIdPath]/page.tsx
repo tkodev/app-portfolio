@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { FC } from 'react'
-import { Main } from '@/components/atoms/main'
+import { Main } from '@/components/organisms/main'
 import { SectionContact } from '@/components/sections/section-contact'
 import { SectionFrames } from '@/components/sections/section-frames'
 import { SectionMedia } from '@/components/sections/section-media'

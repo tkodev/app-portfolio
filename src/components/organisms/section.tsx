@@ -5,7 +5,7 @@ const styles = {
   root: cva('relative flex h-auto w-full', {
     variants: {
       height: {
-        full: 'min-h-screen',
+        full: 'min-h-full',
         auto: 'min-h-5'
       }
     },
@@ -14,7 +14,7 @@ const styles = {
     }
   }),
   overlay: cva('-z-1 absolute left-0 top-0 h-full w-full'),
-  content: cva('max-w-screen relative mx-auto w-full grow px-8 py-[128px]', {
+  content: cva('relative mx-auto w-full max-w-full grow px-8 py-[96px] lg:py-[128px]', {
     variants: {
       width: {
         full: 'max-w-[1280px]',

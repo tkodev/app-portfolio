@@ -1,4 +1,4 @@
-import { Main } from '@/components/atoms/main'
+import { Main } from '@/components/organisms/main'
 import { SectionHome } from '@/components/sections/section-home'
 
 const Page = () => {

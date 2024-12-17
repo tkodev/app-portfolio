@@ -29,8 +29,8 @@ const styles = {
     'flex flex-col items-center justify-center gap-8',
     'lg:flex-row lg:items-center lg:justify-between'
   ]),
-  text: cva('flex flex-col gap-8'),
-  desc: cva('flex flex-col gap-8 lg:mt-8'),
+  text: cva('flex flex-col gap-4'),
+  desc: cva('flex flex-col gap-4 lg:mt-8'),
 
   tableHead: cva('w-[20%]'),
   tableRoles: cva('capitalize'),

@@ -1,4 +1,4 @@
-import { Main } from '@/components/atoms/main'
+import { Main } from '@/components/organisms/main'
 import { SectionLoading } from '@/components/sections/section-loading'
 
 const Page = () => {

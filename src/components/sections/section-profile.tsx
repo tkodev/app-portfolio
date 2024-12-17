@@ -19,7 +19,7 @@ const styles = {
   stats: cva('flex flex-wrap justify-between gap-4'),
 
   photo: cva('w-full max-w-[480px]'),
-  text: cva('flex flex-col gap-8 lg:order-first lg:w-1/2'),
+  text: cva('flex flex-col gap-4 lg:order-first lg:w-1/2'),
 
   avatar: cva('h-full w-full max-w-[480px]'),
   stat: cva('flex w-[160px] flex-col gap-2 md:w-[220px] lg:w-[250px]')

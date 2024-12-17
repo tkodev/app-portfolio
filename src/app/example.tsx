@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Main } from '@/components/atoms/main'
+import { Main } from '@/components/organisms/main'
 import { SectionExample } from '@/components/sections/section-example'
 import { PageProps } from '@/types/layout'
 

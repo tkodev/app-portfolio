@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Main } from '@/components/atoms/main'
+import { Main } from '@/components/organisms/main'
 import { SectionContact } from '@/components/sections/section-contact'
 import { SectionShots } from '@/components/sections/section-shots'
 import { PageProps } from '@/types/layout'

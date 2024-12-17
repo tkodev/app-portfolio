@@ -66,14 +66,15 @@ const colors: Theme = {
 const typography: Theme = {
   fontSize: {
     // tw defaults in rem
-    xs: [pxToRem(12), { lineHeight: pxToRem(12 * 1.5) }],
-    sm: [pxToRem(14), { lineHeight: pxToRem(14 * 1.5) }],
-    base: [pxToRem(16), { lineHeight: pxToRem(16 * 1.5) }],
-    lg: [pxToRem(18), { lineHeight: pxToRem(18 * 1.5) }],
-    xl: [pxToRem(20), { lineHeight: pxToRem(20 * 1.5) }],
-    // custom
-    h3: [pxToRem(24), { lineHeight: pxToRem(24 + 8) }],
-    h2: [pxToRem(32), { lineHeight: pxToRem(32 + 8) }],
+    sm: [pxToRem(14), { lineHeight: pxToRem(12 * 1.5) }],
+    base: [pxToRem(16), { lineHeight: pxToRem(14 * 1.5) }],
+    lg: [pxToRem(18), { lineHeight: pxToRem(16 * 1.5) }],
+    // headings
+    h6: [pxToRem(20), { lineHeight: pxToRem(20 + 8) }],
+    h5: [pxToRem(24), { lineHeight: pxToRem(24 + 8) }],
+    h4: [pxToRem(28), { lineHeight: pxToRem(28 + 8) }],
+    h3: [pxToRem(32), { lineHeight: pxToRem(32 + 8) }],
+    h2: [pxToRem(56), { lineHeight: pxToRem(56 + 8) }],
     h1: [pxToRem(72), { lineHeight: pxToRem(72 + 8) }]
   },
   fontFamily: {
