@@ -28,7 +28,7 @@ const styles = {
   intro: cva([
     'h-auto w-[320px] max-w-[96%] text-center lg:w-[200px]',
     '-mt-8 sm:-mt-16 md:-mt-24 lg:mt-0',
-    'lg:absolute lg:left-[78%] lg:top-1/2 lg:-translate-y-1/2 lg:text-left',
+    'lg:absolute lg:left-[78%] lg:top-1/2 lg:-translate-y-1/2 lg:text-left xl:left-[82%]',
     'flex flex-col gap-2'
   ]),
 
