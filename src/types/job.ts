@@ -1,6 +1,7 @@
 import { ClientId } from './client'
 
 type JobId =
+  | 'badalSeniorSoftwareEngineer'
   | 'badalStaffSoftwareEngineer'
   | 'quantumMobStaffSoftwareEngineer'
   | 'quantumMobSeniorSoftwareEngineer'
@@ -16,7 +17,7 @@ type JobEntry = {
   title: string
   location: string
   startDate: Date
-  endDate: Date
+  endDate?: Date
   skills: string[]
 }
 

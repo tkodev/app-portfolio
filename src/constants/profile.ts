@@ -4,7 +4,7 @@ const profileEntries: Record<ProfileId, ProfileEntry> = {
   tony: {
     id: 'tony',
     name: 'Tony Ko',
-    title: 'Staff Software Engineer',
+    title: 'Senior Software Engineer',
     linkedin: 'https://www.linkedin.com/in/tkodev',
     github: 'https://www.github.com/tkodev',
     email: 'tony@tko.dev',

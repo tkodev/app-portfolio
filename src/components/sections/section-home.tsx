@@ -83,7 +83,7 @@ const SectionHome = forwardRef<SectionHomeRef, SectionHomeProps>((props, ref) =>
             Works By <strong>Tony Ko</strong>
           </h1>
           <h2>
-            <strong>Staff Software Engineer</strong> & <strong>UI Designer</strong> —
+            <strong>Senior Software Engineer</strong> & <strong>UI Designer</strong> —
           </h2>
           <h3>
             Based in <em>Toronto, Canada.</em>

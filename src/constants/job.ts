@@ -4,6 +4,16 @@ import { fromZonedTime } from 'date-fns-tz'
 
 const jobEntries: JobEntry[] = [
   {
+    id: 'badalSeniorSoftwareEngineer',
+    companyId: 'badal',
+    companyName: 'Badal.io',
+    title: 'Senior Software Engineer',
+    location: 'Toronto, Ontario, Canada · Remote',
+    startDate: fromZonedTime('2024-12-16', appTimeZone),
+    endDate: undefined,
+    skills: []
+  },
+  {
     id: 'badalStaffSoftwareEngineer',
     companyId: 'badal',
     companyName: 'Badal.io',
