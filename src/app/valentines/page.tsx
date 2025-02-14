@@ -49,8 +49,11 @@ const FunnyValentine = () => {
   }
 
   const handleReject = () => {
-    setRejected(true)
-    setTimeout(() => setRejected(false), 2000)
+    handleMouseEnter()
+    if (attemptCount >= 7) {
+      setRejected(true)
+      setTimeout(() => setRejected(false), 2000)
+    }
   }
 
   const handleAccept = () => {
@@ -132,7 +135,7 @@ const FunnyValentine = () => {
                 </Alert>
               )}
 
-              {attemptCount >= 7 && (
+              {attemptCount >= 3 && (
                 <Alert className="mt-4 border-yellow-200 bg-yellow-100">
                   <AlertDescription className="text-yellow-800">
                     Come on, stop trying to resist! You know you want to say yes! 😏
