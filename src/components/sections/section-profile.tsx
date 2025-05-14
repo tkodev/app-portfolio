@@ -55,14 +55,14 @@ const SectionProfile = forwardRef<SectionProfileRef, SectionProfileProps>((props
             <Hypertext text="Tony Ko." />
           </h1>
           <h2 className={cn(textStyles.h2())}>
-            Senior Software Engineer <br />& UI Designer
+            Staff Software Engineer <br />& UI Designer
           </h2>
           <h3 className={cn(textStyles.h3())}>
             Crafting performant solutions, championing best practices, and empowering teams to
             innovate.
           </h3>
           <p>
-            I’m Tony Ko, a Senior Software Engineer with over {yearsSince} years of experience
+            I’m Tony Ko, a Staff Software Engineer with over {yearsSince} years of experience
             delivering high-performing, secure, and accessible software solutions for top North
             American brands, including Aeroplan, Air Miles, and Toyota. My expertise spans web,
             mobile, browser extensions, and embedded systems, backed by a strong foundation in
